@@ -1,0 +1,19 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: intro
+chapters:
+- file: whymojo
+- file: gettingstarted
+- file: datastructure
+- file: functions
+- file: controlflow
+- file: comprehension
+- file: packages
+- file: usingpython
+- file: thinkinginmojo
+- file: oops
+# - file: markdown
+# - file: notebooks
+# - file: markdown-notebooks
