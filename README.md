@@ -14,7 +14,7 @@ A Comprehensive Guide to Mojo programming language with Real-Life Data, Transfor
 [<img src="https://github.com/AmitXShukla/AmitXShukla.github.io/blob/master/assets/icons/twitter_1.svg" width=40 height=50>](https://twitter.com/ashuklax)
 
 ---
-Start Here -> read the [documentation](https://amitxshukla.github.io/Mojo/)
+Start Here -> read the [documentation](https://amitxshukla.github.io/Mojo/intro.html)
 
 **WIP** - *Download PDF version of this notebook*
 
@@ -52,7 +52,7 @@ Thank you for joining me, and I'm excited to embark on this educational journey 
 
 Let's get started.
 
-Start Here -> read the [documentation](https://amitxshukla.github.io/Mojo/)
+Start Here -> read the [documentation](https://amitxshukla.github.io/Mojo/intro.html)
 
 ---
 

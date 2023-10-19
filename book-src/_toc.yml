@@ -6,14 +6,31 @@ root: intro
 chapters:
 - file: whymojo
 - file: gettingstarted
-- file: datastructure
-- file: functions
-- file: controlflow
-- file: comprehension
-- file: packages
+- file: datastructure # fix now
+- file: functions # fix now
+- file: controlflow # fix now
+- file: comprehension # fix now
+- file: packages # fix now
 - file: usingpython
 - file: thinkinginmojo
 - file: oops
-# - file: markdown
-# - file: notebooks
-# - file: markdown-notebooks
+
+#TODO-WAIT: getting started: update windows installation instructions
+#TODO-WAIT: functions: till **kwargs are live
+#TODO-WAIT: data structure- wait till Dict is live
+#TODO-WAIT: Mojo packaging system
+#TODO-WAIT: thinking in mojo
+#TODO-WAIT: OOPs
+#TODO-WAIT: till packages functionality are updated
+
+# - what is MLIR anyway #TODO: NEXT
+# - Data Analysis #TODO: NEXT
+# - Data Visualization #TODO: NEXT
+# - Data Mining #TODO: NEXT
+# - Data Transformation #TODO: NEXT
+# - Preparing your Data #TODO: NEXT
+# - Machine Learning Models #TODO: NEXT
+# - Model Train, Test #TODO: NEXT
+# - Deployment #TODO: NEXT
+# - Hardware testing #TODO: NEXT
+# - Deployment #TODO: NEXT
