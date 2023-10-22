@@ -19,7 +19,7 @@ A Comprehensive Guide to Mojo programming language with Real-Life Data, Transfor
 
 **Download PDF** version of this notebook
 
-**Video Tutorials** - Mojo
+[The Mojo Programming Language Book Video Tutorials! ](https://www.youtube.com/playlist?list=PLp0TENYyY8lGXcxf7wbsjAJ2paEAuiLtA)
 
 ## Table of contents
 

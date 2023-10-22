@@ -18,7 +18,7 @@ It's essential to start with the fundamentals. So, let's kick things off by lear
 
 ## Operators
 
-
+<!-- 
 Let's start writing a simple calculator program in Python.
 
 for simple mathematical calculations, just trust Mojo REPL
@@ -147,4 +147,4 @@ struct Complex:
 
 Now, from the application programming perspective, we want to create a professional grade calculator, with end goal in mind that someday it will be a scientific calculator and let;s hope that some day, will even solve partial differential equations or could evolve into a complex system, which spits out results thrown any mathematical equation.
 
-This is a lot to ask for, but let's just start somewhere and build a system which does more than one simple calculation.
+This is a lot to ask for, but let's just start somewhere and build a system which does more than one simple calculation. -->

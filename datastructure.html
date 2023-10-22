@@ -381,11 +381,6 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operators-overloading">Operators overloading</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-dispatch">Method dispatch</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operators">Operators</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-type-variables">Data Type &amp; Variables</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-type">Data Type</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-types-and-memory-representation">Data Types and memory representation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-type-hierarchy">Data Type Hierarchy</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#about-struct">about Struct</a></li>
 </ul>
             </nav>
         </div>
@@ -423,118 +418,136 @@ document.write(`
 </section>
 <section id="operators">
 <h2>Operators<a class="headerlink" href="#operators" title="Permalink to this heading">#</a></h2>
-<p>Let’s start writing a simple calculator program in Python.</p>
-<p>for simple mathematical calculations, just trust Mojo REPL</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># open REPL and run following commands</span>
+<!-- 
+Let's start writing a simple calculator program in Python.
 
-<span class="nb">print</span><span class="p">(</span><span class="mi">3</span><span class="o">+</span><span class="mi">4</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="o">+</span><span class="mi">4</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="o">**</span><span class="mi">4</span><span class="o">+</span><span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="mi">3</span><span class="o">/</span><span class="mi">5</span><span class="p">))</span>
-</pre></div>
-</div>
-<p>however, our end goal is to develop a functionality which can function as full calculator which is way beyond than simple addition and subtraction.
-hence, let’s write a function instead which does the same thing,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">myAdd</span><span class="p">():</span>
+for simple mathematical calculations, just trust Mojo REPL
 
-<span class="c1"># $ cat hello.🔥</span>
-<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;hello world&quot;</span><span class="p">)</span>
-    <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-<span class="c1"># $ mojo hello.🔥</span>
-</pre></div>
-</div>
-<p>However, this is still Python, it’s still very nice for Mojo to run Python code but, what if I write a function which does more than simple addition, for example, it access file or directory structure in operating system. In those case, adding Type will definitely help compiler optimize this code and run it faster.</p>
-</section>
-<section id="data-type-variables">
-<h2>Data Type &amp; Variables<a class="headerlink" href="#data-type-variables" title="Permalink to this heading">#</a></h2>
-<p>So let’s start adding type definition to this function.</p>
-<p>&#64;strict def myAdd()</p>
-<p>this is still not Mojo looking, do I will replace &#64;strict type with fn().
-Now, this is still an overhead to compiler, but Modern Programming or any programming language is about writing many functions, Fn() deserve to be a First class object in Mojo.</p>
-<p>so let’s replace &#64;strict <code class="docutils literal notranslate"><span class="pre">def</span> <span class="pre">myAdd()</span> <span class="pre">-&gt;</span> <span class="pre">fn()</span> <span class="pre">myAdd()</span></code></p>
-<p>inside functional arguments, we will call these functional arguments and later chapters, we will discuss how arguments although look similar but are different than parameters.</p>
-<p>So how do we define static and dynamic variables in Mojo.
+```{code-block}
+
+# open REPL and run following commands
+
+print(3+4)
+print(-3+4)
+print(-3**4+(4*3/5))
+
+```
+
+however, our end goal is to develop a functionality which can function as full calculator which is way beyond than simple addition and subtraction.
+hence, let's write a function instead which does the same thing,
+
+```{code-block}
+
+def myAdd():
+
+# $ cat hello.🔥
+def main():
+    print("hello world")
+    for x in range(9, 0, -3):
+        print(x)
+# $ mojo hello.🔥
+
+```
+
+However, this is still Python, it's still very nice for Mojo to run Python code but, what if I write a function which does more than simple addition, for example, it access file or directory structure in operating system. In those case, adding Type will definitely help compiler optimize this code and run it faster.
+
+## Data Type & Variables
+
+So let's start adding type definition to this function.
+
+@strict def myAdd()
+
+this is still not Mojo looking, do I will replace @strict type with fn().
+Now, this is still an overhead to compiler, but Modern Programming or any programming language is about writing many functions, Fn() deserve to be a First class object in Mojo.
+
+so let's replace @strict `def myAdd() -> fn() myAdd()`
+
+inside functional arguments, we will call these functional arguments and later chapters, we will discuss how arguments although look similar but are different than parameters.
+
+So how do we define static and dynamic variables in Mojo.
 we use Let and Var.
-Let - immutable and var = mutable.
-There is also a third type, alias = run time immutable</p>
-<p>let’s see these in actions to understand the difference</p>
-</section>
-<section id="data-type">
-<h2>Data Type<a class="headerlink" href="#data-type" title="Permalink to this heading">#</a></h2>
-<p>Bool, Int, String, List, ….
-No DICT yet</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">your_function</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
-    <span class="n">let</span> <span class="n">c</span> <span class="o">=</span> <span class="n">a</span>
-    <span class="c1"># Uncomment to see an error:</span>
-    <span class="c1"># c = b  # error: c is immutable</span>
+ Let - immutable and var = mutable.
+ There is also a third type, alias = run time immutable
 
-    <span class="k">if</span> <span class="n">c</span> <span class="o">!=</span> <span class="n">b</span><span class="p">:</span>
-        <span class="n">let</span> <span class="n">d</span> <span class="o">=</span> <span class="n">b</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+ let's see these in actions to understand the difference
 
-<span class="n">your_function</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
-</pre></div>
-</div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">your_function</span><span class="p">():</span>
-    <span class="n">let</span> <span class="n">x</span><span class="p">:</span> <span class="n">Int</span> <span class="o">=</span> <span class="mi">42</span>
-    <span class="n">let</span> <span class="n">y</span><span class="p">:</span> <span class="n">Float64</span> <span class="o">=</span> <span class="mf">17.0</span>
+## Data Type
 
-    <span class="n">let</span> <span class="n">z</span><span class="p">:</span> <span class="n">Float32</span>
-    <span class="k">if</span> <span class="n">x</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="n">z</span> <span class="o">=</span> <span class="mf">1.0</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="n">z</span> <span class="o">=</span> <span class="n">foo</span><span class="p">()</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
+Bool, Int, String, List, ....
+No DICT yet
 
-<span class="k">def</span> <span class="nf">foo</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">Float32</span><span class="p">:</span>
-    <span class="k">return</span> <span class="mf">3.14</span>
+```{code-block}
+def your_function(a, b):
+    let c = a
+    # Uncomment to see an error:
+    # c = b  # error: c is immutable
 
-<span class="n">your_function</span><span class="p">()</span>
-</pre></div>
-</div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">struct</span> <span class="n">MyPair</span><span class="p">:</span>
-    <span class="n">var</span> <span class="n">first</span><span class="p">:</span> <span class="n">Int</span>
-    <span class="n">var</span> <span class="n">second</span><span class="p">:</span> <span class="n">Int</span>
+    if c != b:
+        let d = b
+        print(d)
 
-    <span class="c1"># We use &#39;fn&#39; instead of &#39;def&#39; here - we&#39;ll explain that soon</span>
-    <span class="n">fn</span> <span class="fm">__init__</span><span class="p">(</span><span class="n">inout</span> <span class="bp">self</span><span class="p">,</span> <span class="n">first</span><span class="p">:</span> <span class="n">Int</span><span class="p">,</span> <span class="n">second</span><span class="p">:</span> <span class="n">Int</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">first</span> <span class="o">=</span> <span class="n">first</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">second</span> <span class="o">=</span> <span class="n">second</span>
+your_function(2, 3)
+```
 
-    <span class="n">fn</span> <span class="fm">__lt__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">rhs</span><span class="p">:</span> <span class="n">MyPair</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Bool</span><span class="p">:</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">first</span> <span class="o">&lt;</span> <span class="n">rhs</span><span class="o">.</span><span class="n">first</span> <span class="ow">or</span>
-              <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">first</span> <span class="o">==</span> <span class="n">rhs</span><span class="o">.</span><span class="n">first</span> <span class="ow">and</span>
-               <span class="bp">self</span><span class="o">.</span><span class="n">second</span> <span class="o">&lt;</span> <span class="n">rhs</span><span class="o">.</span><span class="n">second</span><span class="p">)</span>
-</pre></div>
-</div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">struct</span> <span class="n">Complex</span><span class="p">:</span>
-    <span class="n">var</span> <span class="n">re</span><span class="p">:</span> <span class="n">Float32</span>
-    <span class="n">var</span> <span class="n">im</span><span class="p">:</span> <span class="n">Float32</span>
+```{code-block}
+def your_function():
+    let x: Int = 42
+    let y: Float64 = 17.0
 
-    <span class="n">fn</span> <span class="fm">__init__</span><span class="p">(</span><span class="n">inout</span> <span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">:</span> <span class="n">Float32</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;Construct a complex number given a real number.&quot;&quot;&quot;</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">re</span> <span class="o">=</span> <span class="n">x</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">im</span> <span class="o">=</span> <span class="mf">0.0</span>
+    let z: Float32
+    if x != 0:
+        z = 1.0
+    else:
+        z = foo()
+    print(z)
 
-    <span class="n">fn</span> <span class="fm">__init__</span><span class="p">(</span><span class="n">inout</span> <span class="bp">self</span><span class="p">,</span> <span class="n">r</span><span class="p">:</span> <span class="n">Float32</span><span class="p">,</span> <span class="n">i</span><span class="p">:</span> <span class="n">Float32</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;Construct a complex number given its real and imaginary components.&quot;&quot;&quot;</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">re</span> <span class="o">=</span> <span class="n">r</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">im</span> <span class="o">=</span> <span class="n">i</span>
-</pre></div>
-</div>
-</section>
-<section id="data-types-and-memory-representation">
-<h2>Data Types and memory representation<a class="headerlink" href="#data-types-and-memory-representation" title="Permalink to this heading">#</a></h2>
-</section>
-<section id="data-type-hierarchy">
-<h2>Data Type Hierarchy<a class="headerlink" href="#data-type-hierarchy" title="Permalink to this heading">#</a></h2>
-</section>
-<section id="about-struct">
-<h2>about Struct<a class="headerlink" href="#about-struct" title="Permalink to this heading">#</a></h2>
-<p>Now, from the application programming perspective, we want to create a professional grade calculator, with end goal in mind that someday it will be a scientific calculator and let;s hope that some day, will even solve partial differential equations or could evolve into a complex system, which spits out results thrown any mathematical equation.</p>
-<p>This is a lot to ask for, but let’s just start somewhere and build a system which does more than one simple calculation.</p>
-</section>
+def foo() -> Float32:
+    return 3.14
+
+your_function()
+```
+
+```{code-block}
+struct MyPair:
+    var first: Int
+    var second: Int
+
+    # We use 'fn' instead of 'def' here - we'll explain that soon
+    fn __init__(inout self, first: Int, second: Int):
+        self.first = first
+        self.second = second
+
+    fn __lt__(self, rhs: MyPair) -> Bool:
+        return self.first < rhs.first or
+              (self.first == rhs.first and
+               self.second < rhs.second)
+```
+
+```{code-block}
+struct Complex:
+    var re: Float32
+    var im: Float32
+
+    fn __init__(inout self, x: Float32):
+        """Construct a complex number given a real number."""
+        self.re = x
+        self.im = 0.0
+
+    fn __init__(inout self, r: Float32, i: Float32):
+        """Construct a complex number given its real and imaginary components."""
+        self.re = r
+        self.im = i
+```
+
+## Data Types and memory representation
+
+## Data Type Hierarchy
+
+## about Struct
+
+Now, from the application programming perspective, we want to create a professional grade calculator, with end goal in mind that someday it will be a scientific calculator and let;s hope that some day, will even solve partial differential equations or could evolve into a complex system, which spits out results thrown any mathematical equation.
+
+This is a lot to ask for, but let's just start somewhere and build a system which does more than one simple calculation. --></section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -608,11 +621,6 @@ No DICT yet</p>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operators-overloading">Operators overloading</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-dispatch">Method dispatch</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operators">Operators</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-type-variables">Data Type &amp; Variables</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-type">Data Type</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-types-and-memory-representation">Data Types and memory representation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-type-hierarchy">Data Type Hierarchy</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#about-struct">about Struct</a></li>
 </ul>
   </nav></div>
 

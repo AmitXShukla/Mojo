@@ -65,7 +65,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'gettingstarted';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Variables and Data Structure" href="datastructure.html" />
+    <link rel="next" title="Data Types, Variables and Operators" href="datatype.html" />
     <link rel="prev" title="Why Mojo" href="whymojo.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -169,12 +169,15 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="whymojo.html">Why Mojo</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Getting started</a></li>
-<li class="toctree-l1"><a class="reference internal" href="datastructure.html">Variables and Data Structure</a></li>
-<li class="toctree-l1"><a class="reference internal" href="functions.html">Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datatype.html">Data Types, Variables and Operators</a></li>
 <li class="toctree-l1"><a class="reference internal" href="controlflow.html">Loops &amp; Control Flow</a></li>
-<li class="toctree-l1"><a class="reference internal" href="comprehension.html">Arrays, Lists and Comprehension</a></li>
+<li class="toctree-l1"><a class="reference internal" href="functions.html">Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datastructure.html">Data Structure</a></li>
 <li class="toctree-l1"><a class="reference internal" href="packages.html">Module and Packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="comprehension.html">Arrays, Lists and Comprehension</a></li>
 <li class="toctree-l1"><a class="reference internal" href="usingpython.html">using Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="metaprogramming.html">Metaprogramming in Mojo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="MLIR.html">MLIR</a></li>
 <li class="toctree-l1"><a class="reference internal" href="thinkinginmojo.html">Thinking in Mojo</a></li>
 <li class="toctree-l1"><a class="reference internal" href="oops.html">OOPs concepts in Mojo</a></li>
 </ul>
@@ -375,7 +378,8 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#install-mojo-sdk">Install Mojo SDK</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#update-mojo-sdk">Update Mojo SDK</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vscode-extension">vscode extension</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mojo-playground">Mojo playground</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mojo-playground">Mojo playground</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#run-mojo-code">Run Mojo code</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#run-code-in-the-repl">Run code in the REPL</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mojo-source-file">Mojo source file</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#run-mojo-file">run Mojo file</a></li>
@@ -383,6 +387,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#run-executable-binary">run executable binary</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mojo-cli">Mojo CLI</a></li>
 </ul>
             </nav>
         </div>
@@ -409,7 +414,7 @@ document.write(`
 <p>Having a great program like VSCode to write your Mojo code makes learning and using this programming language even more enjoyable.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Presently, Mojo SDK is exclusively accessible on Ubuntu &amp; MacOS. If you’re operating on a different system, such as Windows, Mojo is not yet fullt compatible. However, you can utilize it on a Linux container or a remote machine via SSH or run Mojo using WSL container on windows.</p>
+<p>Presently, Mojo SDK is exclusively accessible on Ubuntu &amp; MacOS. If you’re operating on a different system, such as Windows, Mojo is not yet fully compatible. However, you can still run Mojo using WSL container on windows.</p>
 </div>
 <p>Once you are on your <code class="docutils literal notranslate"><span class="pre">Linux</span></code> or <code class="docutils literal notranslate"><span class="pre">MacOS</span></code> system.</p>
 </section>
@@ -454,6 +459,9 @@ Before you start using Mojo in your local machine, You must set the MODULAR_HOME
 <section id="mojo-playground">
 <h2>Mojo playground<a class="headerlink" href="#mojo-playground" title="Permalink to this heading">#</a></h2>
 <p><a class="reference external" href="https://playground.modular.com/">click here</a> to use hosted Mojo environment in a browser.</p>
+</section>
+<section id="run-mojo-code">
+<h2>Run Mojo code<a class="headerlink" href="#run-mojo-code" title="Permalink to this heading">#</a></h2>
 <section id="run-code-in-the-repl">
 <h3>Run code in the REPL<a class="headerlink" href="#run-code-in-the-repl" title="Permalink to this heading">#</a></h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># $ mojo</span>
@@ -494,6 +502,52 @@ Before you start using Mojo in your local machine, You must set the MODULAR_HOME
 </pre></div>
 </div>
 </section>
+</section>
+<section id="mojo-cli">
+<h2>Mojo CLI<a class="headerlink" href="#mojo-cli" title="Permalink to this heading">#</a></h2>
+<p>The Mojo CLI is a command-line interface that allows you to run, compile, and package Mojo code. It also provides a REPL programming environment and is a useful tool for finding code-related help. To use the Mojo CLI.</p>
+<p>You can run the mojo command followed by various <code class="docutils literal notranslate"><span class="pre">options</span></code> or <code class="docutils literal notranslate"><span class="pre">commands</span></code>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mojo</span> <span class="p">[</span><span class="n">options</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Here is a list of the available ‘options` that you can run with the Mojo CLI:</p>
+<ul class="simple">
+<li><p>–version, -v  # prints current Mojo version installed</p></li>
+<li><p>–help, -h     # displays help information</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># example</span>
+<span class="n">mojo</span> <span class="o">--</span><span class="n">version</span>
+<span class="n">mojo</span> <span class="o">-</span><span class="n">v</span>
+<span class="n">mojo</span> <span class="o">--</span><span class="n">help</span>
+<span class="n">mojo</span> <span class="o">-</span><span class="n">h</span>
+</pre></div>
+</div>
+<p>Alternatively you can run mojo along with a <code class="docutils literal notranslate"><span class="pre">command</span></code> in a terminal window.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mojo</span> <span class="o">&lt;</span><span class="n">command</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>Here is a list of the available <code class="docutils literal notranslate"><span class="pre">commands</span></code> that you can run with the Mojo CLI:</p>
+<ul class="simple">
+<li><p>run       # Builds and executes a Mojo file. <code class="docutils literal notranslate"><span class="pre">run</span></code> command is followed by Mojo file you wish to run.</p></li>
+<li><p>build     # Builds an executable from a Mojo file. <code class="docutils literal notranslate"><span class="pre">build</span></code> command is followed by Mojo file you wish to build.</p></li>
+<li><p>repl      # Launches the Mojo REPL.</p></li>
+<li><p>debug     # Launches the LLDB debugger with support for debugging Mojo programs.</p></li>
+<li><p>package   # Compiles a Mojo package. <code class="docutils literal notranslate"><span class="pre">package</span></code> command is followed by Mojo file you wish to package.</p></li>
+<li><p>format    # Formats Mojo source files.</p></li>
+<li><p>doc       # Compiles docstrings from a Mojo file. <code class="docutils literal notranslate"><span class="pre">doc</span></code> command is followed by Mojo file.</p></li>
+<li><p>demangle  # Demangles the given name.</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># example</span>
+<span class="n">mojo</span> <span class="n">run</span> <span class="o">./</span><span class="n">hello</span><span class="o">.</span><span class="n">mojo</span>
+<span class="n">mojo</span> <span class="n">build</span> <span class="o">./</span><span class="n">hello</span><span class="o">.</span><span class="n">mojo</span>
+<span class="o">...</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mojo</span>  <span class="c1"># default to run Mojo REPL</span>
+
+<span class="c1"># above command is same as running `mojo repl`</span>
+</pre></div>
+</div>
 </section>
 </section>
 
@@ -537,11 +591,11 @@ Before you start using Mojo in your local machine, You must set the MODULAR_HOME
       </div>
     </a>
     <a class="right-next"
-       href="datastructure.html"
+       href="datatype.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Variables and Data Structure</p>
+        <p class="prev-next-title">Data Types, Variables and Operators</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -565,7 +619,8 @@ Before you start using Mojo in your local machine, You must set the MODULAR_HOME
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#install-mojo-sdk">Install Mojo SDK</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#update-mojo-sdk">Update Mojo SDK</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vscode-extension">vscode extension</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mojo-playground">Mojo playground</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mojo-playground">Mojo playground</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#run-mojo-code">Run Mojo code</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#run-code-in-the-repl">Run code in the REPL</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mojo-source-file">Mojo source file</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#run-mojo-file">run Mojo file</a></li>
@@ -573,6 +628,7 @@ Before you start using Mojo in your local machine, You must set the MODULAR_HOME
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#run-executable-binary">run executable binary</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mojo-cli">Mojo CLI</a></li>
 </ul>
   </nav></div>
 
