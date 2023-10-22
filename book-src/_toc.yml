@@ -6,12 +6,15 @@ root: intro
 chapters:
 - file: whymojo
 - file: gettingstarted
-- file: datastructure # fix now
-- file: functions # fix now
+- file: datatype # fix now
 - file: controlflow # fix now
-- file: comprehension # fix now
+- file: functions # fix now
+- file: datastructure # fix now
 - file: packages # fix now
+- file: comprehension # fix now
 - file: usingpython
+- file: metaprogramming
+- file: MLIR
 - file: thinkinginmojo
 - file: oops
 

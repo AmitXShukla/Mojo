@@ -17,21 +17,17 @@ Luckily, the Mojo community has created an extension for VSCode that makes it ev
 Having a great program like VSCode to write your Mojo code makes learning and using this programming language even more enjoyable.
 
 :::{note}
-Presently, Mojo SDK is exclusively accessible on Ubuntu & MacOS. If you're operating on a different system, such as Windows, Mojo is not yet compatible. However, you can utilize it on a Linux container or a remote machine via SSH.
+Presently, Mojo SDK is exclusively accessible on Ubuntu & MacOS. If you're operating on a different system, such as Windows, Mojo is not yet fullt compatible. However, you can utilize it on a Linux container or a remote machine via SSH or run Mojo using WSL container on windows.
 :::
 
-:::{warning}
-The absence of Mojo SDK on Windows shouldn't discourage you from using Mojo. Given Modular's dedication to adopting Mojo and a single AI language, I'm confident it will become accessible on all OSs in the near future.
-:::
-
-Once you are on your Linux or MacOS system.
+Once you are on your `Linux` or `MacOS` system.
 
 ## Install Modular CLI
 
 ```{code-block}
 
 curl https://get.modular.com | \
-MODULAR_AUTH=mut_e982ece66e6949d593f6432514fdfa8a \
+MODULAR_AUTH=mut_e982ece66e6949d593f64xxxx \
 sh -
 
 ```
@@ -44,6 +40,17 @@ sh -
 
 modular install mojo
 
+```
+
+:::{note}
+After `modular` install command finish installing Mojo, it suggests `PATH` to add to your .bashrc or .zsh files.
+Before you start using Mojo in your local machine, You must set the MODULAR_HOME and PATH environment variables, as described in the output when you ran modular install mojo.
+:::
+
+```{code-block}
+echo 'export MODULAR_HOME="$HOME/.modular"' >> ~/.bashrc
+echo 'export PATH="$MODULAR_HOME/pkg/packages.modular.com_mojo/bin:$PATH"' >> ~/.bashrc
+source ~/.bashrc
 ```
 
 ## Update Mojo SDK
@@ -64,20 +71,6 @@ modular install mojo
 ## Mojo playground
 
 [click here](https://playground.modular.com/) to use hosted Mojo environment in a browser.
-
-## Hello World
-
-Before you start using Mojo in your local machine, You must set the MODULAR_HOME and PATH environment variables, as described in the output when you ran modular install mojo.
-
-```{code-block}
-
-echo 'export MODULAR_HOME="$HOME/.modular"' >> ~/.bashrc
-
-echo 'export PATH="$MODULAR_HOME/pkg/packages.modular.com_mojo/bin:$PATH"' >> ~/.bashrc
-
-source ~/.bashrc
-
-```
 
 ### Run code in the REPL
 
