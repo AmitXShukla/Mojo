@@ -17,7 +17,7 @@ Luckily, the Mojo community has created an extension for VSCode that makes it ev
 Having a great program like VSCode to write your Mojo code makes learning and using this programming language even more enjoyable.
 
 :::{note}
-Presently, Mojo SDK is exclusively accessible on Ubuntu & MacOS. If you're operating on a different system, such as Windows, Mojo is not yet fullt compatible. However, you can utilize it on a Linux container or a remote machine via SSH or run Mojo using WSL container on windows.
+Presently, Mojo SDK is exclusively accessible on Ubuntu & MacOS. If you're operating on a different system, such as Windows, Mojo is not yet fully compatible. However, you can still run Mojo using WSL container on windows.
 :::
 
 Once you are on your `Linux` or `MacOS` system.
@@ -72,6 +72,8 @@ modular install mojo
 
 [click here](https://playground.modular.com/) to use hosted Mojo environment in a browser.
 
+## Run Mojo code
+
 ### Run code in the REPL
 
 ```{code-block}
@@ -119,4 +121,58 @@ mojo build hello.mojo
 
 ```{code-block}
 ./hello
+```
+
+## Mojo CLI
+
+The Mojo CLI is a command-line interface that allows you to run, compile, and package Mojo code. It also provides a REPL programming environment and is a useful tool for finding code-related help. To use the Mojo CLI.
+
+You can run the mojo command followed by various `options` or `commands`.
+
+```{code-block}
+mojo [options]
+```
+
+Here is a list of the available 'options` that you can run with the Mojo CLI:
+
++ --version, -v  # prints current Mojo version installed
++ --help, -h     # displays help information
+
+```{code-block}
+# example
+mojo --version
+mojo -v
+mojo --help
+mojo -h
+```
+
+Alternatively you can run mojo along with a `command` in a terminal window.
+
+```{code-block}
+mojo <command>
+```
+
+Here is a list of the available `commands` that you can run with the Mojo CLI:
+
+- run       # Builds and executes a Mojo file. `run` command is followed by Mojo file you wish to run.
+- build     # Builds an executable from a Mojo file. `build` command is followed by Mojo file you wish to build.
+- repl      # Launches the Mojo REPL.
+- debug     # Launches the LLDB debugger with support for debugging Mojo programs.
+- package   # Compiles a Mojo package. `package` command is followed by Mojo file you wish to package.
+- format    # Formats Mojo source files.
+- doc       # Compiles docstrings from a Mojo file. `doc` command is followed by Mojo file.
+- demangle  # Demangles the given name.
+
+```{code-block}
+# example
+mojo run ./hello.mojo
+mojo build ./hello.mojo
+...
+
+```
+
+```{code-block}
+mojo  # default to run Mojo REPL
+
+# above command is same as running `mojo repl`
 ```

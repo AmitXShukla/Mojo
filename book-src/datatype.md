@@ -18,9 +18,61 @@ It's essential to start with the fundamentals. So, let's kick things off by lear
 
 ## Data
 
+In simple words, Data refers to any information that is consumed by Intelligence. Computers store data in forms of numbers, text, images, audio, videos that can be stored and used by a program. Data is typically stored in variables, data structures, or files, and it is the fundamental building block for performing computations and creating meaningful output in a program.
+
+```{code-block}
+x = 1
+name = "Amit Shukla"
+song = "what_am_i_made_of.mp3"
+movie = "Barbie.mp4"
+addresses = ["Malibu","Brooklyn"]
+zipcode = ["90265","11203"]
+
+# uncomment to see error
+# zipcode = ("90265","11203") # errors out
+# addresses = [
+                {"City": "Malibu", zipcode: "90265"},
+                {"City": "Brooklyn", zipcode: "11203"}
+                ]
+```
+
+```{code-block}
+%%python
+addresses = [
+            [{"City": "Malibu", "zipcode": "90265"}],
+            [{"City": "Brooklyn", "zipcode": "11203"}]
+                ]
+print(addresses)
+```
+
 ## Value Semantics
 
+Value Semantics is a concept in Computer Science that focuses on the value of an object rather that it's identity.
+
+```{code-block}
+name = "Amit Shukla"
+
+🔥 = "Amit Shukla"
+# in this case, instead of using an obvious identity such as [name],
+# I can use any unicode char or even an emoji to store value of an object.
+
+```
+
 ## Data Type
+
+Data Type is nothing but a classification of data, that tells compiler how program should process and use the data. It defines the type of `value`|`data`, a variable can hold and the type of operations can be performed on that value without causing errors.
+
+For instance, adding two whole numbers is similar to adding two decimal numbers or adding a decimal number with a whole number. However, adding two pieces of text or two lists is quite different from adding numbers.
+
+Understanding data types is crucial because it allows computers to perform faster. It's important for the computer to know the context and type of data it is dealing with before running operations on that data. This helps ensure that the operations are performed correctly and efficiently.
+
+In dynamic programming languages, programmers don't always have to worry about data type conversions and can rely on the language to handle it. However, in static programming languages, it is appreciated to declare/annotate data types in advance. This may require a bit more code and reduce flexibility, but it greatly improves performance.
+
+Many programming languages are capable of understanding data types based on their values, even if the programmer forgets to explicitly annotate the data type. This is known as "data type inference."
+
+<!-- 
+
+
 
 ## Variables
 
@@ -154,4 +206,4 @@ struct Complex:
 
 Now, from the application programming perspective, we want to create a professional grade calculator, with end goal in mind that someday it will be a scientific calculator and let;s hope that some day, will even solve partial differential equations or could evolve into a complex system, which spits out results thrown any mathematical equation.
 
-This is a lot to ask for, but let's just start somewhere and build a system which does more than one simple calculation.
+This is a lot to ask for, but let's just start somewhere and build a system which does more than one simple calculation. -->
