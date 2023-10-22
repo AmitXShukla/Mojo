@@ -375,8 +375,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#install-mojo-sdk">Install Mojo SDK</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#update-mojo-sdk">Update Mojo SDK</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vscode-extension">vscode extension</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mojo-playground">Mojo playground</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hello-world">Hello World</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mojo-playground">Mojo playground</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#run-code-in-the-repl">Run code in the REPL</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mojo-source-file">Mojo source file</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#run-mojo-file">run Mojo file</a></li>
@@ -410,18 +409,14 @@ document.write(`
 <p>Having a great program like VSCode to write your Mojo code makes learning and using this programming language even more enjoyable.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Presently, Mojo SDK is exclusively accessible on Ubuntu &amp; MacOS. If you’re operating on a different system, such as Windows, Mojo is not yet compatible. However, you can utilize it on a Linux container or a remote machine via SSH.</p>
+<p>Presently, Mojo SDK is exclusively accessible on Ubuntu &amp; MacOS. If you’re operating on a different system, such as Windows, Mojo is not yet fullt compatible. However, you can utilize it on a Linux container or a remote machine via SSH or run Mojo using WSL container on windows.</p>
 </div>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>The absence of Mojo SDK on Windows shouldn’t discourage you from using Mojo. Given Modular’s dedication to adopting Mojo and a single AI language, I’m confident it will become accessible on all OSs in the near future.</p>
-</div>
-<p>Once you are on your Linux or MacOS system.</p>
+<p>Once you are on your <code class="docutils literal notranslate"><span class="pre">Linux</span></code> or <code class="docutils literal notranslate"><span class="pre">MacOS</span></code> system.</p>
 </section>
 <section id="install-modular-cli">
 <h2>Install Modular CLI<a class="headerlink" href="#install-modular-cli" title="Permalink to this heading">#</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">curl</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">get</span><span class="o">.</span><span class="n">modular</span><span class="o">.</span><span class="n">com</span> <span class="o">|</span> \
-<span class="n">MODULAR_AUTH</span><span class="o">=</span><span class="n">mut_e982ece66e6949d593f6432514fdfa8a</span> \
+<span class="n">MODULAR_AUTH</span><span class="o">=</span><span class="n">mut_e982ece66e6949d593f64xxxx</span> \
 <span class="n">sh</span> <span class="o">-</span>
 </pre></div>
 </div>
@@ -430,6 +425,16 @@ document.write(`
 <section id="install-mojo-sdk">
 <h2>Install Mojo SDK<a class="headerlink" href="#install-mojo-sdk" title="Permalink to this heading">#</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">modular</span> <span class="n">install</span> <span class="n">mojo</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>After <code class="docutils literal notranslate"><span class="pre">modular</span></code> install command finish installing Mojo, it suggests <code class="docutils literal notranslate"><span class="pre">PATH</span></code> to add to your .bashrc or .zsh files.
+Before you start using Mojo in your local machine, You must set the MODULAR_HOME and PATH environment variables, as described in the output when you ran modular install mojo.</p>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">echo</span> <span class="s1">&#39;export MODULAR_HOME=&quot;$HOME/.modular&quot;&#39;</span> <span class="o">&gt;&gt;</span> <span class="o">~/.</span><span class="n">bashrc</span>
+<span class="n">echo</span> <span class="s1">&#39;export PATH=&quot;$MODULAR_HOME/pkg/packages.modular.com_mojo/bin:$PATH&quot;&#39;</span> <span class="o">&gt;&gt;</span> <span class="o">~/.</span><span class="n">bashrc</span>
+<span class="n">source</span> <span class="o">~/.</span><span class="n">bashrc</span>
 </pre></div>
 </div>
 </section>
@@ -449,17 +454,6 @@ document.write(`
 <section id="mojo-playground">
 <h2>Mojo playground<a class="headerlink" href="#mojo-playground" title="Permalink to this heading">#</a></h2>
 <p><a class="reference external" href="https://playground.modular.com/">click here</a> to use hosted Mojo environment in a browser.</p>
-</section>
-<section id="hello-world">
-<h2>Hello World<a class="headerlink" href="#hello-world" title="Permalink to this heading">#</a></h2>
-<p>Before you start using Mojo in your local machine, You must set the MODULAR_HOME and PATH environment variables, as described in the output when you ran modular install mojo.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">echo</span> <span class="s1">&#39;export MODULAR_HOME=&quot;$HOME/.modular&quot;&#39;</span> <span class="o">&gt;&gt;</span> <span class="o">~/.</span><span class="n">bashrc</span>
-
-<span class="n">echo</span> <span class="s1">&#39;export PATH=&quot;$MODULAR_HOME/pkg/packages.modular.com_mojo/bin:$PATH&quot;&#39;</span> <span class="o">&gt;&gt;</span> <span class="o">~/.</span><span class="n">bashrc</span>
-
-<span class="n">source</span> <span class="o">~/.</span><span class="n">bashrc</span>
-</pre></div>
-</div>
 <section id="run-code-in-the-repl">
 <h3>Run code in the REPL<a class="headerlink" href="#run-code-in-the-repl" title="Permalink to this heading">#</a></h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># $ mojo</span>
@@ -571,8 +565,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#install-mojo-sdk">Install Mojo SDK</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#update-mojo-sdk">Update Mojo SDK</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vscode-extension">vscode extension</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mojo-playground">Mojo playground</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hello-world">Hello World</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mojo-playground">Mojo playground</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#run-code-in-the-repl">Run code in the REPL</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mojo-source-file">Mojo source file</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#run-mojo-file">run Mojo file</a></li>

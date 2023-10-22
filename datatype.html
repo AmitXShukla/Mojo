@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Data Structure &#8212; The Mojo Programming Language book</title>
+    <title>Data Types, Variables and Operators &#8212; The Mojo Programming Language book</title>
   
   
   
@@ -62,11 +62,11 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'datastructure';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'datatype';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Module and Packages" href="packages.html" />
-    <link rel="prev" title="Functions" href="functions.html" />
+    <link rel="next" title="Loops &amp; Control Flow" href="controlflow.html" />
+    <link rel="prev" title="Getting started" href="gettingstarted.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -169,10 +169,10 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="whymojo.html">Why Mojo</a></li>
 <li class="toctree-l1"><a class="reference internal" href="gettingstarted.html">Getting started</a></li>
-<li class="toctree-l1"><a class="reference internal" href="datatype.html">Data Types, Variables and Operators</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Data Types, Variables and Operators</a></li>
 <li class="toctree-l1"><a class="reference internal" href="controlflow.html">Loops &amp; Control Flow</a></li>
 <li class="toctree-l1"><a class="reference internal" href="functions.html">Functions</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Data Structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datastructure.html">Variables and Data Structure</a></li>
 <li class="toctree-l1"><a class="reference internal" href="packages.html">Module and Packages</a></li>
 <li class="toctree-l1"><a class="reference internal" href="comprehension.html">Arrays, Lists and Comprehension</a></li>
 <li class="toctree-l1"><a class="reference internal" href="usingpython.html">using Python</a></li>
@@ -251,7 +251,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/AmitXShukla/mojo/issues/new?title=Issue%20on%20page%20%2Fdatastructure.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/AmitXShukla/mojo/issues/new?title=Issue%20on%20page%20%2Fdatatype.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -281,7 +281,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="_sources/datastructure.md" target="_blank"
+      <li><a href="_sources/datatype.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -363,7 +363,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Data Structure</h1>
+    <h1>Data Types, Variables and Operators</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -373,18 +373,15 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#struct">Struct</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#constructors">Constructors</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#destructors">Destructors</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dunder-magic-methods">Dunder/Magic methods</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#methods-overloading">Methods overloading</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operators-overloading">Operators overloading</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-dispatch">Method dispatch</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operators">Operators</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-type-variables">Data Type &amp; Variables</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data">Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#value-semantics">Value Semantics</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-type">Data Type</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-types-and-memory-representation">Data Types and memory representation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-type-hierarchy">Data Type Hierarchy</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variables">Variables</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operators">Operators</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-structure">Data Structure</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mojo-as-a-calculator">Mojo as a calculator</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-type-variables">Data Type &amp; Variables</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Data Type</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#about-struct">about Struct</a></li>
 </ul>
             </nav>
@@ -397,32 +394,36 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="data-structure">
-<h1>Data Structure<a class="headerlink" href="#data-structure" title="Permalink to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="data-types-variables-and-operators">
+<h1>Data Types, Variables and Operators<a class="headerlink" href="#data-types-variables-and-operators" title="Permalink to this heading">#</a></h1>
+<p>There are two approaches to initiate your journey into learning a new programming language. The first approach involves leveraging your existing knowledge and drawing parallels between the new language and concepts you’re already familiar with, essentially bridging the gap between the old and the new.</p>
+<p>The alternative approach is to start from scratch, gradually acquainting yourself with each concept in a step-by-step manner, much like a beginner.</p>
+<p>Everyone possesses their unique learning preferences and methods when it comes to acquiring new skills.</p>
+<p>In the context of learning the Mojo programming language, you have two primary options.</p>
+<p>The first approach involves capitalizing on your existing knowledge of programming languages, with Python being a common foundation. In this case, think of Mojo as an evolution of Python, often referred to as “Python++.” If you encounter any challenges, consider Mojo as an extension of Python, and you’ll likely find that your existing Python code can be adapted for use in Mojo with very few tweaks, where relevant.</p>
+<p>However, I strongly recommend taking a fresh, beginner’s perspective when approaching Mojo. After all, Mojo is an entirely new programming language, and it would be a mistake to view it merely as a wrapper for Python. If you begin to perceive Mojo as a superset of Python, I’m confident that your learning experience will transform you into a Mojo expert, or at the very least, make you a better Python programmer.</p>
+<p>Before we begin our exploration, it’s important to note that the current Mojo documentation primarily focuses on systems programming, which is arguably distinct from application programming. However, for our learning purpose, We will initially use Mojo for application programming, gradually incorporating systems programming concepts as we progress. This approach will become particularly useful when our application programming needs to directly access hardware systems concepts for end-to-end program execution and performance optimization, thereby ensuring the most efficient use of hardware for faster application execution.</p>
 <p>It’s essential to start with the fundamentals. So, let’s kick things off by learning Mojo’s data types and data structures.</p>
-<section id="struct">
-<h2>Struct<a class="headerlink" href="#struct" title="Permalink to this heading">#</a></h2>
+<section id="data">
+<h2>Data<a class="headerlink" href="#data" title="Permalink to this heading">#</a></h2>
 </section>
-<section id="constructors">
-<h2>Constructors<a class="headerlink" href="#constructors" title="Permalink to this heading">#</a></h2>
+<section id="value-semantics">
+<h2>Value Semantics<a class="headerlink" href="#value-semantics" title="Permalink to this heading">#</a></h2>
 </section>
-<section id="destructors">
-<h2>Destructors<a class="headerlink" href="#destructors" title="Permalink to this heading">#</a></h2>
+<section id="data-type">
+<h2>Data Type<a class="headerlink" href="#data-type" title="Permalink to this heading">#</a></h2>
 </section>
-<section id="dunder-magic-methods">
-<h2>Dunder/Magic methods<a class="headerlink" href="#dunder-magic-methods" title="Permalink to this heading">#</a></h2>
-</section>
-<section id="methods-overloading">
-<h2>Methods overloading<a class="headerlink" href="#methods-overloading" title="Permalink to this heading">#</a></h2>
-</section>
-<section id="operators-overloading">
-<h2>Operators overloading<a class="headerlink" href="#operators-overloading" title="Permalink to this heading">#</a></h2>
-</section>
-<section id="method-dispatch">
-<h2>Method dispatch<a class="headerlink" href="#method-dispatch" title="Permalink to this heading">#</a></h2>
+<section id="variables">
+<h2>Variables<a class="headerlink" href="#variables" title="Permalink to this heading">#</a></h2>
 </section>
 <section id="operators">
 <h2>Operators<a class="headerlink" href="#operators" title="Permalink to this heading">#</a></h2>
+</section>
+<section id="data-structure">
+<h2>Data Structure<a class="headerlink" href="#data-structure" title="Permalink to this heading">#</a></h2>
+</section>
+<section id="mojo-as-a-calculator">
+<h2>Mojo as a calculator<a class="headerlink" href="#mojo-as-a-calculator" title="Permalink to this heading">#</a></h2>
 <p>Let’s start writing a simple calculator program in Python.</p>
 <p>for simple mathematical calculations, just trust Mojo REPL</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># open REPL and run following commands</span>
@@ -460,8 +461,8 @@ Let - immutable and var = mutable.
 There is also a third type, alias = run time immutable</p>
 <p>let’s see these in actions to understand the difference</p>
 </section>
-<section id="data-type">
-<h2>Data Type<a class="headerlink" href="#data-type" title="Permalink to this heading">#</a></h2>
+<section id="id1">
+<h2>Data Type<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
 <p>Bool, Int, String, List, ….
 No DICT yet</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">your_function</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
@@ -524,12 +525,6 @@ No DICT yet</p>
 </pre></div>
 </div>
 </section>
-<section id="data-types-and-memory-representation">
-<h2>Data Types and memory representation<a class="headerlink" href="#data-types-and-memory-representation" title="Permalink to this heading">#</a></h2>
-</section>
-<section id="data-type-hierarchy">
-<h2>Data Type Hierarchy<a class="headerlink" href="#data-type-hierarchy" title="Permalink to this heading">#</a></h2>
-</section>
 <section id="about-struct">
 <h2>about Struct<a class="headerlink" href="#about-struct" title="Permalink to this heading">#</a></h2>
 <p>Now, from the application programming perspective, we want to create a professional grade calculator, with end goal in mind that someday it will be a scientific calculator and let;s hope that some day, will even solve partial differential equations or could evolve into a complex system, which spits out results thrown any mathematical equation.</p>
@@ -568,20 +563,20 @@ No DICT yet</p>
                   <!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="functions.html"
+       href="gettingstarted.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Functions</p>
+        <p class="prev-next-title">Getting started</p>
       </div>
     </a>
     <a class="right-next"
-       href="packages.html"
+       href="controlflow.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Module and Packages</p>
+        <p class="prev-next-title">Loops &amp; Control Flow</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -600,18 +595,15 @@ No DICT yet</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#struct">Struct</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#constructors">Constructors</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#destructors">Destructors</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dunder-magic-methods">Dunder/Magic methods</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#methods-overloading">Methods overloading</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operators-overloading">Operators overloading</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-dispatch">Method dispatch</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operators">Operators</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-type-variables">Data Type &amp; Variables</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data">Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#value-semantics">Value Semantics</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-type">Data Type</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-types-and-memory-representation">Data Types and memory representation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-type-hierarchy">Data Type Hierarchy</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variables">Variables</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operators">Operators</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-structure">Data Structure</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mojo-as-a-calculator">Mojo as a calculator</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-type-variables">Data Type &amp; Variables</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Data Type</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#about-struct">about Struct</a></li>
 </ul>
   </nav></div>
