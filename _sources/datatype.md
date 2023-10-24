@@ -151,7 +151,7 @@ Before we dive into discussing Mojo's standard data types, it's important to und
 
 Since these [built-in modules](https://docs.modular.com/mojo/lib.html) are part of standard library, you don't need to explicitly import them.
 
-In `Mojo', a standard data type is a module.
+In `Mojo', a Type comes from a module implementation.
 
 For example - `Int` is a type represents an integer value. It comes from `int` module that implements `Int` class.
 
@@ -165,7 +165,7 @@ In simpler terms, `Mojo` allows you to use existing or create your own data type
 let x: Int = 4
 print(x)
 
-# what it means, I declared a Immutable variable named `x`
+# what it means, I declared an Immutable variable named `x`
 # which hold a Integer data type, which is of size 64-bit on Stack memory.
 # since, x is of type Int, which implement Int class from `int` module
 # I can freely use methods __xxx__ defined on int module
@@ -174,6 +174,8 @@ print(x.__bool__)
 print(x.__le__)
 ```
 
+Now that we have a grasp of what a data type is and how it is represented in computer memory, let's explore some more examples of these data types.
+
 - Int
 - Bool
 - FloatLiteral
@@ -181,6 +183,8 @@ print(x.__le__)
 - Tuple
 - Slice
 - SIMD
+
+Before we conclude this topic, let's discuss the `SIMD` data type, as it is an important concept to understand.
 
 ## Struct vs classes
 

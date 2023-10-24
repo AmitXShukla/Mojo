@@ -174,12 +174,12 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="functions.html">Functions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="datastructure.html">Data Structure</a></li>
 <li class="toctree-l1"><a class="reference internal" href="packages.html">Module and Packages</a></li>
-<li class="toctree-l1"><a class="reference internal" href="comprehension.html">Arrays, Lists and Comprehension</a></li>
 <li class="toctree-l1"><a class="reference internal" href="usingpython.html">using Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="metaprogramming.html">Metaprogramming in Mojo</a></li>
 <li class="toctree-l1"><a class="reference internal" href="MLIR.html">MLIR</a></li>
 <li class="toctree-l1"><a class="reference internal" href="thinkinginmojo.html">Thinking in Mojo</a></li>
 <li class="toctree-l1"><a class="reference internal" href="oops.html">OOPs concepts in Mojo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="comprehension.html">Arrays, Lists and Comprehension</a></li>
 </ul>
 
     </div>
@@ -524,7 +524,7 @@ At the highest level you have a CPU’s core memory which directly accesses a L1
 </div>
 <p>Before we dive into discussing Mojo’s standard data types, it’s important to understand that Mojo offers a wide range of built-in functionality through modules. Think of modules as libraries that contain various functionalities, such as data types, data structures and data methods, bundled together to serve a specific purpose. We will explore modules and packages in more detail later on.</p>
 <p>Since these <a class="reference external" href="https://docs.modular.com/mojo/lib.html">built-in modules</a> are part of standard library, you don’t need to explicitly import them.</p>
-<p>In `Mojo’, a standard data type is a module.</p>
+<p>In `Mojo’, a Type comes from a module implementation.</p>
 <p>For example - <code class="docutils literal notranslate"><span class="pre">Int</span></code> is a type represents an integer value. It comes from <code class="docutils literal notranslate"><span class="pre">int</span></code> module that implements <code class="docutils literal notranslate"><span class="pre">Int</span></code> class.</p>
 <p>If you explore the <code class="docutils literal notranslate"><span class="pre">int</span></code> module <a class="reference external" href="https://docs.modular.com/mojo/stdlib/builtin/int.html">documentation</a> in Mojo, you will notice that it provides a wide range of functionality for working with integer data types. This module allows you to perform multiple operations on integer values efficiently.</p>
 <p><em>Mojo is a high-level programming language with an extensive set of modern features. Mojo also provides you, the programmer, access to all of the low-level primitives that you need to write powerful – yet zero-cost – abstractions.</em></p>
@@ -532,7 +532,7 @@ At the highest level you have a CPU’s core memory which directly accesses a L1
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">let</span> <span class="n">x</span><span class="p">:</span> <span class="n">Int</span> <span class="o">=</span> <span class="mi">4</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 
-<span class="c1"># what it means, I declared a Immutable variable named `x`</span>
+<span class="c1"># what it means, I declared an Immutable variable named `x`</span>
 <span class="c1"># which hold a Integer data type, which is of size 64-bit on Stack memory.</span>
 <span class="c1"># since, x is of type Int, which implement Int class from `int` module</span>
 <span class="c1"># I can freely use methods __xxx__ defined on int module</span>
@@ -541,6 +541,7 @@ At the highest level you have a CPU’s core memory which directly accesses a L1
 <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="fm">__le__</span><span class="p">)</span>
 </pre></div>
 </div>
+<p>Now that we have a grasp of what a data type is and how it is represented in computer memory, let’s explore some more examples of these data types.</p>
 <ul class="simple">
 <li><p>Int</p></li>
 <li><p>Bool</p></li>
@@ -550,6 +551,7 @@ At the highest level you have a CPU’s core memory which directly accesses a L1
 <li><p>Slice</p></li>
 <li><p>SIMD</p></li>
 </ul>
+<p>Before we conclude this topic, let’s discuss the <code class="docutils literal notranslate"><span class="pre">SIMD</span></code> data type, as it is an important concept to understand.</p>
 </section>
 <section id="struct-vs-classes">
 <h2>Struct vs classes<a class="headerlink" href="#struct-vs-classes" title="Permalink to this heading">#</a></h2>
