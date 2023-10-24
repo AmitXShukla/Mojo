@@ -376,6 +376,17 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data">Data</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#value-semantics">Value Semantics</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-type">Data Type</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#computer-memory">Computer memory</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lower-level-view-the-stack-and-the-heap">Lower Level View: The Stack and the Heap</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#heap-allocations-and-speed">Heap Allocations and Speed</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variables-and-constants">Variables and Constants</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#standard-data-types">Standard Data Types</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#struct-vs-classes">Struct vs classes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#other-data-types">Other Data Types</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operators">Operators</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-structure">Data Structure</a></li>
 </ul>
             </nav>
         </div>
@@ -400,19 +411,42 @@ document.write(`
 <section id="data">
 <h2>Data<a class="headerlink" href="#data" title="Permalink to this heading">#</a></h2>
 <p>In simple words, Data refers to any information that is consumed by Intelligence. Computers store data in forms of numbers, text, images, audio, videos that can be stored and used by a program. Data is typically stored in variables, data structures, or files, and it is the fundamental building block for performing computations and creating meaningful output in a program.</p>
+<p>for example -</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>name = &quot;Amit Shukla&quot;
+
+🔥 = &quot;Amit Shukla&quot;
+# in this case, instead of using an obvious identity such as &lt;&lt; name &gt;&gt;,
+# I can use any unicode char or even an emoji to store value of an object.
+</pre></div>
+</div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">1</span>
 <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Amit Shukla&quot;</span>
 <span class="n">song</span> <span class="o">=</span> <span class="s2">&quot;what_am_i_made_of.mp3&quot;</span>
 <span class="n">movie</span> <span class="o">=</span> <span class="s2">&quot;Barbie.mp4&quot;</span>
 <span class="n">addresses</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Malibu&quot;</span><span class="p">,</span><span class="s2">&quot;Brooklyn&quot;</span><span class="p">]</span>
-<span class="n">zipcode</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;90265&quot;</span><span class="p">,</span><span class="s2">&quot;11203&quot;</span><span class="p">]</span>
+<span class="n">zipcode</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;90265&quot;</span><span class="p">,</span><span class="s2">&quot;11203&quot;</span><span class="p">)</span>
 
-<span class="c1"># uncomment to see error</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="c1">## uncomment following to see error</span>
 <span class="c1"># zipcode = (&quot;90265&quot;,&quot;11203&quot;) # errors out</span>
 <span class="c1"># addresses = [</span>
                 <span class="p">{</span><span class="s2">&quot;City&quot;</span><span class="p">:</span> <span class="s2">&quot;Malibu&quot;</span><span class="p">,</span> <span class="n">zipcode</span><span class="p">:</span> <span class="s2">&quot;90265&quot;</span><span class="p">},</span>
                 <span class="p">{</span><span class="s2">&quot;City&quot;</span><span class="p">:</span> <span class="s2">&quot;Brooklyn&quot;</span><span class="p">,</span> <span class="n">zipcode</span><span class="p">:</span> <span class="s2">&quot;11203&quot;</span><span class="p">}</span>
                 <span class="p">]</span>
+<span class="c1">## we will fix these errors later once we discuss variables</span>
+
+<span class="c1">## uncomment following to see error</span>
+<span class="c1"># x = 1</span>
+<span class="c1"># name = &quot;Amit Shukla&quot;</span>
+<span class="c1"># song = &quot;what_am_i_made_of.mp3&quot;</span>
+<span class="c1"># movie = &quot;Barbie.mp4&quot;</span>
+<span class="c1"># addresses = [&quot;Malibu&quot;,&quot;Brooklyn&quot;]</span>
+<span class="c1"># zipcode = [&quot;90265&quot;,&quot;11203&quot;]</span>
+
+<span class="c1"># print(name, song, zipcode)</span>
+
+<span class="c1">## we will fix these errors later once we discuss variables</span>
 </pre></div>
 </div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">python</span>
@@ -420,37 +454,122 @@ document.write(`
             <span class="p">[{</span><span class="s2">&quot;City&quot;</span><span class="p">:</span> <span class="s2">&quot;Malibu&quot;</span><span class="p">,</span> <span class="s2">&quot;zipcode&quot;</span><span class="p">:</span> <span class="s2">&quot;90265&quot;</span><span class="p">}],</span>
             <span class="p">[{</span><span class="s2">&quot;City&quot;</span><span class="p">:</span> <span class="s2">&quot;Brooklyn&quot;</span><span class="p">,</span> <span class="s2">&quot;zipcode&quot;</span><span class="p">:</span> <span class="s2">&quot;11203&quot;</span><span class="p">}]</span>
                 <span class="p">]</span>
+<span class="n">addresses</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;Malibu&quot;</span><span class="p">,</span><span class="s2">&quot;Brooklyn&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">addresses</span><span class="p">)</span>
+
+<span class="c1"># above code just works fine, because it&#39;s python code.</span>
 </pre></div>
 </div>
 </section>
 <section id="value-semantics">
 <h2>Value Semantics<a class="headerlink" href="#value-semantics" title="Permalink to this heading">#</a></h2>
 <p>Value Semantics is a concept in Computer Science that focuses on the value of an object rather that it’s identity.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>name = &quot;Amit Shukla&quot;
-
-🔥 = &quot;Amit Shukla&quot;
-# in this case, instead of using an obvious identity as name,
-# I can use any unicode char or even an emoji to store value of an object.
-</pre></div>
-</div>
+<p>Mojo enables users to utilize value semantics, allowing them to pass values (such as data structures like lists, arrays, strings, etc.) as logical copies rather than references.</p>
 </section>
 <section id="data-type">
 <h2>Data Type<a class="headerlink" href="#data-type" title="Permalink to this heading">#</a></h2>
-<p>Data Type is nothing but a classification of data, that tells compiler how to program should process and use the data. It defines the value a.k.a. Type of data a variable can hold and the type of operations can be performed on that value without causing errors.</p>
+<p>Data Type is nothing but a classification of data, that tells compiler how program should process and use the data. It defines the type of <code class="docutils literal notranslate"><span class="pre">value</span></code>|<code class="docutils literal notranslate"><span class="pre">data</span></code>, a variable can hold and the type of operations can be performed on that value without causing errors.</p>
 <p>For instance, adding two whole numbers is similar to adding two decimal numbers or adding a decimal number with a whole number. However, adding two pieces of text or two lists is quite different from adding numbers.</p>
 <p>Understanding data types is crucial because it allows computers to perform faster. It’s important for the computer to know the context and type of data it is dealing with before running operations on that data. This helps ensure that the operations are performed correctly and efficiently.</p>
 <p>In dynamic programming languages, programmers don’t always have to worry about data type conversions and can rely on the language to handle it. However, in static programming languages, it is appreciated to declare/annotate data types in advance. This may require a bit more code and reduce flexibility, but it greatly improves performance.</p>
 <p>Many programming languages are capable of understanding data types based on their values, even if the programmer forgets to explicitly annotate the data type. This is known as “data type inference.”</p>
+</section>
+<section id="computer-memory">
+<h2>Computer memory<a class="headerlink" href="#computer-memory" title="Permalink to this heading">#</a></h2>
+<p>Before we move on to reviewing <code class="docutils literal notranslate"><span class="pre">Python</span></code> and <code class="docutils literal notranslate"><span class="pre">Mojo</span></code> code we write in previous section, let’s take a moment to understand the structure of computer memory. While it may seem overwhelming and unnecessary for Python and application programmers, trust me, having a basic understanding of computer memory systems can greatly benefit you as an AI Engineer when deploying your code.</p>
+<p>Credit: reference <a class="reference external" href="https://book.sciml.ai/notes/02-Optimizing_Serial_Code/">Dr. Chris Rackauckas</a>
+At the highest level you have a CPU’s core memory which directly accesses a L1 cache. The L1 cache has the fastest access, so things which will be needed soon are kept there. However, it is filled from the L2 cache, which itself is filled from the L3 cache, which is filled from the main memory. This bring us to the first idea in optimizing code: using things that are already in a closer cache can help the code run faster because it doesn’t have to be queried for and moved up this chain.</p>
+<p>When something needs to be pulled directly from main memory this is known as a cache miss</p>
+<p><img alt="MultiCore CPU memory" src="https://hackernoon.com/hn-images/1*nT3RAGnOAWmKmvOBnizNtw.png" /></p>
+<section id="lower-level-view-the-stack-and-the-heap">
+<h3>Lower Level View: The Stack and the Heap<a class="headerlink" href="#lower-level-view-the-stack-and-the-heap" title="Permalink to this heading">#</a></h3>
+<p>Locally, the stack is composed of a stack and a heap. The stack requires a static allocation: it is ordered. Because it’s ordered, it is very clear where things are in the stack, and therefore accesses are very quick (think instantaneous). However, because this is static, it requires that the size of the variables is known at compile time (to determine all of the variable locations). Since that is not possible with all variables, there exists the heap. The <em>heap is essentially a stack of pointers to objects in memory</em>. When heap variables are needed, their values are pulled up the cache chain and accessed.</p>
+<p><img alt="The Stack and Heap" src="https://bayanbox.ir/view/581244719208138556/virtual-memory.jpg" /></p>
+</section>
+<section id="heap-allocations-and-speed">
+<h3>Heap Allocations and Speed<a class="headerlink" href="#heap-allocations-and-speed" title="Permalink to this heading">#</a></h3>
+<p>Heap allocations are costly because they involve this pointer indirection, so stack allocation should be done when sensible (it’s not helpful for really large arrays, but for small values like scalars it’s essential!)</p>
+</section>
+</section>
+<section id="variables-and-constants">
+<h2>Variables and Constants<a class="headerlink" href="#variables-and-constants" title="Permalink to this heading">#</a></h2>
+<p>Now is the time to review <code class="docutils literal notranslate"><span class="pre">Python</span></code> and <code class="docutils literal notranslate"><span class="pre">Mojo</span></code> code we write in previous section.</p>
+<p>Mojo provides different ways to declare variables. The var <code class="docutils literal notranslate"><span class="pre">keyword</span></code> allows you to create a mutable variable, while the <code class="docutils literal notranslate"><span class="pre">let</span></code> keyword allows you to create a variable that holds an immutable value.</p>
+<p>Let’s re-run <code class="docutils literal notranslate"><span class="pre">Mojo</span></code> code.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="c1"># uncomment and run to see error</span>
+<span class="c1"># x = 2</span>
+
+<span class="n">let</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="c1"># uncomment and run to see error</span>
+<span class="c1"># x = 2</span>
+
+<span class="n">var</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">x</span> <span class="o">=</span> <span class="mi">2</span> <span class="c1"># works fine</span>
+
+<span class="n">var</span> <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Amit&quot;</span>
+<span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Amit Shukla&quot;</span>
+<span class="n">let</span> <span class="n">song</span> <span class="o">=</span> <span class="s2">&quot;what_am_i_made_of.mp3&quot;</span>
+<span class="n">let</span> <span class="n">movie</span> <span class="o">=</span> <span class="s2">&quot;Barbie.mp4&quot;</span>
+<span class="n">let</span> <span class="n">addresses</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Malibu&quot;</span><span class="p">,</span><span class="s2">&quot;Brooklyn&quot;</span><span class="p">]</span>
+<span class="n">let</span> <span class="n">zipcode</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;90265&quot;</span><span class="p">,</span><span class="s2">&quot;11203&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="standard-data-types">
+<h2>Standard Data Types<a class="headerlink" href="#standard-data-types" title="Permalink to this heading">#</a></h2>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><code class="docutils literal notranslate"><span class="pre">Mojo</span></code> is a relatively new programming language, it is important to expect frequent changes and updates.</p>
+</div>
+<p>Before we dive into discussing Mojo’s standard data types, it’s important to understand that Mojo offers a wide range of built-in functionality through modules. Think of modules as libraries that contain various functionalities, such as data types, data structures and data methods, bundled together to serve a specific purpose. We will explore modules and packages in more detail later on.</p>
+<p>Since these <a class="reference external" href="https://docs.modular.com/mojo/lib.html">built-in modules</a> are part of standard library, you don’t need to explicitly import them.</p>
+<p>In `Mojo’, a standard data type is a module.</p>
+<p>For example - <code class="docutils literal notranslate"><span class="pre">Int</span></code> is a type represents an integer value. It comes from <code class="docutils literal notranslate"><span class="pre">int</span></code> module that implements <code class="docutils literal notranslate"><span class="pre">Int</span></code> class.</p>
+<p>If you explore the <code class="docutils literal notranslate"><span class="pre">int</span></code> module <a class="reference external" href="https://docs.modular.com/mojo/stdlib/builtin/int.html">documentation</a> in Mojo, you will notice that it provides a wide range of functionality for working with integer data types. This module allows you to perform multiple operations on integer values efficiently.</p>
+<p><em>Mojo is a high-level programming language with an extensive set of modern features. Mojo also provides you, the programmer, access to all of the low-level primitives that you need to write powerful – yet zero-cost – abstractions.</em></p>
+<p>In simpler terms, <code class="docutils literal notranslate"><span class="pre">Mojo</span></code> allows you to use existing or create your own data types and functionalities with zero-cost abstractions. Unlike other programming languages that bury data types deep within the compiler or language design, Mojo allows you to see through and define your own data types.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">let</span> <span class="n">x</span><span class="p">:</span> <span class="n">Int</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="c1"># what it means, I declared a Immutable variable named `x`</span>
+<span class="c1"># which hold a Integer data type, which is of size 64-bit on Stack memory.</span>
+<span class="c1"># since, x is of type Int, which implement Int class from `int` module</span>
+<span class="c1"># I can freely use methods __xxx__ defined on int module</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="fm">__bool__</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="fm">__le__</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Int</p></li>
+<li><p>Bool</p></li>
+<li><p>FloatLiteral</p></li>
+<li><p>ListLiteral</p></li>
+<li><p>Tuple</p></li>
+<li><p>Slice</p></li>
+<li><p>SIMD</p></li>
+</ul>
+</section>
+<section id="struct-vs-classes">
+<h2>Struct vs classes<a class="headerlink" href="#struct-vs-classes" title="Permalink to this heading">#</a></h2>
+</section>
+<section id="other-data-types">
+<h2>Other Data Types<a class="headerlink" href="#other-data-types" title="Permalink to this heading">#</a></h2>
+</section>
+<section id="operators">
+<h2>Operators<a class="headerlink" href="#operators" title="Permalink to this heading">#</a></h2>
+</section>
+<section id="data-structure">
+<h2>Data Structure<a class="headerlink" href="#data-structure" title="Permalink to this heading">#</a></h2>
 <!-- 
 
 
 
-## Variables
 
-## Operators
 
-## Data Structure
+
+
 
 ## Mojo as a calculator
 
@@ -648,6 +767,17 @@ This is a lot to ask for, but let's just start somewhere and build a system whic
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data">Data</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#value-semantics">Value Semantics</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-type">Data Type</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#computer-memory">Computer memory</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lower-level-view-the-stack-and-the-heap">Lower Level View: The Stack and the Heap</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#heap-allocations-and-speed">Heap Allocations and Speed</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variables-and-constants">Variables and Constants</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#standard-data-types">Standard Data Types</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#struct-vs-classes">Struct vs classes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#other-data-types">Other Data Types</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operators">Operators</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-structure">Data Structure</a></li>
 </ul>
   </nav></div>
 
