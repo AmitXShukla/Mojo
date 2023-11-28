@@ -1,8 +1,24 @@
 # Getting started
 
 :::{note}
-Mojo is a new programming language that is evolving rapidly. The code written today may not be the same as the code written tomorrow until a fair baseline version is achieved by the community. The code is new and documentation is limited, there are numerous ways to accomplish the same task, and each iteration can be better than the previous one. As a developer, I acknowledge that I may make mistakes in my code, and there will always be room for improvement and optimization. If you see an opportunity to improve the code, please send me a GitHub pull request, and I will be happy to merge into it.
+Mojo is a new programming language that is evolving rapidly. The code written today may not be the same as the code written tomorrow until a fair baseline version is achieved by the community. The code is new and documentation is limited, there are numerous ways to accomplish the same task, and each iteration can be better than the previous one. As a developer, I acknowledge that I may make mistakes in my code, and there will always be room for improvement and optimization. If you see an opportunity to improve the code, please send me a `GitHub pull` request, and I will be happy to merge into it.
 :::
+
+## Prologue
+
+There are two approaches to initiate your journey into learning a new programming language. The first approach involves leveraging your existing knowledge and drawing parallels between the new language and concepts you're already familiar with, essentially bridging the gap between the old and the new.
+
+The alternative approach is to start from scratch, gradually acquainting yourself with each concept in a step-by-step manner, much like a beginner.
+
+Everyone possesses their unique learning preferences and methods when it comes to acquiring new skills.
+
+In the context of learning the Mojo programming language, you have two primary options.
+
+The first approach involves capitalizing on your existing knowledge of programming languages, with Python being a common foundation. In this case, think of Mojo as an evolution of Python, often referred to as "Python++." If you encounter any challenges, consider Mojo as an extension of Python, and you'll likely find that your existing Python code can be adapted for use in Mojo with very few tweaks, where relevant.
+
+However, I strongly recommend taking a fresh, beginner's perspective when approaching Mojo. After all, Mojo is an entirely new programming language, and it would be a mistake to view it merely as a wrapper for Python. If you begin to perceive Mojo as a superset of Python, I'm confident that your learning experience will transform you into a Mojo expert, or at the very least, make you a better Python programmer.
+
+Before we begin our exploration, it's important to note that the current Mojo documentation primarily focuses on systems programming, which is arguably distinct from application programming. However, for our learning purpose, We will initially use Mojo for application programming, gradually incorporating systems programming concepts as we progress. This approach will become particularly useful when our application programming needs to directly access hardware systems concepts for end-to-end program execution and performance optimization, thereby ensuring the most efficient use of hardware for faster application execution.
 
 ## Setup
 
@@ -154,14 +170,14 @@ mojo <command>
 
 Here is a list of the available `commands` that you can run with the Mojo CLI:
 
-- run       # Builds and executes a Mojo file. `run` command is followed by Mojo file you wish to run.
-- build     # Builds an executable from a Mojo file. `build` command is followed by Mojo file you wish to build.
-- repl      # Launches the Mojo REPL.
-- debug     # Launches the LLDB debugger with support for debugging Mojo programs.
-- package   # Compiles a Mojo package. `package` command is followed by Mojo file you wish to package.
-- format    # Formats Mojo source files.
-- doc       # Compiles docstrings from a Mojo file. `doc` command is followed by Mojo file.
-- demangle  # Demangles the given name.
++ run       # Builds and executes a Mojo file. `run` command is followed by Mojo file you wish to run.
++ build     # Builds an executable from a Mojo file. `build` command is followed by Mojo file you wish to build.
++ repl      # Launches the Mojo REPL.
++ debug     # Launches the LLDB debugger with support for debugging Mojo programs.
++ package   # Compiles a Mojo package. `package` command is followed by Mojo file you wish to package.
++ format    # Formats Mojo source files.
++ doc       # Compiles docstrings from a Mojo file. `doc` command is followed by Mojo file.
++ demangle  # Demangles the given name.
 
 ```{code-block}
 # example

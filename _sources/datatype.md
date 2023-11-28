@@ -1,20 +1,6 @@
-# Data Types, Variables and Operators
+# Data Types, Variables, Operators
 
-There are two approaches to initiate your journey into learning a new programming language. The first approach involves leveraging your existing knowledge and drawing parallels between the new language and concepts you're already familiar with, essentially bridging the gap between the old and the new.
-
-The alternative approach is to start from scratch, gradually acquainting yourself with each concept in a step-by-step manner, much like a beginner.
-
-Everyone possesses their unique learning preferences and methods when it comes to acquiring new skills.
-
-In the context of learning the Mojo programming language, you have two primary options.
-
-The first approach involves capitalizing on your existing knowledge of programming languages, with Python being a common foundation. In this case, think of Mojo as an evolution of Python, often referred to as "Python++." If you encounter any challenges, consider Mojo as an extension of Python, and you'll likely find that your existing Python code can be adapted for use in Mojo with very few tweaks, where relevant.
-
-However, I strongly recommend taking a fresh, beginner's perspective when approaching Mojo. After all, Mojo is an entirely new programming language, and it would be a mistake to view it merely as a wrapper for Python. If you begin to perceive Mojo as a superset of Python, I'm confident that your learning experience will transform you into a Mojo expert, or at the very least, make you a better Python programmer.
-
-Before we begin our exploration, it's important to note that the current Mojo documentation primarily focuses on systems programming, which is arguably distinct from application programming. However, for our learning purpose, We will initially use Mojo for application programming, gradually incorporating systems programming concepts as we progress. This approach will become particularly useful when our application programming needs to directly access hardware systems concepts for end-to-end program execution and performance optimization, thereby ensuring the most efficient use of hardware for faster application execution.
-
-It's essential to start with the fundamentals. So, let's kick things off by learning Mojo's data types and data structures.
+Let's kick things off by learning Mojo's data types, variables and operators.
 
 ## Data
 
@@ -24,17 +10,16 @@ for example -
 
 ```{code-block}
 name = "Amit Shukla"
-
 🔥 = "Amit Shukla"
 # in this case, instead of using an obvious identity such as << name >>,
-# I can use any unicode char or even an emoji to store value of an object.
+# you can use any unicode char or even an emoji to store value of an object.
 
 ```
 
 ```{code-block}
 x = 1
-name = "Amit Shukla"
-song = "what_am_i_made_of.mp3"
+# name = "Barbie"
+# song = "what_was_i_made_for.mp3"
 movie = "Barbie.mp4"
 addresses = ["Malibu","Brooklyn"]
 zipcode = ("90265","11203")
@@ -51,8 +36,8 @@ print(x)
 
 ## uncomment following to see error
 # x = 1
-# name = "Amit Shukla"
-# song = "what_am_i_made_of.mp3"
+# name = "Barbie"
+# song = "what_was_i_made_for.mp3"
 # movie = "Barbie.mp4"
 # addresses = ["Malibu","Brooklyn"]
 # zipcode = ["90265","11203"]
@@ -60,6 +45,34 @@ print(x)
 # print(name, song, zipcode)
 
 ## we will fix these errors later once we discuss variables
+```
+
+```{code-block}
+# show case data types
+
+# data type | data structure
+a = 1
+print("type of var a:",type(a))
+b = 1.0
+print("type of var b:",type(b))
+c = "Hello World"
+print("type of var c:",type(c))
+d = (1,2)
+print("type of var d:",type(d))
+e = ["CA","OR"]
+print("type of var e:",type(e))
+f = {"a":1, "b":2}
+print("type of var f:",type(f))
+
+from collections import namedtuple
+Tbl = namedtuple("col", ["x", "y"])
+print("type of var d:", type(Tbl))
+t = Tbl(x=1, y =2)
+print("type of var t:", type(t))
+print(t)
+
+loc = ["CA","WA"]
+print("type of var loc:", type(loc))
 ```
 
 ```{code-block}
@@ -117,7 +130,7 @@ Heap allocations are costly because they involve this pointer indirection, so st
 
 Now is the time to review `Python` and `Mojo` code we write in previous section.
 
-Mojo provides different ways to declare variables. The var `keyword` allows you to create a mutable variable, while the `let` keyword allows you to create a variable that holds an immutable value.
+Mojo provides different ways to declare variables. The `var` keyword allows you to create a mutable variable, while the `let` keyword allows you to create a variable that holds an immutable value.
 
 Let's re-run `Mojo` code.
 
@@ -151,7 +164,7 @@ Before we dive into discussing Mojo's standard data types, it's important to und
 
 Since these [built-in modules](https://docs.modular.com/mojo/lib.html) are part of standard library, you don't need to explicitly import them.
 
-In `Mojo', a Type comes from a module implementation.
+In `Mojo`, mostly a Type comes from a module's struct implementation.
 
 For example - `Int` is a type represents an integer value. It comes from `int` module that implements `Int` class.
 
@@ -161,171 +174,459 @@ If you explore the `int` module [documentation](https://docs.modular.com/mojo/st
 
 In simpler terms, `Mojo` allows you to use existing or create your own data types and functionalities with zero-cost abstractions. Unlike other programming languages that bury data types deep within the compiler or language design, Mojo allows you to see through and define your own data types.
 
+All the “standard types” (like Int, Bool, String and even Tuple) are made using `struct`.
+
 ```{code-block}
 let x: Int = 4
 print(x)
 
-# what it means, I declared an Immutable variable named `x`
-# which hold a Integer data type, which is of size 64-bit on Stack memory.
+let y: Int = 6
+print(y)
+
+# what it means, I declared two Immutable variables named `x` and `y`
+# which hold a Integer data type, of size 64-bit on Stack memory.
 # since, x is of type Int, which implement Int class from `int` module
 # I can freely use methods __xxx__ defined on int module
+# These __ aka "double underscore -> dunder -> magic functions" define most of primitive operations
 
-print(x.__bool__)
-print(x.__le__)
+TODO:::::::::::::::::::::::
+print(x.__bool__())
+print(x.__le__(y)) # same as x < y
+
 ```
 
 Now that we have a grasp of what a data type is and how it is represented in computer memory, let's explore some more examples of these data types.
 
 - Int
 - Bool
+- StringLiteral
+- String
 - FloatLiteral
 - ListLiteral
+- Dynamic Vectors
 - Tuple
+- Builtins
+- Utils
 - Slice
+- DTYPE
 - SIMD
+- Python
+
+```{code-block}
+TODO:::::::::::::::::::::::
+x = 1
+name = "Amit Shukla"
+song = "what_am_i_made_of.mp3"
+movie = "Barbie.mp4"
+addresses = ["Malibu","Brooklyn"]
+zipcode = ("90265","11203")
+
+print(x)
+
+## uncomment following to see error
+# zipcode = ("90265","11203") # errors out
+# addresses = [
+                {"City": "Malibu", zipcode: "90265"},
+                {"City": "Brooklyn", zipcode: "11203"}
+                ]
+## we will fix these errors later once we discuss variables
+
+## uncomment following to see error
+# x = 1
+# name = "Amit Shukla"
+# song = "what_am_i_made_of.mp3"
+# movie = "Barbie.mp4"
+# addresses = ["Malibu","Brooklyn"]
+# zipcode = ["90265","11203"]
+
+# print(name, song, zipcode)
+
+## we will fix these errors later once we discuss variables
+```
+
+### StringLiteral, String
+
+```{code-block}
+TODO:::::::::::::::::::::::
+var name = "Amit Shukla"
+name = 3 # crash this variable to see error, it indicates, when a string variables is declared, Mojo compiler infer data type as StringLiteral
+# var name = "Amit Shukla" << is equal to >> var name: StringLiteral = "Amit Shukla"
+
+# String Literal is different than String,
+# String is a pointer to heap allocated data and allows developer to store huge amount of data into it
+
+# In Mojo the heap allocated String isn't imported by default:
+
+from String import String
+s = String("Mojo🔥")
+print(s)
+
+x = s.buffer
+x = 20 # crash this to see data type
+
+```
+
+Copied!
+
+error: Expression [17]:22:10: cannot implicitly convert 'DynamicVector[SIMD[si8, 1]]' value to 'PythonObject' in assignment
+    x = s.buffer
+        ~^~~~~~~
+
+DynamicVector is similar to a Python list, here it's storing multiple int8's that represent the characters, let's print the first character:
+
+print(s[0])
+
+Copied!
+
+The other string type is a StringLiteral, it's written directly into the binary, when the program starts it's loaded into read-only memory, which means it's constant and lives for the duration of the program:
+
+var lit = "This is my StringLiteral"
+print(lit)
+
+Copied!
+
+This is my StringLiteral
+
+Force an error to see the type:
+
+lit = 20
+
+Copied!
+
+error: Expression [26]:26:11: cannot implicitly convert 'Int' value to 'StringLiteral' in assignment
+    lit = 20
+          ^~
+
+One thing to be aware of is that an emoji is actually four bytes, so we need a slice of 4 to have it print correctly:
+
+emoji = String("🔥😀")
+print("fire:", emoji[0:4])
+print("smiley:", emoji[4:8])
+
+Copied!
+
+fire: 🔥
+smiley: 😀
+
+Check out Maxim Zaks Blog post
+
+for more details.
+
+### FloatLiteral
+
+Now lets take a look at the decimal representation:
+
+from String import ord
+
+print(ord(s[0]))
+
+Copied!
+
+77
+
+That's the ASCII code shown in this table
+
+FloatLiteral
+
+let float: FloatLiteral = 3.3
+print(float)
+
+Copied!
+
+3.2999999999999998
+
+let f32 = Float32(float)
+print(f32)
+
+Copied!
+
+3.2999999523162842
+
+### ListLiteral
+ListLiteral
+
+When you initialize the list the types can be inferred, however when retrieving an item you need to provide the type as a parameter:
+
+let list: ListLiteral[Int, FloatLiteral, StringLiteral] = [1, 5.0, "Mojo🔥"]
+print(list.get[2, StringLiteral]())
+
+Copied!
+
+### Dynamic Vectors
+
+We can build our own string this way, we can put in 78 which is N and 79 which is O
+
+from Vector import DynamicVector
+
+let vec = DynamicVector[Int8](2)
+
+vec.push_back(78)
+vec.push_back(79)
+
+Copied!
+
+We can use a StringRef to get a pointer to the same location in memory, but with the methods required to output the numbers as text:
+
+from Pointer import DTypePointer
+from DType import DType
+
+let vec_str_ref = StringRef(DTypePointer[DType.int8](vec.data).address, vec.size)
+print(vec_str_ref)
+
+Copied!
+
+NO
+
+Because it points to the same location in heap memory, changing the original vector will also change the value retrieved by the reference:
+
+vec[1] = 78
+print(vec_str_ref)
+
+Copied!
+
+NN
+
+Create a deep copy of the String and allocate it to the heap:
+
+from String import String
+let vec_str = String(vec_str_ref)
+
+print(vec_str)
+
+Copied!
+
+NN
+
+Now we've made a copy of the data to a new location in heap memory, we can modify the original and it won't effect our copy:
+
+vec[0] = 65
+vec[1] = 65
+print(vec_str)
+
+Copied!
+
+NN
+
+### Tuple
+
+Tuple
+
+let tup = (1, "Mojo", 3)
+print(tup.get[0, Int]())
+
+Copied!
+
+1
+
+## Builtins
+
+## Utils
+
+These are all of the other builtin types not discussed which are accessible without importing anything, the type can be inferred, but are explicit here for demonstration, for example let bool: Bool = True can just be let bool = True:
+Bool
+
+Standard Bool type
+
+let bool: Bool = True
+print(bool == False)
+
+Copied!
+
+False
+
+Int
+
+Int is the same size as your architecture e.g. on a 64 bit machine it's 64 bits
+
+let i: Int = 2 
+print(i)
+
+Copied!
+
+2
+
+It can also be used as an index:
+
+var vec_2 = DynamicVector[Int]()
+vec_2.push_back(2)
+vec_2.push_back(4)
+vec_2.push_back(6)
+
+print(vec_2[i])
+
+Copied!
+
+6
+
+### Slice
+
+A slice follows the python convention of:
+
+start:end:step
+
+So for example using Python syntax:
+
+let original = String("MojoDojo")
+print(original[0:4])
+
+Copied!
+
+Mojo
+
+You can also represent as:
+
+let slice_expression = slice(0, 4)
+
+print(original[slice_expression])
+
+Copied!
+
+Mojo
+
+And to get every second letter:
+
+print(original[0:4:2])
+
+Copied!
+
+Mj
+
+Or:
+
+let slice_expression = slice(0, 4, 2)
+print(original[slice_expression])
+
+Copied!
+
+Mj
+
+Error
+
+The error type is very simplistic, we'll go into more details on errors in a later chapter:
+
+def return_error():
+    raise Error("This returns an Error type")
+
+return_error()
+
+Copied!
+
+Error: This returns an Error type
+
+------
 
 Before we conclude this topic, let's discuss the `SIMD` data type, as it is an important concept to understand.
 
+TOD::::::::::::
+SIMD stands for Single Instruction, Multiple Data, hardware now contains special registers that allow you do the same operation across a vector in a single instruction, greatly improving performance, let's take a look:
+
+from DType import DType
+
+y = SIMD[DType.uint8, 4](1, 2, 3, 4)
+print(y)
+
+n the definition [DType.uint8, 4] are known as parameters which means they must be compile-time known, while (1, 2, 3, 4) are the arguments which can be compile-time or runtime known.
+
+For example user input or data retrieved from an API is runtime known, and so can't be used as a parameter during the compilation process.
+
+In other languages argument and parameter often mean the same thing, in Mojo it's a very important distinction.
+
+This is now a vector of 8 bit numbers that are packed into 32 bits, we can perform a single instruction across all of it instead of 4 separate instructions:
+
+y *= 10
+print(y)
+
+CS Fundamentals
+
+Binary is how your computer stores memory, with each bit representing a 0 or 1. Memory is typically byte addressable, meaning that each unique memory address points to one byte, which consists of 8 bits.
+
+This is how the first 4 digits in a uint8 are represented in hardware:
+
+    1 = 00000001
+    2 = 00000010
+    3 = 00000011
+    4 = 00000100
+
+Binary 1 and 0 represents ON or OFF indicating an electrical charge in the tiny circuits of your computer.
+
+Check this video
+if you want more information on binary.
+
+We're packing the data together with SIMD on the stack so it can be passed into a SIMD register like this:
+
+00000001 00000010 00000011 00000100
+
+The SIMD register in modern CPU's is huge, let's see how big it is in the Mojo playground:
+
+from TargetInfo import simdbitwidth
+print(simdbitwidth())
+512
+
+That means we could pack 64 x 8bit numbers together and perform a calculation on all of it with a single instruction.
+
+You can also initialize SIMD with a single argument:
+
+z = SIMD[DType.uint8, 4](1)
+print(z)
+
+#### Scalars:
+Scalar just means a single value, you'll notice in Mojo all the numerics are SIMD scalars:
+var x = UInt8(1)
+x = "will cause an error"
+
+error: Expression [14]:20:9: cannot implicitly convert 'StringLiteral' value to 'SIMD[ui8, 1]' in assignment
+    x = "will cause an error"
+        ^~~~~~~~~~~~~~~~~~~~~
+
+
+UInt8 is just an alias for SIMD[DType.uint8, 1], you can see all the numeric SIMD types imported by default here
+
+    Float16
+    Float32
+    Float64
+    Int8
+    Int16
+    Int32
+    Int64
+    UInt8
+    UInt16
+    UInt32
+    UInt64
+
+Also notice when we try and change the type it throws an error, this is because Mojo is strongly typed
+
+If we use existing Python modules, it will give us back a PythonObject that behaves the same loosely typed way as it does in Python:
+
+np = Python.import_module("numpy")
+
+arr = np.ndarray([5])
+print(arr)
+arr = "this will work fine"
+print(arr)
+
 ## Struct vs classes
 
-## Other Data Types
+TODO:::
+You can build high-level abstractions for types (or “objects”) in a struct. A struct in Mojo is similar to a class in Python: they both support methods, fields, operator overloading, decorators for metaprogramming, etc. However, Mojo structs are completely static—they are bound at compile-time, so they do not allow dynamic dispatch or any runtime changes to the structure. (Mojo will also support classes in the future.)
 
-## Operators
-
-## Data Structure
-<!-- 
-
-
-
-
-
-
-
-
-## Mojo as a calculator
-
-Let's start writing a simple calculator program in Python.
-
-for simple mathematical calculations, just trust Mojo REPL
-
-```{code-block}
-
-# open REPL and run following commands
-
-print(3+4)
-print(-3+4)
-print(-3**4+(4*3/5))
-
-```
-
-however, our end goal is to develop a functionality which can function as full calculator which is way beyond than simple addition and subtraction.
-hence, let's write a function instead which does the same thing,
-
-```{code-block}
-
-def myAdd():
-
-# $ cat hello.🔥
-def main():
-    print("hello world")
-    for x in range(9, 0, -3):
-        print(x)
-# $ mojo hello.🔥
-
-```
-
-However, this is still Python, it's still very nice for Mojo to run Python code but, what if I write a function which does more than simple addition, for example, it access file or directory structure in operating system. In those case, adding Type will definitely help compiler optimize this code and run it faster.
-
-## Data Type & Variables
-
-So let's start adding type definition to this function.
-
-@strict def myAdd()
-
-this is still not Mojo looking, do I will replace @strict type with fn().
-Now, this is still an overhead to compiler, but Modern Programming or any programming language is about writing many functions, Fn() deserve to be a First class object in Mojo.
-
-so let's replace @strict `def myAdd() -> fn() myAdd()`
-
-inside functional arguments, we will call these functional arguments and later chapters, we will discuss how arguments although look similar but are different than parameters.
-
-So how do we define static and dynamic variables in Mojo.
-we use Let and Var.
- Let - immutable and var = mutable.
- There is also a third type, alias = run time immutable
-
- let's see these in actions to understand the difference
-
-## Data Type
-
-Bool, Int, String, List, ....
-No DICT yet
-
-```{code-block}
-def your_function(a, b):
-    let c = a
-    # Uncomment to see an error:
-    # c = b  # error: c is immutable
-
-    if c != b:
-        let d = b
-        print(d)
-
-your_function(2, 3)
-```
-
-```{code-block}
-def your_function():
-    let x: Int = 42
-    let y: Float64 = 17.0
-
-    let z: Float32
-    if x != 0:
-        z = 1.0
-    else:
-        z = foo()
-    print(z)
-
-def foo() -> Float32:
-    return 3.14
-
-your_function()
-```
-
-```{code-block}
 struct MyPair:
     var first: Int
     var second: Int
 
-    # We use 'fn' instead of 'def' here - we'll explain that soon
     fn __init__(inout self, first: Int, second: Int):
         self.first = first
         self.second = second
+    
+    fn dump(self):
+        print(self.first, self.second)
 
-    fn __lt__(self, rhs: MyPair) -> Bool:
-        return self.first < rhs.first or
-              (self.first == rhs.first and
-               self.second < rhs.second)
-```
+let mine = MyPair(2, 4)
+mine.dump()
 
-```{code-block}
-struct Complex:
-    var re: Float32
-    var im: Float32
+TODO::: write similar thing in Python
 
-    fn __init__(inout self, x: Float32):
-        """Construct a complex number given a real number."""
-        self.re = x
-        self.im = 0.0
+** will discuss argument ownership in details in later section
 
-    fn __init__(inout self, r: Float32, i: Float32):
-        """Construct a complex number given its real and imaginary components."""
-        self.re = r
-        self.im = i
-```
+## Operators
 
-## about Struct
-
-Now, from the application programming perspective, we want to create a professional grade calculator, with end goal in mind that someday it will be a scientific calculator and let;s hope that some day, will even solve partial differential equations or could evolve into a complex system, which spits out results thrown any mathematical equation.
-
-This is a lot to ask for, but let's just start somewhere and build a system which does more than one simple calculation. -->
+## Simple Mathematics

@@ -3,13 +3,13 @@
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Data Types, Variables and Operators &#8212; The Mojo Programming Language book</title>
+    <title>Data Types, Variables, Operators &#8212; The Mojo Programming Language book</title>
   
   
   
@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=ac02cc09edc035673794" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -38,9 +38,9 @@
     <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=ac02cc09edc035673794" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794" />
-  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=ac02cc09edc035673794"></script>
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
@@ -139,9 +139,11 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
   
 
 <a class="navbar-brand logo" href="intro.html">
+  
   
   
   
@@ -151,8 +153,8 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="_static/logo.png" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="_static/logo.png" class="logo__image only-light" alt="The Mojo Programming Language book - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="The Mojo Programming Language book - Home"/>`);</script>
   
   
 </a></div>
@@ -169,17 +171,20 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="whymojo.html">Why Mojo</a></li>
 <li class="toctree-l1"><a class="reference internal" href="gettingstarted.html">Getting started</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Data Types, Variables and Operators</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Data Types, Variables, Operators</a></li>
 <li class="toctree-l1"><a class="reference internal" href="controlflow.html">Loops &amp; Control Flow</a></li>
 <li class="toctree-l1"><a class="reference internal" href="functions.html">Functions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="datastructure.html">Data Structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datastructure.html">Building Data Structure</a></li>
 <li class="toctree-l1"><a class="reference internal" href="packages.html">Module and Packages</a></li>
 <li class="toctree-l1"><a class="reference internal" href="usingpython.html">using Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="metaprogramming.html">Metaprogramming in Mojo</a></li>
-<li class="toctree-l1"><a class="reference internal" href="MLIR.html">MLIR</a></li>
-<li class="toctree-l1"><a class="reference internal" href="thinkinginmojo.html">Thinking in Mojo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="traits.html">Traits</a></li>
 <li class="toctree-l1"><a class="reference internal" href="oops.html">OOPs concepts in Mojo</a></li>
-<li class="toctree-l1"><a class="reference internal" href="comprehension.html">Arrays, Lists and Comprehension</a></li>
+<li class="toctree-l1"><a class="reference internal" href="comprehension.html">Arrays, Lists &amp; Comprehension</a></li>
+<li class="toctree-l1"><a class="reference internal" href="MLIR.html">MLIR</a></li>
+<li class="toctree-l1"><a class="reference internal" href="parallel.html">Parallelization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="thinkinginmojo.html">Thinking in Mojo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="metaprogramming.html">Meta Programming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="standard.html">Standard Library</a></li>
 </ul>
 
     </div>
@@ -333,6 +338,7 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
@@ -342,6 +348,7 @@ document.write(`
   </button>
 `);
 </script>
+
 
 <script>
 document.write(`
@@ -363,7 +370,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Data Types, Variables and Operators</h1>
+    <h1>Data Types, Variables, Operators</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -382,11 +389,25 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variables-and-constants">Variables and Constants</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#standard-data-types">Standard Data Types</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#standard-data-types">Standard Data Types</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stringliteral-string">StringLiteral, String</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#floatliteral">FloatLiteral</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#listliteral">ListLiteral</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dynamic-vectors">Dynamic Vectors</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tuple">Tuple</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#builtins">Builtins</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#utils">Utils</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#slice">Slice</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#scalars">Scalars:</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#struct-vs-classes">Struct vs classes</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#other-data-types">Other Data Types</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operators">Operators</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-structure">Data Structure</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-mathematics">Simple Mathematics</a></li>
 </ul>
             </nav>
         </div>
@@ -398,30 +419,22 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="data-types-variables-and-operators">
-<h1>Data Types, Variables and Operators<a class="headerlink" href="#data-types-variables-and-operators" title="Permalink to this heading">#</a></h1>
-<p>There are two approaches to initiate your journey into learning a new programming language. The first approach involves leveraging your existing knowledge and drawing parallels between the new language and concepts you’re already familiar with, essentially bridging the gap between the old and the new.</p>
-<p>The alternative approach is to start from scratch, gradually acquainting yourself with each concept in a step-by-step manner, much like a beginner.</p>
-<p>Everyone possesses their unique learning preferences and methods when it comes to acquiring new skills.</p>
-<p>In the context of learning the Mojo programming language, you have two primary options.</p>
-<p>The first approach involves capitalizing on your existing knowledge of programming languages, with Python being a common foundation. In this case, think of Mojo as an evolution of Python, often referred to as “Python++.” If you encounter any challenges, consider Mojo as an extension of Python, and you’ll likely find that your existing Python code can be adapted for use in Mojo with very few tweaks, where relevant.</p>
-<p>However, I strongly recommend taking a fresh, beginner’s perspective when approaching Mojo. After all, Mojo is an entirely new programming language, and it would be a mistake to view it merely as a wrapper for Python. If you begin to perceive Mojo as a superset of Python, I’m confident that your learning experience will transform you into a Mojo expert, or at the very least, make you a better Python programmer.</p>
-<p>Before we begin our exploration, it’s important to note that the current Mojo documentation primarily focuses on systems programming, which is arguably distinct from application programming. However, for our learning purpose, We will initially use Mojo for application programming, gradually incorporating systems programming concepts as we progress. This approach will become particularly useful when our application programming needs to directly access hardware systems concepts for end-to-end program execution and performance optimization, thereby ensuring the most efficient use of hardware for faster application execution.</p>
-<p>It’s essential to start with the fundamentals. So, let’s kick things off by learning Mojo’s data types and data structures.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="data-types-variables-operators">
+<h1>Data Types, Variables, Operators<a class="headerlink" href="#data-types-variables-operators" title="Permalink to this heading">#</a></h1>
+<p>Let’s kick things off by learning Mojo’s data types, variables and operators.</p>
 <section id="data">
 <h2>Data<a class="headerlink" href="#data" title="Permalink to this heading">#</a></h2>
 <p>In simple words, Data refers to any information that is consumed by Intelligence. Computers store data in forms of numbers, text, images, audio, videos that can be stored and used by a program. Data is typically stored in variables, data structures, or files, and it is the fundamental building block for performing computations and creating meaningful output in a program.</p>
 <p>for example -</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>name = &quot;Amit Shukla&quot;
-
 🔥 = &quot;Amit Shukla&quot;
 # in this case, instead of using an obvious identity such as &lt;&lt; name &gt;&gt;,
-# I can use any unicode char or even an emoji to store value of an object.
+# you can use any unicode char or even an emoji to store value of an object.
 </pre></div>
 </div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Amit Shukla&quot;</span>
-<span class="n">song</span> <span class="o">=</span> <span class="s2">&quot;what_am_i_made_of.mp3&quot;</span>
+<span class="c1"># name = &quot;Barbie&quot;</span>
+<span class="c1"># song = &quot;what_was_i_made_for.mp3&quot;</span>
 <span class="n">movie</span> <span class="o">=</span> <span class="s2">&quot;Barbie.mp4&quot;</span>
 <span class="n">addresses</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Malibu&quot;</span><span class="p">,</span><span class="s2">&quot;Brooklyn&quot;</span><span class="p">]</span>
 <span class="n">zipcode</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;90265&quot;</span><span class="p">,</span><span class="s2">&quot;11203&quot;</span><span class="p">)</span>
@@ -438,8 +451,8 @@ document.write(`
 
 <span class="c1">## uncomment following to see error</span>
 <span class="c1"># x = 1</span>
-<span class="c1"># name = &quot;Amit Shukla&quot;</span>
-<span class="c1"># song = &quot;what_am_i_made_of.mp3&quot;</span>
+<span class="c1"># name = &quot;Barbie&quot;</span>
+<span class="c1"># song = &quot;what_was_i_made_for.mp3&quot;</span>
 <span class="c1"># movie = &quot;Barbie.mp4&quot;</span>
 <span class="c1"># addresses = [&quot;Malibu&quot;,&quot;Brooklyn&quot;]</span>
 <span class="c1"># zipcode = [&quot;90265&quot;,&quot;11203&quot;]</span>
@@ -447,6 +460,33 @@ document.write(`
 <span class="c1"># print(name, song, zipcode)</span>
 
 <span class="c1">## we will fix these errors later once we discuss variables</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># show case data types</span>
+
+<span class="c1"># data type | data structure</span>
+<span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;type of var a:&quot;</span><span class="p">,</span><span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mf">1.0</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;type of var b:&quot;</span><span class="p">,</span><span class="nb">type</span><span class="p">(</span><span class="n">b</span><span class="p">))</span>
+<span class="n">c</span> <span class="o">=</span> <span class="s2">&quot;Hello World&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;type of var c:&quot;</span><span class="p">,</span><span class="nb">type</span><span class="p">(</span><span class="n">c</span><span class="p">))</span>
+<span class="n">d</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;type of var d:&quot;</span><span class="p">,</span><span class="nb">type</span><span class="p">(</span><span class="n">d</span><span class="p">))</span>
+<span class="n">e</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;CA&quot;</span><span class="p">,</span><span class="s2">&quot;OR&quot;</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;type of var e:&quot;</span><span class="p">,</span><span class="nb">type</span><span class="p">(</span><span class="n">e</span><span class="p">))</span>
+<span class="n">f</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;a&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">:</span><span class="mi">2</span><span class="p">}</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;type of var f:&quot;</span><span class="p">,</span><span class="nb">type</span><span class="p">(</span><span class="n">f</span><span class="p">))</span>
+
+<span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">namedtuple</span>
+<span class="n">Tbl</span> <span class="o">=</span> <span class="n">namedtuple</span><span class="p">(</span><span class="s2">&quot;col&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="s2">&quot;y&quot;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;type of var d:&quot;</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">Tbl</span><span class="p">))</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">Tbl</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;type of var t:&quot;</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">t</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+
+<span class="n">loc</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;CA&quot;</span><span class="p">,</span><span class="s2">&quot;WA&quot;</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;type of var loc:&quot;</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">loc</span><span class="p">))</span>
 </pre></div>
 </div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">python</span>
@@ -494,7 +534,7 @@ At the highest level you have a CPU’s core memory which directly accesses a L1
 <section id="variables-and-constants">
 <h2>Variables and Constants<a class="headerlink" href="#variables-and-constants" title="Permalink to this heading">#</a></h2>
 <p>Now is the time to review <code class="docutils literal notranslate"><span class="pre">Python</span></code> and <code class="docutils literal notranslate"><span class="pre">Mojo</span></code> code we write in previous section.</p>
-<p>Mojo provides different ways to declare variables. The var <code class="docutils literal notranslate"><span class="pre">keyword</span></code> allows you to create a mutable variable, while the <code class="docutils literal notranslate"><span class="pre">let</span></code> keyword allows you to create a variable that holds an immutable value.</p>
+<p>Mojo provides different ways to declare variables. The <code class="docutils literal notranslate"><span class="pre">var</span></code> keyword allows you to create a mutable variable, while the <code class="docutils literal notranslate"><span class="pre">let</span></code> keyword allows you to create a variable that holds an immutable value.</p>
 <p>Let’s re-run <code class="docutils literal notranslate"><span class="pre">Mojo</span></code> code.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">1</span>
 <span class="c1"># uncomment and run to see error</span>
@@ -524,182 +564,341 @@ At the highest level you have a CPU’s core memory which directly accesses a L1
 </div>
 <p>Before we dive into discussing Mojo’s standard data types, it’s important to understand that Mojo offers a wide range of built-in functionality through modules. Think of modules as libraries that contain various functionalities, such as data types, data structures and data methods, bundled together to serve a specific purpose. We will explore modules and packages in more detail later on.</p>
 <p>Since these <a class="reference external" href="https://docs.modular.com/mojo/lib.html">built-in modules</a> are part of standard library, you don’t need to explicitly import them.</p>
-<p>In `Mojo’, a Type comes from a module implementation.</p>
+<p>In <code class="docutils literal notranslate"><span class="pre">Mojo</span></code>, mostly a Type comes from a module’s struct implementation.</p>
 <p>For example - <code class="docutils literal notranslate"><span class="pre">Int</span></code> is a type represents an integer value. It comes from <code class="docutils literal notranslate"><span class="pre">int</span></code> module that implements <code class="docutils literal notranslate"><span class="pre">Int</span></code> class.</p>
 <p>If you explore the <code class="docutils literal notranslate"><span class="pre">int</span></code> module <a class="reference external" href="https://docs.modular.com/mojo/stdlib/builtin/int.html">documentation</a> in Mojo, you will notice that it provides a wide range of functionality for working with integer data types. This module allows you to perform multiple operations on integer values efficiently.</p>
 <p><em>Mojo is a high-level programming language with an extensive set of modern features. Mojo also provides you, the programmer, access to all of the low-level primitives that you need to write powerful – yet zero-cost – abstractions.</em></p>
 <p>In simpler terms, <code class="docutils literal notranslate"><span class="pre">Mojo</span></code> allows you to use existing or create your own data types and functionalities with zero-cost abstractions. Unlike other programming languages that bury data types deep within the compiler or language design, Mojo allows you to see through and define your own data types.</p>
+<p>All the “standard types” (like Int, Bool, String and even Tuple) are made using <code class="docutils literal notranslate"><span class="pre">struct</span></code>.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">let</span> <span class="n">x</span><span class="p">:</span> <span class="n">Int</span> <span class="o">=</span> <span class="mi">4</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 
-<span class="c1"># what it means, I declared an Immutable variable named `x`</span>
-<span class="c1"># which hold a Integer data type, which is of size 64-bit on Stack memory.</span>
+<span class="n">let</span> <span class="n">y</span><span class="p">:</span> <span class="n">Int</span> <span class="o">=</span> <span class="mi">6</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+
+<span class="c1"># what it means, I declared two Immutable variables named `x` and `y`</span>
+<span class="c1"># which hold a Integer data type, of size 64-bit on Stack memory.</span>
 <span class="c1"># since, x is of type Int, which implement Int class from `int` module</span>
 <span class="c1"># I can freely use methods __xxx__ defined on int module</span>
+<span class="c1"># These __ aka &quot;double underscore -&gt; dunder -&gt; magic functions&quot; define most of primitive operations</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="fm">__bool__</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="fm">__le__</span><span class="p">)</span>
+<span class="n">TODO</span><span class="p">:::::::::::::::::::::::</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="fm">__bool__</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="fm">__le__</span><span class="p">(</span><span class="n">y</span><span class="p">))</span> <span class="c1"># same as x &lt; y</span>
 </pre></div>
 </div>
 <p>Now that we have a grasp of what a data type is and how it is represented in computer memory, let’s explore some more examples of these data types.</p>
 <ul class="simple">
 <li><p>Int</p></li>
 <li><p>Bool</p></li>
+<li><p>StringLiteral</p></li>
+<li><p>String</p></li>
 <li><p>FloatLiteral</p></li>
 <li><p>ListLiteral</p></li>
+<li><p>Dynamic Vectors</p></li>
 <li><p>Tuple</p></li>
+<li><p>Builtins</p></li>
+<li><p>Utils</p></li>
 <li><p>Slice</p></li>
+<li><p>DTYPE</p></li>
 <li><p>SIMD</p></li>
+<li><p>Python</p></li>
 </ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">TODO</span><span class="p">:::::::::::::::::::::::</span>
+<span class="n">x</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Amit Shukla&quot;</span>
+<span class="n">song</span> <span class="o">=</span> <span class="s2">&quot;what_am_i_made_of.mp3&quot;</span>
+<span class="n">movie</span> <span class="o">=</span> <span class="s2">&quot;Barbie.mp4&quot;</span>
+<span class="n">addresses</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Malibu&quot;</span><span class="p">,</span><span class="s2">&quot;Brooklyn&quot;</span><span class="p">]</span>
+<span class="n">zipcode</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;90265&quot;</span><span class="p">,</span><span class="s2">&quot;11203&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="c1">## uncomment following to see error</span>
+<span class="c1"># zipcode = (&quot;90265&quot;,&quot;11203&quot;) # errors out</span>
+<span class="c1"># addresses = [</span>
+                <span class="p">{</span><span class="s2">&quot;City&quot;</span><span class="p">:</span> <span class="s2">&quot;Malibu&quot;</span><span class="p">,</span> <span class="n">zipcode</span><span class="p">:</span> <span class="s2">&quot;90265&quot;</span><span class="p">},</span>
+                <span class="p">{</span><span class="s2">&quot;City&quot;</span><span class="p">:</span> <span class="s2">&quot;Brooklyn&quot;</span><span class="p">,</span> <span class="n">zipcode</span><span class="p">:</span> <span class="s2">&quot;11203&quot;</span><span class="p">}</span>
+                <span class="p">]</span>
+<span class="c1">## we will fix these errors later once we discuss variables</span>
+
+<span class="c1">## uncomment following to see error</span>
+<span class="c1"># x = 1</span>
+<span class="c1"># name = &quot;Amit Shukla&quot;</span>
+<span class="c1"># song = &quot;what_am_i_made_of.mp3&quot;</span>
+<span class="c1"># movie = &quot;Barbie.mp4&quot;</span>
+<span class="c1"># addresses = [&quot;Malibu&quot;,&quot;Brooklyn&quot;]</span>
+<span class="c1"># zipcode = [&quot;90265&quot;,&quot;11203&quot;]</span>
+
+<span class="c1"># print(name, song, zipcode)</span>
+
+<span class="c1">## we will fix these errors later once we discuss variables</span>
+</pre></div>
+</div>
+<section id="stringliteral-string">
+<h3>StringLiteral, String<a class="headerlink" href="#stringliteral-string" title="Permalink to this heading">#</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">TODO</span><span class="p">:::::::::::::::::::::::</span>
+<span class="n">var</span> <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Amit Shukla&quot;</span>
+<span class="n">name</span> <span class="o">=</span> <span class="mi">3</span> <span class="c1"># crash this variable to see error, it indicates, when a string variables is declared, Mojo compiler infer data type as StringLiteral</span>
+<span class="c1"># var name = &quot;Amit Shukla&quot; &lt;&lt; is equal to &gt;&gt; var name: StringLiteral = &quot;Amit Shukla&quot;</span>
+
+<span class="c1"># String Literal is different than String,</span>
+<span class="c1"># String is a pointer to heap allocated data and allows developer to store huge amount of data into it</span>
+
+<span class="c1"># In Mojo the heap allocated String isn&#39;t imported by default:</span>
+
+<span class="kn">from</span> <span class="nn">String</span> <span class="kn">import</span> <span class="n">String</span>
+<span class="n">s</span> <span class="o">=</span> <span class="n">String</span><span class="p">(</span><span class="s2">&quot;Mojo🔥&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">buffer</span>
+<span class="n">x</span> <span class="o">=</span> <span class="mi">20</span> <span class="c1"># crash this to see data type</span>
+</pre></div>
+</div>
+<p>Copied!</p>
+<p>error: Expression [17]:22:10: cannot implicitly convert ‘DynamicVector[SIMD[si8, 1]]’ value to ‘PythonObject’ in assignment
+x = s.buffer
+~^~~~~~~</p>
+<p>DynamicVector is similar to a Python list, here it’s storing multiple int8’s that represent the characters, let’s print the first character:</p>
+<p>print(s[0])</p>
+<p>Copied!</p>
+<p>The other string type is a StringLiteral, it’s written directly into the binary, when the program starts it’s loaded into read-only memory, which means it’s constant and lives for the duration of the program:</p>
+<p>var lit = “This is my StringLiteral”
+print(lit)</p>
+<p>Copied!</p>
+<p>This is my StringLiteral</p>
+<p>Force an error to see the type:</p>
+<p>lit = 20</p>
+<p>Copied!</p>
+<p>error: Expression [26]:26:11: cannot implicitly convert ‘Int’ value to ‘StringLiteral’ in assignment
+lit = 20
+^~</p>
+<p>One thing to be aware of is that an emoji is actually four bytes, so we need a slice of 4 to have it print correctly:</p>
+<p>emoji = String(”🔥😀”)
+print(“fire:”, emoji[0:4])
+print(“smiley:”, emoji[4:8])</p>
+<p>Copied!</p>
+<p>fire: 🔥
+smiley: 😀</p>
+<p>Check out Maxim Zaks Blog post</p>
+<p>for more details.</p>
+</section>
+<section id="floatliteral">
+<h3>FloatLiteral<a class="headerlink" href="#floatliteral" title="Permalink to this heading">#</a></h3>
+<p>Now lets take a look at the decimal representation:</p>
+<p>from String import ord</p>
+<p>print(ord(s[0]))</p>
+<p>Copied!</p>
+<p>77</p>
+<p>That’s the ASCII code shown in this table</p>
+<p>FloatLiteral</p>
+<p>let float: FloatLiteral = 3.3
+print(float)</p>
+<p>Copied!</p>
+<p>3.2999999999999998</p>
+<p>let f32 = Float32(float)
+print(f32)</p>
+<p>Copied!</p>
+<p>3.2999999523162842</p>
+</section>
+<section id="listliteral">
+<h3>ListLiteral<a class="headerlink" href="#listliteral" title="Permalink to this heading">#</a></h3>
+<p>ListLiteral</p>
+<p>When you initialize the list the types can be inferred, however when retrieving an item you need to provide the type as a parameter:</p>
+<p>let list: ListLiteral[Int, FloatLiteral, StringLiteral] = [1, 5.0, “Mojo🔥”]
+print(list.get<span class="xref myst">2, StringLiteral</span>)</p>
+<p>Copied!</p>
+</section>
+<section id="dynamic-vectors">
+<h3>Dynamic Vectors<a class="headerlink" href="#dynamic-vectors" title="Permalink to this heading">#</a></h3>
+<p>We can build our own string this way, we can put in 78 which is N and 79 which is O</p>
+<p>from Vector import DynamicVector</p>
+<p>let vec = DynamicVector<span class="xref myst">Int8</span></p>
+<p>vec.push_back(78)
+vec.push_back(79)</p>
+<p>Copied!</p>
+<p>We can use a StringRef to get a pointer to the same location in memory, but with the methods required to output the numbers as text:</p>
+<p>from Pointer import DTypePointer
+from DType import DType</p>
+<p>let vec_str_ref = StringRef(DTypePointer<span class="xref myst">DType.int8</span>.address, vec.size)
+print(vec_str_ref)</p>
+<p>Copied!</p>
+<p>NO</p>
+<p>Because it points to the same location in heap memory, changing the original vector will also change the value retrieved by the reference:</p>
+<p>vec[1] = 78
+print(vec_str_ref)</p>
+<p>Copied!</p>
+<p>NN</p>
+<p>Create a deep copy of the String and allocate it to the heap:</p>
+<p>from String import String
+let vec_str = String(vec_str_ref)</p>
+<p>print(vec_str)</p>
+<p>Copied!</p>
+<p>NN</p>
+<p>Now we’ve made a copy of the data to a new location in heap memory, we can modify the original and it won’t effect our copy:</p>
+<p>vec[0] = 65
+vec[1] = 65
+print(vec_str)</p>
+<p>Copied!</p>
+<p>NN</p>
+</section>
+<section id="tuple">
+<h3>Tuple<a class="headerlink" href="#tuple" title="Permalink to this heading">#</a></h3>
+<p>Tuple</p>
+<p>let tup = (1, “Mojo”, 3)
+print(tup.get<span class="xref myst">0, Int</span>)</p>
+<p>Copied!</p>
+<p>1</p>
+</section>
+</section>
+<section id="builtins">
+<h2>Builtins<a class="headerlink" href="#builtins" title="Permalink to this heading">#</a></h2>
+</section>
+<section id="utils">
+<h2>Utils<a class="headerlink" href="#utils" title="Permalink to this heading">#</a></h2>
+<p>These are all of the other builtin types not discussed which are accessible without importing anything, the type can be inferred, but are explicit here for demonstration, for example let bool: Bool = True can just be let bool = True:
+Bool</p>
+<p>Standard Bool type</p>
+<p>let bool: Bool = True
+print(bool == False)</p>
+<p>Copied!</p>
+<p>False</p>
+<p>Int</p>
+<p>Int is the same size as your architecture e.g. on a 64 bit machine it’s 64 bits</p>
+<p>let i: Int = 2
+print(i)</p>
+<p>Copied!</p>
+<p>2</p>
+<p>It can also be used as an index:</p>
+<p>var vec_2 = DynamicVector<span class="xref myst">Int</span>
+vec_2.push_back(2)
+vec_2.push_back(4)
+vec_2.push_back(6)</p>
+<p>print(vec_2[i])</p>
+<p>Copied!</p>
+<p>6</p>
+<section id="slice">
+<h3>Slice<a class="headerlink" href="#slice" title="Permalink to this heading">#</a></h3>
+<p>A slice follows the python convention of:</p>
+<p>start:end:step</p>
+<p>So for example using Python syntax:</p>
+<p>let original = String(“MojoDojo”)
+print(original[0:4])</p>
+<p>Copied!</p>
+<p>Mojo</p>
+<p>You can also represent as:</p>
+<p>let slice_expression = slice(0, 4)</p>
+<p>print(original[slice_expression])</p>
+<p>Copied!</p>
+<p>Mojo</p>
+<p>And to get every second letter:</p>
+<p>print(original[0:4:2])</p>
+<p>Copied!</p>
+<p>Mj</p>
+<p>Or:</p>
+<p>let slice_expression = slice(0, 4, 2)
+print(original[slice_expression])</p>
+<p>Copied!</p>
+<p>Mj</p>
+<p>Error</p>
+<p>The error type is very simplistic, we’ll go into more details on errors in a later chapter:</p>
+<p>def return_error():
+raise Error(“This returns an Error type”)</p>
+<p>return_error()</p>
+<p>Copied!</p>
+<p>Error: This returns an Error type</p>
+<hr class="docutils" />
 <p>Before we conclude this topic, let’s discuss the <code class="docutils literal notranslate"><span class="pre">SIMD</span></code> data type, as it is an important concept to understand.</p>
+<p>TOD::::::::::::
+SIMD stands for Single Instruction, Multiple Data, hardware now contains special registers that allow you do the same operation across a vector in a single instruction, greatly improving performance, let’s take a look:</p>
+<p>from DType import DType</p>
+<p>y = SIMD[DType.uint8, 4](1, 2, 3, 4)
+print(y)</p>
+<p>n the definition [DType.uint8, 4] are known as parameters which means they must be compile-time known, while (1, 2, 3, 4) are the arguments which can be compile-time or runtime known.</p>
+<p>For example user input or data retrieved from an API is runtime known, and so can’t be used as a parameter during the compilation process.</p>
+<p>In other languages argument and parameter often mean the same thing, in Mojo it’s a very important distinction.</p>
+<p>This is now a vector of 8 bit numbers that are packed into 32 bits, we can perform a single instruction across all of it instead of 4 separate instructions:</p>
+<p>y *= 10
+print(y)</p>
+<p>CS Fundamentals</p>
+<p>Binary is how your computer stores memory, with each bit representing a 0 or 1. Memory is typically byte addressable, meaning that each unique memory address points to one byte, which consists of 8 bits.</p>
+<p>This is how the first 4 digits in a uint8 are represented in hardware:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>1 = 00000001
+2 = 00000010
+3 = 00000011
+4 = 00000100
+</pre></div>
+</div>
+<p>Binary 1 and 0 represents ON or OFF indicating an electrical charge in the tiny circuits of your computer.</p>
+<p>Check this video
+if you want more information on binary.</p>
+<p>We’re packing the data together with SIMD on the stack so it can be passed into a SIMD register like this:</p>
+<p>00000001 00000010 00000011 00000100</p>
+<p>The SIMD register in modern CPU’s is huge, let’s see how big it is in the Mojo playground:</p>
+<p>from TargetInfo import simdbitwidth
+print(simdbitwidth())
+512</p>
+<p>That means we could pack 64 x 8bit numbers together and perform a calculation on all of it with a single instruction.</p>
+<p>You can also initialize SIMD with a single argument:</p>
+<p>z = SIMD<span class="xref myst">DType.uint8, 4</span>
+print(z)</p>
+<section id="scalars">
+<h4>Scalars:<a class="headerlink" href="#scalars" title="Permalink to this heading">#</a></h4>
+<p>Scalar just means a single value, you’ll notice in Mojo all the numerics are SIMD scalars:
+var x = UInt8(1)
+x = “will cause an error”</p>
+<p>error: Expression [14]:20:9: cannot implicitly convert ‘StringLiteral’ value to ‘SIMD[ui8, 1]’ in assignment
+x = “will cause an error”
+^~~~~~~~~~~~~~~~~~~~~</p>
+<p>UInt8 is just an alias for SIMD[DType.uint8, 1], you can see all the numeric SIMD types imported by default here</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Float16
+Float32
+Float64
+Int8
+Int16
+Int32
+Int64
+UInt8
+UInt16
+UInt32
+UInt64
+</pre></div>
+</div>
+<p>Also notice when we try and change the type it throws an error, this is because Mojo is strongly typed</p>
+<p>If we use existing Python modules, it will give us back a PythonObject that behaves the same loosely typed way as it does in Python:</p>
+<p>np = Python.import_module(“numpy”)</p>
+<p>arr = np.ndarray([5])
+print(arr)
+arr = “this will work fine”
+print(arr)</p>
+</section>
+</section>
 </section>
 <section id="struct-vs-classes">
 <h2>Struct vs classes<a class="headerlink" href="#struct-vs-classes" title="Permalink to this heading">#</a></h2>
-</section>
-<section id="other-data-types">
-<h2>Other Data Types<a class="headerlink" href="#other-data-types" title="Permalink to this heading">#</a></h2>
+<p>TODO:::
+You can build high-level abstractions for types (or “objects”) in a struct. A struct in Mojo is similar to a class in Python: they both support methods, fields, operator overloading, decorators for metaprogramming, etc. However, Mojo structs are completely static—they are bound at compile-time, so they do not allow dynamic dispatch or any runtime changes to the structure. (Mojo will also support classes in the future.)</p>
+<p>struct MyPair:
+var first: Int
+var second: Int</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>fn __init__(inout self, first: Int, second: Int):
+    self.first = first
+    self.second = second
+
+fn dump(self):
+    print(self.first, self.second)
+</pre></div>
+</div>
+<p>let mine = MyPair(2, 4)
+mine.dump()</p>
+<p>TODO::: write similar thing in Python</p>
+<p>** will discuss argument ownership in details in later section</p>
 </section>
 <section id="operators">
 <h2>Operators<a class="headerlink" href="#operators" title="Permalink to this heading">#</a></h2>
 </section>
-<section id="data-structure">
-<h2>Data Structure<a class="headerlink" href="#data-structure" title="Permalink to this heading">#</a></h2>
-<!-- 
-
-
-
-
-
-
-
-
-## Mojo as a calculator
-
-Let's start writing a simple calculator program in Python.
-
-for simple mathematical calculations, just trust Mojo REPL
-
-```{code-block}
-
-# open REPL and run following commands
-
-print(3+4)
-print(-3+4)
-print(-3**4+(4*3/5))
-
-```
-
-however, our end goal is to develop a functionality which can function as full calculator which is way beyond than simple addition and subtraction.
-hence, let's write a function instead which does the same thing,
-
-```{code-block}
-
-def myAdd():
-
-# $ cat hello.🔥
-def main():
-    print("hello world")
-    for x in range(9, 0, -3):
-        print(x)
-# $ mojo hello.🔥
-
-```
-
-However, this is still Python, it's still very nice for Mojo to run Python code but, what if I write a function which does more than simple addition, for example, it access file or directory structure in operating system. In those case, adding Type will definitely help compiler optimize this code and run it faster.
-
-## Data Type & Variables
-
-So let's start adding type definition to this function.
-
-@strict def myAdd()
-
-this is still not Mojo looking, do I will replace @strict type with fn().
-Now, this is still an overhead to compiler, but Modern Programming or any programming language is about writing many functions, Fn() deserve to be a First class object in Mojo.
-
-so let's replace @strict `def myAdd() -> fn() myAdd()`
-
-inside functional arguments, we will call these functional arguments and later chapters, we will discuss how arguments although look similar but are different than parameters.
-
-So how do we define static and dynamic variables in Mojo.
-we use Let and Var.
- Let - immutable and var = mutable.
- There is also a third type, alias = run time immutable
-
- let's see these in actions to understand the difference
-
-## Data Type
-
-Bool, Int, String, List, ....
-No DICT yet
-
-```{code-block}
-def your_function(a, b):
-    let c = a
-    # Uncomment to see an error:
-    # c = b  # error: c is immutable
-
-    if c != b:
-        let d = b
-        print(d)
-
-your_function(2, 3)
-```
-
-```{code-block}
-def your_function():
-    let x: Int = 42
-    let y: Float64 = 17.0
-
-    let z: Float32
-    if x != 0:
-        z = 1.0
-    else:
-        z = foo()
-    print(z)
-
-def foo() -> Float32:
-    return 3.14
-
-your_function()
-```
-
-```{code-block}
-struct MyPair:
-    var first: Int
-    var second: Int
-
-    # We use 'fn' instead of 'def' here - we'll explain that soon
-    fn __init__(inout self, first: Int, second: Int):
-        self.first = first
-        self.second = second
-
-    fn __lt__(self, rhs: MyPair) -> Bool:
-        return self.first < rhs.first or
-              (self.first == rhs.first and
-               self.second < rhs.second)
-```
-
-```{code-block}
-struct Complex:
-    var re: Float32
-    var im: Float32
-
-    fn __init__(inout self, x: Float32):
-        """Construct a complex number given a real number."""
-        self.re = x
-        self.im = 0.0
-
-    fn __init__(inout self, r: Float32, i: Float32):
-        """Construct a complex number given its real and imaginary components."""
-        self.re = r
-        self.im = i
-```
-
-## about Struct
-
-Now, from the application programming perspective, we want to create a professional grade calculator, with end goal in mind that someday it will be a scientific calculator and let;s hope that some day, will even solve partial differential equations or could evolve into a complex system, which spits out results thrown any mathematical equation.
-
-This is a lot to ask for, but let's just start somewhere and build a system which does more than one simple calculation. -->
+<section id="simple-mathematics">
+<h2>Simple Mathematics<a class="headerlink" href="#simple-mathematics" title="Permalink to this heading">#</a></h2>
 </section>
 </section>
 
@@ -731,7 +930,7 @@ This is a lot to ask for, but let's just start somewhere and build a system whic
               
               
                 <footer class="prev-next-footer">
-                  <!-- Previous / next buttons -->
+                  
 <div class="prev-next-area">
     <a class="left-prev"
        href="gettingstarted.html"
@@ -775,11 +974,25 @@ This is a lot to ask for, but let's just start somewhere and build a system whic
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variables-and-constants">Variables and Constants</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#standard-data-types">Standard Data Types</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#standard-data-types">Standard Data Types</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stringliteral-string">StringLiteral, String</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#floatliteral">FloatLiteral</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#listliteral">ListLiteral</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dynamic-vectors">Dynamic Vectors</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tuple">Tuple</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#builtins">Builtins</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#utils">Utils</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#slice">Slice</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#scalars">Scalars:</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#struct-vs-classes">Struct vs classes</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#other-data-types">Other Data Types</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operators">Operators</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-structure">Data Structure</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-mathematics">Simple Mathematics</a></li>
 </ul>
   </nav></div>
 
@@ -801,6 +1014,7 @@ By Amit Shukla
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
       © Copyright 2022.
@@ -827,8 +1041,8 @@ By Amit Shukla
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=ac02cc09edc035673794"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794"></script>
+  <script src="_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
 
   <footer class="bd-footer">
   </footer>

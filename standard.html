@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Arrays, Lists &amp; Comprehension &#8212; The Mojo Programming Language book</title>
+    <title>Standard Library &#8212; The Mojo Programming Language book</title>
   
   
   
@@ -62,11 +62,10 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'comprehension';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'standard';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="MLIR" href="MLIR.html" />
-    <link rel="prev" title="OOPs concepts in Mojo" href="oops.html" />
+    <link rel="prev" title="Meta Programming" href="metaprogramming.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -179,12 +178,12 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="usingpython.html">using Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="traits.html">Traits</a></li>
 <li class="toctree-l1"><a class="reference internal" href="oops.html">OOPs concepts in Mojo</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Arrays, Lists &amp; Comprehension</a></li>
+<li class="toctree-l1"><a class="reference internal" href="comprehension.html">Arrays, Lists &amp; Comprehension</a></li>
 <li class="toctree-l1"><a class="reference internal" href="MLIR.html">MLIR</a></li>
 <li class="toctree-l1"><a class="reference internal" href="parallel.html">Parallelization</a></li>
 <li class="toctree-l1"><a class="reference internal" href="thinkinginmojo.html">Thinking in Mojo</a></li>
 <li class="toctree-l1"><a class="reference internal" href="metaprogramming.html">Meta Programming</a></li>
-<li class="toctree-l1"><a class="reference internal" href="standard.html">Standard Library</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Standard Library</a></li>
 </ul>
 
     </div>
@@ -256,7 +255,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/AmitXShukla/mojo/issues/new?title=Issue%20on%20page%20%2Fcomprehension.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/AmitXShukla/mojo/issues/new?title=Issue%20on%20page%20%2Fstandard.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -286,7 +285,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="_sources/comprehension.md" target="_blank"
+      <li><a href="_sources/standard.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -370,7 +369,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Arrays, Lists & Comprehension</h1>
+    <h1>Standard Library</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -392,12 +391,12 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="arrays-lists-comprehension">
-<h1>Arrays, Lists &amp; Comprehension<a class="headerlink" href="#arrays-lists-comprehension" title="Permalink to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="standard-library">
+<h1>Standard Library<a class="headerlink" href="#standard-library" title="Permalink to this heading">#</a></h1>
 <p>A Comprehensive Guide to Mojo programming language with Real-Life Data, Transforming Beginners into Professionals.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p><strong>WIP</strong>: This section is work in progress.</p>
+<p><strong>WIP</strong></p>
 </div>
 <section id="author-amit-shukla">
 <h2>Author: Amit Shukla<a class="headerlink" href="#author-amit-shukla" title="Permalink to this heading">#</a></h2>
@@ -409,6 +408,150 @@ document.write(`
 <a class="reference external" href="https://github.com/AmitXShukla">GitHub</a>
 <a class="reference external" href="https://medium.com/&#64;Amit-Shukla">Medium</a></p>
 </div>
+<!-- @value
+
+Generates boilerplate for a struct, for example on this struct with nothing implemented:
+Generates boilerplate for a struct, for example on this struct with nothing implemented:
+
+struct Pair:
+    var x: Int
+    var y: Int
+
+Copied!
+
+We can't initialize the struct:
+
+let pair = Pair(5, 10)
+
+Copied!
+
+error: Expression [2]:16:20: 'Pair' does not implement any '__init__' methods in 'let' initializer
+    let pair = Pair(5, 10)
+               ~~~~^~~~~~~
+
+Until we implement __init__:
+
+struct Pair:
+    var x: Int
+    var y: Int
+
+    fn __init__(inout self: Pair, x: Int, y: Int):
+        self.x = x
+        self.y = y
+
+Copied!
+
+let pair = Pair(5, 10)
+print(pair.x)
+
+Copied!
+
+5
+
+But now we can't copy or move it:
+
+let pair2 = pair
+
+Copied!
+
+error: Expression [5]:16:17: value of type 'Pair' cannot be copied into its destination
+    let pair2 = pair
+                ^~~~
+
+let pair2 = pair^
+
+Copied!
+
+error: Expression [16]:18:21: value of type 'Pair' cannot be copied into its destination
+    let pair2 = pair^
+                    ^
+
+error: Expression [16]:18:21: expression does not designate a value with a lifetime
+    let pair2 = pair^
+                    ^
+
+Until we implement __moveinit__ and __copyinit__:
+
+struct Pair:
+    var x: Int
+    var y: Int
+
+    fn __init__(inout self, x: Int, y: Int):
+        print("Running init")
+        self.x = x
+        self.y = y
+
+    fn __moveinit__(inout self, owned existing: Self):
+        print("Running move init")
+        self.x = existing.x
+        self.y = existing.x
+
+    fn __copyinit__(inout self, existing: Self):
+        print("Running copy init")
+        self.x = existing.x
+        self.y = existing.y
+
+Copied!
+
+let pair = Pair(5, 10)
+
+# Move object
+let pair2 = pair^
+
+# Copy object
+let pair3 = pair2
+
+Copied!
+
+Running init
+Running move init
+Running copy init
+
+To generate all that boilerplate for our members you can annotate with @value:
+
+@value
+struct Pair:
+    var x: Int
+    var y: Int
+
+Copied!
+
+20
+5
+
+And use it as normal:
+
+let pair = Pair(5, 10)
+
+# Move object
+var pair2 = pair^
+# Copy object
+let pair3 = pair2
+# Edit original
+pair2.x = 20
+
+# Print both the original and copy
+print(pair2.x)
+print(pair3.x)
+
+Copied!
+
+20
+5
+
+----------
+ @parameter
+
+
+fn add_print[a: Int, b: Int](): 
+    @parameter
+    fn add[a: Int, b: Int]() -> Int:
+        return a + b
+
+    let x = add[a, b]()
+    print(x)
+
+add_print[5, 10]() -->
 </section>
 </section>
 
@@ -443,22 +586,13 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="oops.html"
+       href="metaprogramming.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">OOPs concepts in Mojo</p>
+        <p class="prev-next-title">Meta Programming</p>
       </div>
-    </a>
-    <a class="right-next"
-       href="MLIR.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">MLIR</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                 </footer>

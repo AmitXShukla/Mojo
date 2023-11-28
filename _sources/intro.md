@@ -3,7 +3,7 @@
 A Comprehensive Guide to Mojo programming language with Real-Life Data, Transforming Beginners into Professionals.
 
 :::{warning}
-*This is a `work in progress` repository and `updated frequently`, please follow me at [Twitter](https://twitter.com/ashuklax), Subscribe to my [YouTube channel](https://youtube.com/@Amit.Shukla) to see latest updates.*. Please give a star * to this repository.
+*This is a `work in progress` repository and `updated frequently`, please follow me at [Twitter](https://twitter.com/ashuklax), Subscribe to my [YouTube channel](https://youtube.com/@Amit.Shukla) to see latest updates.*. Please give a star * to this [repository](https://github.com/AmitXShukla/Mojo).
 :::
 
 ## Author: Amit Shukla
@@ -19,14 +19,14 @@ A Comprehensive Guide to Mojo programming language with Real-Life Data, Transfor
 
 **Download PDF** version of this notebook
 
-[The Mojo Programming Language Book Video Tutorials! ](https://www.youtube.com/playlist?list=PLp0TENYyY8lGXcxf7wbsjAJ2paEAuiLtA)
+[The Mojo Programming Language Book Video Tutorials!](https://www.youtube.com/playlist?list=PLp0TENYyY8lGXcxf7wbsjAJ2paEAuiLtA)
 
 ## Table of contents
 
 ```{tableofcontents}
 ```
 
-- what is MLIR anyway
+<!-- - what is MLIR anyway
 - Data Analysis
 - Data Visualization
 - Data Mining
@@ -36,7 +36,7 @@ A Comprehensive Guide to Mojo programming language with Real-Life Data, Transfor
 - Model Train, Test
 - Deployment
 - Hardware testing
-- Deployment
+- Deployment -->
 
 ## About Author
 
@@ -53,11 +53,11 @@ My goal is to enable the seamless deployment of my research code into production
 
 ### Objective
 
-We'll gain expertise in the essential techniques of employing the Mojo Programming language to handle real-life scenarios. This knowledge is vital for the preparation of finance and supply chain data for advanced analytics, visualization, and predictive modeling through neural networks, machine learning models, training, testing and deployment.
+We'll gain expertise in the essential techniques of employing the Mojo Programming language to handle real-life scenarios. This knowledge is vital for the preparation of advanced analytics, visualization, and predictive modeling through neural networks, machine learning models, training, testing and deployment.
 
 ### Subject
 
-It's important to note that this particular series will concentrate solely on using Mojo as one AI language to solve a real life AI problem.
+It's important to note that this particular series will concentrate solely learning Mojo fundamentals as one AI language.
 
 ### Following
 

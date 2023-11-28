@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=ac02cc09edc035673794" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -38,9 +38,9 @@
     <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=ac02cc09edc035673794" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794" />
-  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=ac02cc09edc035673794"></script>
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
@@ -65,7 +65,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'usingpython';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Thinking in Mojo" href="thinkinginmojo.html" />
+    <link rel="next" title="Traits" href="traits.html" />
     <link rel="prev" title="Module and Packages" href="packages.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -139,9 +139,11 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
   
 
 <a class="navbar-brand logo" href="intro.html">
+  
   
   
   
@@ -151,8 +153,8 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="_static/logo.png" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="_static/logo.png" class="logo__image only-light" alt="The Mojo Programming Language book - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="The Mojo Programming Language book - Home"/>`);</script>
   
   
 </a></div>
@@ -169,14 +171,20 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="whymojo.html">Why Mojo</a></li>
 <li class="toctree-l1"><a class="reference internal" href="gettingstarted.html">Getting started</a></li>
-<li class="toctree-l1"><a class="reference internal" href="datastructure.html">Variables and Data Structure</a></li>
-<li class="toctree-l1"><a class="reference internal" href="functions.html">Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datatype.html">Data Types, Variables, Operators</a></li>
 <li class="toctree-l1"><a class="reference internal" href="controlflow.html">Loops &amp; Control Flow</a></li>
-<li class="toctree-l1"><a class="reference internal" href="comprehension.html">Arrays, Lists and Comprehension</a></li>
+<li class="toctree-l1"><a class="reference internal" href="functions.html">Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datastructure.html">Building Data Structure</a></li>
 <li class="toctree-l1"><a class="reference internal" href="packages.html">Module and Packages</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">using Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="thinkinginmojo.html">Thinking in Mojo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="traits.html">Traits</a></li>
 <li class="toctree-l1"><a class="reference internal" href="oops.html">OOPs concepts in Mojo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="comprehension.html">Arrays, Lists &amp; Comprehension</a></li>
+<li class="toctree-l1"><a class="reference internal" href="MLIR.html">MLIR</a></li>
+<li class="toctree-l1"><a class="reference internal" href="parallel.html">Parallelization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="thinkinginmojo.html">Thinking in Mojo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="metaprogramming.html">Meta Programming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="standard.html">Standard Library</a></li>
 </ul>
 
     </div>
@@ -330,6 +338,7 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
@@ -339,6 +348,7 @@ document.write(`
   </button>
 `);
 </script>
+
 
 <script>
 document.write(`
@@ -499,6 +509,139 @@ document.write(`
 <span class="nb">print</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
 </pre></div>
 </div>
+<!-- 
+PythonObject
+
+Let's start by running code through the Python interpreter from Mojo to get a PythonObject
+
+back:
+
+x = Python.evaluate('5 + 10')
+print(x)
+
+Copied!
+
+15
+
+x is represented in memory the same way as if we ran this in Python:
+
+%%python
+x = 5 + 10
+print(x)
+
+Copied!
+
+15
+
+in the Mojo playground, using %%python at the top of a cell will run code through Python instead of Mojo
+
+x is actually a pointer to heap allocated memory.
+
+CS Fundamentals
+
+stack and heap memory are really important concepts to understand, this YouTube video
+
+does a fantastic job of explaining it visually.
+
+If the video doesn't make sense, for now you can use the mental model that:
+
+    stack memory is very fast but small, the size of the values are static and can't change at runtime
+    pointer is an address to lookup the value somewhere else in memory
+    heap memory is huge and the size can change at runtime, but needs a pointer to access the data which is relatively slow
+
+These concepts will make more sense over time
+
+You can access all the Python keywords by importing builtins:
+
+let py = Python.import_module("builtins")
+
+py.print("this uses the python print keyword")
+
+Copied!
+
+this uses the python print keyword
+
+We can now use the type builtin from Python to see what the dynamic type of x is:
+
+py.print(py.type(x))
+
+Copied!
+
+<class 'int'>
+
+We can read the address that is stored in x on the stack using the Python builtin id
+
+py.print(py.id(x))
+
+Copied!
+
+139732464847136
+
+This is pointing to a C object in Python, and Mojo behaves the same when using a PythonObject, accessing the value actually uses the address to lookup the data on the heap which comes with a performance cost.
+
+This is a simplified representation of how the C Object being pointed to would look if it were a Python dict:
+
+%%python
+heap = {
+    44601345678945: {
+        "type": "int",
+        "ref_count": 1,
+        "size": 1,
+        "digit": 8,
+        #...
+    }
+    #...
+}
+
+Copied!
+
+On the stack the simplified representation of x would look like this:
+
+%%python
+[
+    { "frame": "main", "variables": { "x": 44601345678945 } }
+]
+
+Copied!
+
+x contains an address that is pointing to the heap object
+
+In Python we can change the type dynamically:
+
+x = "mojo"
+
+Copied!
+
+The object in C will change its representation:
+
+%%python
+heap = {
+    44601345678945 : {
+        "type": "string",
+        "ref_count": 1,
+        "size": 4,
+        "ascii": True,
+        # utf-8 / ascii for "mojo"
+        "value": [109, 111, 106, 111]
+        # ...
+    }
+}
+
+Copied!
+
+Mojo also allows us to do this when the type is a PythonObject, it works the exact same way as it would in a Python program.
+
+This allows the runtime to do nice convenient things for us
+
+    once the ref_count goes to zero it will be de-allocated from the heap during garbage collection, so the OS can use that memory for something else
+    an integer can grow beyond 64 bits by increasing size
+    we can dynamically change the type
+    the data can be large or small, we don't have to think about when we should allocate to the heap
+
+However this also comes with a penalty, there is a lot of extra memory being used for the extra fields, and it takes CPU instructions to allocate the data, retrieve it, garbage collect etc.
+
+In Mojo we can remove all that overhead:
+Mojo 🔥 -->
 </section>
 
     <script type="text/x-thebe-config">
@@ -529,7 +672,7 @@ document.write(`
               
               
                 <footer class="prev-next-footer">
-                  <!-- Previous / next buttons -->
+                  
 <div class="prev-next-area">
     <a class="left-prev"
        href="packages.html"
@@ -541,11 +684,11 @@ document.write(`
       </div>
     </a>
     <a class="right-next"
-       href="thinkinginmojo.html"
+       href="traits.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Thinking in Mojo</p>
+        <p class="prev-next-title">Traits</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -572,6 +715,7 @@ By Amit Shukla
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
       © Copyright 2022.
@@ -598,8 +742,8 @@ By Amit Shukla
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=ac02cc09edc035673794"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794"></script>
+  <script src="_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
 
   <footer class="bd-footer">
   </footer>

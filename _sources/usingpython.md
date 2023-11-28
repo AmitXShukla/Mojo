@@ -137,3 +137,136 @@ image_path = "../downloads/image_to_read.png"
 text = read_image_text(image_path)
 print(text)
 ```
+<!-- 
+PythonObject
+
+Let's start by running code through the Python interpreter from Mojo to get a PythonObject
+
+back:
+
+x = Python.evaluate('5 + 10')
+print(x)
+
+Copied!
+
+15
+
+x is represented in memory the same way as if we ran this in Python:
+
+%%python
+x = 5 + 10
+print(x)
+
+Copied!
+
+15
+
+in the Mojo playground, using %%python at the top of a cell will run code through Python instead of Mojo
+
+x is actually a pointer to heap allocated memory.
+
+CS Fundamentals
+
+stack and heap memory are really important concepts to understand, this YouTube video
+
+does a fantastic job of explaining it visually.
+
+If the video doesn't make sense, for now you can use the mental model that:
+
+    stack memory is very fast but small, the size of the values are static and can't change at runtime
+    pointer is an address to lookup the value somewhere else in memory
+    heap memory is huge and the size can change at runtime, but needs a pointer to access the data which is relatively slow
+
+These concepts will make more sense over time
+
+You can access all the Python keywords by importing builtins:
+
+let py = Python.import_module("builtins")
+
+py.print("this uses the python print keyword")
+
+Copied!
+
+this uses the python print keyword
+
+We can now use the type builtin from Python to see what the dynamic type of x is:
+
+py.print(py.type(x))
+
+Copied!
+
+<class 'int'>
+
+We can read the address that is stored in x on the stack using the Python builtin id
+
+py.print(py.id(x))
+
+Copied!
+
+139732464847136
+
+This is pointing to a C object in Python, and Mojo behaves the same when using a PythonObject, accessing the value actually uses the address to lookup the data on the heap which comes with a performance cost.
+
+This is a simplified representation of how the C Object being pointed to would look if it were a Python dict:
+
+%%python
+heap = {
+    44601345678945: {
+        "type": "int",
+        "ref_count": 1,
+        "size": 1,
+        "digit": 8,
+        #...
+    }
+    #...
+}
+
+Copied!
+
+On the stack the simplified representation of x would look like this:
+
+%%python
+[
+    { "frame": "main", "variables": { "x": 44601345678945 } }
+]
+
+Copied!
+
+x contains an address that is pointing to the heap object
+
+In Python we can change the type dynamically:
+
+x = "mojo"
+
+Copied!
+
+The object in C will change its representation:
+
+%%python
+heap = {
+    44601345678945 : {
+        "type": "string",
+        "ref_count": 1,
+        "size": 4,
+        "ascii": True,
+        # utf-8 / ascii for "mojo"
+        "value": [109, 111, 106, 111]
+        # ...
+    }
+}
+
+Copied!
+
+Mojo also allows us to do this when the type is a PythonObject, it works the exact same way as it would in a Python program.
+
+This allows the runtime to do nice convenient things for us
+
+    once the ref_count goes to zero it will be de-allocated from the heap during garbage collection, so the OS can use that memory for something else
+    an integer can grow beyond 64 bits by increasing size
+    we can dynamically change the type
+    the data can be large or small, we don't have to think about when we should allocate to the heap
+
+However this also comes with a penalty, there is a lot of extra memory being used for the extra fields, and it takes CPU instructions to allocate the data, retrieve it, garbage collect etc.
+
+In Mojo we can remove all that overhead:
+Mojo 🔥 -->

@@ -1,4 +1,4 @@
-# Meta Programming
+# Standard Library
 
 A Comprehensive Guide to Mojo programming language with Real-Life Data, Transforming Beginners into Professionals.
 

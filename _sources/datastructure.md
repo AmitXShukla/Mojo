@@ -1,4 +1,4 @@
-# Data Structure
+# Building Data Structure
 
 It's essential to start with the fundamentals. So, let's kick things off by learning Mojo's data types and data structures.
 

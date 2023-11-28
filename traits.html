@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Arrays, Lists &amp; Comprehension &#8212; The Mojo Programming Language book</title>
+    <title>Traits &#8212; The Mojo Programming Language book</title>
   
   
   
@@ -62,11 +62,11 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'comprehension';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'traits';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="MLIR" href="MLIR.html" />
-    <link rel="prev" title="OOPs concepts in Mojo" href="oops.html" />
+    <link rel="next" title="OOPs concepts in Mojo" href="oops.html" />
+    <link rel="prev" title="using Python" href="usingpython.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -177,9 +177,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="datastructure.html">Building Data Structure</a></li>
 <li class="toctree-l1"><a class="reference internal" href="packages.html">Module and Packages</a></li>
 <li class="toctree-l1"><a class="reference internal" href="usingpython.html">using Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="traits.html">Traits</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Traits</a></li>
 <li class="toctree-l1"><a class="reference internal" href="oops.html">OOPs concepts in Mojo</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Arrays, Lists &amp; Comprehension</a></li>
+<li class="toctree-l1"><a class="reference internal" href="comprehension.html">Arrays, Lists &amp; Comprehension</a></li>
 <li class="toctree-l1"><a class="reference internal" href="MLIR.html">MLIR</a></li>
 <li class="toctree-l1"><a class="reference internal" href="parallel.html">Parallelization</a></li>
 <li class="toctree-l1"><a class="reference internal" href="thinkinginmojo.html">Thinking in Mojo</a></li>
@@ -256,7 +256,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/AmitXShukla/mojo/issues/new?title=Issue%20on%20page%20%2Fcomprehension.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/AmitXShukla/mojo/issues/new?title=Issue%20on%20page%20%2Ftraits.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -286,7 +286,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="_sources/comprehension.md" target="_blank"
+      <li><a href="_sources/traits.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -370,7 +370,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Arrays, Lists & Comprehension</h1>
+    <h1>Traits</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -380,7 +380,9 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#author-amit-shukla">Author: Amit Shukla</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oops">OOPs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#duck-typing">duck typing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-a-trait">What is a trait</a></li>
 </ul>
             </nav>
         </div>
@@ -392,23 +394,102 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="arrays-lists-comprehension">
-<h1>Arrays, Lists &amp; Comprehension<a class="headerlink" href="#arrays-lists-comprehension" title="Permalink to this heading">#</a></h1>
-<p>A Comprehensive Guide to Mojo programming language with Real-Life Data, Transforming Beginners into Professionals.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="traits">
+<h1>Traits<a class="headerlink" href="#traits" title="Permalink to this heading">#</a></h1>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p><strong>WIP</strong>: This section is work in progress.</p>
+<p><strong>WIP</strong>: This is a work in progress. Mojo Traits are eagerly awaited feature.</p>
 </div>
-<section id="author-amit-shukla">
-<h2>Author: Amit Shukla<a class="headerlink" href="#author-amit-shukla" title="Permalink to this heading">#</a></h2>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>connect with me
-<a class="reference external" href="https://youtube.com/&#64;Amit.Shukla">YouTube</a>
-<a class="reference external" href="https://x.com/ashuklax">X</a>
-<a class="reference external" href="https://github.com/AmitXShukla">GitHub</a>
-<a class="reference external" href="https://medium.com/&#64;Amit-Shukla">Medium</a></p>
+<section id="oops">
+<h2>OOPs<a class="headerlink" href="#oops" title="Permalink to this heading">#</a></h2>
+<p>Object oriented programming concepts are well suited for programs that are large, complex and actively updated. OOPs concepts help developer create reusable code in form of classes that are designed around data or objects, methods and attributes rather than functions and logic.</p>
+<p>Let’s see an example of OOPs classes.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Vehicle</span>
+<span class="k">class</span> <span class="nc">fourWheal</span>
+<span class="k">class</span> <span class="nc">twoWheal</span>
+<span class="k">class</span> <span class="nc">boats</span>
+</pre></div>
 </div>
+<p>While above code works fine, Wouldn’t it be nicer, if developer can just create methods outside of classes, which are more object’s behavior based instead of it’s specific type of class. That way, developers don’t need to worry about inheritance and freely/mix-in shared behavioral methods across Classes.</p>
+<p>Developers can write generic methods/functions that describe the generic behavior of a vehicle and apply them to objects when appropriate. This approach promotes code reusability and flexibility, as objects can be treated interchangeably based on their behavior rather than their specific type or class.</p>
+<p>This is referred as <strong>duck typing</strong>.</p>
+<p>By leveraging duck typing, developers can write generic methods/functions that describe the generic behavior of a vehicle and apply them to objects when appropriate. This approach promotes code reusability and flexibility, as objects can be treated interchangeably based on their behavior rather than their specific type or class.</p>
+</section>
+<section id="duck-typing">
+<h2>duck typing<a class="headerlink" href="#duck-typing" title="Permalink to this heading">#</a></h2>
+<p>The duck typing concept is a programming approach that focuses on an object’s behavior rather than its specific type or class. It is based on the idea that “if it walks like a duck and quacks like a duck, then it must be a duck.”</p>
+<p>In duck typing, the suitability of an object for a particular operation is determined by whether the object supports the required methods or behaviors, rather than by its explicit type or inheritance hierarchy. This means that as long as an object behaves like the expected type (i.e., it has the necessary methods or properties), it can be treated as that type, regardless of its actual class or type declaration.</p>
+<p>Duck typing is commonly associated with dynamically typed languages, where type checking is done at runtime.</p>
+<p>Python is a dynamically typed language that embraces the concept of duck typing. In Python, the suitability of an object for a particular operation is determined by whether the object supports the required methods or behaviors, rather than by its explicit type or class.</p>
+<p>Python’s duck typing philosophy is encapsulated in the saying, “If it walks like a duck and quacks like a duck, then it must be a duck.” This means that as long as an object behaves like the expected type (i.e., it has the necessary methods or properties), it can be treated as that type, regardless of its actual class or type declaration.</p>
+<p>However, it’s important to note that Python also supports explicit type annotations and static type checking through tools like MyPy. While duck typing is a common practice in Python, it is not enforced by the language itself, and developers have the flexibility to choose between dynamic typing and static typing approaches based on their needs</p>
+<p>– duck typing in python</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Duck</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">quack</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Quack!&quot;</span><span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">Dog</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">bark</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Woof!&quot;</span><span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">Car</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">honk</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Beep!&quot;</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">make_sound</span><span class="p">(</span><span class="n">animal</span><span class="p">):</span>
+    <span class="n">animal</span><span class="o">.</span><span class="n">quack</span><span class="p">()</span>  <span class="c1"># The object is treated as a duck as long as it has a &quot;quack&quot; method</span>
+
+<span class="n">duck</span> <span class="o">=</span> <span class="n">Duck</span><span class="p">()</span>
+<span class="n">dog</span> <span class="o">=</span> <span class="n">Dog</span><span class="p">()</span>
+<span class="n">car</span> <span class="o">=</span> <span class="n">Car</span><span class="p">()</span>
+
+<span class="n">make_sound</span><span class="p">(</span><span class="n">duck</span><span class="p">)</span>  <span class="c1"># Output: Quack!</span>
+<span class="n">make_sound</span><span class="p">(</span><span class="n">dog</span><span class="p">)</span>   <span class="c1"># Raises an AttributeError since the &quot;Dog&quot; class does not have a &quot;quack&quot; method</span>
+<span class="n">make_sound</span><span class="p">(</span><span class="n">car</span><span class="p">)</span>   <span class="c1"># Raises an AttributeError since the &quot;Car&quot; class does not have a &quot;quack&quot; method</span>
+</pre></div>
+</div>
+<p>In this example, we have three different classes: Duck, Dog, and Car. Each class has its own unique method (quack, bark, and honk, respectively). The make_sound function takes an object as an argument and calls the quack method on it.</p>
+<p>Even though the make_sound function expects an object with a quack method, it doesn’t explicitly check the type of the object. Instead, it relies on duck typing. As long as the object passed to make_sound has a quack method, it can be treated as a duck and the quack method will be called successfully.</p>
+<p>In this way, duck typing allows different objects to be used interchangeably based on their behavior rather than their explicit type.</p>
+<p>–
+does python has traits:</p>
+<p>Python does not have built-in support for traits as a language feature. However, there are ways to achieve similar functionality in Python through other means.</p>
+<p>One common approach in Python is to use multiple inheritance and mixins to achieve trait-like behavior. By creating classes that define specific sets of methods or behaviors and then inheriting from or mixing in those classes, you can effectively share and reuse code across multiple classes.</p>
+<p>Here’s an example of using multiple inheritance and mixins to achieve trait-like behavior in Python:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">TraitA</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">method_a</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Trait A method&quot;</span><span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">TraitB</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">method_b</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Trait B method&quot;</span><span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">MyClass</span><span class="p">(</span><span class="n">TraitA</span><span class="p">,</span> <span class="n">TraitB</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">my_method</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;MyClass method&quot;</span><span class="p">)</span>
+
+<span class="n">obj</span> <span class="o">=</span> <span class="n">MyClass</span><span class="p">()</span>
+<span class="n">obj</span><span class="o">.</span><span class="n">method_a</span><span class="p">()</span>  <span class="c1"># Output: Trait A method</span>
+<span class="n">obj</span><span class="o">.</span><span class="n">method_b</span><span class="p">()</span>  <span class="c1"># Output: Trait B method</span>
+<span class="n">obj</span><span class="o">.</span><span class="n">my_method</span><span class="p">()</span> <span class="c1"># Output: MyClass method</span>
+</pre></div>
+</div>
+<p>In this example, TraitA and TraitB define specific sets of methods (method_a and method_b, respectively). The MyClass class inherits from both TraitA and TraitB, effectively combining the behaviors defined in those traits. The MyClass class also defines its own method (my_method).</p>
+<p>By using multiple inheritance and mixins, you can achieve code reuse and composition similar to traits in other statically typed languages. However, it’s important to note that this approach in Python is not enforced by the language itself and relies on developer discipline to properly use and manage the mixin classes.</p>
+</section>
+<section id="what-is-a-trait">
+<h2>What is a trait<a class="headerlink" href="#what-is-a-trait" title="Permalink to this heading">#</a></h2>
+<p>so, Duck Typing == Traits
+<strong>Not at all.</strong>. It’s important to know the difference and implementation, so that developer can enjoy both <code class="docutils literal notranslate"><span class="pre">Python</span></code>’s duck typing and <code class="docutils literal notranslate"><span class="pre">Mojo</span> <span class="pre">Trait</span></code>.</p>
+<p>While both traits and duck typing involve considering object behavior, traits are a specific language feature that enables code reuse and composition, while duck typing is a broader programming approach that focuses on behavior rather than type.</p>
+<p>Traits are a language feature or construct that defines a set of methods or behaviors that can be shared among multiple classes or objects. Traits provide a way to define reusable code that can be mixed into different classes, allowing them to inherit or implement the defined behaviors. Traits are typically used in statically typed languages to achieve code reuse and composition without relying on traditional inheritance.</p>
+<p>In dynamically typed languages, duck typing is often used to achieve similar goals as traits in statically typed languages. However, the implementation and usage may differ. Duck typing in dynamically typed languages allows objects to be treated as a certain type based on their behavior, while traits in statically typed languages provide a way to define and share behaviors among classes.</p>
+<hr class="docutils" />
+<p>Traits are a language feature or construct in programming languages that define a set of methods or behaviors that can be shared among multiple classes or objects. They provide a way to define reusable code that can be mixed into different classes, allowing them to inherit or implement the defined behaviors.</p>
+<p>Traits are typically used in statically typed languages to achieve code reuse and composition without relying on traditional inheritance. They offer an alternative to single inheritance by allowing classes to inherit or implement multiple traits, thereby combining the behaviors defined in those traits.</p>
+<p>Traits provide a mechanism for defining and enforcing a contract for behavior that can be shared among classes. They encapsulate a set of methods or behaviors that can be reused across different classes, promoting code reuse and modularity. By mixing in traits, classes can inherit or implement the behaviors defined in those traits, extending their functionality without the need for complex inheritance hierarchies.</p>
+<p>Traits are often used to address the limitations of single inheritance and to achieve greater flexibility and modularity in code. They allow for the composition of behaviors from multiple sources, enabling more flexible and reusable code design.</p>
+<p>It’s important to note that the specific implementation and syntax of traits may vary depending on the programming language. Some languages have built-in support for traits, while others may provide similar functionality through interfaces, mixins, or other language constructs.</p>
 </section>
 </section>
 
@@ -443,20 +524,20 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="oops.html"
+       href="usingpython.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">OOPs concepts in Mojo</p>
+        <p class="prev-next-title">using Python</p>
       </div>
     </a>
     <a class="right-next"
-       href="MLIR.html"
+       href="oops.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">MLIR</p>
+        <p class="prev-next-title">OOPs concepts in Mojo</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -475,7 +556,9 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#author-amit-shukla">Author: Amit Shukla</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oops">OOPs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#duck-typing">duck typing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-a-trait">What is a trait</a></li>
 </ul>
   </nav></div>
 

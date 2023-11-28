@@ -1,9 +1,9 @@
-# Arrays, Lists & Comprehension
+# Parallelization
 
 A Comprehensive Guide to Mojo programming language with Real-Life Data, Transforming Beginners into Professionals.
 
 :::{warning}
-**WIP**: This section is work in progress.
+**WIP**
 :::
 
 ## Author: Amit Shukla
