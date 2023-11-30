@@ -7,6 +7,10 @@ __pycache__/
 *.so
 
 # Distribution / packaging
+share/
+include/
+Scripts/
+pyvenv.cfg
 .Python
 build/
 _build/
