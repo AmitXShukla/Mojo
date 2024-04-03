@@ -2,13 +2,13 @@
 
 "Python is a slow scripting programming language."
 
-I really love Python, and it frustrates me when people say it's slow. It's not the language itself that's slow; it's the way people write their code. If you write code poorly, it will be slow.
+I really love Python, it frustrates me when people say it’s slow and tag it as scripting language. It’s not the language itself that’s slow; it’s the way people write their code. If you write code poorly, it will be slow. `Mojo` will not fix it.
 
-Many smart people claim that Python is slow, not suitable for large-scale applications, not good for system-level programming, and not well-optimized for production use, among other things. I believed these experts and switched to Julia, which is undoubtedly excellent for AI, Math, Numerical and Scientific computing.
+Many smart people claim that Python is slow, not suitable for large-scale applications, not good for system-level programming, and not well-optimized for production use, among other things.
 
-I am very much in love with Julia Language, it brings me close to metal.
+I believed industry experts and switched to Julia, which is undoubtedly excellent for AI, Math, Numerical and Scientific computing. I am still very much in love with Julia Language, it brings me close to metal.
 
-Throughout the book, I won't get into debates about Python, Julia, C, Mojo's speed or whether one language is better than another. Plenty has already been said on this topic, and I'll leave those discussions to the experts and industry leaders.
+Throughout the book, I won’t get into debates about Python, Rust, Julia, C, Mojo’s speed or whether one language is better than another. Plenty has already been said on this topic, and I’ll leave those discussions to the experts and industry leaders.
 
 My primary motivation for transitioning to Modular | Mojo is simple: it acts as a bridge between research and production, blending Python's user-friendly syntax with systems programming and meta programming capabilities. Period.
 

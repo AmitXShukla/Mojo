@@ -11,12 +11,15 @@ chapters:
 - file: functions # fix now
 - file: datastructure # fix now
 - file: packages # fix now
-- file: comprehension # fix now
 - file: usingpython
+- file: traits
+- file: oops
 - file: metaprogramming
 - file: MLIR
 - file: thinkinginmojo
-- file: oops
+- file: comprehension # fix now
+- file: parallel # fix now
+- file: standard # fix now
 
 #TODO-WAIT: getting started: update windows installation instructions
 #TODO-WAIT: functions: till **kwargs are live

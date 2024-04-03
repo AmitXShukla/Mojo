@@ -19,7 +19,7 @@ A Comprehensive Guide to Mojo programming language with Real-Life Data, Transfor
 
 **Download PDF** version of this notebook
 
-[The Mojo Programming Language Book Video Tutorials! ](https://www.youtube.com/playlist?list=PLp0TENYyY8lGXcxf7wbsjAJ2paEAuiLtA)
+[The Mojo Programming Language Book Video Tutorials!](https://www.youtube.com/playlist?list=PLp0TENYyY8lGXcxf7wbsjAJ2paEAuiLtA)
 
 ## Table of contents
 
@@ -40,8 +40,8 @@ A Comprehensive Guide to Mojo programming language with Real-Life Data, Transfor
 
 ## About Author
 
-I'm Amit Shukla, and I specialize in training neural networks for finance supply chain analysis, enabling them to identify data patterns and make accurate predictions.
-During the challenges posed by the COVID-19 pandemic, I successfully trained GL and Supply Chain neural networks to anticipate supply chain shortages. The valuable insights gained from this effort have significantly influenced the content of this book.
+I'm Amit Shukla, and I specialize in training neural networks for production data sets, enabling them to identify data patterns and make accurate predictions.
+During the challenges posed by the COVID-19 pandemic, I successfully trained Finance & Supply Chain neural networks to anticipate supply chain shortages. The valuable insights gained from this effort have significantly influenced the content of this book.
 
 Despite my ability to devise an innovative solution, I couldn't transition my AI models from research to production during the peak of the pandemic. My efforts to transform my work into a scalable solution capable of handling petabytes of data were hindered by the challenges of optimizing and fine-tuning my code for parallelization and multi-threaded execution.
 
@@ -53,11 +53,11 @@ My goal is to enable the seamless deployment of my research code into production
 
 ### Objective
 
-We'll gain expertise in the essential techniques of employing the Mojo Programming language to handle real-life scenarios. This knowledge is vital for the preparation of finance and supply chain data for advanced analytics, visualization, and predictive modeling through neural networks, machine learning models, training, testing and deployment.
+We’ll gain expertise in the essential techniques of employing the Mojo Programming language to handle real-life scenarios. This knowledge is vital for the preparation of advanced analytics, visualization, and predictive modeling through neural networks, machine learning models, training, testing and deployment.
 
 ### Subject
 
-It's important to note that this particular series will concentrate solely on using Mojo as one AI language to solve a real life AI problem.
+It’s important to note that this particular series will concentrate solely learning Mojo fundamentals as one AI language.
 
 ### Following
 

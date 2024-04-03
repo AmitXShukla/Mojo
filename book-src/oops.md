@@ -36,4 +36,4 @@ mine.dump()
 
 If you’re familiar with Python, then the __init__() method and the self argument should be familiar to you. If you’re not familiar with Python, then notice that, when we call dump(), we don’t actually pass a value for the self argument. The value for self is automatically provided with the current instance of the struct (it’s used similar to the this name used in some other languages to refer to the current instance of the object/type).
 
-For much more detail about `struct` and other special methods like __init__() (also known as “dunder” methods), see the programming manual.
+For much more detail about `struct` and other special methods like __init__() (also known as `dunder` methods), see the programming manual.
