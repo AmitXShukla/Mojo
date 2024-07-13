@@ -2,6 +2,8 @@
 
 A Comprehensive Guide to Mojo programming language with Real-Life Data, Transforming Beginners into Professionals.
 
+## This is a `work in progress` repository and currently waiting for sponsors.
+
 *This is a `work in progress` repository and `updated frequently`, please follow me at [Twitter](https://twitter.com/ashuklax), Subscribe to [YouTube channel](https://youtube.com/@Amit.Shukla) to see latest updates.*. Please give a star * to this repository.
 
 ## Author: Amit Shukla
