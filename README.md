@@ -2,18 +2,15 @@
 
 A Comprehensive Guide to Mojo programming language with Real-Life Data, Transforming Beginners into Professionals.
 
-## This is a `work in progress` repository and currently waiting for sponsors.
-
-*This is a `work in progress` repository and `updated frequently`, please follow me at [Twitter](https://twitter.com/ashuklax), Subscribe to [YouTube channel](https://youtube.com/@Amit.Shukla) to see latest updates.*. Please give a star * to this repository.
+*This is a `work in progress` repository, currently waiting for sponsors. This repository is `updated frequently`, please follow me at [Twitter](https://x.com/ashuklax), Subscribe to [YouTube channel](https://youtube.com/@Amit.Shukla) to see latest updates.*. Please give a star * to this repository.
 
 ## Author: Amit Shukla
 
 ## Connect
 
-[<img src="https://github.com/AmitXShukla/AmitXShukla.github.io/blob/master/assets/icons/youtube.svg" width=40 height=50>](https://youtube.com/@Amit.Shukla)
-[<img src="https://github.com/AmitXShukla/AmitXShukla.github.io/blob/master/assets/icons/github.svg" width=40 height=50>](https://github.com/AmitXShukla)
-[<img src="https://github.com/AmitXShukla/AmitXShukla.github.io/blob/master/assets/icons/medium.svg" width=40 height=50>](https://medium.com/@Amit-Shukla)
-[<img src="https://github.com/AmitXShukla/AmitXShukla.github.io/blob/master/assets/icons/twitter_1.svg" width=40 height=50>](https://twitter.com/ashuklax)
+- [YouTube](https://youtube.com/@Amit.Shukla)
+- [GitHub](https://github.com/AmitXShukla)
+- [X](https://x.com/ashuklax)
 
 ---
 Start Here -> read the [documentation](https://amitxshukla.github.io/Mojo/intro.html)
@@ -24,7 +21,7 @@ Start Here -> read the [documentation](https://amitxshukla.github.io/Mojo/intro.
 
 ---
 
-## Introduction
+## About the author
 
 I'm Amit Shukla, and I specialize in training neural networks for finance supply chain analysis, enabling them to identify data patterns and make accurate predictions.
 
@@ -51,10 +48,6 @@ It's important to note that this particular series will concentrate solely on `u
 However, in future installments, we will explore Data Analytics and delve into the realm of machine learning for predictive analytics to final AI deployment into production.
 
 Thank you for joining me, and I'm excited to embark on this educational journey together.
-
-Let's get started.
-
-Start Here -> read the [documentation](https://amitxshukla.github.io/Mojo/intro.html)
 
 ---
 
