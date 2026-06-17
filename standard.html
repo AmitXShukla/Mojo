@@ -1,73 +1,72 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="./" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Standard Library &#8212; The Mojo Programming Language book</title>
+    <title>The Standard Library &#8212; The Mojo Programming Language</title>
   
   
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
   
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
-
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
-  
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
-  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/clipboard.min.js"></script>
-    <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js"></script>
+    <script src="_static/togglebutton.js?v=b8b12719"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'standard';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="Meta Programming" href="metaprogramming.html" />
+    <link rel="prev" title="Parallelization" href="parallel.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -75,32 +74,16 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
   
   <div id="pst-scroll-pixel-helper"></div>
-
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>
-    Back to top
-  </button>
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
-  
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
+  <dialog id="pst-search-dialog">
+    
 <form class="bd-search d-flex align-items-center"
       action="search.html"
       method="get">
@@ -108,7 +91,6 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -116,16 +98,25 @@ const thebe_selector_output = ".output, .cell_output"
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -140,6 +131,8 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="sidebar-primary-item">
 
   
+    
+  
 
 <a class="navbar-brand logo" href="intro.html">
   
@@ -152,12 +145,19 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="_static/logo.png" class="logo__image only-light" alt="The Mojo Programming Language book - Home"/>
-    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="The Mojo Programming Language book - Home"/>`);</script>
+    <img src="_static/logo.png" class="logo__image only-light" alt="The Mojo Programming Language - Home"/>
+    <img src="_static/logo.png" class="logo__image only-dark pst-js-only" alt="The Mojo Programming Language - Home"/>
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -170,20 +170,20 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="whymojo.html">Why Mojo</a></li>
 <li class="toctree-l1"><a class="reference internal" href="gettingstarted.html">Getting started</a></li>
-<li class="toctree-l1"><a class="reference internal" href="datatype.html">Data Types, Variables, Operators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datatype.html">Data Types, Variables and Operators</a></li>
 <li class="toctree-l1"><a class="reference internal" href="controlflow.html">Loops &amp; Control Flow</a></li>
 <li class="toctree-l1"><a class="reference internal" href="functions.html">Functions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="datastructure.html">Building Data Structure</a></li>
-<li class="toctree-l1"><a class="reference internal" href="packages.html">Module and Packages</a></li>
-<li class="toctree-l1"><a class="reference internal" href="usingpython.html">using Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datastructure.html">Data Structures: Building Your Own Types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages.html">Modules and Packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usingpython.html">Using Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="traits.html">Traits</a></li>
-<li class="toctree-l1"><a class="reference internal" href="oops.html">OOPs concepts in Mojo</a></li>
-<li class="toctree-l1"><a class="reference internal" href="comprehension.html">Arrays, Lists &amp; Comprehension</a></li>
-<li class="toctree-l1"><a class="reference internal" href="MLIR.html">MLIR</a></li>
-<li class="toctree-l1"><a class="reference internal" href="parallel.html">Parallelization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="oops.html">OOP Concepts in Mojo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="metaprogramming.html">Metaprogramming in Mojo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="MLIR.html">MLIR: The Engine Under the Hood</a></li>
 <li class="toctree-l1"><a class="reference internal" href="thinkinginmojo.html">Thinking in Mojo</a></li>
-<li class="toctree-l1"><a class="reference internal" href="metaprogramming.html">Meta Programming</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Standard Library</a></li>
+<li class="toctree-l1"><a class="reference internal" href="comprehension.html">Arrays, Lists and Comprehension</a></li>
+<li class="toctree-l1"><a class="reference internal" href="parallel.html">Parallelization</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">The Standard Library</a></li>
 </ul>
 
     </div>
@@ -192,14 +192,19 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
   </div>
-  
-  <div id="rtd-footer-container"></div>
 
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -208,14 +213,14 @@ const thebe_selector_output = ".output, .cell_output"
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -238,7 +243,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/AmitXShukla/mojo" target="_blank"
+      <li><a href="https://github.com/AmitXShukla/Mojo" target="_blank"
    class="btn btn-sm btn-source-repository-button dropdown-item"
    title="Source repository"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -255,7 +260,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/AmitXShukla/mojo/issues/new?title=Issue%20on%20page%20%2Fstandard.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/AmitXShukla/Mojo/issues/new?title=Issue%20on%20page%20%2Fstandard.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -324,7 +329,7 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 <button onclick="toggleFullScreen()"
-  class="btn btn-sm btn-fullscreen-button"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
   title="Fullscreen mode"
   data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
@@ -338,27 +343,19 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
-  </button>
-`);
-</script>
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-  </button>
-`);
-</script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -369,7 +366,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Standard Library</h1>
+    <h1>The Standard Library</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -379,7 +376,15 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#author-amit-shukla">Author: Amit Shukla</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#built-ins-always-there-no-import-needed">Built-ins: always there, no import needed</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#collections">Collections</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#math">Math</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#system-and-hardware-information">System and hardware information</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#working-with-the-operating-system">Working with the operating system</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#time-and-testing">Time and testing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-python-bridge-revisited">The Python bridge, revisited</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-explore-further">How to explore further</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#where-you-are-now-and-where-to-go-next">Where you are now, and where to go next</a></li>
 </ul>
             </nav>
         </div>
@@ -389,169 +394,120 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="standard-library">
-<h1>Standard Library<a class="headerlink" href="#standard-library" title="Permalink to this heading">#</a></h1>
-<p>A Comprehensive Guide to Mojo programming language with Real-Life Data, Transforming Beginners into Professionals.</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p><strong>WIP</strong></p>
+  <section class="tex2jax_ignore mathjax_ignore" id="the-standard-library">
+<h1>The Standard Library<a class="headerlink" href="#the-standard-library" title="Link to this heading">#</a></h1>
+<p>Every language ships with a set of “batteries included”, ready-made types and functions so you don’t reinvent the basics. Mojo’s is called the <strong>standard library</strong> (often just “stdlib”), and a lovely fact about it is that it’s <strong>open source</strong> (Apache 2.0). You can read exactly how <code class="docutils literal notranslate"><span class="pre">String</span></code> or <code class="docutils literal notranslate"><span class="pre">List</span></code> is implemented, and even contribute improvements. This final chapter is a guided tour of what’s in the box.</p>
+<section id="built-ins-always-there-no-import-needed">
+<h2>Built-ins: always there, no import needed<a class="headerlink" href="#built-ins-always-there-no-import-needed" title="Link to this heading">#</a></h2>
+<p>The most common things are <em>built-in</em>, available in every Mojo program without importing anything. You’ve used most of them already:</p>
+<ul class="simple">
+<li><p><strong>Numeric types</strong> — <code class="docutils literal notranslate"><span class="pre">Int</span></code>, <code class="docutils literal notranslate"><span class="pre">UInt</span></code>, the fixed-width family (<code class="docutils literal notranslate"><span class="pre">Int8</span></code> … <code class="docutils literal notranslate"><span class="pre">UInt64</span></code>), and the floats (<code class="docutils literal notranslate"><span class="pre">Float16</span></code>, <code class="docutils literal notranslate"><span class="pre">Float32</span></code>, <code class="docutils literal notranslate"><span class="pre">Float64</span></code>).</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">Bool</span></code></strong> — <code class="docutils literal notranslate"><span class="pre">True</span></code> / <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">String</span></code> and <code class="docutils literal notranslate"><span class="pre">StringLiteral</span></code></strong> — text.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">List</span></code>, <code class="docutils literal notranslate"><span class="pre">Tuple</span></code></strong> — core collections.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">SIMD</span></code></strong> — the vector type powering Mojo’s numeric performance.</p></li>
+<li><p><strong>Core functions</strong> — <code class="docutils literal notranslate"><span class="pre">print</span></code>, <code class="docutils literal notranslate"><span class="pre">len</span></code>, <code class="docutils literal notranslate"><span class="pre">range</span></code>, <code class="docutils literal notranslate"><span class="pre">abs</span></code>, <code class="docutils literal notranslate"><span class="pre">min</span></code>, <code class="docutils literal notranslate"><span class="pre">max</span></code>, and friends.</p></li>
+</ul>
+<p>These are the words you’ll reach for in nearly every program, which is exactly why they’re always on hand.</p>
+</section>
+<section id="collections">
+<h2>Collections<a class="headerlink" href="#collections" title="Link to this heading">#</a></h2>
+<p>Beyond the built-in <code class="docutils literal notranslate"><span class="pre">List</span></code> and <code class="docutils literal notranslate"><span class="pre">Tuple</span></code>, the <code class="docutils literal notranslate"><span class="pre">collections</span></code> package adds the data structures that show up constantly in real work:</p>
+<div class="highlight-mojo notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">collections</span><span class="w"> </span><span class="kn">import</span><span class="w"> </span><span class="n">Dict</span><span class="p">,</span><span class="w"> </span><span class="n">Set</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span>
+<span class="w">    </span><span class="c1"># Dict: key → value lookups</span>
+<span class="w">    </span><span class="k">var</span><span class="w"> </span><span class="nv">ages</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Dict</span><span class="p">[</span><span class="nb">String</span><span class="p">,</span><span class="w"> </span><span class="nb">Int</span><span class="p">]()</span>
+<span class="w">    </span><span class="n">ages</span><span class="p">[</span><span class="s2">&quot;Amit&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">35</span>
+<span class="w">    </span><span class="n">ages</span><span class="p">[</span><span class="s2">&quot;Sam&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">28</span>
+<span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="n">ages</span><span class="p">[</span><span class="s2">&quot;Amit&quot;</span><span class="p">])</span><span class="w">          </span><span class="c1"># 35</span>
+
+<span class="w">    </span><span class="c1"># Set: unique values, fast membership tests</span>
+<span class="w">    </span><span class="k">var</span><span class="w"> </span><span class="nv">seen</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Set</span><span class="p">[</span><span class="nb">Int</span><span class="p">]()</span>
+<span class="w">    </span><span class="n">seen</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="w">    </span><span class="n">seen</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w">                  </span><span class="c1"># duplicate ignored</span>
+<span class="w">    </span><span class="n">seen</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">seen</span><span class="p">))</span><span class="w">             </span><span class="c1"># 2</span>
+</pre></div>
 </div>
-<section id="author-amit-shukla">
-<h2>Author: Amit Shukla<a class="headerlink" href="#author-amit-shukla" title="Permalink to this heading">#</a></h2>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>connect with me
-<a class="reference external" href="https://youtube.com/&#64;Amit.Shukla">YouTube</a>
-<a class="reference external" href="https://x.com/ashuklax">X</a>
-<a class="reference external" href="https://github.com/AmitXShukla">GitHub</a>
-<a class="reference external" href="https://medium.com/&#64;Amit-Shukla">Medium</a></p>
+<p>Reach for <code class="docutils literal notranslate"><span class="pre">Dict</span></code> when you need lookups by key, and <code class="docutils literal notranslate"><span class="pre">Set</span></code> when you care about uniqueness or fast “is this in here?” checks. (If you remember me writing “No DICT yet” in the early drafts of this book, that gap is long since filled.)</p>
+</section>
+<section id="math">
+<h2>Math<a class="headerlink" href="#math" title="Link to this heading">#</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">math</span></code> module holds the mathematical functions you’d expect, plus constants:</p>
+<div class="highlight-mojo notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">math</span><span class="w"> </span><span class="kn">import</span><span class="w"> </span><span class="n">sqrt</span><span class="p">,</span><span class="w"> </span><span class="n">ceil</span><span class="p">,</span><span class="w"> </span><span class="n">floor</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span>
+<span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="n">sqrt</span><span class="p">(</span><span class="mf">144.0</span><span class="p">))</span><span class="w">           </span><span class="c1"># 12.0</span>
+<span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="n">ceil</span><span class="p">(</span><span class="mf">4.2</span><span class="p">))</span><span class="w">             </span><span class="c1"># 5</span>
+<span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="n">floor</span><span class="p">(</span><span class="mf">4.8</span><span class="p">))</span><span class="w">            </span><span class="c1"># 4</span>
+</pre></div>
 </div>
-<!-- @value
+<p>For trig, logarithms, and the rest, it’s all here. This is your first stop for numerical work that goes beyond the basic operators.</p>
+</section>
+<section id="system-and-hardware-information">
+<h2>System and hardware information<a class="headerlink" href="#system-and-hardware-information" title="Link to this heading">#</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">sys</span></code> module lets your program ask about the machine it’s running on, useful when you’re tuning for performance:</p>
+<div class="highlight-mojo notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sys</span><span class="w"> </span><span class="kn">import</span><span class="w"> </span><span class="n">simd_width_of</span><span class="p">,</span><span class="w"> </span><span class="n">num_physical_cores</span>
 
-Generates boilerplate for a struct, for example on this struct with nothing implemented:
-Generates boilerplate for a struct, for example on this struct with nothing implemented:
+<span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span>
+<span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;SIMD width for Float32:&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">simd_width_of</span><span class="p">[</span><span class="nb">DType</span><span class="o">.</span><span class="n">float32</span><span class="p">]())</span>
+<span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Physical cores:&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">num_physical_cores</span><span class="p">())</span>
+</pre></div>
+</div>
+<p>These are exactly the numbers you’d use to size your SIMD vectors and decide how many parallel work items to launch, the bridge between your code and the hardware it runs on.</p>
+</section>
+<section id="working-with-the-operating-system">
+<h2>Working with the operating system<a class="headerlink" href="#working-with-the-operating-system" title="Link to this heading">#</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">os</span></code> and related modules let you interact with files and the environment, reading directories, checking whether a path exists, and so on, the everyday plumbing of a real application that has to load data from disk.</p>
+</section>
+<section id="time-and-testing">
+<h2>Time and testing<a class="headerlink" href="#time-and-testing" title="Link to this heading">#</a></h2>
+<p>A couple more that earn their keep:</p>
+<ul class="simple">
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">time</span></code></strong> — measure how long things take. Indispensable when you’re optimizing, because the golden rule of performance is <em>measure, don’t guess</em>.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">testing</span></code></strong> — utilities for writing tests, paired with the <code class="docutils literal notranslate"><span class="pre">mojo</span> <span class="pre">test</span></code> command. Tests are how you make sure your fast code is also <em>correct</em> code.</p></li>
+</ul>
+<div class="highlight-mojo notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">time</span><span class="w"> </span><span class="kn">import</span><span class="w"> </span><span class="n">perf_counter_ns</span>
 
-struct Pair:
-    var x: Int
-    var y: Int
-
-Copied!
-
-We can't initialize the struct:
-
-let pair = Pair(5, 10)
-
-Copied!
-
-error: Expression [2]:16:20: 'Pair' does not implement any '__init__' methods in 'let' initializer
-    let pair = Pair(5, 10)
-               ~~~~^~~~~~~
-
-Until we implement __init__:
-
-struct Pair:
-    var x: Int
-    var y: Int
-
-    fn __init__(inout self: Pair, x: Int, y: Int):
-        self.x = x
-        self.y = y
-
-Copied!
-
-let pair = Pair(5, 10)
-print(pair.x)
-
-Copied!
-
-5
-
-But now we can't copy or move it:
-
-let pair2 = pair
-
-Copied!
-
-error: Expression [5]:16:17: value of type 'Pair' cannot be copied into its destination
-    let pair2 = pair
-                ^~~~
-
-let pair2 = pair^
-
-Copied!
-
-error: Expression [16]:18:21: value of type 'Pair' cannot be copied into its destination
-    let pair2 = pair^
-                    ^
-
-error: Expression [16]:18:21: expression does not designate a value with a lifetime
-    let pair2 = pair^
-                    ^
-
-Until we implement __moveinit__ and __copyinit__:
-
-struct Pair:
-    var x: Int
-    var y: Int
-
-    fn __init__(inout self, x: Int, y: Int):
-        print("Running init")
-        self.x = x
-        self.y = y
-
-    fn __moveinit__(inout self, owned existing: Self):
-        print("Running move init")
-        self.x = existing.x
-        self.y = existing.x
-
-    fn __copyinit__(inout self, existing: Self):
-        print("Running copy init")
-        self.x = existing.x
-        self.y = existing.y
-
-Copied!
-
-let pair = Pair(5, 10)
-
-# Move object
-let pair2 = pair^
-
-# Copy object
-let pair3 = pair2
-
-Copied!
-
-Running init
-Running move init
-Running copy init
-
-To generate all that boilerplate for our members you can annotate with @value:
-
-@value
-struct Pair:
-    var x: Int
-    var y: Int
-
-Copied!
-
-20
-5
-
-And use it as normal:
-
-let pair = Pair(5, 10)
-
-# Move object
-var pair2 = pair^
-# Copy object
-let pair3 = pair2
-# Edit original
-pair2.x = 20
-
-# Print both the original and copy
-print(pair2.x)
-print(pair3.x)
-
-Copied!
-
-20
-5
-
-----------
- @parameter
-
-
-fn add_print[a: Int, b: Int](): 
-    @parameter
-    fn add[a: Int, b: Int]() -> Int:
-        return a + b
-
-    let x = add[a, b]()
-    print(x)
-
-add_print[5, 10]() -->
+<span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span>
+<span class="w">    </span><span class="k">var</span><span class="w"> </span><span class="nv">start</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">perf_counter_ns</span><span class="p">()</span>
+<span class="w">    </span><span class="c1"># ... do some work ...</span>
+<span class="w">    </span><span class="k">var</span><span class="w"> </span><span class="nv">elapsed</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">perf_counter_ns</span><span class="p">()</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">start</span>
+<span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;took&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">elapsed</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;nanoseconds&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="the-python-bridge-revisited">
+<h2>The Python bridge, revisited<a class="headerlink" href="#the-python-bridge-revisited" title="Link to this heading">#</a></h2>
+<p>It’s worth remembering that the entire <strong>Python ecosystem</strong> is effectively an extension of your standard library, reachable through the <code class="docutils literal notranslate"><span class="pre">python</span></code> module we covered earlier. Anything Mojo’s stdlib doesn’t have yet, NumPy, Pandas, Matplotlib, you can borrow from Python today. Mojo’s own library will keep growing, but you’re never blocked waiting for it.</p>
+</section>
+<section id="how-to-explore-further">
+<h2>How to explore further<a class="headerlink" href="#how-to-explore-further" title="Link to this heading">#</a></h2>
+<p>The stdlib is large and growing, so the most useful skill isn’t memorizing it, it’s knowing how to look things up:</p>
+<ul class="simple">
+<li><p>The official <a class="reference external" href="https://mojolang.org/docs/std/">Standard Library reference</a> documents every module, type, and function.</p></li>
+<li><p>Because the library is open source, you can read the actual implementation when you want to understand <em>how</em> something works.</p></li>
+<li><p>When you import a type, your editor’s autocompletion (with the Mojo VS Code extension) will show you its available methods.</p></li>
+</ul>
+<p>A good habit: before writing a utility yourself, spend two minutes checking whether the stdlib already has it. More often than you’d expect, it does, and the built-in version is faster and better-tested than what you’d write in a hurry.</p>
+</section>
+<section id="where-you-are-now-and-where-to-go-next">
+<h2>Where you are now, and where to go next<a class="headerlink" href="#where-you-are-now-and-where-to-go-next" title="Link to this heading">#</a></h2>
+<p>Take a breath and look back at the ground we’ve covered. You started by installing Mojo and printing “Hello, world!”. Along the way you learned:</p>
+<ul class="simple">
+<li><p>how Mojo stores data, and why types and memory layout make it fast,</p></li>
+<li><p>control flow, functions, and Mojo’s careful ownership model,</p></li>
+<li><p>how to build your own types with structs, and share behavior with traits,</p></li>
+<li><p>how to borrow Python’s ecosystem when you need it,</p></li>
+<li><p>how metaprogramming moves work to compile time,</p></li>
+<li><p>and how SIMD and multi-core parallelism unleash your hardware.</p></li>
+</ul>
+<p>That’s a real foundation. You can now write Mojo that’s expressive <em>and</em> fast, the exact combination that pulled me to this language in the first place.</p>
+<p>From here, the natural next step is to point these skills at real problems. In future installments, that’s exactly where we’re headed: data analysis, visualization, transformation, and ultimately training and deploying machine-learning models, all the way from a research notebook to production hardware, in Mojo.</p>
+<p>Thank you for coming this far with me. This book began as my own attempt to rebuild my research code on a foundation I could trust to scale, and if it’s helped you take even a few steps along that same path, then it’s done its job. Now go build something. 🔥</p>
 </section>
 </section>
 
@@ -582,16 +538,16 @@ add_print[5, 10]() -->
               
               
               
-                <footer class="prev-next-footer">
+                <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="metaprogramming.html"
+       href="parallel.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Meta Programming</p>
+        <p class="prev-next-title">Parallelization</p>
       </div>
     </a>
 </div>
@@ -601,15 +557,26 @@ add_print[5, 10]() -->
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
     <i class="fa-solid fa-list"></i> Contents
   </div>
-  <nav class="bd-toc-nav page-toc">
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#author-amit-shukla">Author: Amit Shukla</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#built-ins-always-there-no-import-needed">Built-ins: always there, no import needed</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#collections">Collections</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#math">Math</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#system-and-hardware-information">System and hardware information</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#working-with-the-operating-system">Working with the operating system</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#time-and-testing">Time and testing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-python-bridge-revisited">The Python bridge, revisited</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-explore-further">How to explore further</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#where-you-are-now-and-where-to-go-next">Where you are now, and where to go next</a></li>
 </ul>
   </nav></div>
 
@@ -634,7 +601,7 @@ By Amit Shukla
 
   <p class="copyright">
     
-      © Copyright 2022.
+      © Copyright 2023.
       <br/>
     
   </p>
@@ -658,8 +625,8 @@ By Amit Shukla
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+  <script defer src="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
 
   <footer class="bd-footer">
   </footer>

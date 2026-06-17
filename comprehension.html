@@ -1,74 +1,73 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="./" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Arrays, Lists &amp; Comprehension &#8212; The Mojo Programming Language book</title>
+    <title>Arrays, Lists and Comprehension &#8212; The Mojo Programming Language</title>
   
   
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
   
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
-
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
-  
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
-  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/clipboard.min.js"></script>
-    <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js"></script>
+    <script src="_static/togglebutton.js?v=b8b12719"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'comprehension';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="MLIR" href="MLIR.html" />
-    <link rel="prev" title="OOPs concepts in Mojo" href="oops.html" />
+    <link rel="next" title="Parallelization" href="parallel.html" />
+    <link rel="prev" title="Thinking in Mojo" href="thinkinginmojo.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -76,32 +75,16 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
   
   <div id="pst-scroll-pixel-helper"></div>
-
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>
-    Back to top
-  </button>
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
-  
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
+  <dialog id="pst-search-dialog">
+    
 <form class="bd-search d-flex align-items-center"
       action="search.html"
       method="get">
@@ -109,7 +92,6 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -117,16 +99,25 @@ const thebe_selector_output = ".output, .cell_output"
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -141,6 +132,8 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="sidebar-primary-item">
 
   
+    
+  
 
 <a class="navbar-brand logo" href="intro.html">
   
@@ -153,12 +146,19 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="_static/logo.png" class="logo__image only-light" alt="The Mojo Programming Language book - Home"/>
-    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="The Mojo Programming Language book - Home"/>`);</script>
+    <img src="_static/logo.png" class="logo__image only-light" alt="The Mojo Programming Language - Home"/>
+    <img src="_static/logo.png" class="logo__image only-dark pst-js-only" alt="The Mojo Programming Language - Home"/>
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -171,20 +171,20 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="whymojo.html">Why Mojo</a></li>
 <li class="toctree-l1"><a class="reference internal" href="gettingstarted.html">Getting started</a></li>
-<li class="toctree-l1"><a class="reference internal" href="datatype.html">Data Types, Variables, Operators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datatype.html">Data Types, Variables and Operators</a></li>
 <li class="toctree-l1"><a class="reference internal" href="controlflow.html">Loops &amp; Control Flow</a></li>
 <li class="toctree-l1"><a class="reference internal" href="functions.html">Functions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="datastructure.html">Building Data Structure</a></li>
-<li class="toctree-l1"><a class="reference internal" href="packages.html">Module and Packages</a></li>
-<li class="toctree-l1"><a class="reference internal" href="usingpython.html">using Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datastructure.html">Data Structures: Building Your Own Types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages.html">Modules and Packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usingpython.html">Using Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="traits.html">Traits</a></li>
-<li class="toctree-l1"><a class="reference internal" href="oops.html">OOPs concepts in Mojo</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Arrays, Lists &amp; Comprehension</a></li>
-<li class="toctree-l1"><a class="reference internal" href="MLIR.html">MLIR</a></li>
-<li class="toctree-l1"><a class="reference internal" href="parallel.html">Parallelization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="oops.html">OOP Concepts in Mojo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="metaprogramming.html">Metaprogramming in Mojo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="MLIR.html">MLIR: The Engine Under the Hood</a></li>
 <li class="toctree-l1"><a class="reference internal" href="thinkinginmojo.html">Thinking in Mojo</a></li>
-<li class="toctree-l1"><a class="reference internal" href="metaprogramming.html">Meta Programming</a></li>
-<li class="toctree-l1"><a class="reference internal" href="standard.html">Standard Library</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Arrays, Lists and Comprehension</a></li>
+<li class="toctree-l1"><a class="reference internal" href="parallel.html">Parallelization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="standard.html">The Standard Library</a></li>
 </ul>
 
     </div>
@@ -193,14 +193,19 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
   </div>
-  
-  <div id="rtd-footer-container"></div>
 
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -209,14 +214,14 @@ const thebe_selector_output = ".output, .cell_output"
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -239,7 +244,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/AmitXShukla/mojo" target="_blank"
+      <li><a href="https://github.com/AmitXShukla/Mojo" target="_blank"
    class="btn btn-sm btn-source-repository-button dropdown-item"
    title="Source repository"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -256,7 +261,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/AmitXShukla/mojo/issues/new?title=Issue%20on%20page%20%2Fcomprehension.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/AmitXShukla/Mojo/issues/new?title=Issue%20on%20page%20%2Fcomprehension.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -325,7 +330,7 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 <button onclick="toggleFullScreen()"
-  class="btn btn-sm btn-fullscreen-button"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
   title="Fullscreen mode"
   data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
@@ -339,27 +344,19 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
-  </button>
-`);
-</script>
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-  </button>
-`);
-</script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -370,7 +367,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Arrays, Lists & Comprehension</h1>
+    <h1>Arrays, Lists and Comprehension</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -380,7 +377,17 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#author-amit-shukla">Author: Amit Shukla</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#list-your-everyday-collection">List: your everyday collection</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#building-a-list-step-by-step">Building a list step by step</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#list-comprehensions">List comprehensions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#filtering-with-a-condition">Filtering with a condition</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-real-world-flavor">A real-world flavor</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#other-collections-worth-knowing">Other collections worth knowing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#choosing-the-right-collection">Choosing the right collection</a></li>
 </ul>
             </nav>
         </div>
@@ -390,25 +397,125 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="arrays-lists-comprehension">
-<h1>Arrays, Lists &amp; Comprehension<a class="headerlink" href="#arrays-lists-comprehension" title="Permalink to this heading">#</a></h1>
-<p>A Comprehensive Guide to Mojo programming language with Real-Life Data, Transforming Beginners into Professionals.</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p><strong>WIP</strong>: This section is work in progress.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="arrays-lists-and-comprehension">
+<h1>Arrays, Lists and Comprehension<a class="headerlink" href="#arrays-lists-and-comprehension" title="Link to this heading">#</a></h1>
+<p>Data rarely comes one value at a time. You have a <em>week</em> of temperatures, a <em>batch</em> of invoices, a <em>column</em> of prices. Collections are how we hold many values together, and knowing them well is most of the battle in data work. This chapter goes deeper on Mojo’s everyday collections and introduces a beautifully compact way to build them: comprehensions.</p>
+<section id="list-your-everyday-collection">
+<h2>List: your everyday collection<a class="headerlink" href="#list-your-everyday-collection" title="Link to this heading">#</a></h2>
+<p>We met <code class="docutils literal notranslate"><span class="pre">List</span></code> back in the <em>Data Types</em> chapter. It’s an ordered, growable sequence of values that all share the same type, and it’s the collection you’ll reach for most often.</p>
+<div class="highlight-mojo notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span>
+<span class="w">    </span><span class="k">var</span><span class="w"> </span><span class="nv">prices</span><span class="p">:</span><span class="w"> </span><span class="nb">List</span><span class="p">[</span><span class="nb">Float64</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">9.99</span><span class="p">,</span><span class="w"> </span><span class="mf">19.50</span><span class="p">,</span><span class="w"> </span><span class="mf">4.25</span><span class="p">,</span><span class="w"> </span><span class="mf">30.00</span><span class="p">]</span>
+
+<span class="w">    </span><span class="c1"># Indexing (zero-based, like Python)</span>
+<span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="n">prices</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="w">         </span><span class="c1"># 9.99</span>
+
+<span class="w">    </span><span class="c1"># Length</span>
+<span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">prices</span><span class="p">))</span><span class="w">       </span><span class="c1"># 4</span>
+
+<span class="w">    </span><span class="c1"># Growing the list</span>
+<span class="w">    </span><span class="n">prices</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mf">12.00</span><span class="p">)</span>
+<span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">prices</span><span class="p">))</span><span class="w">       </span><span class="c1"># 5</span>
+
+<span class="w">    </span><span class="c1"># Iterating</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="n">price</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">prices</span><span class="p">:</span>
+<span class="w">        </span><span class="nb">print</span><span class="p">(</span><span class="n">price</span><span class="p">)</span>
+</pre></div>
 </div>
-<section id="author-amit-shukla">
-<h2>Author: Amit Shukla<a class="headerlink" href="#author-amit-shukla" title="Permalink to this heading">#</a></h2>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>connect with me
-<a class="reference external" href="https://youtube.com/&#64;Amit.Shukla">YouTube</a>
-<a class="reference external" href="https://x.com/ashuklax">X</a>
-<a class="reference external" href="https://github.com/AmitXShukla">GitHub</a>
-<a class="reference external" href="https://medium.com/&#64;Amit-Shukla">Medium</a></p>
+<p>The <code class="docutils literal notranslate"><span class="pre">List[Float64]</span></code> annotation is doing real work: it tells Mojo every element is a <code class="docutils literal notranslate"><span class="pre">Float64</span></code>. That’s what keeps lists fast, there’s no per-element type checking at runtime, because the type is known up front.</p>
+<section id="building-a-list-step-by-step">
+<h3>Building a list step by step<a class="headerlink" href="#building-a-list-step-by-step" title="Link to this heading">#</a></h3>
+<p>A very common pattern is to start empty and fill as you go:</p>
+<div class="highlight-mojo notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span>
+<span class="w">    </span><span class="k">var</span><span class="w"> </span><span class="nv">squares</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">List</span><span class="p">[</span><span class="nb">Int</span><span class="p">]()</span><span class="w">        </span><span class="c1"># an empty List of Int</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p">):</span>
+<span class="w">        </span><span class="n">squares</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">n</span><span class="p">)</span>
+
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">squares</span><span class="p">:</span>
+<span class="w">        </span><span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span><span class="w">                     </span><span class="c1"># 1, 4, 9, 16, 25</span>
+</pre></div>
 </div>
+<p><code class="docutils literal notranslate"><span class="pre">List[Int]()</span></code> creates an empty list ready to receive <code class="docutils literal notranslate"><span class="pre">Int</span></code> values. Then we loop and <code class="docutils literal notranslate"><span class="pre">append</span></code>. This works perfectly, and for a long time it was the only way. But there’s a tidier option.</p>
+</section>
+</section>
+<section id="list-comprehensions">
+<h2>List comprehensions<a class="headerlink" href="#list-comprehensions" title="Link to this heading">#</a></h2>
+<p>A <strong>comprehension</strong> lets you build a list in a single expression that reads almost like English: “give me <code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">*</span> <span class="pre">n</span></code> for each <code class="docutils literal notranslate"><span class="pre">n</span></code> in this range.” If you’ve used Python comprehensions, Mojo’s will feel instantly familiar:</p>
+<div class="highlight-mojo notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span>
+<span class="w">    </span><span class="k">var</span><span class="w"> </span><span class="nv">squares</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="n">n</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p">)]</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">squares</span><span class="p">:</span>
+<span class="w">        </span><span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span><span class="w">                     </span><span class="c1"># 1, 4, 9, 16, 25</span>
+</pre></div>
+</div>
+<p>That one line replaces the empty-list-plus-loop-plus-append dance above. The shape is:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>[ expression  for  variable  in  iterable ]
+</pre></div>
+</div>
+<p>Read it right-to-left to build it, left-to-right to read it: <em>for each <code class="docutils literal notranslate"><span class="pre">n</span></code> in the range, compute <code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">*</span> <span class="pre">n</span></code>, and collect the results into a list.</em></p>
+<section id="filtering-with-a-condition">
+<h3>Filtering with a condition<a class="headerlink" href="#filtering-with-a-condition" title="Link to this heading">#</a></h3>
+<p>You can add an <code class="docutils literal notranslate"><span class="pre">if</span></code> clause to keep only the items you want:</p>
+<div class="highlight-mojo notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span>
+<span class="w">    </span><span class="c1"># Only the even squares</span>
+<span class="w">    </span><span class="k">var</span><span class="w"> </span><span class="nv">even_squares</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="n">n</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">11</span><span class="p">)</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">]</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">even_squares</span><span class="p">:</span>
+<span class="w">        </span><span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span><span class="w">                     </span><span class="c1"># 4, 16, 36, 64, 100</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">n</span> <span class="pre">%</span> <span class="pre">2</span> <span class="pre">==</span> <span class="pre">0</span></code> acts as a gate: an item is included only when the condition is true. This “transform and filter in one line” is what makes comprehensions so satisfying for data work.</p>
+</section>
+<section id="a-real-world-flavor">
+<h3>A real-world flavor<a class="headerlink" href="#a-real-world-flavor" title="Link to this heading">#</a></h3>
+<p>Comprehensions shine when you’re reshaping data. Say you have raw account balances and want just the ones over a threshold, scaled into thousands:</p>
+<div class="highlight-mojo notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span>
+<span class="w">    </span><span class="k">var</span><span class="w"> </span><span class="nv">balances</span><span class="p">:</span><span class="w"> </span><span class="nb">List</span><span class="p">[</span><span class="nb">Int</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mi">1200</span><span class="p">,</span><span class="w"> </span><span class="mi">800</span><span class="p">,</span><span class="w"> </span><span class="mi">1500</span><span class="p">,</span><span class="w"> </span><span class="mi">300</span><span class="p">,</span><span class="w"> </span><span class="mi">950</span><span class="p">,</span><span class="w"> </span><span class="mi">2000</span><span class="p">]</span>
+
+<span class="w">    </span><span class="c1"># Keep balances over 1000, expressed in thousands</span>
+<span class="w">    </span><span class="k">var</span><span class="w"> </span><span class="nv">big</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="nb">Float64</span><span class="p">(</span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">1000.0</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">balances</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">1000</span><span class="p">]</span>
+
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">big</span><span class="p">:</span>
+<span class="w">        </span><span class="nb">print</span><span class="p">(</span><span class="n">value</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;K&quot;</span><span class="p">)</span><span class="w">            </span><span class="c1"># 1.2 K, 1.5 K, 2.0 K</span>
+</pre></div>
+</div>
+<p>In one expression we filtered <em>and</em> transformed the data. Without comprehensions that’s a loop, a condition, a conversion, and an append, four lines doing what one line does here.</p>
+</section>
+</section>
+<section id="other-collections-worth-knowing">
+<h2>Other collections worth knowing<a class="headerlink" href="#other-collections-worth-knowing" title="Link to this heading">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">List</span></code> is your default, but the standard library has more:</p>
+<ul class="simple">
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">Dict</span></code></strong> — maps keys to values, like a Python dictionary. Great for lookups: <code class="docutils literal notranslate"><span class="pre">var</span> <span class="pre">ages</span> <span class="pre">=</span> <span class="pre">Dict[String,</span> <span class="pre">Int]()</span></code>. (Early Mojo didn’t have <code class="docutils literal notranslate"><span class="pre">Dict</span></code> at all, you may remember me noting “No DICT yet” in older drafts. It exists now.)</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">Set</span></code></strong> — an unordered collection of unique values, perfect for membership tests and de-duplication.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">Tuple</span></code></strong> — a fixed-size group of values that can have different types (we met this earlier).</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">InlineArray</span></code></strong> — a fixed-size array whose storage lives right on the stack, no heap allocation, for when you know the size up front and want maximum speed.</p></li>
+</ul>
+<p>Here’s a quick taste of <code class="docutils literal notranslate"><span class="pre">Dict</span></code>:</p>
+<div class="highlight-mojo notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span>
+<span class="w">    </span><span class="k">var</span><span class="w"> </span><span class="nv">ages</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Dict</span><span class="p">[</span><span class="nb">String</span><span class="p">,</span><span class="w"> </span><span class="nb">Int</span><span class="p">]()</span>
+<span class="w">    </span><span class="n">ages</span><span class="p">[</span><span class="s2">&quot;Amit&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">35</span>
+<span class="w">    </span><span class="n">ages</span><span class="p">[</span><span class="s2">&quot;Sam&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">28</span>
+
+<span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="n">ages</span><span class="p">[</span><span class="s2">&quot;Amit&quot;</span><span class="p">])</span><span class="w">              </span><span class="c1"># 35</span>
+<span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">ages</span><span class="p">))</span><span class="w">                 </span><span class="c1"># 2</span>
+
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="n">entry</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">ages</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+<span class="w">        </span><span class="nb">print</span><span class="p">(</span><span class="n">entry</span><span class="o">.</span><span class="n">key</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;→&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">entry</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="choosing-the-right-collection">
+<h2>Choosing the right collection<a class="headerlink" href="#choosing-the-right-collection" title="Link to this heading">#</a></h2>
+<p>A quick guide for when you’re not sure:</p>
+<ul class="simple">
+<li><p>Reaching for an <em>ordered, growable</em> sequence of same-typed values? → <strong><code class="docutils literal notranslate"><span class="pre">List</span></code></strong></p></li>
+<li><p>Need <em>key → value</em> lookups? → <strong><code class="docutils literal notranslate"><span class="pre">Dict</span></code></strong></p></li>
+<li><p>Need <em>uniqueness</em> or fast “is this in here?” checks? → <strong><code class="docutils literal notranslate"><span class="pre">Set</span></code></strong></p></li>
+<li><p>Have a <em>small fixed bundle</em> of mixed types? → <strong><code class="docutils literal notranslate"><span class="pre">Tuple</span></code></strong></p></li>
+<li><p>Know the <em>exact size</em> and want stack-allocated speed? → <strong><code class="docutils literal notranslate"><span class="pre">InlineArray</span></code></strong></p></li>
+</ul>
+<p>Pick the collection that matches the <em>shape</em> of your data, and your code will be both clearer and faster.</p>
+<p>You can now hold and reshape data fluently. Next we’ll make that data processing <em>fast at scale</em>, by putting your machine’s many cores to work with parallelization.</p>
 </section>
 </section>
 
@@ -439,24 +546,24 @@ document.write(`
               
               
               
-                <footer class="prev-next-footer">
+                <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="oops.html"
+       href="thinkinginmojo.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">OOPs concepts in Mojo</p>
+        <p class="prev-next-title">Thinking in Mojo</p>
       </div>
     </a>
     <a class="right-next"
-       href="MLIR.html"
+       href="parallel.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">MLIR</p>
+        <p class="prev-next-title">Parallelization</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -467,15 +574,28 @@ document.write(`
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
     <i class="fa-solid fa-list"></i> Contents
   </div>
-  <nav class="bd-toc-nav page-toc">
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#author-amit-shukla">Author: Amit Shukla</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#list-your-everyday-collection">List: your everyday collection</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#building-a-list-step-by-step">Building a list step by step</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#list-comprehensions">List comprehensions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#filtering-with-a-condition">Filtering with a condition</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-real-world-flavor">A real-world flavor</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#other-collections-worth-knowing">Other collections worth knowing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#choosing-the-right-collection">Choosing the right collection</a></li>
 </ul>
   </nav></div>
 
@@ -500,7 +620,7 @@ By Amit Shukla
 
   <p class="copyright">
     
-      © Copyright 2022.
+      © Copyright 2023.
       <br/>
     
   </p>
@@ -524,8 +644,8 @@ By Amit Shukla
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+  <script defer src="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
 
   <footer class="bd-footer">
   </footer>

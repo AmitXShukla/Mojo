@@ -1,399 +1,203 @@
 # Functions
 
-A Comprehensive Guide to Mojo programming language with Real-Life Data, Transforming Beginners into Professionals.
+A function is a named, reusable piece of logic. You give it some inputs, it does some work, and (optionally) it hands you back a result. Functions are how we stop copy-pasting code and start *composing* programs. In Mojo, they're also where a lot of the language's power and safety live, so this is a chapter worth slowing down for.
 
-Mojo functions can be declared with either fn (shown above) or def (as in Python). The fn declaration enforces strongly-typed and memory-safe behaviors, while def provides Python-style dynamic behaviors.
-currently includes only partial support for keyword arguments, so some features such as keyword-only arguments and variadic keyword arguments (e.g. **kwargs) are not supported yet
+## Defining a function
 
+You define a function with the `def` keyword:
 
-:::{warning}
-**WIP**
+```{code-block} mojo
+def greet(name: String):
+    print("Hello,", name)
+
+def main():
+    greet("Amit")        # Hello, Amit
+```
+
+:::{note} A big change: `fn` is gone
+If you learned Mojo a while ago, you'll remember it had **two** function keywords: `def` (Python-like, flexible) and `fn` (stricter, typed). As of Mojo v26.2, **`fn` is deprecated** and on its way out. Use `def` for everything. The good news is that today's `def` carries all the strictness and performance that `fn` used to, so you lose nothing.
 :::
 
-keyword parameters support 
-```{code-block}
-fn foo[a: Int, b: Int = 42]():
-  print(a, "+", b)
+A couple of rules to internalize early:
 
-foo[a=5]()        # prints '5 + 42'
-foo[a=7, b=13]()  # prints '7 + 13'
-foo[b=20, a=6]()  # prints '6 + 20'
-```
+- You must declare a **type for every argument**. `name: String` above isn't optional decoration; Mojo needs it.
+- The parentheses are always required, even when there are no arguments. The square brackets (which we'll meet shortly) are optional.
 
-```{code-block}
-struct KwParamStruct[a: Int, msg: String = "🔥mojo🔥"]:
-    fn __init__(inout self):
-        print(msg, a)
+## Returning values
 
-fn use_kw_params():
-    KwParamStruct[a=42]()               # prints '🔥mojo🔥 42'
-    KwParamStruct[5, msg="hello"]()     # prints 'hello 5'
-    KwParamStruct[msg="hello", a=42]()  # prints 'hello 42'
-```
+If a function produces a result, declare its return type with `->`:
 
-```{code-block}
-from memory.unsafe import Pointer
+```{code-block} mojo
+def add(a: Int, b: Int) -> Int:
+    return a + b
 
-struct HeapArray:
-    var data: Pointer[Int]
-    var size: Int
-
-    fn __init__(inout self, size: Int, val: Int):
-        self.size = size
-        self.data = Pointer[Int].alloc(self.size)
-        for i in range(self.size):
-            self.data.store(i, val)
-     
-    fn __del__(owned self):
-        self.data.free()
-
-    fn dump(self):
-        print_no_newline("[")
-        for i in range(self.size):
-            if i > 0:
-                print_no_newline(", ")
-            print_no_newline(self.data.load(i))
-        print("]")
-
-```
-
-```{code-block}
-var a = HeapArray(3, 1)
-a.dump()   # Should print [1, 1, 1]
-# Uncomment to see an error:
-# var b = a  # ERROR: Vector doesn't implement __copyinit__
-
-var b = HeapArray(4, 2)
-b.dump()   # Should print [2, 2, 2, 2]
-a.dump()   # Should print [1, 1, 1]
-```
-
-```{code-block}
-struct HeapArray:
-    var data: Pointer[Int]
-    var size: Int
-
-    fn __init__(inout self, size: Int, val: Int):
-        self.size = size
-        self.data = Pointer[Int].alloc(self.size)
-        for i in range(self.size):
-            self.data.store(i, val)
-
-    fn __copyinit__(inout self, other: Self):
-        self.size = other.size
-        self.data = Pointer[Int].alloc(self.size)
-        for i in range(self.size):
-            self.data.store(i, other.data.load(i))
-            
-    fn __del__(owned self):
-        self.data.free()
-
-    fn dump(self):
-        print_no_newline("[")
-        for i in range(self.size):
-            if i > 0:
-                print_no_newline(", ")
-            print_no_newline(self.data.load(i))
-        print("]")
-```
-
-```{code-block}
-var a = HeapArray(3, 1)
-a.dump()   # Should print [1, 1, 1]
-# This is no longer an error:
-var b = a
-
-b.dump()   # Should print [1, 1, 1]
-a.dump()   # Should print [1, 1, 1]
-```
-
-```{code-block}
-# Don't worry about this code yet. It's just needed for the function below.
-# It's a type so expensive to copy around so it does not have a
-# __copyinit__ method.
-struct SomethingBig:
-    var id_number: Int
-    var huge: HeapArray
-    fn __init__(inout self, id: Int):
-        self.huge = HeapArray(1000, 0)
-        self.id_number = id
-
-    # self is passed by-reference for mutation as described above.
-    fn set_id(inout self, number: Int):
-        self.id_number = number
-
-    # Arguments like self are passed as borrowed by default.
-    fn print_id(self):  # Same as: fn print_id(borrowed self):
-        print(self.id_number)
-```
-
-```{code-block}
-fn use_something_big(borrowed a: SomethingBig, b: SomethingBig):
-    """'a' and 'b' are both immutable, because 'borrowed' is the default."""
-    a.print_id()
-    b.print_id()
-
-let a = SomethingBig(10)
-let b = SomethingBig(20)
-use_something_big(a, b)
-```
-
-```{code-block}
-struct MyInt:
-    var value: Int
-    
-    fn __init__(inout self, v: Int):
-        self.value = v
-  
-    fn __copyinit__(inout self, other: MyInt):
-        self.value = other.value
-        
-    # self and rhs are both immutable in __add__.
-    fn __add__(self, rhs: MyInt) -> MyInt:
-        return MyInt(self.value + rhs.value)
-
-    # ... but this cannot work for __iadd__
-    # Uncomment to see the error:
-    #fn __iadd__(self, rhs: Int):
-    #    self = self + rhs  # ERROR: cannot assign to self!
-```
-
-```{code-block}
-struct MyInt:
-    var value: Int
-    
-    fn __init__(inout self, v: Int):
-        self.value = v
-
-    fn __copyinit__(inout self, other: MyInt):
-        self.value = other.value
-        
-    # self and rhs are both immutable in __add__.
-    fn __add__(self, rhs: MyInt) -> MyInt:
-        return MyInt(self.value + rhs.value)
-        
-    # ... now this works:
-    fn __iadd__(inout self, rhs: Int):
-        self = self + rhs
-```
-
-```{code-block}
-var x: MyInt = 42
-x += 1
-print(x.value) # prints 43 as expected
-
-# However...
-let y = x
-# Uncomment to see the error:
-# y += 1       # ERROR: Cannot mutate 'let' value
-```
-
-```{code-block}
-fn swap(inout lhs: Int, inout rhs: Int):
-    let tmp = lhs
-    lhs = rhs
-    rhs = tmp
-
-var x = 42
-var y = 12
-print(x, y)  # Prints 42, 12
-swap(x, y)
-print(x, y)  # Prints 12, 42
-```
-
-```{code-block}
-# This is not really a unique pointer, we just model its behavior here
-# to serve the examples below.
-struct UniquePointer:
-    var ptr: Int
-    
-    fn __init__(inout self, ptr: Int):
-        self.ptr = ptr
-    
-    fn __moveinit__(inout self, owned existing: Self):
-        self.ptr = existing.ptr
-        
-    fn __del__(owned self):
-        self.ptr = 0
-```
-
-```{code-block}
-fn take_ptr(owned p: UniquePointer):
-    print("take_ptr")
-    print(p.ptr)
-
-fn use_ptr(borrowed p: UniquePointer):
-    print("use_ptr")
-    print(p.ptr)
-    
-fn work_with_unique_ptrs():
-    let p = UniquePointer(100)
-    use_ptr(p)    # Pass to borrowing function.
-    take_ptr(p^)  # Pass ownership of the `p` value to another function.
-
-    # Uncomment to see an error:
-    # use_ptr(p) # ERROR: p is no longer valid here!
-
-work_with_unique_ptrs()
-```
-
-```{code-block}
-def example(inout a: Int, b: Int, c):
-    # b and c use value semantics so they're mutable in the function
-    ...
-
-fn example(inout a: Int, b_in: Int, c_in: Object):
-    # b_in and c_in are immutable references, so we make mutable shadow copies
-    var b = b_in
-    var c = c_in
-    ...
-```
-
-```{code-block}
-from python import Python
-from python.object import PythonObject
-
-var dictionary = Python.dict()
-dictionary["fruit"] = "apple"
-dictionary["starch"] = "potato"
-
-var keys: PythonObject = ["fruit", "starch", "protein"]
-var N: Int = keys.__len__().__index__()
-print(N, "items")
-
-for i in range(N):
-    if Python.is_type(dictionary.get(keys[i]), Python.none()):
-        print(keys[i], "is not in dictionary")
-    else:
-        print(keys[i], "is included")
-```
-
-<!-- 
-
-## Mojo as a calculator
-
-Let's start writing a simple calculator program in Python.
-
-for simple mathematical calculations, just trust Mojo REPL
-<!-- 
-```{code-block}
-
-# open REPL and run following commands
-
-print(3+4)
-print(-3+4)
-print(-3**4+(4*3/5))
-
-```
-
-however, our end goal is to develop a functionality which can function as full calculator which is way beyond than simple addition and subtraction.
-hence, let's write a function instead which does the same thing,
-
-```{code-block}
-
-def myAdd():
-
-# $ cat hello.🔥
 def main():
-    print("hello world")
-    for x in range(9, 0, -3):
-        print(x)
-# $ mojo hello.🔥
-
+    var sum = add(5, 7)
+    print(sum)           # 12
 ```
 
-However, this is still Python, it's still very nice for Mojo to run Python code but, what if I write a function which does more than simple addition, for example, it access file or directory structure in operating system. In those case, adding Type will definitely help compiler optimize this code and run it faster.
+If a function doesn't return anything, you can simply leave off the `->` part (or write `-> None`, they mean the same thing).
 
-## Data Type & Variables
+## Arguments vs. parameters
 
-So let's start adding type definition to this function.
+This is the single most important idea in the chapter, and it's the thing that confuses newcomers most, so let's be deliberate.
 
-@strict def myAdd()
+Mojo functions take **two** different kinds of input:
 
-this is still not Mojo looking, do I will replace @strict type with fn().
-Now, this is still an overhead to compiler, but Modern Programming or any programming language is about writing many functions, Fn() deserve to be a First class object in Mojo.
+- **Arguments** are ordinary *runtime* values, the numbers and strings you pass when you call the function. They go in **parentheses** `()`. Every language has these.
+- **Parameters** are *compile-time* values, things the compiler knows before your program ever runs. They go in **square brackets** `[]`.
 
-so let's replace @strict `def myAdd() -> fn() myAdd()`
+```{code-block} mojo
+def repeat[count: Int](message: String):
+    for _ in range(count):
+        print(message)
 
-inside functional arguments, we will call these functional arguments and later chapters, we will discuss how arguments although look similar but are different than parameters.
-
-So how do we define static and dynamic variables in Mojo.
-we use Let and Var.
- Let - immutable and var = mutable.
- There is also a third type, alias = run time immutable
-
- let's see these in actions to understand the difference
-
-## Data Type
-
-Bool, Int, String, List, ....
-No DICT yet
-
-```{code-block}
-def your_function(a, b):
-    let c = a
-    # Uncomment to see an error:
-    # c = b  # error: c is immutable
-
-    if c != b:
-        let d = b
-        print(d)
-
-your_function(2, 3)
+def main():
+    repeat[3]("🔥")      # count is a compile-time parameter; "🔥" is a runtime argument
 ```
 
-```{code-block}
-def your_function():
-    let x: Int = 42
-    let y: Float64 = 17.0
+When you call `repeat[3](...)`, the compiler generates a specialized version of the function with `count` fixed at `3`. That specialization is *why* Mojo can be so fast: decisions that other languages make at runtime, Mojo can make at compile time and bake into the machine code.
 
-    let z: Float32
-    if x != 0:
-        z = 1.0
-    else:
-        z = foo()
-    print(z)
+You don't need parameters for most everyday functions, plain arguments are plenty. But keep this distinction in your back pocket; it unlocks Mojo's metaprogramming later. (In many other languages "parameter" and "argument" are used interchangeably. In Mojo, the difference is real and intentional.)
 
-def foo() -> Float32:
-    return 3.14
+## Default and keyword arguments
 
-your_function()
+You can give an argument a default value, making it optional:
+
+```{code-block} mojo
+def power(base: Int, exp: Int = 2) -> Int:
+    return base ** exp
+
+def main():
+    print(power(3))      # 9   (exp defaults to 2)
+    print(power(3, 3))   # 27
 ```
 
-```{code-block}
-struct MyPair:
-    var first: Int
-    var second: Int
+And you can pass arguments **by name**, in any order, which makes calls self-documenting:
 
-    # We use 'fn' instead of 'def' here - we'll explain that soon
-    fn __init__(inout self, first: Int, second: Int):
-        self.first = first
-        self.second = second
-
-    fn __lt__(self, rhs: MyPair) -> Bool:
-        return self.first < rhs.first or
-              (self.first == rhs.first and
-               self.second < rhs.second)
+```{code-block} mojo
+def main():
+    print(power(exp=3, base=2))   # 8
 ```
 
-```{code-block}
-struct Complex:
-    var re: Float32
-    var im: Float32
+Optional (defaulted) arguments must come after all the required ones.
 
-    fn __init__(inout self, x: Float32):
-        """Construct a complex number given a real number."""
-        self.re = x
-        self.im = 0.0
+## A function with real data
 
-    fn __init__(inout self, r: Float32, i: Float32):
-        """Construct a complex number given its real and imaginary components."""
-        self.re = r
-        self.im = i
+Let's write something you'd actually use, an average over a list, the kind of helper that shows up constantly in data work:
+
+```{code-block} mojo
+def calculate_average(temps: List[Float64]) -> Float64:
+    var total: Float64 = 0.0
+    for i in range(len(temps)):
+        total += temps[i]
+    return total / Float64(len(temps))
+
+def main():
+    var temps: List[Float64] = [20.5, 22.3, 19.8, 25.1]
+    var avg = calculate_average(temps)
+    print("Average:", avg, "°C")
 ```
 
-## about Struct
+Notice `Float64(len(temps))`: `len` gives back an `Int`, and we convert it to a `Float64` so the division produces a precise decimal. Small detail, but exactly the kind of thing strong typing makes you think about (and your future self will thank you for).
 
-Now, from the application programming perspective, we want to create a professional grade calculator, with end goal in mind that someday it will be a scientific calculator and let;s hope that some day, will even solve partial differential equations or could evolve into a complex system, which spits out results thrown any mathematical equation.
+## Functions that can fail: `raises`
 
-This is a lot to ask for, but let's just start somewhere and build a system which does more than one simple calculation. --> -->
+What if our list is empty? Dividing by zero is a problem. A function that might fail should say so with the `raises` keyword and raise an `Error`:
+
+```{code-block} mojo
+def calculate_average(temps: List[Float64]) raises -> Float64:
+    if len(temps) == 0:
+        raise Error("No temperature data")
+
+    var total: Float64 = 0.0
+    for i in range(len(temps)):
+        total += temps[i]
+    return total / Float64(len(temps))
+```
+
+The caller then handles the possible failure with `try` / `except`:
+
+```{code-block} mojo
+def main():
+    var temps = List[Float64]()    # an empty list
+
+    try:
+        var avg = calculate_average(temps)
+        print("Average:", avg)
+    except e:
+        print("Error:", e)         # Error: No temperature data
+```
+
+This is Mojo nudging you toward robust code: failure isn't an afterthought, it's part of the function's signature.
+
+## Argument conventions: who owns the data?
+
+Here's where Mojo gets genuinely interesting, and where a lot of its old keywords got renamed, so pay attention even if you've seen this before.
+
+When you pass a value into a function, Mojo wants to be crystal clear about two things: **can the function change it?** and **does the function take ownership of it?** You answer by putting a small keyword in front of an argument. These are called *argument conventions*.
+
+There are four you'll use:
+
+- **`read`** — the function gets an **immutable reference**. It can look at the value but not change it. *This is the default*, so most of the time you write nothing at all. (This replaced the old `borrowed` keyword.)
+- **`mut`** — the function gets a **mutable reference**. Changes it makes are visible to the caller afterward. (This replaced `inout`.)
+- **`var`** — the function **takes ownership** of the value. (This replaced `owned`.)
+- **`out`** — a special convention for uninitialized output, used mainly in constructors. We'll meet it in the *Data Structures* chapter.
+
+Let's see the first two in action:
+
+```{code-block} mojo
+# `read` is the default: this function can read but not modify `y`.
+# `mut` on `x` means changes to x escape the function.
+def add_into(mut x: Int, y: Int):
+    x += y
+
+def main():
+    var a = 1
+    var b = 2
+    add_into(a, b)
+    print(a)         # 3  -- a was modified
+    print(b)         # 2  -- b is untouched
+```
+
+Because `read` is the default and it passes an efficient reference (not a copy), Mojo is fast *and* safe by default: your data isn't needlessly copied, and it can't be modified behind your back unless you explicitly opt in with `mut`.
+
+Here's `mut` with a list:
+
+```{code-block} mojo
+def add_record(mut data: List[Int], value: Int):
+    data.append(value)
+
+def main():
+    var records: List[Int] = [10, 20]
+    add_record(records, 30)
+    print(len(records))      # 3 -- the original list grew
+```
+
+## Transferring ownership: the `^` sigil
+
+Sometimes you want to *hand off* a value to a function and stop using it yourself, no copy, just a clean transfer. You do that by appending the **transfer sigil** `^` to the value, and the receiving function declares its argument as `var`:
+
+```{code-block} mojo
+def consume(var message: String):
+    print("I now own:", message)
+
+def main():
+    var greeting = String("Mojo🔥")
+    consume(greeting^)        # ownership transferred to `consume`
+    # greeting is no longer valid here
+```
+
+After `greeting^`, the original variable is "used up", Mojo's compiler will stop you from accidentally touching it again. This is the heart of Mojo's ownership model: **every value has exactly one owner at a time**, which is how Mojo guarantees memory safety *without* a garbage collector slowing things down. We'll go much deeper into ownership in the *Value Ownership* discussions later in the book.
+
+## Why this matters
+
+It's easy to read all this and think "that's a lot of ceremony just to pass a number around." But step back and look at what you've gained:
+
+- By default, arguments are passed efficiently and can't be silently mutated.
+- When you *do* want mutation, `mut` makes it visible and intentional.
+- When you want to transfer ownership, `^` makes it explicit and the compiler keeps you safe.
+
+That combination, fast by default, safe by default, explicit when it counts, is exactly why I moved my research code to Mojo. You write application-level code, and you get systems-level performance and safety underneath.
+
+Next, we'll use functions and types together to build our own custom types with **structs and data structures**.

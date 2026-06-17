@@ -1,74 +1,73 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="./" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Traits &#8212; The Mojo Programming Language book</title>
+    <title>Traits &#8212; The Mojo Programming Language</title>
   
   
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
   
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
-
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
-  
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
-  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/clipboard.min.js"></script>
-    <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js"></script>
+    <script src="_static/togglebutton.js?v=b8b12719"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'traits';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="OOPs concepts in Mojo" href="oops.html" />
-    <link rel="prev" title="using Python" href="usingpython.html" />
+    <link rel="next" title="OOP Concepts in Mojo" href="oops.html" />
+    <link rel="prev" title="Using Python" href="usingpython.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -76,32 +75,16 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
   
   <div id="pst-scroll-pixel-helper"></div>
-
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>
-    Back to top
-  </button>
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
-  
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
+  <dialog id="pst-search-dialog">
+    
 <form class="bd-search d-flex align-items-center"
       action="search.html"
       method="get">
@@ -109,7 +92,6 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -117,16 +99,25 @@ const thebe_selector_output = ".output, .cell_output"
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -141,6 +132,8 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="sidebar-primary-item">
 
   
+    
+  
 
 <a class="navbar-brand logo" href="intro.html">
   
@@ -153,12 +146,19 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="_static/logo.png" class="logo__image only-light" alt="The Mojo Programming Language book - Home"/>
-    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="The Mojo Programming Language book - Home"/>`);</script>
+    <img src="_static/logo.png" class="logo__image only-light" alt="The Mojo Programming Language - Home"/>
+    <img src="_static/logo.png" class="logo__image only-dark pst-js-only" alt="The Mojo Programming Language - Home"/>
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -171,20 +171,20 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="whymojo.html">Why Mojo</a></li>
 <li class="toctree-l1"><a class="reference internal" href="gettingstarted.html">Getting started</a></li>
-<li class="toctree-l1"><a class="reference internal" href="datatype.html">Data Types, Variables, Operators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datatype.html">Data Types, Variables and Operators</a></li>
 <li class="toctree-l1"><a class="reference internal" href="controlflow.html">Loops &amp; Control Flow</a></li>
 <li class="toctree-l1"><a class="reference internal" href="functions.html">Functions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="datastructure.html">Building Data Structure</a></li>
-<li class="toctree-l1"><a class="reference internal" href="packages.html">Module and Packages</a></li>
-<li class="toctree-l1"><a class="reference internal" href="usingpython.html">using Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datastructure.html">Data Structures: Building Your Own Types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages.html">Modules and Packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usingpython.html">Using Python</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Traits</a></li>
-<li class="toctree-l1"><a class="reference internal" href="oops.html">OOPs concepts in Mojo</a></li>
-<li class="toctree-l1"><a class="reference internal" href="comprehension.html">Arrays, Lists &amp; Comprehension</a></li>
-<li class="toctree-l1"><a class="reference internal" href="MLIR.html">MLIR</a></li>
-<li class="toctree-l1"><a class="reference internal" href="parallel.html">Parallelization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="oops.html">OOP Concepts in Mojo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="metaprogramming.html">Metaprogramming in Mojo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="MLIR.html">MLIR: The Engine Under the Hood</a></li>
 <li class="toctree-l1"><a class="reference internal" href="thinkinginmojo.html">Thinking in Mojo</a></li>
-<li class="toctree-l1"><a class="reference internal" href="metaprogramming.html">Meta Programming</a></li>
-<li class="toctree-l1"><a class="reference internal" href="standard.html">Standard Library</a></li>
+<li class="toctree-l1"><a class="reference internal" href="comprehension.html">Arrays, Lists and Comprehension</a></li>
+<li class="toctree-l1"><a class="reference internal" href="parallel.html">Parallelization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="standard.html">The Standard Library</a></li>
 </ul>
 
     </div>
@@ -193,14 +193,19 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
   </div>
-  
-  <div id="rtd-footer-container"></div>
 
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -209,14 +214,14 @@ const thebe_selector_output = ".output, .cell_output"
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -239,7 +244,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/AmitXShukla/mojo" target="_blank"
+      <li><a href="https://github.com/AmitXShukla/Mojo" target="_blank"
    class="btn btn-sm btn-source-repository-button dropdown-item"
    title="Source repository"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -256,7 +261,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/AmitXShukla/mojo/issues/new?title=Issue%20on%20page%20%2Ftraits.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/AmitXShukla/Mojo/issues/new?title=Issue%20on%20page%20%2Ftraits.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -325,7 +330,7 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 <button onclick="toggleFullScreen()"
-  class="btn btn-sm btn-fullscreen-button"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
   title="Fullscreen mode"
   data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
@@ -339,27 +344,19 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
-  </button>
-`);
-</script>
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-  </button>
-`);
-</script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -380,9 +377,18 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oops">OOPs</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#duck-typing">duck typing</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-a-trait">What is a trait</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-problem-shared-behavior-across-different-types">The problem: shared behavior across different types</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#duck-typing">Duck typing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-duck-typing-doesn-t-translate-directly-to-mojo">Why duck typing doesn’t translate directly to Mojo</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#traits-a-contract-for-behavior">Traits: a contract for behavior</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-define-the-trait">Step 1 — Define the trait</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-make-types-conform">Step 2 — Make types conform</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-write-one-function-against-the-trait">Step 3 — Write one function against the trait</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#default-implementations">Default implementations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#traits-you-ve-already-been-using">Traits you’ve already been using</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#duck-typing-vs-traits-the-takeaway">Duck typing vs. traits, the takeaway</a></li>
 </ul>
             </nav>
         </div>
@@ -392,104 +398,156 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="traits">
-<h1>Traits<a class="headerlink" href="#traits" title="Permalink to this heading">#</a></h1>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p><strong>WIP</strong>: This is a work in progress. Mojo Traits are eagerly awaited feature.</p>
+<h1>Traits<a class="headerlink" href="#traits" title="Link to this heading">#</a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>When I first wrote this chapter, traits were an eagerly-awaited feature that didn’t exist yet. They’ve since shipped and are a core part of Mojo. So this is no longer a wish list, it’s a working tour.</p>
 </div>
-<section id="oops">
-<h2>OOPs<a class="headerlink" href="#oops" title="Permalink to this heading">#</a></h2>
-<p>Object oriented programming concepts are well suited for programs that are large, complex and actively updated. OOPs concepts help developer create reusable code in form of classes that are designed around data or objects, methods and attributes rather than functions and logic.</p>
-<p>Let’s see an example of OOPs classes.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Vehicle</span>
-<span class="k">class</span> <span class="nc">fourWheal</span>
-<span class="k">class</span> <span class="nc">twoWheal</span>
-<span class="k">class</span> <span class="nc">boats</span>
-</pre></div>
-</div>
-<p>While above code works fine, Wouldn’t it be nicer, if developer can just create methods outside of classes, which are more object’s behavior based instead of it’s specific type of class. That way, developers don’t need to worry about inheritance and freely/mix-in shared behavioral methods across Classes.</p>
-<p>Developers can write generic methods/functions that describe the generic behavior of a vehicle and apply them to objects when appropriate. This approach promotes code reusability and flexibility, as objects can be treated interchangeably based on their behavior rather than their specific type or class.</p>
-<p>This is referred as <strong>duck typing</strong>.</p>
-<p>By leveraging duck typing, developers can write generic methods/functions that describe the generic behavior of a vehicle and apply them to objects when appropriate. This approach promotes code reusability and flexibility, as objects can be treated interchangeably based on their behavior rather than their specific type or class.</p>
+<p>Traits are one of those features that quietly reshape how you write code. To appreciate why, we first need to understand the problem they solve, and that takes us through a beloved idea from the Python world: duck typing.</p>
+<section id="the-problem-shared-behavior-across-different-types">
+<h2>The problem: shared behavior across different types<a class="headerlink" href="#the-problem-shared-behavior-across-different-types" title="Link to this heading">#</a></h2>
+<p>Object-oriented programming is great for large, evolving programs. It lets you build reusable code around objects, methods, and attributes rather than scattered functions and logic. But classic inheritance has a limitation: it ties behavior tightly to a specific class hierarchy.</p>
+<p>Wouldn’t it be nicer if you could describe behavior <em>independently</em> of the exact class? Instead of asking “what type is this?”, you’d ask “can this thing do what I need?” That shift, from type to behavior, is the heart of what we’re about to explore.</p>
 </section>
 <section id="duck-typing">
-<h2>duck typing<a class="headerlink" href="#duck-typing" title="Permalink to this heading">#</a></h2>
-<p>The duck typing concept is a programming approach that focuses on an object’s behavior rather than its specific type or class. It is based on the idea that “if it walks like a duck and quacks like a duck, then it must be a duck.”</p>
-<p>In duck typing, the suitability of an object for a particular operation is determined by whether the object supports the required methods or behaviors, rather than by its explicit type or inheritance hierarchy. This means that as long as an object behaves like the expected type (i.e., it has the necessary methods or properties), it can be treated as that type, regardless of its actual class or type declaration.</p>
-<p>Duck typing is commonly associated with dynamically typed languages, where type checking is done at runtime.</p>
-<p>Python is a dynamically typed language that embraces the concept of duck typing. In Python, the suitability of an object for a particular operation is determined by whether the object supports the required methods or behaviors, rather than by its explicit type or class.</p>
-<p>Python’s duck typing philosophy is encapsulated in the saying, “If it walks like a duck and quacks like a duck, then it must be a duck.” This means that as long as an object behaves like the expected type (i.e., it has the necessary methods or properties), it can be treated as that type, regardless of its actual class or type declaration.</p>
-<p>However, it’s important to note that Python also supports explicit type annotations and static type checking through tools like MyPy. While duck typing is a common practice in Python, it is not enforced by the language itself, and developers have the flexibility to choose between dynamic typing and static typing approaches based on their needs</p>
-<p>– duck typing in python</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Duck</span><span class="p">:</span>
-    <span class="k">def</span> <span class="nf">quack</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<h2>Duck typing<a class="headerlink" href="#duck-typing" title="Link to this heading">#</a></h2>
+<p>Python’s answer is <strong>duck typing</strong>, captured by the old saying: <em>“If it walks like a duck and quacks like a duck, then it must be a duck.”</em></p>
+<p>In duck typing, what matters isn’t an object’s declared type or class, it’s whether it supports the method you’re about to call. As long as an object behaves the way you expect, you can use it, no inheritance required.</p>
+<p>Here’s the classic Python example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 🐍 Python</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">Duck</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">quack</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Quack!&quot;</span><span class="p">)</span>
 
-<span class="k">class</span> <span class="nc">Dog</span><span class="p">:</span>
-    <span class="k">def</span> <span class="nf">bark</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Woof!&quot;</span><span class="p">)</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">StealthCow</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">quack</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Moo!&quot;</span><span class="p">)</span>     <span class="c1"># a cow that has learned to &quot;quack&quot;</span>
 
-<span class="k">class</span> <span class="nc">Car</span><span class="p">:</span>
-    <span class="k">def</span> <span class="nf">honk</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Beep!&quot;</span><span class="p">)</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">make_it_quack</span><span class="p">(</span><span class="n">thing</span><span class="p">):</span>
+    <span class="n">thing</span><span class="o">.</span><span class="n">quack</span><span class="p">()</span>         <span class="c1"># works for anything with a quack() method</span>
 
-<span class="k">def</span> <span class="nf">make_sound</span><span class="p">(</span><span class="n">animal</span><span class="p">):</span>
-    <span class="n">animal</span><span class="o">.</span><span class="n">quack</span><span class="p">()</span>  <span class="c1"># The object is treated as a duck as long as it has a &quot;quack&quot; method</span>
-
-<span class="n">duck</span> <span class="o">=</span> <span class="n">Duck</span><span class="p">()</span>
-<span class="n">dog</span> <span class="o">=</span> <span class="n">Dog</span><span class="p">()</span>
-<span class="n">car</span> <span class="o">=</span> <span class="n">Car</span><span class="p">()</span>
-
-<span class="n">make_sound</span><span class="p">(</span><span class="n">duck</span><span class="p">)</span>  <span class="c1"># Output: Quack!</span>
-<span class="n">make_sound</span><span class="p">(</span><span class="n">dog</span><span class="p">)</span>   <span class="c1"># Raises an AttributeError since the &quot;Dog&quot; class does not have a &quot;quack&quot; method</span>
-<span class="n">make_sound</span><span class="p">(</span><span class="n">car</span><span class="p">)</span>   <span class="c1"># Raises an AttributeError since the &quot;Car&quot; class does not have a &quot;quack&quot; method</span>
+<span class="n">make_it_quack</span><span class="p">(</span><span class="n">Duck</span><span class="p">())</span>         <span class="c1"># Quack!</span>
+<span class="n">make_it_quack</span><span class="p">(</span><span class="n">StealthCow</span><span class="p">())</span>   <span class="c1"># Moo!</span>
 </pre></div>
 </div>
-<p>In this example, we have three different classes: Duck, Dog, and Car. Each class has its own unique method (quack, bark, and honk, respectively). The make_sound function takes an object as an argument and calls the quack method on it.</p>
-<p>Even though the make_sound function expects an object with a quack method, it doesn’t explicitly check the type of the object. Instead, it relies on duck typing. As long as the object passed to make_sound has a quack method, it can be treated as a duck and the quack method will be called successfully.</p>
-<p>In this way, duck typing allows different objects to be used interchangeably based on their behavior rather than their explicit type.</p>
-<p>–
-does python has traits:</p>
-<p>Python does not have built-in support for traits as a language feature. However, there are ways to achieve similar functionality in Python through other means.</p>
-<p>One common approach in Python is to use multiple inheritance and mixins to achieve trait-like behavior. By creating classes that define specific sets of methods or behaviors and then inheriting from or mixing in those classes, you can effectively share and reuse code across multiple classes.</p>
-<p>Here’s an example of using multiple inheritance and mixins to achieve trait-like behavior in Python:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">TraitA</span><span class="p">:</span>
-    <span class="k">def</span> <span class="nf">method_a</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Trait A method&quot;</span><span class="p">)</span>
-
-<span class="k">class</span> <span class="nc">TraitB</span><span class="p">:</span>
-    <span class="k">def</span> <span class="nf">method_b</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Trait B method&quot;</span><span class="p">)</span>
-
-<span class="k">class</span> <span class="nc">MyClass</span><span class="p">(</span><span class="n">TraitA</span><span class="p">,</span> <span class="n">TraitB</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">my_method</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;MyClass method&quot;</span><span class="p">)</span>
-
-<span class="n">obj</span> <span class="o">=</span> <span class="n">MyClass</span><span class="p">()</span>
-<span class="n">obj</span><span class="o">.</span><span class="n">method_a</span><span class="p">()</span>  <span class="c1"># Output: Trait A method</span>
-<span class="n">obj</span><span class="o">.</span><span class="n">method_b</span><span class="p">()</span>  <span class="c1"># Output: Trait B method</span>
-<span class="n">obj</span><span class="o">.</span><span class="n">my_method</span><span class="p">()</span> <span class="c1"># Output: MyClass method</span>
-</pre></div>
-</div>
-<p>In this example, TraitA and TraitB define specific sets of methods (method_a and method_b, respectively). The MyClass class inherits from both TraitA and TraitB, effectively combining the behaviors defined in those traits. The MyClass class also defines its own method (my_method).</p>
-<p>By using multiple inheritance and mixins, you can achieve code reuse and composition similar to traits in other statically typed languages. However, it’s important to note that this approach in Python is not enforced by the language itself and relies on developer discipline to properly use and manage the mixin classes.</p>
+<p><code class="docutils literal notranslate"><span class="pre">Duck</span></code> and <code class="docutils literal notranslate"><span class="pre">StealthCow</span></code> aren’t related at all, but both have a <code class="docutils literal notranslate"><span class="pre">quack()</span></code> method, so both work in <code class="docutils literal notranslate"><span class="pre">make_it_quack()</span></code>. Python doesn’t check the type; it just calls the method at runtime and hopes for the best. This is flexible and elegant, and it’s a big part of why Python feels so easy.</p>
+<p>The catch: that “hopes for the best” is doing a lot of work. If you pass in something <em>without</em> a <code class="docutils literal notranslate"><span class="pre">quack()</span></code> method, Python only finds out when it crashes at runtime.</p>
 </section>
-<section id="what-is-a-trait">
-<h2>What is a trait<a class="headerlink" href="#what-is-a-trait" title="Permalink to this heading">#</a></h2>
-<p>so, Duck Typing == Traits
-<strong>Not at all.</strong>. It’s important to know the difference and implementation, so that developer can enjoy both <code class="docutils literal notranslate"><span class="pre">Python</span></code>’s duck typing and <code class="docutils literal notranslate"><span class="pre">Mojo</span> <span class="pre">Trait</span></code>.</p>
-<p>While both traits and duck typing involve considering object behavior, traits are a specific language feature that enables code reuse and composition, while duck typing is a broader programming approach that focuses on behavior rather than type.</p>
-<p>Traits are a language feature or construct that defines a set of methods or behaviors that can be shared among multiple classes or objects. Traits provide a way to define reusable code that can be mixed into different classes, allowing them to inherit or implement the defined behaviors. Traits are typically used in statically typed languages to achieve code reuse and composition without relying on traditional inheritance.</p>
-<p>In dynamically typed languages, duck typing is often used to achieve similar goals as traits in statically typed languages. However, the implementation and usage may differ. Duck typing in dynamically typed languages allows objects to be treated as a certain type based on their behavior, while traits in statically typed languages provide a way to define and share behaviors among classes.</p>
-<hr class="docutils" />
-<p>Traits are a language feature or construct in programming languages that define a set of methods or behaviors that can be shared among multiple classes or objects. They provide a way to define reusable code that can be mixed into different classes, allowing them to inherit or implement the defined behaviors.</p>
-<p>Traits are typically used in statically typed languages to achieve code reuse and composition without relying on traditional inheritance. They offer an alternative to single inheritance by allowing classes to inherit or implement multiple traits, thereby combining the behaviors defined in those traits.</p>
-<p>Traits provide a mechanism for defining and enforcing a contract for behavior that can be shared among classes. They encapsulate a set of methods or behaviors that can be reused across different classes, promoting code reuse and modularity. By mixing in traits, classes can inherit or implement the behaviors defined in those traits, extending their functionality without the need for complex inheritance hierarchies.</p>
-<p>Traits are often used to address the limitations of single inheritance and to achieve greater flexibility and modularity in code. They allow for the composition of behaviors from multiple sources, enabling more flexible and reusable code design.</p>
-<p>It’s important to note that the specific implementation and syntax of traits may vary depending on the programming language. Some languages have built-in support for traits, while others may provide similar functionality through interfaces, mixins, or other language constructs.</p>
+<section id="why-duck-typing-doesn-t-translate-directly-to-mojo">
+<h2>Why duck typing doesn’t translate directly to Mojo<a class="headerlink" href="#why-duck-typing-doesn-t-translate-directly-to-mojo" title="Link to this heading">#</a></h2>
+<p>Mojo is statically typed: every function argument needs a declared type, and the compiler checks everything <em>before</em> your program runs. That safety is wonderful, but it seems to break duck typing. If <code class="docutils literal notranslate"><span class="pre">make_it_quack</span></code> must declare the type of <code class="docutils literal notranslate"><span class="pre">thing</span></code>, how can it accept both a <code class="docutils literal notranslate"><span class="pre">Duck</span></code> and a <code class="docutils literal notranslate"><span class="pre">StealthCow</span></code>?</p>
+<p>One clumsy answer is to write a separate overload for every type:</p>
+<div class="highlight-mojo notranslate"><div class="highlight"><pre><span></span><span class="nd">@fieldwise_init</span>
+<span class="k">struct</span><span class="w"> </span><span class="n n-Struct">Duck</span><span class="p">(</span><span class="nb">Copyable</span><span class="p">):</span>
+<span class="w">    </span><span class="k">def</span><span class="w"> </span><span class="nf">quack</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Quack!&quot;</span><span class="p">)</span>
+
+<span class="nd">@fieldwise_init</span>
+<span class="k">struct</span><span class="w"> </span><span class="n n-Struct">StealthCow</span><span class="p">(</span><span class="nb">Copyable</span><span class="p">):</span>
+<span class="w">    </span><span class="k">def</span><span class="w"> </span><span class="nf">quack</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Moo!&quot;</span><span class="p">)</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">make_it_quack</span><span class="p">(</span><span class="n">d</span><span class="p">:</span><span class="w"> </span><span class="n">Duck</span><span class="p">):</span>
+<span class="w">    </span><span class="n">d</span><span class="o">.</span><span class="n">quack</span><span class="p">()</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">make_it_quack</span><span class="p">(</span><span class="n">c</span><span class="p">:</span><span class="w"> </span><span class="n">StealthCow</span><span class="p">):</span><span class="w">    </span><span class="c1"># a second overload, ugh</span>
+<span class="w">    </span><span class="n">c</span><span class="o">.</span><span class="n">quack</span><span class="p">()</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span>
+<span class="w">    </span><span class="n">make_it_quack</span><span class="p">(</span><span class="n">Duck</span><span class="p">())</span><span class="w">        </span><span class="c1"># Quack!</span>
+<span class="w">    </span><span class="n">make_it_quack</span><span class="p">(</span><span class="n">StealthCow</span><span class="p">())</span><span class="w">  </span><span class="c1"># Moo!</span>
+</pre></div>
+</div>
+<p>This works, and notice we didn’t need Python’s <code class="docutils literal notranslate"><span class="pre">try/except</span></code>, Mojo’s type checker guarantees at compile time that only valid types are passed. But writing one overload per type doesn’t scale. With ten “quackable” types you’d write ten copies. There has to be a better way.</p>
+</section>
+<section id="traits-a-contract-for-behavior">
+<h2>Traits: a contract for behavior<a class="headerlink" href="#traits-a-contract-for-behavior" title="Link to this heading">#</a></h2>
+<p>A <strong>trait</strong> is that better way. Think of a trait as a <em>contract</em>: it lists a set of methods a type must provide. Any type that implements those methods can <em>conform</em> to the trait, and then a single function can accept “anything that conforms,” no overloads, no inheritance hierarchy, and full compile-time safety.</p>
+<p>If you’ve used interfaces in Java, protocols in Swift, concepts in C++, or traits in Rust, this is the same idea.</p>
+<p>Let’s redo the duck example properly. Three steps.</p>
+<section id="step-1-define-the-trait">
+<h3>Step 1 — Define the trait<a class="headerlink" href="#step-1-define-the-trait" title="Link to this heading">#</a></h3>
+<div class="highlight-mojo notranslate"><div class="highlight"><pre><span></span><span class="k">trait</span><span class="w"> </span><span class="n n-Struct">Quackable</span><span class="p">:</span>
+<span class="w">    </span><span class="k">def</span><span class="w"> </span><span class="nf">quack</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="o">...</span>
+</pre></div>
+</div>
+<p>A <code class="docutils literal notranslate"><span class="pre">trait</span></code> looks like a struct, but it’s introduced by the <code class="docutils literal notranslate"><span class="pre">trait</span></code> keyword, and its method bodies are just <code class="docutils literal notranslate"><span class="pre">...</span></code> (three dots). Those dots mean “this method is <em>required</em> but not implemented here”, every conforming type must supply its own <code class="docutils literal notranslate"><span class="pre">quack()</span></code>.</p>
+</section>
+<section id="step-2-make-types-conform">
+<h3>Step 2 — Make types conform<a class="headerlink" href="#step-2-make-types-conform" title="Link to this heading">#</a></h3>
+<p>A struct conforms to a trait by listing it in parentheses after the struct name (the same place we put <code class="docutils literal notranslate"><span class="pre">Copyable</span></code> and <code class="docutils literal notranslate"><span class="pre">Movable</span></code> earlier):</p>
+<div class="highlight-mojo notranslate"><div class="highlight"><pre><span></span><span class="nd">@fieldwise_init</span>
+<span class="k">struct</span><span class="w"> </span><span class="n n-Struct">Duck</span><span class="p">(</span><span class="n">Quackable</span><span class="p">):</span>
+<span class="w">    </span><span class="k">def</span><span class="w"> </span><span class="nf">quack</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Quack!&quot;</span><span class="p">)</span>
+
+<span class="nd">@fieldwise_init</span>
+<span class="k">struct</span><span class="w"> </span><span class="n n-Struct">StealthCow</span><span class="p">(</span><span class="n">Quackable</span><span class="p">):</span>
+<span class="w">    </span><span class="k">def</span><span class="w"> </span><span class="nf">quack</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Moo!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Both already have a <code class="docutils literal notranslate"><span class="pre">quack()</span></code> method, so all we did was promise, via <code class="docutils literal notranslate"><span class="pre">(Quackable)</span></code>, that they fulfill the contract.</p>
+</section>
+<section id="step-3-write-one-function-against-the-trait">
+<h3>Step 3 — Write one function against the trait<a class="headerlink" href="#step-3-write-one-function-against-the-trait" title="Link to this heading">#</a></h3>
+<p>Now the payoff. Instead of typing the argument as a <em>concrete struct</em>, we type it as the <em>trait</em>, using a compile-time parameter:</p>
+<div class="highlight-mojo notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">make_it_quack</span><span class="p">[</span><span class="n">T</span><span class="p">:</span><span class="w"> </span><span class="n">Quackable</span><span class="p">](</span><span class="n">thing</span><span class="p">:</span><span class="w"> </span><span class="n">T</span><span class="p">):</span>
+<span class="w">    </span><span class="n">thing</span><span class="o">.</span><span class="n">quack</span><span class="p">()</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span>
+<span class="w">    </span><span class="n">make_it_quack</span><span class="p">(</span><span class="n">Duck</span><span class="p">())</span><span class="w">        </span><span class="c1"># Quack!</span>
+<span class="w">    </span><span class="n">make_it_quack</span><span class="p">(</span><span class="n">StealthCow</span><span class="p">())</span><span class="w">  </span><span class="c1"># Moo!</span>
+</pre></div>
+</div>
+<p>Read <code class="docutils literal notranslate"><span class="pre">[T:</span> <span class="pre">Quackable]</span></code> as: “this function works for <em>any</em> type <code class="docutils literal notranslate"><span class="pre">T</span></code>, as long as <code class="docutils literal notranslate"><span class="pre">T</span></code> conforms to <code class="docutils literal notranslate"><span class="pre">Quackable</span></code>.” One function, every quackable type, and the compiler still guarantees, before the program runs, that whatever you pass really does quack. We got Python’s flexibility <em>and</em> Mojo’s safety. That’s the whole pitch.</p>
+</section>
+</section>
+<section id="default-implementations">
+<h2>Default implementations<a class="headerlink" href="#default-implementations" title="Link to this heading">#</a></h2>
+<p>A trait can also provide a <em>default</em> implementation, so conforming types don’t have to write the method themselves unless they want to override it:</p>
+<div class="highlight-mojo notranslate"><div class="highlight"><pre><span></span><span class="k">trait</span><span class="w"> </span><span class="n n-Struct">Greetable</span><span class="p">:</span>
+<span class="w">    </span><span class="k">def</span><span class="w"> </span><span class="nf">greet</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello from a generic thing.&quot;</span><span class="p">)</span>
+
+<span class="nd">@fieldwise_init</span>
+<span class="k">struct</span><span class="w"> </span><span class="n n-Struct">Robot</span><span class="p">(</span><span class="n">Greetable</span><span class="p">):</span>
+<span class="w">    </span><span class="k">pass</span><span class="w">        </span><span class="c1"># inherits the default greet()</span>
+
+<span class="nd">@fieldwise_init</span>
+<span class="k">struct</span><span class="w"> </span><span class="n n-Struct">Human</span><span class="p">(</span><span class="n">Greetable</span><span class="p">):</span>
+<span class="w">    </span><span class="k">def</span><span class="w"> </span><span class="nf">greet</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hi, I&#39;m a person.&quot;</span><span class="p">)</span><span class="w">   </span><span class="c1"># overrides the default</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span>
+<span class="w">    </span><span class="n">Robot</span><span class="p">()</span><span class="o">.</span><span class="n">greet</span><span class="p">()</span><span class="w">    </span><span class="c1"># Hello from a generic thing.</span>
+<span class="w">    </span><span class="n">Human</span><span class="p">()</span><span class="o">.</span><span class="n">greet</span><span class="p">()</span><span class="w">    </span><span class="c1"># Hi, I&#39;m a person.</span>
+</pre></div>
+</div>
+</section>
+<section id="traits-you-ve-already-been-using">
+<h2>Traits you’ve already been using<a class="headerlink" href="#traits-you-ve-already-been-using" title="Link to this heading">#</a></h2>
+<p>You’ve actually been using traits since the <em>Data Structures</em> chapter without realizing it. <code class="docutils literal notranslate"><span class="pre">Copyable</span></code> and <code class="docutils literal notranslate"><span class="pre">Movable</span></code> are built-in traits, when you wrote <code class="docutils literal notranslate"><span class="pre">struct</span> <span class="pre">MyPair(Copyable,</span> <span class="pre">Movable)</span></code>, you were declaring conformance to them. The standard library is full of useful ones:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Copyable</span></code> / <code class="docutils literal notranslate"><span class="pre">Movable</span></code> — the type can be copied / moved.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Stringable</span></code> — the type can convert itself to a <code class="docutils literal notranslate"><span class="pre">String</span></code> (via <code class="docutils literal notranslate"><span class="pre">__str__</span></code>).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Writable</span></code> — the type can be written to an output stream (this is what lets <code class="docutils literal notranslate"><span class="pre">print</span></code> work on it).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Intable</span></code> — the type can convert itself to an <code class="docutils literal notranslate"><span class="pre">Int</span></code>.</p></li>
+</ul>
+<p>When you implement the matching dunder method and declare the trait, your custom types slot right into standard-library functions that expect that behavior. Traits are the glue that lets Mojo’s generic, reusable code work across types it has never seen.</p>
+</section>
+<section id="duck-typing-vs-traits-the-takeaway">
+<h2>Duck typing vs. traits, the takeaway<a class="headerlink" href="#duck-typing-vs-traits-the-takeaway" title="Link to this heading">#</a></h2>
+<p>So, is duck typing the same as traits? <strong>Not quite, and the difference is the point.</strong></p>
+<ul class="simple">
+<li><p><em>Duck typing</em> (Python) checks behavior at <strong>runtime</strong>. Flexible, but errors surface only when the code runs.</p></li>
+<li><p><em>Traits</em> (Mojo) check behavior at <strong>compile time</strong>. You write generic code that works across many types, and the compiler proves it’s correct before you ship.</p></li>
+</ul>
+<p>Traits let you keep the expressive, behavior-focused style that makes Python pleasant, while gaining the speed and safety of a statically-typed systems language. Once you start designing with traits, you’ll find yourself writing less repetitive code and catching more bugs early, which is exactly the kind of leverage that makes Mojo worth learning.</p>
 </section>
 </section>
 
@@ -520,7 +578,7 @@ does python has traits:</p>
               
               
               
-                <footer class="prev-next-footer">
+                <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
     <a class="left-prev"
@@ -529,7 +587,7 @@ does python has traits:</p>
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">using Python</p>
+        <p class="prev-next-title">Using Python</p>
       </div>
     </a>
     <a class="right-next"
@@ -537,7 +595,7 @@ does python has traits:</p>
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">OOPs concepts in Mojo</p>
+        <p class="prev-next-title">OOP Concepts in Mojo</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -548,17 +606,29 @@ does python has traits:</p>
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
     <i class="fa-solid fa-list"></i> Contents
   </div>
-  <nav class="bd-toc-nav page-toc">
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oops">OOPs</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#duck-typing">duck typing</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-a-trait">What is a trait</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-problem-shared-behavior-across-different-types">The problem: shared behavior across different types</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#duck-typing">Duck typing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-duck-typing-doesn-t-translate-directly-to-mojo">Why duck typing doesn’t translate directly to Mojo</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#traits-a-contract-for-behavior">Traits: a contract for behavior</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-define-the-trait">Step 1 — Define the trait</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-make-types-conform">Step 2 — Make types conform</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-write-one-function-against-the-trait">Step 3 — Write one function against the trait</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#default-implementations">Default implementations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#traits-you-ve-already-been-using">Traits you’ve already been using</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#duck-typing-vs-traits-the-takeaway">Duck typing vs. traits, the takeaway</a></li>
 </ul>
   </nav></div>
 
@@ -583,7 +653,7 @@ By Amit Shukla
 
   <p class="copyright">
     
-      © Copyright 2022.
+      © Copyright 2023.
       <br/>
     
   </p>
@@ -607,8 +677,8 @@ By Amit Shukla
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+  <script defer src="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
 
   <footer class="bd-footer">
   </footer>

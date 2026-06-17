@@ -1,632 +1,265 @@
-# Data Types, Variables, Operators
+# Data Types, Variables and Operators
 
-Let's kick things off by learning Mojo's data types, variables and operators.
+Let's kick things off by learning Mojo's data types, variables, and operators. These are the bricks. Everything else in the book is built on top of them.
 
 ## Data
 
-In simple words, Data refers to any information that is consumed by Intelligence. Computers store data in forms of numbers, text, images, audio, videos that can be stored and used by a program. Data is typically stored in variables, data structures, or files, and it is the fundamental building block for performing computations and creating meaningful output in a program.
+In plain words, *data* is any information that intelligence consumes. Computers store data as numbers, text, images, audio, and video, and a program reads, transforms, and produces it. Data lives in variables, data structures, or files, and it's the raw material every program works with.
 
-for example -
+Here's some everyday data, the kind you'd actually find in a real application:
 
-```{code-block}
-name = "Amit Shukla"
-🔥 = "Amit Shukla"
-# in this case, instead of using an obvious identity such as << name >>,
-# you can use any unicode char or even an emoji to store value of an object.
-
-```
-
-```{code-block}
-x = 1
-# name = "Barbie"
-# song = "what_was_i_made_for.mp3"
-movie = "Barbie.mp4"
-addresses = ["Malibu","Brooklyn"]
-zipcode = ("90265","11203")
-
-print(x)
-
-## uncomment following to see error
-# zipcode = ("90265","11203") # errors out
-# addresses = [
-                {"City": "Malibu", zipcode: "90265"},
-                {"City": "Brooklyn", zipcode: "11203"}
-                ]
-## we will fix these errors later once we discuss variables
-
-## uncomment following to see error
-# x = 1
-# name = "Barbie"
-# song = "what_was_i_made_for.mp3"
-# movie = "Barbie.mp4"
-# addresses = ["Malibu","Brooklyn"]
-# zipcode = ["90265","11203"]
-
-# print(name, song, zipcode)
-
-## we will fix these errors later once we discuss variables
-```
-
-```{code-block}
-# show case data types
-
-# data type | data structure
-a = 1
-print("type of var a:",type(a))
-b = 1.0
-print("type of var b:",type(b))
-c = "Hello World"
-print("type of var c:",type(c))
-d = (1,2)
-print("type of var d:",type(d))
-e = ["CA","OR"]
-print("type of var e:",type(e))
-f = {"a":1, "b":2}
-print("type of var f:",type(f))
-
-from collections import namedtuple
-Tbl = namedtuple("col", ["x", "y"])
-print("type of var d:", type(Tbl))
-t = Tbl(x=1, y =2)
-print("type of var t:", type(t))
-print(t)
-
-loc = ["CA","WA"]
-print("type of var loc:", type(loc))
-```
-
-```{code-block}
-%%python
-addresses = [
-            [{"City": "Malibu", "zipcode": "90265"}],
-            [{"City": "Brooklyn", "zipcode": "11203"}]
-                ]
-addresses = ("Malibu","Brooklyn")
-print(addresses)
-
-# above code just works fine, because it's python code.
-```
-
-## Value Semantics
-
-Value Semantics is a concept in Computer Science that focuses on the value of an object rather that it's identity.
-
-Mojo enables users to utilize value semantics, allowing them to pass values (such as data structures like lists, arrays, strings, etc.) as logical copies rather than references.
-
-## Data Type
-
-Data Type is nothing but a classification of data, that tells compiler how program should process and use the data. It defines the type of `value`|`data`, a variable can hold and the type of operations can be performed on that value without causing errors.
-
-For instance, adding two whole numbers is similar to adding two decimal numbers or adding a decimal number with a whole number. However, adding two pieces of text or two lists is quite different from adding numbers.
-
-Understanding data types is crucial because it allows computers to perform faster. It's important for the computer to know the context and type of data it is dealing with before running operations on that data. This helps ensure that the operations are performed correctly and efficiently.
-
-In dynamic programming languages, programmers don't always have to worry about data type conversions and can rely on the language to handle it. However, in static programming languages, it is appreciated to declare/annotate data types in advance. This may require a bit more code and reduce flexibility, but it greatly improves performance.
-
-Many programming languages are capable of understanding data types based on their values, even if the programmer forgets to explicitly annotate the data type. This is known as "data type inference."
-
-## Computer memory
-
-Before we move on to reviewing `Python` and `Mojo` code we write in previous section, let's take a moment to understand the structure of computer memory. While it may seem overwhelming and unnecessary for Python and application programmers, trust me, having a basic understanding of computer memory systems can greatly benefit you as an AI Engineer when deploying your code.
-
-Credit: reference [Dr. Chris Rackauckas](https://book.sciml.ai/notes/02-Optimizing_Serial_Code/)
-At the highest level you have a CPU's core memory which directly accesses a L1 cache. The L1 cache has the fastest access, so things which will be needed soon are kept there. However, it is filled from the L2 cache, which itself is filled from the L3 cache, which is filled from the main memory. This bring us to the first idea in optimizing code: using things that are already in a closer cache can help the code run faster because it doesn't have to be queried for and moved up this chain.
-
-When something needs to be pulled directly from main memory this is known as a cache miss
-
-![MultiCore CPU memory](https://hackernoon.com/hn-images/1*nT3RAGnOAWmKmvOBnizNtw.png)
-
-### Lower Level View: The Stack and the Heap
-
-Locally, the stack is composed of a stack and a heap. The stack requires a static allocation: it is ordered. Because it's ordered, it is very clear where things are in the stack, and therefore accesses are very quick (think instantaneous). However, because this is static, it requires that the size of the variables is known at compile time (to determine all of the variable locations). Since that is not possible with all variables, there exists the heap. The *heap is essentially a stack of pointers to objects in memory*. When heap variables are needed, their values are pulled up the cache chain and accessed.
-
-![The Stack and Heap](https://bayanbox.ir/view/581244719208138556/virtual-memory.jpg)
-
-### Heap Allocations and Speed
-
-Heap allocations are costly because they involve this pointer indirection, so stack allocation should be done when sensible (it's not helpful for really large arrays, but for small values like scalars it's essential!)
-
-## Variables and Constants
-
-Now is the time to review `Python` and `Mojo` code we write in previous section.
-
-Mojo provides different ways to declare variables. The `var` keyword allows you to create a mutable variable, while the `let` keyword allows you to create a variable that holds an immutable value.
-
-Let's re-run `Mojo` code.
-
-```{code-block}
-x = 1
-# uncomment and run to see error
-# x = 2
-
-let x = 1
-# uncomment and run to see error
-# x = 2
-
+```{code-block} mojo
 var x = 1
-x = 2 # works fine
-
-var name = "Amit"
-name = "Amit Shukla"
-let song = "what_am_i_made_of.mp3"
-let movie = "Barbie.mp4"
-let addresses = ["Malibu","Brooklyn"]
-let zipcode = ("90265","11203")
+var name = "Amit Shukla"
+var song = "what_am_i_made_of.mp3"
+var movie = "Barbie.mp4"
+var addresses = ["Malibu", "Brooklyn"]
+var zipcodes = ["90265", "11203"]
 ```
 
-## Standard Data Types
+Nothing exotic here. A number, some text, and a couple of lists. We'll spend the rest of this chapter understanding what Mojo actually does with each of these behind the scenes, because *that* is where Mojo earns its speed.
 
-:::{warning}
-`Mojo` is a relatively new programming language, it is important to expect frequent changes and updates.
+## Value semantics
+
+*Value semantics* is a computer science idea that cares about the **value** of an object rather than its **identity** (where it lives in memory).
+
+By default, Mojo gives you value semantics: when you pass data around (a list, a string, a number), the receiver gets a logical *copy*, not a hidden reference to your original. That means a function can't secretly reach back and mangle your data. It's predictable, and predictability is what keeps large programs sane.
+
+A small, fun aside: Mojo source files are UTF-8, so a variable name doesn't have to be plain ASCII. This is legal:
+
+```{code-block} mojo
+var name = "Amit Shukla"
+var 🔥 = "Amit Shukla"   # yes, an emoji can be a variable name
+```
+
+I wouldn't ship code like that, but it's a nice reminder that Mojo is a modern, Unicode-native language.
+
+## Data type
+
+A *data type* is a classification of data that tells the compiler how to store and operate on a value. It defines what a variable can hold and which operations are legal on it.
+
+Adding two whole numbers behaves like adding two decimals, more or less. But "adding" two pieces of text, or two lists, means something completely different from adding numbers. The type is how the compiler knows which behavior you meant.
+
+Why does this matter for speed? Because when the compiler knows the exact type ahead of time, it doesn't have to *check* at runtime. It can lay out the data efficiently and generate tight machine code.
+
+Dynamic languages like Python let you skip type declarations and figure things out as the program runs, which is flexible but costs performance. Static languages ask you to annotate types up front, which is a little more typing but much faster execution. Mojo gives you both: it can *infer* a type from the value you assign, or you can spell it out explicitly when you want control.
+
+## A quick detour: computer memory
+
+Before we look at variables, let's spend two minutes on how memory is structured. It feels like a tangent for an application programmer, but this small mental model pays off enormously once you start deploying performance-sensitive AI code.
+
+Credit for the framing goes to [Dr. Chris Rackauckas](https://book.sciml.ai/notes/02-Optimizing_Serial_Code/). At the top, a CPU core talks to a tiny, blazing-fast **L1 cache**. L1 is fed by a larger, slightly slower **L2**, which is fed by **L3**, which is fed by the comparatively glacial **main memory (RAM)**. The first rule of fast code falls right out of this picture: data that's already sitting in a nearby cache is cheap to reach; data that has to be hauled up from main memory is expensive. That expensive trip is called a **cache miss**.
+
+### The stack and the heap
+
+Within a running program, memory is organized into a **stack** and a **heap**.
+
+The **stack** is ordered and statically allocated. Because everything has a known place, access is essentially instantaneous. The catch: the compiler has to know each value's size at compile time. That works great for small, fixed-size values like a single `Int`.
+
+The **heap** exists for everything else. Think of the heap as a place to store values whose size isn't known until runtime (a string the user types, a list that grows). Heap data is reached through a *pointer*, an address that lives on the stack and points to the real data on the heap.
+
+### Why this affects your code
+
+Heap allocations aren't free. Following a pointer and managing that memory has a cost. So the guideline is: keep small values (scalars like an `Int` or a `Float64`) on the stack, and accept heap allocation when you genuinely need a large or dynamically-sized value. Mojo gives you the control to make that choice, which is exactly what a systems language should do.
+
+![The stack and the heap](https://bayanbox.ir/view/581244719208138556/virtual-memory.jpg)
+
+## Variables and constants
+
+Now let's revisit those variables.
+
+Here's the single most important change if you learned Mojo a couple of years ago: **the `let` keyword is gone.** Early Mojo used `let` for immutable variables and `var` for mutable ones. That distinction was removed. Today, **all variables in Mojo are mutable**, and you have two ways to create one:
+
+```{code-block} mojo
+# Explicit: use the `var` keyword
+var x = 1
+x = 2          # totally fine, variables are mutable
+
+# Implicit: just assign a name (inside a function)
+y = 10
+y = 20         # also fine
+```
+
+So what's the difference between `var x = 1` and plain `x = 1`?
+
+- A `var` variable has **block-level scope**: it lives only inside the `{}`-style indented block where you declared it.
+- An implicit variable (no `var`) has **function-level scope**, just like Python: assigning it anywhere in a function makes it visible throughout that function.
+
+For most beginner code the two behave the same. I'll lean on `var` in this book because being explicit makes examples easier to read.
+
+:::{note} What about constants?
+If you want a value that genuinely cannot change, and that is known at compile time, Mojo uses the `comptime` keyword (and you'll still see the older `alias` keyword in lots of library code). We'll meet `comptime` properly in the *Metaprogramming* chapter. For now: variables are mutable, and that's the rule to remember.
 :::
 
-Before we dive into discussing Mojo's standard data types, it's important to understand that Mojo offers a wide range of built-in functionality through modules. Think of modules as libraries that contain various functionalities, such as data types, data structures and data methods, bundled together to serve a specific purpose. We will explore modules and packages in more detail later on.
+### Strong typing
 
-Since these [built-in modules](https://docs.modular.com/mojo/lib.html) are part of standard library, you don't need to explicitly import them.
+Mojo is **strongly typed**. A variable gets its type the moment it's created, and that type never changes:
 
-In `Mojo`, mostly a Type comes from a module's struct implementation.
-
-For example - `Int` is a type represents an integer value. It comes from `int` module that implements `Int` class.
-
-If you explore the `int` module [documentation](https://docs.modular.com/mojo/stdlib/builtin/int.html) in Mojo, you will notice that it provides a wide range of functionality for working with integer data types. This module allows you to perform multiple operations on integer values efficiently.
-
-*Mojo is a high-level programming language with an extensive set of modern features. Mojo also provides you, the programmer, access to all of the low-level primitives that you need to write powerful – yet zero-cost – abstractions.*
-
-In simpler terms, `Mojo` allows you to use existing or create your own data types and functionalities with zero-cost abstractions. Unlike other programming languages that bury data types deep within the compiler or language design, Mojo allows you to see through and define your own data types.
-
-All the “standard types” (like Int, Bool, String and even Tuple) are made using `struct`.
-
-```{code-block}
-let x: Int = 4
-print(x)
-
-let y: Int = 6
-print(y)
-
-# what it means, I declared two Immutable variables named `x` and `y`
-# which hold a Integer data type, of size 64-bit on Stack memory.
-# since, x is of type Int, which implement Int class from `int` module
-# I can freely use methods __xxx__ defined on int module
-# These __ aka "double underscore -> dunder -> magic functions" define most of primitive operations
-
-TODO:::::::::::::::::::::::
-print(x.__bool__())
-print(x.__le__(y)) # same as x < y
-
+```{code-block} mojo
+var count = 8     # count is an Int
+count = "nine?"   # ERROR: can't put a String into an Int
 ```
 
-Now that we have a grasp of what a data type is and how it is represented in computer memory, let's explore some more examples of these data types.
+You can also annotate the type explicitly with a colon:
 
-- Int
-- Bool
-- StringLiteral
-- String
-- FloatLiteral
-- ListLiteral
-- Dynamic Vectors
-- Tuple
-- Builtins
-- Utils
-- Slice
-- DTYPE
-- SIMD
-- Python
-
-```{code-block}
-TODO:::::::::::::::::::::::
-x = 1
-name = "Amit Shukla"
-song = "what_am_i_made_of.mp3"
-movie = "Barbie.mp4"
-addresses = ["Malibu","Brooklyn"]
-zipcode = ("90265","11203")
-
-print(x)
-
-## uncomment following to see error
-# zipcode = ("90265","11203") # errors out
-# addresses = [
-                {"City": "Malibu", zipcode: "90265"},
-                {"City": "Brooklyn", zipcode: "11203"}
-                ]
-## we will fix these errors later once we discuss variables
-
-## uncomment following to see error
-# x = 1
-# name = "Amit Shukla"
-# song = "what_am_i_made_of.mp3"
-# movie = "Barbie.mp4"
-# addresses = ["Malibu","Brooklyn"]
-# zipcode = ["90265","11203"]
-
-# print(name, song, zipcode)
-
-## we will fix these errors later once we discuss variables
+```{code-block} mojo
+var temperature: Float64 = 99   # the 99 is converted to 99.0
+print(temperature)
 ```
 
-### StringLiteral, String
+Here `temperature` is declared as `Float64`, so the integer `99` is *implicitly converted* to the floating-point value `99.0`. Mojo allows these conversions only when they're safe and lossless.
 
-```{code-block}
-TODO:::::::::::::::::::::::
-var name = "Amit Shukla"
-name = 3 # crash this variable to see error, it indicates, when a string variables is declared, Mojo compiler infer data type as StringLiteral
-# var name = "Amit Shukla" << is equal to >> var name: StringLiteral = "Amit Shukla"
+## Standard data types
 
-# String Literal is different than String,
-# String is a pointer to heap allocated data and allows developer to store huge amount of data into it
+:::{warning}
+Mojo is still young, so expect the standard library to grow and shift between releases.
+:::
 
-# In Mojo the heap allocated String isn't imported by default:
+A wonderful thing about Mojo is that its "built-in" types aren't baked secretly into the compiler. They're defined in the standard library using the same `struct` feature you'll use for your own types. `Int`, `Bool`, `String`, even `Tuple`, are all just structs. That's what people mean when they say Mojo lets you build *zero-cost abstractions*: you get high-level, readable types without giving up low-level control, because you can see (and even build) all the way down.
 
-from String import String
-s = String("Mojo🔥")
-print(s)
+The most common types are **built-ins**, always available with no import needed. Let's meet them.
 
-x = s.buffer
-x = 20 # crash this to see data type
+### Int and UInt
 
+`Int` is a signed integer that matches your machine's word size, typically 64 bits on a modern computer. `UInt` is its unsigned cousin (non-negative values only).
+
+```{code-block} mojo
+var x: Int = 4
+var y: Int = 6
+print(x + y)        # 10
+print(x < y)        # True
 ```
 
-Copied!
+When you need a *specific* width, Mojo offers fixed-size types: `Int8`, `Int16`, `Int32`, `Int64` and the unsigned `UInt8` … `UInt64`. Reach for plain `Int` as your default and only specify a width when you have a reason to.
 
-error: Expression [17]:22:10: cannot implicitly convert 'DynamicVector[SIMD[si8, 1]]' value to 'PythonObject' in assignment
-    x = s.buffer
-        ~^~~~~~~
+A small detail worth knowing: those fixed-width numeric types are actually aliases for the `SIMD` type, which we'll get to at the end of this chapter. It's a clue that Mojo was designed for high-performance numerical work from day one.
 
-DynamicVector is similar to a Python list, here it's storing multiple int8's that represent the characters, let's print the first character:
+### Bool
 
-print(s[0])
+A boolean is either `True` or `False`:
 
-Copied!
+```{code-block} mojo
+var ready: Bool = True
+print(ready == False)   # False
+```
 
-The other string type is a StringLiteral, it's written directly into the binary, when the program starts it's loaded into read-only memory, which means it's constant and lives for the duration of the program:
+### Float
 
-var lit = "This is my StringLiteral"
-print(lit)
+For decimals, use floating-point types. `Float64` (double precision) is the everyday choice; `Float32` and `Float16` trade precision for size and speed.
 
-Copied!
+```{code-block} mojo
+var pi: Float64 = 3.14159
+print(pi)
 
-This is my StringLiteral
+var small = Float32(pi)   # fewer bits, less precise
+print(small)
+```
 
-Force an error to see the type:
+Floating-point numbers can't represent every decimal exactly, so don't be surprised if a value prints with a tiny rounding tail. That's the nature of binary floating point, not a Mojo quirk.
 
-lit = 20
+### String and StringLiteral
 
-Copied!
+Text comes in two related flavors.
 
-error: Expression [26]:26:11: cannot implicitly convert 'Int' value to 'StringLiteral' in assignment
-    lit = 20
-          ^~
+A **`StringLiteral`** is the text you write directly in your source code, like `"Mojo🔥"`. It's baked into the compiled program and is known at compile time.
 
-One thing to be aware of is that an emoji is actually four bytes, so we need a slice of 4 to have it print correctly:
+A **`String`** is a full, heap-allocated, growable string, the one you'll use for text that's built or changed while the program runs.
 
-emoji = String("🔥😀")
-print("fire:", emoji[0:4])
-print("smiley:", emoji[4:8])
+```{code-block} mojo
+var greeting: String = "Mojo🔥"
+print(greeting)
+print(len(greeting))        # length in bytes
+```
 
-Copied!
+`String` is a built-in now, so unlike in old Mojo you don't import anything to use it. You can index and slice it using familiar Python-style syntax:
 
-fire: 🔥
-smiley: 😀
+```{code-block} mojo
+var original = String("MojoDojo")
+print(original[0:4])        # "Mojo"
+print(original[0:4:2])      # "Mj"  (start:end:step)
+```
 
-Check out Maxim Zaks Blog post
+### List
 
-for more details.
+When you want an ordered, growable collection of values *of the same type*, use `List`. This is Mojo's workhorse collection, and it replaces the old `DynamicVector` you may remember.
 
-### FloatLiteral
+```{code-block} mojo
+var zipcodes: List[String] = ["90265", "11203"]
+zipcodes.append("10001")
 
-Now lets take a look at the decimal representation:
+for z in zipcodes:
+    print(z)
 
-from String import ord
+print(len(zipcodes))        # 3
+```
 
-print(ord(s[0]))
-
-Copied!
-
-77
-
-That's the ASCII code shown in this table
-
-FloatLiteral
-
-let float: FloatLiteral = 3.3
-print(float)
-
-Copied!
-
-3.2999999999999998
-
-let f32 = Float32(float)
-print(f32)
-
-Copied!
-
-3.2999999523162842
-
-### ListLiteral
-ListLiteral
-
-When you initialize the list the types can be inferred, however when retrieving an item you need to provide the type as a parameter:
-
-let list: ListLiteral[Int, FloatLiteral, StringLiteral] = [1, 5.0, "Mojo🔥"]
-print(list.get[2, StringLiteral]())
-
-Copied!
-
-### Dynamic Vectors
-
-We can build our own string this way, we can put in 78 which is N and 79 which is O
-
-from Vector import DynamicVector
-
-let vec = DynamicVector[Int8](2)
-
-vec.push_back(78)
-vec.push_back(79)
-
-Copied!
-
-We can use a StringRef to get a pointer to the same location in memory, but with the methods required to output the numbers as text:
-
-from Pointer import DTypePointer
-from DType import DType
-
-let vec_str_ref = StringRef(DTypePointer[DType.int8](vec.data).address, vec.size)
-print(vec_str_ref)
-
-Copied!
-
-NO
-
-Because it points to the same location in heap memory, changing the original vector will also change the value retrieved by the reference:
-
-vec[1] = 78
-print(vec_str_ref)
-
-Copied!
-
-NN
-
-Create a deep copy of the String and allocate it to the heap:
-
-from String import String
-let vec_str = String(vec_str_ref)
-
-print(vec_str)
-
-Copied!
-
-NN
-
-Now we've made a copy of the data to a new location in heap memory, we can modify the original and it won't effect our copy:
-
-vec[0] = 65
-vec[1] = 65
-print(vec_str)
-
-Copied!
-
-NN
+The `List[String]` part says "a list whose elements are all `String`". The square brackets after `List` are a *parameter*: a compile-time piece of information telling Mojo exactly what's inside. We'll unpack parameters properly in later chapters.
 
 ### Tuple
 
-Tuple
+A `Tuple` groups a fixed number of values that may have **different** types:
 
-let tup = (1, "Mojo", 3)
-print(tup.get[0, Int]())
+```{code-block} mojo
+var record = (1, "Mojo", 3.0)
+print(record[0])    # 1
+print(record[1])    # "Mojo"
+```
 
-Copied!
+Use a `List` when you have many things of the same type, and a `Tuple` when you have a small, fixed bundle of related but differently-typed things.
 
-1
+## SIMD: where Mojo flexes
 
-## Builtins
+Before we wrap up, let's meet the type that hints at Mojo's real ambitions: **SIMD**, which stands for *Single Instruction, Multiple Data*.
 
-## Utils
+Modern CPUs have special wide registers that can apply one operation to a whole vector of numbers *at once*, instead of looping over them one at a time. That's a huge speedup for the kind of math AI workloads are made of. Mojo exposes this directly:
 
-These are all of the other builtin types not discussed which are accessible without importing anything, the type can be inferred, but are explicit here for demonstration, for example let bool: Bool = True can just be let bool = True:
-Bool
+```{code-block} mojo
+var v = SIMD[DType.uint8, 4](1, 2, 3, 4)
+print(v)            # [1, 2, 3, 4]
 
-Standard Bool type
+v *= 10
+print(v)            # [10, 20, 30, 40]  -- one instruction, all four values
+```
 
-let bool: Bool = True
-print(bool == False)
+Look closely at `SIMD[DType.uint8, 4]`. The parts in **square brackets** (`DType.uint8, 4`) are *parameters*: the element type and how many of them, both known at compile time. The parts in **parentheses** (`1, 2, 3, 4`) are *arguments*: the actual runtime values.
 
-Copied!
+This distinction between parameters (compile-time) and arguments (runtime) is one of Mojo's most important ideas. In many languages "parameter" and "argument" mean the same thing. In Mojo they're deliberately different, and that difference is what lets the compiler generate such fast code. We'll come back to it again and again.
 
-False
+Here's the kicker. Those friendly fixed-width types from earlier are just SIMD vectors of length one:
 
-Int
+```{code-block} mojo
+var n = UInt8(1)    # exactly the same as SIMD[DType.uint8, 1]
+```
 
-Int is the same size as your architecture e.g. on a 64 bit machine it's 64 bits
-
-let i: Int = 2 
-print(i)
-
-Copied!
-
-2
-
-It can also be used as an index:
-
-var vec_2 = DynamicVector[Int]()
-vec_2.push_back(2)
-vec_2.push_back(4)
-vec_2.push_back(6)
-
-print(vec_2[i])
-
-Copied!
-
-6
-
-### Slice
-
-A slice follows the python convention of:
-
-start:end:step
-
-So for example using Python syntax:
-
-let original = String("MojoDojo")
-print(original[0:4])
-
-Copied!
-
-Mojo
-
-You can also represent as:
-
-let slice_expression = slice(0, 4)
-
-print(original[slice_expression])
-
-Copied!
-
-Mojo
-
-And to get every second letter:
-
-print(original[0:4:2])
-
-Copied!
-
-Mj
-
-Or:
-
-let slice_expression = slice(0, 4, 2)
-print(original[slice_expression])
-
-Copied!
-
-Mj
-
-Error
-
-The error type is very simplistic, we'll go into more details on errors in a later chapter:
-
-def return_error():
-    raise Error("This returns an Error type")
-
-return_error()
-
-Copied!
-
-Error: This returns an Error type
-
-------
-
-Before we conclude this topic, let's discuss the `SIMD` data type, as it is an important concept to understand.
-
-TOD::::::::::::
-SIMD stands for Single Instruction, Multiple Data, hardware now contains special registers that allow you do the same operation across a vector in a single instruction, greatly improving performance, let's take a look:
-
-from DType import DType
-
-y = SIMD[DType.uint8, 4](1, 2, 3, 4)
-print(y)
-
-n the definition [DType.uint8, 4] are known as parameters which means they must be compile-time known, while (1, 2, 3, 4) are the arguments which can be compile-time or runtime known.
-
-For example user input or data retrieved from an API is runtime known, and so can't be used as a parameter during the compilation process.
-
-In other languages argument and parameter often mean the same thing, in Mojo it's a very important distinction.
-
-This is now a vector of 8 bit numbers that are packed into 32 bits, we can perform a single instruction across all of it instead of 4 separate instructions:
-
-y *= 10
-print(y)
-
-CS Fundamentals
-
-Binary is how your computer stores memory, with each bit representing a 0 or 1. Memory is typically byte addressable, meaning that each unique memory address points to one byte, which consists of 8 bits.
-
-This is how the first 4 digits in a uint8 are represented in hardware:
-
-    1 = 00000001
-    2 = 00000010
-    3 = 00000011
-    4 = 00000100
-
-Binary 1 and 0 represents ON or OFF indicating an electrical charge in the tiny circuits of your computer.
-
-Check this video
-if you want more information on binary.
-
-We're packing the data together with SIMD on the stack so it can be passed into a SIMD register like this:
-
-00000001 00000010 00000011 00000100
-
-The SIMD register in modern CPU's is huge, let's see how big it is in the Mojo playground:
-
-from TargetInfo import simdbitwidth
-print(simdbitwidth())
-512
-
-That means we could pack 64 x 8bit numbers together and perform a calculation on all of it with a single instruction.
-
-You can also initialize SIMD with a single argument:
-
-z = SIMD[DType.uint8, 4](1)
-print(z)
-
-#### Scalars:
-Scalar just means a single value, you'll notice in Mojo all the numerics are SIMD scalars:
-var x = UInt8(1)
-x = "will cause an error"
-
-error: Expression [14]:20:9: cannot implicitly convert 'StringLiteral' value to 'SIMD[ui8, 1]' in assignment
-    x = "will cause an error"
-        ^~~~~~~~~~~~~~~~~~~~~
-
-
-UInt8 is just an alias for SIMD[DType.uint8, 1], you can see all the numeric SIMD types imported by default here
-
-    Float16
-    Float32
-    Float64
-    Int8
-    Int16
-    Int32
-    Int64
-    UInt8
-    UInt16
-    UInt32
-    UInt64
-
-Also notice when we try and change the type it throws an error, this is because Mojo is strongly typed
-
-If we use existing Python modules, it will give us back a PythonObject that behaves the same loosely typed way as it does in Python:
-
-np = Python.import_module("numpy")
-
-arr = np.ndarray([5])
-print(arr)
-arr = "this will work fine"
-print(arr)
-
-## Struct vs classes
-
-TODO:::
-You can build high-level abstractions for types (or “objects”) in a struct. A struct in Mojo is similar to a class in Python: they both support methods, fields, operator overloading, decorators for metaprogramming, etc. However, Mojo structs are completely static—they are bound at compile-time, so they do not allow dynamic dispatch or any runtime changes to the structure. (Mojo will also support classes in the future.)
-
-struct MyPair:
-    var first: Int
-    var second: Int
-
-    fn __init__(inout self, first: Int, second: Int):
-        self.first = first
-        self.second = second
-    
-    fn dump(self):
-        print(self.first, self.second)
-
-let mine = MyPair(2, 4)
-mine.dump()
-
-TODO::: write similar thing in Python
-
-** will discuss argument ownership in details in later section
+So when you write `Int8` or `UInt8`, you're already using the machinery that powers Mojo's number-crunching. That's the kind of "high-level on the surface, metal underneath" design that made me fall for this language.
 
 ## Operators
 
-## Simple Mathematics
+With types in hand, operators are the easy part. Mojo's operators will feel instantly familiar:
+
+```{code-block} mojo
+var a = 10
+var b = 3
+
+print(a + b)    # 13   addition
+print(a - b)    # 7    subtraction
+print(a * b)    # 30   multiplication
+print(a / b)    # 3.333...  true division (returns a float)
+print(a // b)   # 3    floor division
+print(a % b)    # 1    remainder (modulo)
+print(a ** b)   # 1000 exponentiation
+```
+
+Comparisons return a `Bool`:
+
+```{code-block} mojo
+print(a > b)    # True
+print(a == b)   # False
+print(a != b)   # True
+```
+
+And the logical operators `and`, `or`, and `not` combine boolean values, exactly as you'd expect.
+
+Here's something elegant about Mojo: those operators aren't hardcoded into the compiler either. `a + b` is really a call to an `__add__` method on the type of `a`. That's why you can later give *your own* types the ability to use `+`, `<`, `*`, and friends, a feature called operator overloading that we'll explore in the *Data Structures* chapter.
+
+That's the foundation. You now know how Mojo stores data, how variables and types work, why the stack-versus-heap distinction matters, and how operators are really just method calls in disguise. Next we'll put these to work with loops and control flow.

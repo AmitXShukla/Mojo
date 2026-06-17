@@ -1,74 +1,73 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="./" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>OOPs concepts in Mojo &#8212; The Mojo Programming Language book</title>
+    <title>OOP Concepts in Mojo &#8212; The Mojo Programming Language</title>
   
   
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
   
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
-
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
-  
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
-  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/clipboard.min.js"></script>
-    <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js"></script>
+    <script src="_static/togglebutton.js?v=b8b12719"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'oops';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Arrays, Lists &amp; Comprehension" href="comprehension.html" />
+    <link rel="next" title="Metaprogramming in Mojo" href="metaprogramming.html" />
     <link rel="prev" title="Traits" href="traits.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -76,32 +75,16 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
   
   <div id="pst-scroll-pixel-helper"></div>
-
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>
-    Back to top
-  </button>
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
-  
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
+  <dialog id="pst-search-dialog">
+    
 <form class="bd-search d-flex align-items-center"
       action="search.html"
       method="get">
@@ -109,7 +92,6 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -117,16 +99,25 @@ const thebe_selector_output = ".output, .cell_output"
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -141,6 +132,8 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="sidebar-primary-item">
 
   
+    
+  
 
 <a class="navbar-brand logo" href="intro.html">
   
@@ -153,12 +146,19 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="_static/logo.png" class="logo__image only-light" alt="The Mojo Programming Language book - Home"/>
-    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="The Mojo Programming Language book - Home"/>`);</script>
+    <img src="_static/logo.png" class="logo__image only-light" alt="The Mojo Programming Language - Home"/>
+    <img src="_static/logo.png" class="logo__image only-dark pst-js-only" alt="The Mojo Programming Language - Home"/>
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -171,20 +171,20 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="whymojo.html">Why Mojo</a></li>
 <li class="toctree-l1"><a class="reference internal" href="gettingstarted.html">Getting started</a></li>
-<li class="toctree-l1"><a class="reference internal" href="datatype.html">Data Types, Variables, Operators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datatype.html">Data Types, Variables and Operators</a></li>
 <li class="toctree-l1"><a class="reference internal" href="controlflow.html">Loops &amp; Control Flow</a></li>
 <li class="toctree-l1"><a class="reference internal" href="functions.html">Functions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="datastructure.html">Building Data Structure</a></li>
-<li class="toctree-l1"><a class="reference internal" href="packages.html">Module and Packages</a></li>
-<li class="toctree-l1"><a class="reference internal" href="usingpython.html">using Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datastructure.html">Data Structures: Building Your Own Types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages.html">Modules and Packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usingpython.html">Using Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="traits.html">Traits</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">OOPs concepts in Mojo</a></li>
-<li class="toctree-l1"><a class="reference internal" href="comprehension.html">Arrays, Lists &amp; Comprehension</a></li>
-<li class="toctree-l1"><a class="reference internal" href="MLIR.html">MLIR</a></li>
-<li class="toctree-l1"><a class="reference internal" href="parallel.html">Parallelization</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">OOP Concepts in Mojo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="metaprogramming.html">Metaprogramming in Mojo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="MLIR.html">MLIR: The Engine Under the Hood</a></li>
 <li class="toctree-l1"><a class="reference internal" href="thinkinginmojo.html">Thinking in Mojo</a></li>
-<li class="toctree-l1"><a class="reference internal" href="metaprogramming.html">Meta Programming</a></li>
-<li class="toctree-l1"><a class="reference internal" href="standard.html">Standard Library</a></li>
+<li class="toctree-l1"><a class="reference internal" href="comprehension.html">Arrays, Lists and Comprehension</a></li>
+<li class="toctree-l1"><a class="reference internal" href="parallel.html">Parallelization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="standard.html">The Standard Library</a></li>
 </ul>
 
     </div>
@@ -193,14 +193,19 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
   </div>
-  
-  <div id="rtd-footer-container"></div>
 
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -209,14 +214,14 @@ const thebe_selector_output = ".output, .cell_output"
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -239,7 +244,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/AmitXShukla/mojo" target="_blank"
+      <li><a href="https://github.com/AmitXShukla/Mojo" target="_blank"
    class="btn btn-sm btn-source-repository-button dropdown-item"
    title="Source repository"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -256,7 +261,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/AmitXShukla/mojo/issues/new?title=Issue%20on%20page%20%2Foops.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/AmitXShukla/Mojo/issues/new?title=Issue%20on%20page%20%2Foops.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -325,7 +330,7 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 <button onclick="toggleFullScreen()"
-  class="btn btn-sm btn-fullscreen-button"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
   title="Fullscreen mode"
   data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
@@ -339,27 +344,19 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
-  </button>
-`);
-</script>
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-  </button>
-`);
-</script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -370,7 +367,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>OOPs concepts in Mojo</h1>
+    <h1>OOP Concepts in Mojo</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -380,7 +377,14 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#structures">Structures</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#structs-are-mojo-s-objects">Structs are Mojo’s objects</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-crucial-difference-static-vs-dynamic">The crucial difference: static vs. dynamic</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-static-means-fast">Why static means fast</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#value-semantics-again">Value semantics, again</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-about-inheritance">What about inheritance?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-mental-model-to-carry-forward">The mental model to carry forward</a></li>
 </ul>
             </nav>
         </div>
@@ -390,39 +394,74 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="oops-concepts-in-mojo">
-<h1>OOPs concepts in Mojo<a class="headerlink" href="#oops-concepts-in-mojo" title="Permalink to this heading">#</a></h1>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>WIP: OOPs programming concepts is <em>Not Available yet</em>. This chapter is <em>Work in Progress</em>.</p>
-</div>
-<section id="structures">
-<h2>Structures<a class="headerlink" href="#structures" title="Permalink to this heading">#</a></h2>
-<p>You can build high-level abstractions for types (or “objects”) in a <code class="docutils literal notranslate"><span class="pre">struct</span></code>.</p>
-<p>A <code class="docutils literal notranslate"><span class="pre">struct</span></code> in Mojo is similar to a class in Python: they both support methods, fields, operator overloading, decorators for meta-programming, etc.</p>
-<p>However, Mojo <code class="docutils literal notranslate"><span class="pre">struct</span></code> are completely static. Mojo <code class="docutils literal notranslate"><span class="pre">struct</span></code> are bound at compile-time, so they do not allow dynamic dispatch or any runtime changes to the structure. (Mojo will also support classes in the future.)</p>
-<p>Here is one basic <code class="docutils literal notranslate"><span class="pre">struct</span></code> example.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">struct</span> <span class="n">MyPair</span><span class="p">:</span>
-    <span class="n">var</span> <span class="n">first</span><span class="p">:</span> <span class="n">Int</span>
-    <span class="n">var</span> <span class="n">second</span><span class="p">:</span> <span class="n">Int</span>
+  <section class="tex2jax_ignore mathjax_ignore" id="oop-concepts-in-mojo">
+<h1>OOP Concepts in Mojo<a class="headerlink" href="#oop-concepts-in-mojo" title="Link to this heading">#</a></h1>
+<p>We’ve already built our own types with structs. Now let’s step back and talk about the bigger picture: how Mojo approaches object-oriented programming, how its <code class="docutils literal notranslate"><span class="pre">struct</span></code> compares to Python’s <code class="docutils literal notranslate"><span class="pre">class</span></code>, and why those differences exist. Understanding the <em>why</em> here will make you a more confident Mojo programmer.</p>
+<section id="structs-are-mojo-s-objects">
+<h2>Structs are Mojo’s objects<a class="headerlink" href="#structs-are-mojo-s-objects" title="Link to this heading">#</a></h2>
+<p>In Python, the <code class="docutils literal notranslate"><span class="pre">class</span></code> is the centerpiece of object-oriented programming. In Mojo, that role is played by the <strong><code class="docutils literal notranslate"><span class="pre">struct</span></code></strong>. The two share a lot of DNA: both bundle data (fields) with behavior (methods), both use <code class="docutils literal notranslate"><span class="pre">self</span></code> to refer to the current instance, both support <code class="docutils literal notranslate"><span class="pre">__init__</span></code> constructors, dunder methods, decorators, and operator overloading.</p>
+<p>Here’s the same simple type you’d recognize from Python, written as a Mojo struct:</p>
+<div class="highlight-mojo notranslate"><div class="highlight"><pre><span></span><span class="nd">@fieldwise_init</span>
+<span class="k">struct</span><span class="w"> </span><span class="n n-Struct">MyPair</span><span class="p">(</span><span class="nb">Copyable</span><span class="p">,</span><span class="w"> </span><span class="nb">Movable</span><span class="p">):</span>
+<span class="w">    </span><span class="k">var</span><span class="w"> </span><span class="nv">first</span><span class="p">:</span><span class="w"> </span><span class="nb">Int</span>
+<span class="w">    </span><span class="k">var</span><span class="w"> </span><span class="nv">second</span><span class="p">:</span><span class="w"> </span><span class="nb">Int</span>
 
-    <span class="n">fn</span> <span class="fm">__init__</span><span class="p">(</span><span class="n">inout</span> <span class="bp">self</span><span class="p">,</span> <span class="n">first</span><span class="p">:</span> <span class="n">Int</span><span class="p">,</span> <span class="n">second</span><span class="p">:</span> <span class="n">Int</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">first</span> <span class="o">=</span> <span class="n">first</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">second</span> <span class="o">=</span> <span class="n">second</span>
-    
-    <span class="n">fn</span> <span class="n">dump</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">first</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">second</span><span class="p">)</span>
+<span class="w">    </span><span class="k">def</span><span class="w"> </span><span class="nf">dump</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="nb">print</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">first</span><span class="p">,</span><span class="w"> </span><span class="bp">self</span><span class="o">.</span><span class="n">second</span><span class="p">)</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span>
+<span class="w">    </span><span class="k">var</span><span class="w"> </span><span class="nv">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">MyPair</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">)</span>
+<span class="w">    </span><span class="n">p</span><span class="o">.</span><span class="n">dump</span><span class="p">()</span><span class="w">        </span><span class="c1"># 2 4</span>
 </pre></div>
 </div>
-<p>call <code class="docutils literal notranslate"><span class="pre">struct</span></code></p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">let</span> <span class="n">mine</span> <span class="o">=</span> <span class="n">MyPair</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
-<span class="n">mine</span><span class="o">.</span><span class="n">dump</span><span class="p">()</span>
-</pre></div>
+<p>If you’ve written a Python class, almost none of this is surprising. The <code class="docutils literal notranslate"><span class="pre">self</span></code> argument, the method syntax, the way you construct and use an instance, it’s all familiar. That familiarity is intentional; Mojo wants Python programmers to feel at home.</p>
+</section>
+<section id="the-crucial-difference-static-vs-dynamic">
+<h2>The crucial difference: static vs. dynamic<a class="headerlink" href="#the-crucial-difference-static-vs-dynamic" title="Link to this heading">#</a></h2>
+<p>So if structs are so much like classes, why the new name? Because of one deep, deliberate difference:</p>
+<p><strong>A Mojo <code class="docutils literal notranslate"><span class="pre">struct</span></code> is static. A Python <code class="docutils literal notranslate"><span class="pre">class</span></code> is dynamic.</strong></p>
+<p>A Python class is endlessly flexible at runtime. You can add new attributes to an object on the fly, swap out methods, monkey-patch behavior, and inspect or change almost anything while the program runs. That flexibility is powerful and is a big reason Python is so pleasant for exploration.</p>
+<p>A Mojo struct makes the opposite trade. Its shape, the fields it has, their types, the methods it offers, is fixed at <strong>compile time</strong> and cannot change while the program runs. You can’t bolt a new field onto an instance halfway through execution.</p>
+<p>At first this sounds like a downgrade. It isn’t. It’s the source of Mojo’s speed.</p>
+<section id="why-static-means-fast">
+<h3>Why static means fast<a class="headerlink" href="#why-static-means-fast" title="Link to this heading">#</a></h3>
+<p>Because the compiler knows <em>exactly</em> what’s inside a struct, and that it will never change, it can:</p>
+<ul class="simple">
+<li><p>lay the fields out in memory in the most efficient way possible,</p></li>
+<li><p>skip the runtime bookkeeping that dynamic objects require,</p></li>
+<li><p>and resolve method calls directly instead of looking them up at runtime.</p></li>
+</ul>
+<p>A Python object carries around a dictionary of its attributes so it can stay flexible. A Mojo struct doesn’t need that overhead, it’s just the data, packed tightly, with the compiler having already figured everything out. That’s how you get high-level, class-like ergonomics with low-level, C-like performance. No dynamic dispatch, no runtime surprises, no hidden costs.</p>
+<p>This is the central bargain of Mojo, and once you internalize it, a lot of the language’s design choices click into place: <em>trade a little runtime flexibility for a lot of compile-time knowledge, and let the compiler turn that knowledge into speed.</em></p>
+</section>
+</section>
+<section id="value-semantics-again">
+<h2>Value semantics, again<a class="headerlink" href="#value-semantics-again" title="Link to this heading">#</a></h2>
+<p>There’s a second philosophical difference worth calling out. Python objects are passed around by <strong>reference</strong> by default, two variables can point at the same underlying object, and a change through one is visible through the other. That’s occasionally convenient and frequently the source of subtle bugs.</p>
+<p>Mojo defaults to <strong>value semantics</strong> (we met this idea back in the <em>Data Types</em> chapter). Pass a value to a function and, conceptually, the function gets its own logical copy; it can’t reach back and mutate your original unless you explicitly allow it with <code class="docutils literal notranslate"><span class="pre">mut</span></code>. And as we saw, Mojo structs aren’t even copyable by default, you opt in with the <code class="docutils literal notranslate"><span class="pre">Copyable</span></code> trait. Every one of these choices points the same direction: <strong>no surprises</strong>. You can read a Mojo function’s signature and know exactly what it’s allowed to do to your data.</p>
+</section>
+<section id="what-about-inheritance">
+<h2>What about inheritance?<a class="headerlink" href="#what-about-inheritance" title="Link to this heading">#</a></h2>
+<p>Here’s a question every OOP programmer asks: does Mojo have class inheritance, where one type extends another and inherits its fields and methods?</p>
+<p>Mojo’s structs deliberately don’t lean on classic implementation inheritance the way Python classes do. Instead, Mojo gives you <strong>traits</strong> (the previous chapter) as the primary tool for sharing and abstracting behavior across types. Rather than saying “a <code class="docutils literal notranslate"><span class="pre">SavingsAccount</span></code> <em>is a</em> <code class="docutils literal notranslate"><span class="pre">Account</span></code> and inherits its guts,” you say “a <code class="docutils literal notranslate"><span class="pre">SavingsAccount</span></code> <em>conforms to</em> the <code class="docutils literal notranslate"><span class="pre">Depositable</span></code> trait”, you share the <em>contract</em>, not a tangled hierarchy.</p>
+<p>This is a modern approach that many newer languages favor (Rust and Swift lean this way too). It tends to produce flatter, more flexible designs and sidesteps the famous pitfalls of deep inheritance trees. If you’ve ever been bitten by a six-level-deep class hierarchy, you’ll appreciate it.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Mojo’s object model is still evolving. The language designers have discussed adding <code class="docutils literal notranslate"><span class="pre">class</span></code> with reference semantics and dynamic dispatch in the future, to support cases where Python-style dynamism is genuinely needed and to ease porting existing Python code. For now, the static <code class="docutils literal notranslate"><span class="pre">struct</span></code> plus traits is the idiomatic, high-performance way to model your types, and it’s what this book teaches.</p>
 </div>
-<p>If you’re familiar with Python, then the <strong>init</strong>() method and the self argument should be familiar to you. If you’re not familiar with Python, then notice that, when we call dump(), we don’t actually pass a value for the self argument. The value for self is automatically provided with the current instance of the struct (it’s used similar to the this name used in some other languages to refer to the current instance of the object/type).</p>
-<p>For much more detail about <code class="docutils literal notranslate"><span class="pre">struct</span></code> and other special methods like <strong>init</strong>() (also known as “dunder” methods), see the programming manual.</p>
+</section>
+<section id="the-mental-model-to-carry-forward">
+<h2>The mental model to carry forward<a class="headerlink" href="#the-mental-model-to-carry-forward" title="Link to this heading">#</a></h2>
+<p>When you reach for a type in Mojo, think like this:</p>
+<ul class="simple">
+<li><p>Use a <strong><code class="docutils literal notranslate"><span class="pre">struct</span></code></strong> to bundle data and behavior, your everyday “object.”</p></li>
+<li><p>Lean on <strong>value semantics</strong> and explicit <code class="docutils literal notranslate"><span class="pre">mut</span></code> so your code has no spooky action at a distance.</p></li>
+<li><p>Use <strong>traits</strong> to share behavior and write generic code, instead of inheritance.</p></li>
+<li><p>Remember the bargain: structs are static so the compiler can make them <em>fast</em>.</p></li>
+</ul>
+<p>That combination, Python-like ergonomics with compiler-driven performance, is exactly what makes Mojo such a compelling language for taking research code all the way to production.</p>
 </section>
 </section>
 
@@ -453,7 +492,7 @@ document.write(`
               
               
               
-                <footer class="prev-next-footer">
+                <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
     <a class="left-prev"
@@ -466,11 +505,11 @@ document.write(`
       </div>
     </a>
     <a class="right-next"
-       href="comprehension.html"
+       href="metaprogramming.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Arrays, Lists &amp; Comprehension</p>
+        <p class="prev-next-title">Metaprogramming in Mojo</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -481,15 +520,25 @@ document.write(`
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
     <i class="fa-solid fa-list"></i> Contents
   </div>
-  <nav class="bd-toc-nav page-toc">
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#structures">Structures</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#structs-are-mojo-s-objects">Structs are Mojo’s objects</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-crucial-difference-static-vs-dynamic">The crucial difference: static vs. dynamic</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-static-means-fast">Why static means fast</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#value-semantics-again">Value semantics, again</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-about-inheritance">What about inheritance?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-mental-model-to-carry-forward">The mental model to carry forward</a></li>
 </ul>
   </nav></div>
 
@@ -514,7 +563,7 @@ By Amit Shukla
 
   <p class="copyright">
     
-      © Copyright 2022.
+      © Copyright 2023.
       <br/>
     
   </p>
@@ -538,8 +587,8 @@ By Amit Shukla
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+  <script defer src="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
 
   <footer class="bd-footer">
   </footer>

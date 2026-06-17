@@ -1,150 +1,209 @@
-# Building Data Structure
+# Data Structures: Building Your Own Types
 
-It's essential to start with the fundamentals. So, let's kick things off by learning Mojo's data types and data structures.
+The built-in types (`Int`, `String`, `List`) get you surprisingly far. But sooner or later you'll want a type that models *your* problem: an `Account`, an `Invoice`, a `Pixel`, a `Complex` number. In Mojo, you build your own types with a **`struct`**.
 
-## Struct
+A struct bundles **data** (fields) together with the **behavior** (methods) that operates on that data. That bundling is what turns a pile of loose variables into a clean, reusable concept.
 
-## Constructors
+## Your first struct
 
-## Destructors
+Let's model a simple pair of numbers:
 
-## Dunder/Magic methods
-
-## Methods overloading
-
-## Operators overloading
-
-## Method dispatch
-
-## Operators
-
-<!-- 
-Let's start writing a simple calculator program in Python.
-
-for simple mathematical calculations, just trust Mojo REPL
-
-```{code-block}
-
-# open REPL and run following commands
-
-print(3+4)
-print(-3+4)
-print(-3**4+(4*3/5))
-
-```
-
-however, our end goal is to develop a functionality which can function as full calculator which is way beyond than simple addition and subtraction.
-hence, let's write a function instead which does the same thing,
-
-```{code-block}
-
-def myAdd():
-
-# $ cat hello.🔥
-def main():
-    print("hello world")
-    for x in range(9, 0, -3):
-        print(x)
-# $ mojo hello.🔥
-
-```
-
-However, this is still Python, it's still very nice for Mojo to run Python code but, what if I write a function which does more than simple addition, for example, it access file or directory structure in operating system. In those case, adding Type will definitely help compiler optimize this code and run it faster.
-
-## Data Type & Variables
-
-So let's start adding type definition to this function.
-
-@strict def myAdd()
-
-this is still not Mojo looking, do I will replace @strict type with fn().
-Now, this is still an overhead to compiler, but Modern Programming or any programming language is about writing many functions, Fn() deserve to be a First class object in Mojo.
-
-so let's replace @strict `def myAdd() -> fn() myAdd()`
-
-inside functional arguments, we will call these functional arguments and later chapters, we will discuss how arguments although look similar but are different than parameters.
-
-So how do we define static and dynamic variables in Mojo.
-we use Let and Var.
- Let - immutable and var = mutable.
- There is also a third type, alias = run time immutable
-
- let's see these in actions to understand the difference
-
-## Data Type
-
-Bool, Int, String, List, ....
-No DICT yet
-
-```{code-block}
-def your_function(a, b):
-    let c = a
-    # Uncomment to see an error:
-    # c = b  # error: c is immutable
-
-    if c != b:
-        let d = b
-        print(d)
-
-your_function(2, 3)
-```
-
-```{code-block}
-def your_function():
-    let x: Int = 42
-    let y: Float64 = 17.0
-
-    let z: Float32
-    if x != 0:
-        z = 1.0
-    else:
-        z = foo()
-    print(z)
-
-def foo() -> Float32:
-    return 3.14
-
-your_function()
-```
-
-```{code-block}
+```{code-block} mojo
 struct MyPair:
     var first: Int
     var second: Int
 
-    # We use 'fn' instead of 'def' here - we'll explain that soon
-    fn __init__(inout self, first: Int, second: Int):
+    def __init__(out self, first: Int, second: Int):
         self.first = first
         self.second = second
 
-    fn __lt__(self, rhs: MyPair) -> Bool:
-        return self.first < rhs.first or
-              (self.first == rhs.first and
-               self.second < rhs.second)
+def main():
+    var p = MyPair(2, 4)
+    print(p.first, p.second)     # 2 4
 ```
 
-```{code-block}
-struct Complex:
-    var re: Float32
-    var im: Float32
+There's a lot packed into those few lines, so let's unpack it.
 
-    fn __init__(inout self, x: Float32):
-        """Construct a complex number given a real number."""
-        self.re = x
-        self.im = 0.0
+### Fields
 
-    fn __init__(inout self, r: Float32, i: Float32):
-        """Construct a complex number given its real and imaginary components."""
-        self.re = r
-        self.im = i
+```{code-block} mojo
+    var first: Int
+    var second: Int
 ```
 
-## Data Types and memory representation
+These are the struct's **fields**, the data it holds. Two rules, both enforced by the compiler:
 
-## Data Type Hierarchy
+- Every field must be declared with `var` and must have a type annotation.
+- You can't assign a default value at the field line; fields get their values in the constructor.
 
-## about Struct
+This strictness is deliberate. Because Mojo knows the exact layout of every struct at compile time, it can generate tight, fast code, no runtime guessing about what's inside.
 
-Now, from the application programming perspective, we want to create a professional grade calculator, with end goal in mind that someday it will be a scientific calculator and let;s hope that some day, will even solve partial differential equations or could evolve into a complex system, which spits out results thrown any mathematical equation.
+### The constructor: `__init__`
 
-This is a lot to ask for, but let's just start somewhere and build a system which does more than one simple calculation. -->
+```{code-block} mojo
+    def __init__(out self, first: Int, second: Int):
+        self.first = first
+        self.second = second
+```
+
+`__init__` is the **constructor**, the method that runs when you create an instance. Its name has double underscores on each side, so it belongs to a family of special methods Mojo programmers affectionately call **dunder methods** ("**d**ouble **under**score").
+
+Two things to notice:
+
+- The first argument is always `self`, which refers to the instance being built. You never pass `self` yourself; Mojo supplies it automatically. (If you know Python, this is the same `self`.)
+- `self` here uses the **`out`** convention. `out self` means: this `self` starts out *uninitialized*, and the constructor's job is to fully initialize it before returning. That's exactly what we do, set both fields. If you forget to initialize a field, your code won't compile.
+
+## The shortcut: `@fieldwise_init`
+
+Writing a constructor that just copies each argument into a field gets repetitive. Mojo has a decorator that writes it for you:
+
+```{code-block} mojo
+@fieldwise_init
+struct MyPair:
+    var first: Int
+    var second: Int
+
+def main():
+    var p = MyPair(2, 4)
+    print(p.first, p.second)     # 2 4
+```
+
+`@fieldwise_init` generates a constructor that takes one argument per field, in order. For plain data-holding types, this is the idiomatic, no-boilerplate way to go.
+
+## Methods
+
+A **method** is just a function defined inside a struct. It automatically receives `self`, giving it access to the instance's fields:
+
+```{code-block} mojo
+@fieldwise_init
+struct Account:
+    var owner: String
+    var balance: Int
+
+    def show(self):
+        print(self.owner, "has", self.balance)
+
+def main():
+    var acct = Account("Amit", 1200)
+    acct.show()      # Amit has 1200
+```
+
+### Read-only by default; `mut self` to change things
+
+By default a method gets an **immutable** `self`, it can read fields but not change them. If you try, the compiler stops you. To let a method modify the instance, declare its receiver as **`mut self`**:
+
+```{code-block} mojo
+@fieldwise_init
+struct Account:
+    var owner: String
+    var balance: Int
+
+    def deposit(mut self, amount: Int):
+        self.balance += amount      # allowed: self is mutable here
+
+    def show(self):
+        print(self.owner, "has", self.balance)
+
+def main():
+    var acct = Account("Amit", 1200)
+    acct.deposit(300)
+    acct.show()      # Amit has 1500
+```
+
+This mirrors the argument conventions from the *Functions* chapter: `read` (the default) for "look but don't touch", `mut` for "I intend to modify this". Mutation is always opt-in and visible, which makes code much easier to reason about.
+
+## Making a struct copyable and movable
+
+Here's a surprise that catches everyone. By default, a Mojo struct **cannot be copied or moved**:
+
+```{code-block} mojo
+var a = MyPair(1, 2)
+var b = a        # ERROR: MyPair doesn't conform to 'ImplicitlyCopyable'
+```
+
+Why so strict? Because copying isn't always cheap or even desirable (imagine a type that owns a huge buffer, or a unique handle to a file). Mojo refuses to copy silently and asks you to opt in.
+
+The easy fix for ordinary value types is to add the built-in **`Copyable`** and **`Movable`** traits in parentheses after the struct name:
+
+```{code-block} mojo
+@fieldwise_init
+struct MyPair(Copyable, Movable):
+    var first: Int
+    var second: Int
+
+def main():
+    var a = MyPair(1, 2)
+    var b = a.copy()     # an explicit, intentional copy
+    var c = a^           # move ownership of a into c
+    print(b.first, c.second)
+```
+
+We'll cover traits properly in their own chapter. For now, just remember: if you want a struct you can freely copy, conform it to `Copyable` (which gives you `Movable` too).
+
+## Operator overloading
+
+Remember how `a + b` is really a call to `a.__add__(b)`? That means you can teach *your* types to use the familiar operators, by implementing the right dunder methods. This is called **operator overloading**, and it's where structs start to feel like first-class citizens of the language.
+
+Let's build a `Complex` number type that knows how to add and print itself:
+
+```{code-block} mojo
+@fieldwise_init
+struct Complex(Copyable, Movable):
+    var re: Float64
+    var im: Float64
+
+    # Enables  a + b
+    def __add__(self, other: Complex) -> Complex:
+        return Complex(self.re + other.re, self.im + other.im)
+
+    # Enables  print(a)  via the Writable/Stringable machinery
+    def __str__(self) -> String:
+        return String(self.re) + " + " + String(self.im) + "i"
+
+def main():
+    var a = Complex(2.0, 3.0)
+    var b = Complex(1.0, 4.0)
+    var c = a + b
+    print(c.__str__())       # 3.0 + 7.0i
+```
+
+By implementing `__add__`, the expression `a + b` just works. By implementing `__str__`, we control how the value turns into text. A handful of dunder methods, and your custom type behaves like it was built into the language.
+
+Common dunder methods you'll meet:
+
+- `__init__` — construct an instance.
+- `__add__`, `__sub__`, `__mul__` — arithmetic operators (`+`, `-`, `*`).
+- `__eq__`, `__lt__` — comparisons (`==`, `<`).
+- `__str__` — convert to a `String`.
+- `__del__` — clean up when the value is destroyed (the *destructor*).
+- `__copyinit__`, `__moveinit__` — define copying and moving (usually handled for you by the `Copyable`/`Movable` traits).
+
+## Putting it together
+
+Here's a slightly bigger example, an `Invoice` type with data, behavior, and an operator, the kind of small building block a real finance application is made of:
+
+```{code-block} mojo
+@fieldwise_init
+struct Invoice(Copyable, Movable):
+    var id: Int
+    var amount: Float64
+    var paid: Bool
+
+    def mark_paid(mut self):
+        self.paid = True
+
+    def __str__(self) -> String:
+        var status = "PAID" if self.paid else "DUE"
+        return "Invoice #" + String(self.id) + ": $" + String(self.amount) + " [" + status + "]"
+
+def main():
+    var inv = Invoice(1001, 450.0, False)
+    print(inv.__str__())     # Invoice #1001: $450.0 [DUE]
+
+    inv.mark_paid()
+    print(inv.__str__())     # Invoice #1001: $450.0 [PAID]
+```
+
+Data, methods that read it, a method that mutates it, and a clean string representation, all wrapped in one self-contained type. That's the whole idea of a data structure.
+
+In the next chapters we'll see how structs connect to bigger themes: how they relate to Python's classes (*OOP in Mojo*), and how **traits** let you write code that works across many different structs at once.

@@ -1,74 +1,73 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="./" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>using Python &#8212; The Mojo Programming Language book</title>
+    <title>Using Python &#8212; The Mojo Programming Language</title>
   
   
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
   
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
-
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
-  
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
-  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/clipboard.min.js"></script>
-    <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js"></script>
+    <script src="_static/togglebutton.js?v=b8b12719"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'usingpython';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Traits" href="traits.html" />
-    <link rel="prev" title="Module and Packages" href="packages.html" />
+    <link rel="prev" title="Modules and Packages" href="packages.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -76,32 +75,16 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
   
   <div id="pst-scroll-pixel-helper"></div>
-
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>
-    Back to top
-  </button>
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
-  
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
+  <dialog id="pst-search-dialog">
+    
 <form class="bd-search d-flex align-items-center"
       action="search.html"
       method="get">
@@ -109,7 +92,6 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -117,16 +99,25 @@ const thebe_selector_output = ".output, .cell_output"
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -141,6 +132,8 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="sidebar-primary-item">
 
   
+    
+  
 
 <a class="navbar-brand logo" href="intro.html">
   
@@ -153,12 +146,19 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="_static/logo.png" class="logo__image only-light" alt="The Mojo Programming Language book - Home"/>
-    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="The Mojo Programming Language book - Home"/>`);</script>
+    <img src="_static/logo.png" class="logo__image only-light" alt="The Mojo Programming Language - Home"/>
+    <img src="_static/logo.png" class="logo__image only-dark pst-js-only" alt="The Mojo Programming Language - Home"/>
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -171,20 +171,20 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="whymojo.html">Why Mojo</a></li>
 <li class="toctree-l1"><a class="reference internal" href="gettingstarted.html">Getting started</a></li>
-<li class="toctree-l1"><a class="reference internal" href="datatype.html">Data Types, Variables, Operators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datatype.html">Data Types, Variables and Operators</a></li>
 <li class="toctree-l1"><a class="reference internal" href="controlflow.html">Loops &amp; Control Flow</a></li>
 <li class="toctree-l1"><a class="reference internal" href="functions.html">Functions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="datastructure.html">Building Data Structure</a></li>
-<li class="toctree-l1"><a class="reference internal" href="packages.html">Module and Packages</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">using Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datastructure.html">Data Structures: Building Your Own Types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages.html">Modules and Packages</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Using Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="traits.html">Traits</a></li>
-<li class="toctree-l1"><a class="reference internal" href="oops.html">OOPs concepts in Mojo</a></li>
-<li class="toctree-l1"><a class="reference internal" href="comprehension.html">Arrays, Lists &amp; Comprehension</a></li>
-<li class="toctree-l1"><a class="reference internal" href="MLIR.html">MLIR</a></li>
-<li class="toctree-l1"><a class="reference internal" href="parallel.html">Parallelization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="oops.html">OOP Concepts in Mojo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="metaprogramming.html">Metaprogramming in Mojo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="MLIR.html">MLIR: The Engine Under the Hood</a></li>
 <li class="toctree-l1"><a class="reference internal" href="thinkinginmojo.html">Thinking in Mojo</a></li>
-<li class="toctree-l1"><a class="reference internal" href="metaprogramming.html">Meta Programming</a></li>
-<li class="toctree-l1"><a class="reference internal" href="standard.html">Standard Library</a></li>
+<li class="toctree-l1"><a class="reference internal" href="comprehension.html">Arrays, Lists and Comprehension</a></li>
+<li class="toctree-l1"><a class="reference internal" href="parallel.html">Parallelization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="standard.html">The Standard Library</a></li>
 </ul>
 
     </div>
@@ -193,14 +193,19 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
   </div>
-  
-  <div id="rtd-footer-container"></div>
 
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -209,14 +214,14 @@ const thebe_selector_output = ".output, .cell_output"
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -239,7 +244,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/AmitXShukla/mojo" target="_blank"
+      <li><a href="https://github.com/AmitXShukla/Mojo" target="_blank"
    class="btn btn-sm btn-source-repository-button dropdown-item"
    title="Source repository"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -256,7 +261,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/AmitXShukla/mojo/issues/new?title=Issue%20on%20page%20%2Fusingpython.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/AmitXShukla/Mojo/issues/new?title=Issue%20on%20page%20%2Fusingpython.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -325,7 +330,7 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 <button onclick="toggleFullScreen()"
-  class="btn btn-sm btn-fullscreen-button"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
   title="Fullscreen mode"
   data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
@@ -339,25 +344,19 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
-  </button>
-`);
-</script>
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-  </button>
-`);
-</script>
-
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -368,11 +367,23 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>using Python</h1>
+    <h1>Using Python</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#importing-a-python-module">Importing a Python module</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-you-get-back-pythonobject">What you get back: <code class="docutils literal notranslate"><span class="pre">PythonObject</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-larger-example-building-a-table">A larger example: building a table</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluating-quick-python-expressions">Evaluating quick Python expressions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#when-to-use-python-and-when-not-to">When to use Python, and when not to</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -380,268 +391,96 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="using-python">
-<h1>using Python<a class="headerlink" href="#using-python" title="Permalink to this heading">#</a></h1>
-<p>Although Mojo is still a work in progress and is not a full superset of Python yet, Mojo built a mechanism to import Python modules as-is, so you can leverage existing Python code right away. Under the hood, this mechanism uses the CPython interpreter to run Python code, and thus it works seamlessly with all Python modules today.</p>
-<p>For example, here’s how you can import and use NumPy.</p>
-<p><em>you must have Python numpy installed.</em></p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">python</span> <span class="kn">import</span> <span class="n">Python</span>
-
-<span class="n">let</span> <span class="n">np</span> <span class="o">=</span> <span class="n">Python</span><span class="o">.</span><span class="n">import_module</span><span class="p">(</span><span class="s2">&quot;numpy&quot;</span><span class="p">)</span>
-
-<span class="n">ar</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">15</span><span class="p">)</span><span class="o">.</span><span class="n">re</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">ar</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
-</pre></div>
-</div>
+<h1>Using Python<a class="headerlink" href="#using-python" title="Link to this heading">#</a></h1>
+<p>One of Mojo’s most practical superpowers: it can import and run <strong>Python modules</strong> directly. Under the hood, Mojo hosts the CPython interpreter, so the entire Python ecosystem, NumPy, Pandas, Matplotlib, and the rest, is available to you from day one. You don’t have to wait for someone to rewrite your favorite library in Mojo; you can call it today.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Mojo is not a feature-complete superset of Python yet. So, you <strong>can’t always</strong> copy Python code and run it in Mojo.</p>
+<p>Mojo is <strong>not</strong> a complete superset of Python yet. You can <em>import and call</em> Python libraries seamlessly, but you can’t always copy arbitrary Python code into a <code class="docutils literal notranslate"><span class="pre">.mojo</span></code> file and expect it to compile. Think of it as “Mojo can use Python,” rather than “Mojo is Python.”</p>
 </div>
-<p>Let’s run another example of Python code.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
+<section id="importing-a-python-module">
+<h2>Importing a Python module<a class="headerlink" href="#importing-a-python-module" title="Link to this heading">#</a></h2>
+<p>The gateway is the <code class="docutils literal notranslate"><span class="pre">Python</span></code> object, imported from the standard library. Here’s the canonical example with NumPy:</p>
+<div class="highlight-mojo notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">std.python</span><span class="w"> </span><span class="kn">import</span><span class="w"> </span><span class="n">Python</span>
 
-<span class="k">def</span> <span class="nf">subtract</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">x</span> <span class="o">-</span> <span class="n">y</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span>
+<span class="w">    </span><span class="k">var</span><span class="w"> </span><span class="nv">np</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Python</span><span class="o">.</span><span class="n">import_module</span><span class="p">(</span><span class="s2">&quot;numpy&quot;</span><span class="p">)</span>
 
-<span class="k">def</span> <span class="nf">multiply</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">x</span> <span class="o">*</span> <span class="n">y</span>
-
-<span class="k">def</span> <span class="nf">divide</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">x</span> <span class="o">/</span> <span class="n">y</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Select operation.&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;1. Add&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;2. Subtract&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;3. Multiply&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;4. Divide&quot;</span><span class="p">)</span>
-
-<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
-    <span class="n">choice</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter choice (1/2/3/4): &quot;</span><span class="p">)</span>
-
-<span class="c1">## this is ChatGPT generated code</span>
-<span class="c1"># MATCH/Switch case would have been a preferred approach to write below code</span>
-<span class="c1"># TODO: refactor this code</span>
-    <span class="k">if</span> <span class="n">choice</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="s1">&#39;2&#39;</span><span class="p">,</span> <span class="s1">&#39;3&#39;</span><span class="p">,</span> <span class="s1">&#39;4&#39;</span><span class="p">):</span>
-        <span class="n">num1</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter first number: &quot;</span><span class="p">))</span>
-        <span class="n">num2</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter second number: &quot;</span><span class="p">))</span>
-
-        <span class="k">if</span> <span class="n">choice</span> <span class="o">==</span> <span class="s1">&#39;1&#39;</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="n">num1</span><span class="p">,</span> <span class="s2">&quot;+&quot;</span><span class="p">,</span> <span class="n">num2</span><span class="p">,</span> <span class="s2">&quot;=&quot;</span><span class="p">,</span> <span class="n">add</span><span class="p">(</span><span class="n">num1</span><span class="p">,</span> <span class="n">num2</span><span class="p">))</span>
-
-        <span class="k">elif</span> <span class="n">choice</span> <span class="o">==</span> <span class="s1">&#39;2&#39;</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="n">num1</span><span class="p">,</span> <span class="s2">&quot;-&quot;</span><span class="p">,</span> <span class="n">num2</span><span class="p">,</span> <span class="s2">&quot;=&quot;</span><span class="p">,</span> <span class="n">subtract</span><span class="p">(</span><span class="n">num1</span><span class="p">,</span> <span class="n">num2</span><span class="p">))</span>
-
-        <span class="k">elif</span> <span class="n">choice</span> <span class="o">==</span> <span class="s1">&#39;3&#39;</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="n">num1</span><span class="p">,</span> <span class="s2">&quot;*&quot;</span><span class="p">,</span> <span class="n">num2</span><span class="p">,</span> <span class="s2">&quot;=&quot;</span><span class="p">,</span> <span class="n">multiply</span><span class="p">(</span><span class="n">num1</span><span class="p">,</span> <span class="n">num2</span><span class="p">))</span>
-
-        <span class="k">elif</span> <span class="n">choice</span> <span class="o">==</span> <span class="s1">&#39;4&#39;</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="n">num1</span><span class="p">,</span> <span class="s2">&quot;/&quot;</span><span class="p">,</span> <span class="n">num2</span><span class="p">,</span> <span class="s2">&quot;=&quot;</span><span class="p">,</span> <span class="n">divide</span><span class="p">(</span><span class="n">num1</span><span class="p">,</span> <span class="n">num2</span><span class="p">))</span>
-        <span class="k">break</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Invalid Input&quot;</span><span class="p">)</span>
+<span class="w">    </span><span class="k">var</span><span class="w"> </span><span class="nv">arr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">15</span><span class="p">)</span>
+<span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+<span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;shape:&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">arr</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Let’s run another example of Python code.</p>
-<p><em>you must have Python tabulate installed to run this example.</em></p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">tabulate</span> <span class="kn">import</span> <span class="n">tabulate</span>
+<p><code class="docutils literal notranslate"><span class="pre">Python.import_module(&quot;numpy&quot;)</span></code> is the equivalent of Python’s <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">numpy</span> <span class="pre">as</span> <span class="pre">np</span></code>. Whatever the module returns, you use it with the same dotted syntax you’d use in Python.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The Python module must actually be installed in your project’s environment. With <code class="docutils literal notranslate"><span class="pre">pixi</span></code>, add it like any dependency, for example <code class="docutils literal notranslate"><span class="pre">pixi</span> <span class="pre">add</span> <span class="pre">numpy</span></code>. If a required module isn’t present, your Mojo program will fail when it tries to import it.</p>
+</div>
+</section>
+<section id="what-you-get-back-pythonobject">
+<h2>What you get back: <code class="docutils literal notranslate"><span class="pre">PythonObject</span></code><a class="headerlink" href="#what-you-get-back-pythonobject" title="Link to this heading">#</a></h2>
+<p>When you call into Python, the values you receive are wrapped in a type called <strong><code class="docutils literal notranslate"><span class="pre">PythonObject</span></code></strong>. A <code class="docutils literal notranslate"><span class="pre">PythonObject</span></code> behaves with the same loose, dynamic flexibility it would have in Python, which is convenient, but remember you’ve temporarily stepped outside Mojo’s strict, statically-typed world. You can also build Python values directly:</p>
+<div class="highlight-mojo notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">std.python</span><span class="w"> </span><span class="kn">import</span><span class="w"> </span><span class="n">Python</span><span class="p">,</span><span class="w"> </span><span class="n">PythonObject</span>
 
-<span class="c1"># Example text data</span>
-<span class="n">text_data</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
-<span class="s2">Name        Age     Occupation</span>
-<span class="s2">Alice       25      Engineer</span>
-<span class="s2">Bob         30      Developer</span>
-<span class="s2">Charlie     40      Manager</span>
-<span class="s2">&quot;&quot;&quot;</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span>
+<span class="w">    </span><span class="k">var</span><span class="w"> </span><span class="nv">np</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Python</span><span class="o">.</span><span class="n">import_module</span><span class="p">(</span><span class="s2">&quot;numpy&quot;</span><span class="p">)</span>
 
-<span class="c1"># Split the text into rows and columns</span>
-<span class="n">rows</span> <span class="o">=</span> <span class="p">[</span><span class="n">row</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()</span> <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">text_data</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)]</span>
+<span class="w">    </span><span class="c1"># A Python list literal, typed as PythonObject</span>
+<span class="w">    </span><span class="k">var</span><span class="w"> </span><span class="nv">data</span><span class="p">:</span><span class="w"> </span><span class="n">PythonObject</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">20.5</span><span class="p">,</span><span class="w"> </span><span class="mf">22.3</span><span class="p">,</span><span class="w"> </span><span class="mf">19.8</span><span class="p">,</span><span class="w"> </span><span class="mf">25.1</span><span class="p">]</span>
 
-<span class="c1"># Create the table using the tabulate library</span>
-<span class="n">table</span> <span class="o">=</span> <span class="n">tabulate</span><span class="p">(</span><span class="n">rows</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="s2">&quot;firstrow&quot;</span><span class="p">)</span>
-
-<span class="c1"># Print the table</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">table</span><span class="p">)</span>
+<span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;mean:&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">data</span><span class="p">))</span>
+<span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;std: &quot;</span><span class="p">,</span><span class="w"> </span><span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">data</span><span class="p">))</span>
 </pre></div>
 </div>
-<p>Let’s run another tricky example of Python code. Python calls <code class="docutils literal notranslate"><span class="pre">Tesseract</span></code> exe to read image content.
-<em>you must have Python pytesseract and Pillow installed to run this example.</em></p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">############################################</span>
-<span class="c1">## MAKE SURE these packages are installed ##</span>
-<span class="c1">############################################</span>
-<span class="c1"># py -m pip install pytesseract</span>
-<span class="c1"># py -m pip install PIL</span>
-<span class="c1">################################</span>
+<p>This tiny program hands a list to NumPy and gets back statistics, real, useful work, with almost no ceremony. For data analysis and quick prototyping, this interop is gold.</p>
+</section>
+<section id="a-larger-example-building-a-table">
+<h2>A larger example: building a table<a class="headerlink" href="#a-larger-example-building-a-table" title="Link to this heading">#</a></h2>
+<p>Let’s use Python’s <code class="docutils literal notranslate"><span class="pre">tabulate</span></code> library (install it first with <code class="docutils literal notranslate"><span class="pre">pixi</span> <span class="pre">add</span> <span class="pre">--pypi</span> <span class="pre">tabulate</span></code>) to pretty-print some records, the kind of thing you’d do when eyeballing a dataset:</p>
+<div class="highlight-mojo notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">std.python</span><span class="w"> </span><span class="kn">import</span><span class="w"> </span><span class="n">Python</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span>
+<span class="w">    </span><span class="k">var</span><span class="w"> </span><span class="nv">tabulate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Python</span><span class="o">.</span><span class="n">import_module</span><span class="p">(</span><span class="s2">&quot;tabulate&quot;</span><span class="p">)</span>
+
+<span class="w">    </span><span class="k">var</span><span class="w"> </span><span class="nv">rows</span><span class="p">:</span><span class="w"> </span><span class="n">PythonObject</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="p">[</span><span class="s2">&quot;Alice&quot;</span><span class="p">,</span><span class="w">   </span><span class="mi">25</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Engineer&quot;</span><span class="p">],</span>
+<span class="w">        </span><span class="p">[</span><span class="s2">&quot;Bob&quot;</span><span class="p">,</span><span class="w">     </span><span class="mi">30</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Developer&quot;</span><span class="p">],</span>
+<span class="w">        </span><span class="p">[</span><span class="s2">&quot;Charlie&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">40</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Manager&quot;</span><span class="p">],</span>
+<span class="w">    </span><span class="p">]</span>
+<span class="w">    </span><span class="k">var</span><span class="w"> </span><span class="nv">headers</span><span class="p">:</span><span class="w"> </span><span class="n">PythonObject</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;Name&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Age&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Occupation&quot;</span><span class="p">]</span>
+
+<span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="n">tabulate</span><span class="o">.</span><span class="n">tabulate</span><span class="p">(</span><span class="n">rows</span><span class="p">,</span><span class="w"> </span><span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span><span class="w"> </span><span class="n">tablefmt</span><span class="o">=</span><span class="s2">&quot;grid&quot;</span><span class="p">))</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pytesseract</span>
-<span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span>
+<p>We import a third-party Python package, hand it Mojo-side data, and let it do the formatting. Notice how natural the keyword argument <code class="docutils literal notranslate"><span class="pre">tablefmt=&quot;grid&quot;</span></code> feels, calling Python from Mojo really does look like calling Python.</p>
+</section>
+<section id="evaluating-quick-python-expressions">
+<h2>Evaluating quick Python expressions<a class="headerlink" href="#evaluating-quick-python-expressions" title="Link to this heading">#</a></h2>
+<p>For one-off calculations, <code class="docutils literal notranslate"><span class="pre">Python.evaluate</span></code> runs a snippet of Python and returns the result:</p>
+<div class="highlight-mojo notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">std.python</span><span class="w"> </span><span class="kn">import</span><span class="w"> </span><span class="n">Python</span>
 
-<span class="c1">##############################################################################</span>
-<span class="c1"># in case if tesseract is not included in PATH</span>
-<span class="n">pytesseract</span><span class="o">.</span><span class="n">pytesseract</span><span class="o">.</span><span class="n">tesseract_cmd</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;&lt;&lt;path_to_&gt;&gt;\tesseract.exe&#39;</span>
-<span class="c1">##############################################################################</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span>
+<span class="w">    </span><span class="k">var</span><span class="w"> </span><span class="nv">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Python</span><span class="o">.</span><span class="n">evaluate</span><span class="p">(</span><span class="s2">&quot;2 ** 8&quot;</span><span class="p">)</span>
+<span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span><span class="w">        </span><span class="c1"># 256</span>
 
-<span class="k">def</span> <span class="nf">read_image_text</span><span class="p">(</span><span class="n">image_path</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Reads text from an image file using Tesseract OCR.</span>
-
-<span class="sd">    Args:</span>
-<span class="sd">        image_path (str): The file path to the input image.</span>
-
-<span class="sd">    Returns:</span>
-<span class="sd">        str: The extracted text from the image.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="c1"># Load the image file</span>
-    <span class="n">image</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">image_path</span><span class="p">)</span>
-
-    <span class="c1"># Use Tesseract OCR to extract the text from the image</span>
-    <span class="n">text</span> <span class="o">=</span> <span class="n">pytesseract</span><span class="o">.</span><span class="n">image_to_string</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
-
-    <span class="k">return</span> <span class="n">text</span>
+<span class="w">    </span><span class="k">var</span><span class="w"> </span><span class="nv">math</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Python</span><span class="o">.</span><span class="n">import_module</span><span class="p">(</span><span class="s2">&quot;math&quot;</span><span class="p">)</span>
+<span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span><span class="w">       </span><span class="c1"># 3.141592653589793</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example usage</span>
-<span class="n">image_path</span> <span class="o">=</span> <span class="s2">&quot;../downloads/image_to_read.png&quot;</span>
-<span class="n">text</span> <span class="o">=</span> <span class="n">read_image_text</span><span class="p">(</span><span class="n">image_path</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
-</pre></div>
-</div>
-<!-- 
-PythonObject
-
-Let's start by running code through the Python interpreter from Mojo to get a PythonObject
-
-back:
-
-x = Python.evaluate('5 + 10')
-print(x)
-
-Copied!
-
-15
-
-x is represented in memory the same way as if we ran this in Python:
-
-%%python
-x = 5 + 10
-print(x)
-
-Copied!
-
-15
-
-in the Mojo playground, using %%python at the top of a cell will run code through Python instead of Mojo
-
-x is actually a pointer to heap allocated memory.
-
-CS Fundamentals
-
-stack and heap memory are really important concepts to understand, this YouTube video
-
-does a fantastic job of explaining it visually.
-
-If the video doesn't make sense, for now you can use the mental model that:
-
-    stack memory is very fast but small, the size of the values are static and can't change at runtime
-    pointer is an address to lookup the value somewhere else in memory
-    heap memory is huge and the size can change at runtime, but needs a pointer to access the data which is relatively slow
-
-These concepts will make more sense over time
-
-You can access all the Python keywords by importing builtins:
-
-let py = Python.import_module("builtins")
-
-py.print("this uses the python print keyword")
-
-Copied!
-
-this uses the python print keyword
-
-We can now use the type builtin from Python to see what the dynamic type of x is:
-
-py.print(py.type(x))
-
-Copied!
-
-<class 'int'>
-
-We can read the address that is stored in x on the stack using the Python builtin id
-
-py.print(py.id(x))
-
-Copied!
-
-139732464847136
-
-This is pointing to a C object in Python, and Mojo behaves the same when using a PythonObject, accessing the value actually uses the address to lookup the data on the heap which comes with a performance cost.
-
-This is a simplified representation of how the C Object being pointed to would look if it were a Python dict:
-
-%%python
-heap = {
-    44601345678945: {
-        "type": "int",
-        "ref_count": 1,
-        "size": 1,
-        "digit": 8,
-        #...
-    }
-    #...
-}
-
-Copied!
-
-On the stack the simplified representation of x would look like this:
-
-%%python
-[
-    { "frame": "main", "variables": { "x": 44601345678945 } }
-]
-
-Copied!
-
-x contains an address that is pointing to the heap object
-
-In Python we can change the type dynamically:
-
-x = "mojo"
-
-Copied!
-
-The object in C will change its representation:
-
-%%python
-heap = {
-    44601345678945 : {
-        "type": "string",
-        "ref_count": 1,
-        "size": 4,
-        "ascii": True,
-        # utf-8 / ascii for "mojo"
-        "value": [109, 111, 106, 111]
-        # ...
-    }
-}
-
-Copied!
-
-Mojo also allows us to do this when the type is a PythonObject, it works the exact same way as it would in a Python program.
-
-This allows the runtime to do nice convenient things for us
-
-    once the ref_count goes to zero it will be de-allocated from the heap during garbage collection, so the OS can use that memory for something else
-    an integer can grow beyond 64 bits by increasing size
-    we can dynamically change the type
-    the data can be large or small, we don't have to think about when we should allocate to the heap
-
-However this also comes with a penalty, there is a lot of extra memory being used for the extra fields, and it takes CPU instructions to allocate the data, retrieve it, garbage collect etc.
-
-In Mojo we can remove all that overhead:
-Mojo 🔥 -->
+<p>Handy when you just need Python’s answer to something and don’t want to import a whole module.</p>
+</section>
+<section id="when-to-use-python-and-when-not-to">
+<h2>When to use Python, and when not to<a class="headerlink" href="#when-to-use-python-and-when-not-to" title="Link to this heading">#</a></h2>
+<p>This interop is a bridge, and like any bridge it has a toll. Every call into Python runs through the CPython interpreter, which is exactly the slowness Mojo was built to escape. So a good rule of thumb:</p>
+<ul class="simple">
+<li><p><strong>Do</strong> use Python for things Mojo doesn’t have yet: mature libraries, plotting, quick data exploration, glue code.</p></li>
+<li><p><strong>Don’t</strong> put Python calls inside your hottest inner loops if you care about performance. For the heavy numerical work, write it in native Mojo and let the compiler do its magic.</p></li>
+</ul>
+<p>The beautiful workflow Mojo enables is exactly the one that pulled me in: prototype fast by leaning on Python’s ecosystem, then, where it matters, rewrite the performance-critical pieces in pure Mojo, all in the same language, the same file, without switching tools. That’s the bridge between research and production I kept talking about, and here it is in practice.</p>
+<p>Next, we’ll leave Python behind and explore a feature that’s pure Mojo: <strong>traits</strong>.</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -671,7 +510,7 @@ Mojo 🔥 -->
               
               
               
-                <footer class="prev-next-footer">
+                <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
     <a class="left-prev"
@@ -680,7 +519,7 @@ Mojo 🔥 -->
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Module and Packages</p>
+        <p class="prev-next-title">Modules and Packages</p>
       </div>
     </a>
     <a class="right-next"
@@ -698,6 +537,27 @@ Mojo 🔥 -->
             </div>
             
             
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#importing-a-python-module">Importing a Python module</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-you-get-back-pythonobject">What you get back: <code class="docutils literal notranslate"><span class="pre">PythonObject</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-larger-example-building-a-table">A larger example: building a table</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluating-quick-python-expressions">Evaluating quick Python expressions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#when-to-use-python-and-when-not-to">When to use Python, and when not to</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
@@ -718,7 +578,7 @@ By Amit Shukla
 
   <p class="copyright">
     
-      © Copyright 2022.
+      © Copyright 2023.
       <br/>
     
   </p>
@@ -742,8 +602,8 @@ By Amit Shukla
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+  <script defer src="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
 
   <footer class="bd-footer">
   </footer>

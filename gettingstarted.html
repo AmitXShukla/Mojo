@@ -1,74 +1,73 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="./" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Getting started &#8212; The Mojo Programming Language book</title>
+    <title>Getting started &#8212; The Mojo Programming Language</title>
   
   
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
   
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
-
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
-  
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
-  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/clipboard.min.js"></script>
-    <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js"></script>
+    <script src="_static/togglebutton.js?v=b8b12719"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'gettingstarted';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Data Types, Variables, Operators" href="datatype.html" />
+    <link rel="next" title="Data Types, Variables and Operators" href="datatype.html" />
     <link rel="prev" title="Why Mojo" href="whymojo.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -76,32 +75,16 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
   
   <div id="pst-scroll-pixel-helper"></div>
-
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>
-    Back to top
-  </button>
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
-  
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
+  <dialog id="pst-search-dialog">
+    
 <form class="bd-search d-flex align-items-center"
       action="search.html"
       method="get">
@@ -109,7 +92,6 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -117,16 +99,25 @@ const thebe_selector_output = ".output, .cell_output"
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -141,6 +132,8 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="sidebar-primary-item">
 
   
+    
+  
 
 <a class="navbar-brand logo" href="intro.html">
   
@@ -153,12 +146,19 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="_static/logo.png" class="logo__image only-light" alt="The Mojo Programming Language book - Home"/>
-    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="The Mojo Programming Language book - Home"/>`);</script>
+    <img src="_static/logo.png" class="logo__image only-light" alt="The Mojo Programming Language - Home"/>
+    <img src="_static/logo.png" class="logo__image only-dark pst-js-only" alt="The Mojo Programming Language - Home"/>
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -171,20 +171,20 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="whymojo.html">Why Mojo</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Getting started</a></li>
-<li class="toctree-l1"><a class="reference internal" href="datatype.html">Data Types, Variables, Operators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datatype.html">Data Types, Variables and Operators</a></li>
 <li class="toctree-l1"><a class="reference internal" href="controlflow.html">Loops &amp; Control Flow</a></li>
 <li class="toctree-l1"><a class="reference internal" href="functions.html">Functions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="datastructure.html">Building Data Structure</a></li>
-<li class="toctree-l1"><a class="reference internal" href="packages.html">Module and Packages</a></li>
-<li class="toctree-l1"><a class="reference internal" href="usingpython.html">using Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datastructure.html">Data Structures: Building Your Own Types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages.html">Modules and Packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usingpython.html">Using Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="traits.html">Traits</a></li>
-<li class="toctree-l1"><a class="reference internal" href="oops.html">OOPs concepts in Mojo</a></li>
-<li class="toctree-l1"><a class="reference internal" href="comprehension.html">Arrays, Lists &amp; Comprehension</a></li>
-<li class="toctree-l1"><a class="reference internal" href="MLIR.html">MLIR</a></li>
-<li class="toctree-l1"><a class="reference internal" href="parallel.html">Parallelization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="oops.html">OOP Concepts in Mojo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="metaprogramming.html">Metaprogramming in Mojo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="MLIR.html">MLIR: The Engine Under the Hood</a></li>
 <li class="toctree-l1"><a class="reference internal" href="thinkinginmojo.html">Thinking in Mojo</a></li>
-<li class="toctree-l1"><a class="reference internal" href="metaprogramming.html">Meta Programming</a></li>
-<li class="toctree-l1"><a class="reference internal" href="standard.html">Standard Library</a></li>
+<li class="toctree-l1"><a class="reference internal" href="comprehension.html">Arrays, Lists and Comprehension</a></li>
+<li class="toctree-l1"><a class="reference internal" href="parallel.html">Parallelization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="standard.html">The Standard Library</a></li>
 </ul>
 
     </div>
@@ -193,14 +193,19 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
   </div>
-  
-  <div id="rtd-footer-container"></div>
 
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -209,14 +214,14 @@ const thebe_selector_output = ".output, .cell_output"
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -239,7 +244,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/AmitXShukla/mojo" target="_blank"
+      <li><a href="https://github.com/AmitXShukla/Mojo" target="_blank"
    class="btn btn-sm btn-source-repository-button dropdown-item"
    title="Source repository"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -256,7 +261,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/AmitXShukla/mojo/issues/new?title=Issue%20on%20page%20%2Fgettingstarted.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/AmitXShukla/Mojo/issues/new?title=Issue%20on%20page%20%2Fgettingstarted.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -325,7 +330,7 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 <button onclick="toggleFullScreen()"
-  class="btn btn-sm btn-fullscreen-button"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
   title="Fullscreen mode"
   data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
@@ -339,27 +344,19 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
-  </button>
-`);
-</script>
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-  </button>
-`);
-</script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -381,21 +378,20 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prologue">Prologue</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup">Setup</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#install-modular-cli">Install Modular CLI</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#install-mojo-sdk">Install Mojo SDK</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#update-mojo-sdk">Update Mojo SDK</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vscode-extension">vscode extension</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mojo-playground">Mojo playground</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#run-mojo-code">Run Mojo code</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#run-code-in-the-repl">Run code in the REPL</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mojo-source-file">Mojo source file</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#run-mojo-file">run Mojo file</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#build-an-executable-binary">build an executable binary</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#run-executable-binary">run executable binary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-mojo-is-installed-today">How Mojo is installed today</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-install-pixi">Step 1 — Install pixi</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-create-a-mojo-project">Step 2 — Create a Mojo project</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-add-mojo">Step 3 — Add Mojo</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-activate-the-environment">Step 4 — Activate the environment</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mojo-cli">Mojo CLI</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#an-editor-for-mojo">An editor for Mojo</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#your-first-mojo-program">Your first Mojo program</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#run-it">Run it</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#build-a-standalone-executable">Build a standalone executable</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-mojo-command">The mojo command</a></li>
 </ul>
             </nav>
         </div>
@@ -405,167 +401,137 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="getting-started">
-<h1>Getting started<a class="headerlink" href="#getting-started" title="Permalink to this heading">#</a></h1>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Mojo is a new programming language that is evolving rapidly. The code written today may not be the same as the code written tomorrow until a fair baseline version is achieved by the community. The code is new and documentation is limited, there are numerous ways to accomplish the same task, and each iteration can be better than the previous one. As a developer, I acknowledge that I may make mistakes in my code, and there will always be room for improvement and optimization. If you see an opportunity to improve the code, please send me a <code class="docutils literal notranslate"><span class="pre">GitHub</span> <span class="pre">pull</span></code> request, and I will be happy to merge into it.</p>
+<h1>Getting started<a class="headerlink" href="#getting-started" title="Link to this heading">#</a></h1>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Mojo is a young, fast-moving language. It reached its <code class="docutils literal notranslate"><span class="pre">1.0</span></code> beta in 2026, but the standard library still changes between releases, and there is often more than one way to do the same thing. The code in this book targets the <strong>stable <code class="docutils literal notranslate"><span class="pre">1.0</span></code> release line</strong>. If something here no longer matches what your compiler says, trust the compiler, and please open a GitHub pull request so I can fix it.</p>
 </div>
 <section id="prologue">
-<h2>Prologue<a class="headerlink" href="#prologue" title="Permalink to this heading">#</a></h2>
-<p>There are two approaches to initiate your journey into learning a new programming language. The first approach involves leveraging your existing knowledge and drawing parallels between the new language and concepts you’re already familiar with, essentially bridging the gap between the old and the new.</p>
-<p>The alternative approach is to start from scratch, gradually acquainting yourself with each concept in a step-by-step manner, much like a beginner.</p>
-<p>Everyone possesses their unique learning preferences and methods when it comes to acquiring new skills.</p>
-<p>In the context of learning the Mojo programming language, you have two primary options.</p>
-<p>The first approach involves capitalizing on your existing knowledge of programming languages, with Python being a common foundation. In this case, think of Mojo as an evolution of Python, often referred to as “Python++.” If you encounter any challenges, consider Mojo as an extension of Python, and you’ll likely find that your existing Python code can be adapted for use in Mojo with very few tweaks, where relevant.</p>
-<p>However, I strongly recommend taking a fresh, beginner’s perspective when approaching Mojo. After all, Mojo is an entirely new programming language, and it would be a mistake to view it merely as a wrapper for Python. If you begin to perceive Mojo as a superset of Python, I’m confident that your learning experience will transform you into a Mojo expert, or at the very least, make you a better Python programmer.</p>
-<p>Before we begin our exploration, it’s important to note that the current Mojo documentation primarily focuses on systems programming, which is arguably distinct from application programming. However, for our learning purpose, We will initially use Mojo for application programming, gradually incorporating systems programming concepts as we progress. This approach will become particularly useful when our application programming needs to directly access hardware systems concepts for end-to-end program execution and performance optimization, thereby ensuring the most efficient use of hardware for faster application execution.</p>
+<h2>Prologue<a class="headerlink" href="#prologue" title="Link to this heading">#</a></h2>
+<p>There are two ways to start learning a new programming language.</p>
+<p>The first is to lean on what you already know and draw parallels between the new language and the concepts you’re comfortable with, essentially bridging the gap between the old and the new.</p>
+<p>The second is to start from scratch and meet each concept step by step, like a complete beginner.</p>
+<p>Everyone learns differently, and both paths are valid. With Mojo, you have both options.</p>
+<p>If you already know Python, you can treat Mojo as an evolution of Python, often nicknamed “Python++”. Much of your Python intuition carries over, and a lot of Python code runs in Mojo with only small tweaks.</p>
+<p>That said, I strongly recommend approaching Mojo with fresh, beginner’s eyes. Mojo is a genuinely new language, not just a faster Python wrapper. If you let yourself learn it on its own terms, you’ll come out the other side either a Mojo expert or, at the very least, a sharper Python programmer.</p>
+<p>One more thing before we start. The official Mojo documentation leans heavily toward <em>systems programming</em>, which is a different world from the <em>application programming</em> most of us do day to day. In this book we’ll start with application programming, the kind of code that loads data, transforms it, and prints a result, and only reach for systems concepts when we actually need them for performance. That keeps the learning curve gentle while still getting us to fast, production-ready code.</p>
 </section>
-<section id="setup">
-<h2>Setup<a class="headerlink" href="#setup" title="Permalink to this heading">#</a></h2>
-<p>To begin using Mojo, the first thing you need to do is download something called the “Mojo SDK.” This SDK contains the special code that Mojo needs to work. It also comes with a handy tool called the “Mojo CLI,” which is like a super tool for people who like using the command line on their computer. The Mojo CLI helps you run Mojo code and does lots of other useful things. One of its main jobs is to take your Mojo code, compile it, and make it work. It can also create a special programming environment called a REPL.</p>
-<p>Now, a REPL is a fantastic way to start learning any programming language. Think of it like a simple calculator on your computer. You can use it to do basic calculations, and it’s a great way to practice writing little bits of code. Just remember, when you’re using a REPL, you need to keep track of the variables you use in your code.</p>
-<p>As you get better at Mojo, you might want to organize your code into separate Mojo files, modules, and packages. When you’re ready to do this, it means you’re ready to start coding in a program called Visual Studio Code, or VSCode for short.</p>
-<p>Luckily, the Mojo community has created an extension for VSCode that makes it even easier to write Mojo code. This extension gives you lots of helpful features like auto-completion, quick fixes for mistakes, and explanations when you need help with Mojo.</p>
-<p>Having a great program like VSCode to write your Mojo code makes learning and using this programming language even more enjoyable.</p>
+<section id="how-mojo-is-installed-today">
+<h2>How Mojo is installed today<a class="headerlink" href="#how-mojo-is-installed-today" title="Link to this heading">#</a></h2>
+<p>Here’s the single biggest change if you’re returning to Mojo after a break: <strong>the old <code class="docutils literal notranslate"><span class="pre">modular</span></code> / <code class="docutils literal notranslate"><span class="pre">Mojo</span> <span class="pre">SDK</span></code> installer is gone.</strong></p>
+<p>Mojo now installs like an ordinary Python or Conda package. You create a project, and the Mojo compiler lives <em>inside that project’s environment</em>, exactly the way <code class="docutils literal notranslate"><span class="pre">numpy</span></code> or <code class="docutils literal notranslate"><span class="pre">pandas</span></code> would. The recommended tool for this is <a class="reference external" href="https://pixi.sh"><code class="docutils literal notranslate"><span class="pre">pixi</span></code></a>, a fast package and environment manager. You can also use <code class="docutils literal notranslate"><span class="pre">uv</span></code>, <code class="docutils literal notranslate"><span class="pre">pip</span></code>, or <code class="docutils literal notranslate"><span class="pre">conda</span></code>, but <code class="docutils literal notranslate"><span class="pre">pixi</span></code> is the smoothest path for a first-timer.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Presently, Mojo SDK is exclusively accessible on Ubuntu &amp; MacOS. If you’re operating on a different system, such as Windows, Mojo is not yet fully compatible. However, you can still run Mojo using WSL container on windows.</p>
+<p>Mojo runs on <strong>macOS</strong> and <strong>Linux</strong>. On <strong>Windows</strong>, run it inside <strong>WSL</strong> (Windows Subsystem for Linux). For the current details, see the <a class="reference external" href="https://mojolang.org/docs/requirements">system requirements</a>.</p>
 </div>
-<p>Once you are on your <code class="docutils literal notranslate"><span class="pre">Linux</span></code> or <code class="docutils literal notranslate"><span class="pre">MacOS</span></code> system.</p>
-</section>
-<section id="install-modular-cli">
-<h2>Install Modular CLI<a class="headerlink" href="#install-modular-cli" title="Permalink to this heading">#</a></h2>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">curl</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">get</span><span class="o">.</span><span class="n">modular</span><span class="o">.</span><span class="n">com</span> <span class="o">|</span> \
-<span class="n">MODULAR_AUTH</span><span class="o">=</span><span class="n">mut_e982ece66e6949d593f64xxxx</span> \
-<span class="n">sh</span> <span class="o">-</span>
+<section id="step-1-install-pixi">
+<h3>Step 1 — Install pixi<a class="headerlink" href="#step-1-install-pixi" title="Link to this heading">#</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>-fsSL<span class="w"> </span>https://pixi.sh/install.sh<span class="w"> </span><span class="p">|</span><span class="w"> </span>sh
 </pre></div>
 </div>
-<p><a class="reference external" href="https://developer.modular.com/download">click here</a> to download Modular SDK.</p>
+<p>Close and reopen your terminal afterward so the <code class="docutils literal notranslate"><span class="pre">pixi</span></code> command is on your <code class="docutils literal notranslate"><span class="pre">PATH</span></code>.</p>
 </section>
-<section id="install-mojo-sdk">
-<h2>Install Mojo SDK<a class="headerlink" href="#install-mojo-sdk" title="Permalink to this heading">#</a></h2>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">modular</span> <span class="n">install</span> <span class="n">mojo</span>
+<section id="step-2-create-a-mojo-project">
+<h3>Step 2 — Create a Mojo project<a class="headerlink" href="#step-2-create-a-mojo-project" title="Link to this heading">#</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pixi<span class="w"> </span>init<span class="w"> </span>mojo-book<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-c<span class="w"> </span>https://conda.modular.com/max/<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>mojo-book
 </pre></div>
 </div>
+<p>This makes a folder called <code class="docutils literal notranslate"><span class="pre">mojo-book</span></code>, registers Modular’s package channel (that’s where the <code class="docutils literal notranslate"><span class="pre">mojo</span></code> package lives), and drops you inside the new project.</p>
+</section>
+<section id="step-3-add-mojo">
+<h3>Step 3 — Add Mojo<a class="headerlink" href="#step-3-add-mojo" title="Link to this heading">#</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pixi<span class="w"> </span>add<span class="w"> </span>mojo
+</pre></div>
+</div>
+<p>That command downloads the Mojo compiler, standard library, language server, and debugger into your project.</p>
+</section>
+<section id="step-4-activate-the-environment">
+<h3>Step 4 — Activate the environment<a class="headerlink" href="#step-4-activate-the-environment" title="Link to this heading">#</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pixi<span class="w"> </span>shell
+</pre></div>
+</div>
+<p>You’re now inside the project’s environment, where the <code class="docutils literal notranslate"><span class="pre">mojo</span></code> command is available. Check it:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mojo<span class="w"> </span>--version
+</pre></div>
+</div>
+<p>You should see a version string. If you do, you’re ready to write Mojo.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>After <code class="docutils literal notranslate"><span class="pre">modular</span></code> install command finish installing Mojo, it suggests <code class="docutils literal notranslate"><span class="pre">PATH</span></code> to add to your .bashrc or .zsh files.
-Before you start using Mojo in your local machine, You must set the MODULAR_HOME and PATH environment variables, as described in the output when you ran modular install mojo.</p>
-</div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">echo</span> <span class="s1">&#39;export MODULAR_HOME=&quot;$HOME/.modular&quot;&#39;</span> <span class="o">&gt;&gt;</span> <span class="o">~/.</span><span class="n">bashrc</span>
-<span class="n">echo</span> <span class="s1">&#39;export PATH=&quot;$MODULAR_HOME/pkg/packages.modular.com_mojo/bin:$PATH&quot;&#39;</span> <span class="o">&gt;&gt;</span> <span class="o">~/.</span><span class="n">bashrc</span>
-<span class="n">source</span> <span class="o">~/.</span><span class="n">bashrc</span>
-</pre></div>
-</div>
-</section>
-<section id="update-mojo-sdk">
-<h2>Update Mojo SDK<a class="headerlink" href="#update-mojo-sdk" title="Permalink to this heading">#</a></h2>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">update</span>
-<span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">modular</span>
-<span class="n">modular</span> <span class="n">clean</span>
-<span class="n">modular</span> <span class="n">install</span> <span class="n">mojo</span>
-</pre></div>
-</div>
-</section>
-<section id="vscode-extension">
-<h2>vscode extension<a class="headerlink" href="#vscode-extension" title="Permalink to this heading">#</a></h2>
-<p><a class="reference external" href="https://marketplace.visualstudio.com/items?itemName=modular-mojotools.vscode-mojo">click here</a> to download vscode extension.</p>
-</section>
-<section id="mojo-playground">
-<h2>Mojo playground<a class="headerlink" href="#mojo-playground" title="Permalink to this heading">#</a></h2>
-<p><a class="reference external" href="https://playground.modular.com/">click here</a> to use hosted Mojo environment in a browser.</p>
-</section>
-<section id="run-mojo-code">
-<h2>Run Mojo code<a class="headerlink" href="#run-mojo-code" title="Permalink to this heading">#</a></h2>
-<section id="run-code-in-the-repl">
-<h3>Run code in the REPL<a class="headerlink" href="#run-code-in-the-repl" title="Permalink to this heading">#</a></h3>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># $ mojo</span>
-<span class="c1"># Welcome to Mojo! 🔥</span>
-
-<span class="c1"># Expressions are delimited by a blank line.</span>
-<span class="c1"># Type `:quit` to exit the REPL and `:mojo help` for further assistance.</span>
-
-<span class="c1"># 1&gt; print(&quot;Hello, world!&quot;)</span>
-<span class="c1"># 2.</span>
-<span class="c1"># Hello, world!</span>
-</pre></div>
-</div>
-</section>
-<section id="mojo-source-file">
-<h3>Mojo source file<a class="headerlink" href="#mojo-source-file" title="Permalink to this heading">#</a></h3>
-<p>Create a file named hello.mojo (or hello.🔥) and add the following code.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fn</span> <span class="n">main</span><span class="p">():</span>
-   <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello, world!&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</section>
-<section id="run-mojo-file">
-<h3>run Mojo file<a class="headerlink" href="#run-mojo-file" title="Permalink to this heading">#</a></h3>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mojo</span> <span class="n">hello</span><span class="o">.</span><span class="n">mojo</span>
-</pre></div>
-</div>
-</section>
-<section id="build-an-executable-binary">
-<h3>build an executable binary<a class="headerlink" href="#build-an-executable-binary" title="Permalink to this heading">#</a></h3>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mojo</span> <span class="n">build</span> <span class="n">hello</span><span class="o">.</span><span class="n">mojo</span>
-</pre></div>
-</div>
-</section>
-<section id="run-executable-binary">
-<h3>run executable binary<a class="headerlink" href="#run-executable-binary" title="Permalink to this heading">#</a></h3>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">hello</span>
-</pre></div>
+<p>Every Mojo project gets its own pinned compiler version, recorded in the project’s <code class="docutils literal notranslate"><span class="pre">pixi.toml</span></code> file. To upgrade later, edit the version there (or run <code class="docutils literal notranslate"><span class="pre">pixi</span> <span class="pre">update</span></code>) and run <code class="docutils literal notranslate"><span class="pre">pixi</span> <span class="pre">install</span></code> again. No global “SDK” to babysit.</p>
 </div>
 </section>
 </section>
-<section id="mojo-cli">
-<h2>Mojo CLI<a class="headerlink" href="#mojo-cli" title="Permalink to this heading">#</a></h2>
-<p>The Mojo CLI is a command-line interface that allows you to run, compile, and package Mojo code. It also provides a REPL programming environment and is a useful tool for finding code-related help. To use the Mojo CLI.</p>
-<p>You can run the mojo command followed by various <code class="docutils literal notranslate"><span class="pre">options</span></code> or <code class="docutils literal notranslate"><span class="pre">commands</span></code>.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mojo</span> <span class="p">[</span><span class="n">options</span><span class="p">]</span>
-</pre></div>
-</div>
-<p>Here is a list of the available ‘options` that you can run with the Mojo CLI:</p>
+<section id="an-editor-for-mojo">
+<h2>An editor for Mojo<a class="headerlink" href="#an-editor-for-mojo" title="Link to this heading">#</a></h2>
+<p>You can write Mojo in any text editor, but I’d use <a class="reference external" href="https://code.visualstudio.com">Visual Studio Code</a> with the official <strong>Mojo extension</strong>, which gives you syntax highlighting, autocompletion, inline errors, and a debugger.</p>
 <ul class="simple">
-<li><p>–version, -v  # prints current Mojo version installed</p></li>
-<li><p>–help, -h     # displays help information</p></li>
+<li><p><a class="reference external" href="https://marketplace.visualstudio.com/items?itemName=modular-mojotools.vscode-mojo">Mojo for VS Code</a></p></li>
+<li><p>For Cursor and other VS Code-compatible editors, install it from the <a class="reference external" href="https://open-vsx.org/">Open VSX Registry</a>.</p></li>
 </ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># example</span>
-<span class="n">mojo</span> <span class="o">--</span><span class="n">version</span>
-<span class="n">mojo</span> <span class="o">-</span><span class="n">v</span>
-<span class="n">mojo</span> <span class="o">--</span><span class="n">help</span>
-<span class="n">mojo</span> <span class="o">-</span><span class="n">h</span>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>A note for the AI era
+This book was first written before large language models were everywhere. Things are different now. Mojo ships official <strong>agent skills</strong> that keep an AI assistant’s Mojo knowledge current, instead of relying on whatever the model happened to memorize during training:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>npx<span class="w"> </span>skills<span class="w"> </span>add<span class="w"> </span>modular/skills
 </pre></div>
 </div>
-<p>Alternatively you can run mojo along with a <code class="docutils literal notranslate"><span class="pre">command</span></code> in a terminal window.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mojo</span> <span class="o">&lt;</span><span class="n">command</span><span class="o">&gt;</span>
+<p>I still believe in understanding the language yourself, which is why this book exists, but it’s worth knowing the tool is there.</p>
+</div>
+</section>
+<section id="your-first-mojo-program">
+<h2>Your first Mojo program<a class="headerlink" href="#your-first-mojo-program" title="Link to this heading">#</a></h2>
+<p>Inside your project, create a file named <code class="docutils literal notranslate"><span class="pre">hello.mojo</span></code> (the trendy alternative is <code class="docutils literal notranslate"><span class="pre">hello.🔥</span></code>, yes, the fire-emoji extension is real) and add:</p>
+<div class="highlight-mojo notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span>
+<span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello, world!&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Here is a list of the available <code class="docutils literal notranslate"><span class="pre">commands</span></code> that you can run with the Mojo CLI:</p>
+<p>Two things to notice already:</p>
 <ul class="simple">
-<li><p>run       # Builds and executes a Mojo file. <code class="docutils literal notranslate"><span class="pre">run</span></code> command is followed by Mojo file you wish to run.</p></li>
-<li><p>build     # Builds an executable from a Mojo file. <code class="docutils literal notranslate"><span class="pre">build</span></code> command is followed by Mojo file you wish to build.</p></li>
-<li><p>repl      # Launches the Mojo REPL.</p></li>
-<li><p>debug     # Launches the LLDB debugger with support for debugging Mojo programs.</p></li>
-<li><p>package   # Compiles a Mojo package. <code class="docutils literal notranslate"><span class="pre">package</span></code> command is followed by Mojo file you wish to package.</p></li>
-<li><p>format    # Formats Mojo source files.</p></li>
-<li><p>doc       # Compiles docstrings from a Mojo file. <code class="docutils literal notranslate"><span class="pre">doc</span></code> command is followed by Mojo file.</p></li>
-<li><p>demangle  # Demangles the given name.</p></li>
+<li><p>We use <code class="docutils literal notranslate"><span class="pre">def</span></code> to define a function. In older Mojo you’d have seen <code class="docutils literal notranslate"><span class="pre">fn</span></code> here too; <code class="docutils literal notranslate"><span class="pre">fn</span></code> is now deprecated, so we use <code class="docutils literal notranslate"><span class="pre">def</span></code> everywhere.</p></li>
+<li><p>Every Mojo program that you <em>run</em> needs a <code class="docutils literal notranslate"><span class="pre">main()</span></code> function. That’s the entry point, the first thing executed.</p></li>
 </ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># example</span>
-<span class="n">mojo</span> <span class="n">run</span> <span class="o">./</span><span class="n">hello</span><span class="o">.</span><span class="n">mojo</span>
-<span class="n">mojo</span> <span class="n">build</span> <span class="o">./</span><span class="n">hello</span><span class="o">.</span><span class="n">mojo</span>
-<span class="o">...</span>
+<section id="run-it">
+<h3>Run it<a class="headerlink" href="#run-it" title="Link to this heading">#</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mojo<span class="w"> </span>hello.mojo
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mojo</span>  <span class="c1"># default to run Mojo REPL</span>
-
-<span class="c1"># above command is same as running `mojo repl`</span>
+<p>You should see <code class="docutils literal notranslate"><span class="pre">Hello,</span> <span class="pre">world!</span></code>.</p>
+</section>
+<section id="build-a-standalone-executable">
+<h3>Build a standalone executable<a class="headerlink" href="#build-a-standalone-executable" title="Link to this heading">#</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mojo<span class="w"> </span>build<span class="w"> </span>hello.mojo
 </pre></div>
 </div>
+<p>This compiles your code into a native binary named <code class="docutils literal notranslate"><span class="pre">hello</span></code>. Run it directly:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./hello
+</pre></div>
+</div>
+<p>No interpreter, no environment, just a fast native program, which is the whole point of Mojo.</p>
+</section>
+</section>
+<section id="the-mojo-command">
+<h2>The mojo command<a class="headerlink" href="#the-mojo-command" title="Link to this heading">#</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">mojo</span></code> command-line tool does more than run files. The pattern is:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mojo<span class="w"> </span><span class="o">[</span>command<span class="o">]</span><span class="w"> </span><span class="o">[</span>options<span class="o">]</span>
+</pre></div>
+</div>
+<p>A few you’ll reach for early:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">mojo</span> <span class="pre">run</span> <span class="pre">hello.mojo</span></code> — build and execute a file (the same as <code class="docutils literal notranslate"><span class="pre">mojo</span> <span class="pre">hello.mojo</span></code>).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">mojo</span> <span class="pre">build</span> <span class="pre">hello.mojo</span></code> — compile to a native executable.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">mojo</span> <span class="pre">format</span> <span class="pre">hello.mojo</span></code> — auto-format your source.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">mojo</span> <span class="pre">test</span></code> — run tests.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">mojo</span> <span class="pre">package</span> <span class="pre">mypackage</span></code> — bundle a package (more on this in the <em>Modules and Packages</em> chapter).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">mojo</span> <span class="pre">--version</span></code> — print the installed version.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">mojo</span> <span class="pre">--help</span></code> — show everything available.</p></li>
+</ul>
+<p>You don’t need to memorize these. <code class="docutils literal notranslate"><span class="pre">mojo</span> <span class="pre">--help</span></code> is always one command away.</p>
+<p>With your environment working and <code class="docutils literal notranslate"><span class="pre">Hello,</span> <span class="pre">world!</span></code> on the screen, we’re ready to actually learn the language. Next stop: data, types, and variables.</p>
 </section>
 </section>
 
@@ -596,7 +562,7 @@ Before you start using Mojo in your local machine, You must set the MODULAR_HOME
               
               
               
-                <footer class="prev-next-footer">
+                <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
     <a class="left-prev"
@@ -613,7 +579,7 @@ Before you start using Mojo in your local machine, You must set the MODULAR_HOME
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Data Types, Variables, Operators</p>
+        <p class="prev-next-title">Data Types, Variables and Operators</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -624,30 +590,32 @@ Before you start using Mojo in your local machine, You must set the MODULAR_HOME
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
     <i class="fa-solid fa-list"></i> Contents
   </div>
-  <nav class="bd-toc-nav page-toc">
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prologue">Prologue</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup">Setup</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#install-modular-cli">Install Modular CLI</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#install-mojo-sdk">Install Mojo SDK</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#update-mojo-sdk">Update Mojo SDK</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vscode-extension">vscode extension</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mojo-playground">Mojo playground</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#run-mojo-code">Run Mojo code</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#run-code-in-the-repl">Run code in the REPL</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mojo-source-file">Mojo source file</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#run-mojo-file">run Mojo file</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#build-an-executable-binary">build an executable binary</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#run-executable-binary">run executable binary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-mojo-is-installed-today">How Mojo is installed today</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-install-pixi">Step 1 — Install pixi</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-create-a-mojo-project">Step 2 — Create a Mojo project</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-add-mojo">Step 3 — Add Mojo</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-activate-the-environment">Step 4 — Activate the environment</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mojo-cli">Mojo CLI</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#an-editor-for-mojo">An editor for Mojo</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#your-first-mojo-program">Your first Mojo program</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#run-it">Run it</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#build-a-standalone-executable">Build a standalone executable</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-mojo-command">The mojo command</a></li>
 </ul>
   </nav></div>
 
@@ -672,7 +640,7 @@ By Amit Shukla
 
   <p class="copyright">
     
-      © Copyright 2022.
+      © Copyright 2023.
       <br/>
     
   </p>
@@ -696,8 +664,8 @@ By Amit Shukla
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+  <script defer src="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
 
   <footer class="bd-footer">
   </footer>
