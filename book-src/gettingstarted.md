@@ -1,194 +1,150 @@
 # Getting started
 
 :::{warning}
-Mojo is a rapidly evolving programming language with limited documentation and multiple ways to achieve tasks. Code written today may change as the community refines it. As a developer, I recognize my code may have errors and can be optimized. If you spot improvements, please submit a GitHub pull request, and I'll gladly merge it.
+Mojo is a young, fast-moving language. It reached its `1.0` beta in 2026, but the standard library still changes between releases, and there is often more than one way to do the same thing. The code in this book targets the **stable `1.0` release line**. If something here no longer matches what your compiler says, trust the compiler, and please open a GitHub pull request so I can fix it.
 :::
 
 ## Prologue
 
-There are two approaches to initiate your journey into learning a new programming language. The first approach involves leveraging your existing knowledge and drawing parallels between the new language and concepts you’re already familiar with, essentially bridging the gap between the old and the new.
+There are two ways to start learning a new programming language.
 
-The alternative approach is to start from scratch, gradually acquainting yourself with each concept in a step-by-step manner, much like a beginner.
+The first is to lean on what you already know and draw parallels between the new language and the concepts you're comfortable with, essentially bridging the gap between the old and the new.
 
-Everyone possesses their unique learning preferences and methods when it comes to acquiring new skills.
+The second is to start from scratch and meet each concept step by step, like a complete beginner.
 
-In the context of learning the Mojo programming language, you have two primary options.
+Everyone learns differently, and both paths are valid. With Mojo, you have both options.
 
-The first approach involves capitalizing on your existing knowledge of programming languages, with Python being a common foundation. In this case, think of Mojo as an evolution of Python, often referred to as “Python++.” If you encounter any challenges, consider Mojo as an extension of Python, and you’ll likely find that your existing Python code can be adapted for use in Mojo with very few tweaks, where relevant.
+If you already know Python, you can treat Mojo as an evolution of Python, often nicknamed "Python++". Much of your Python intuition carries over, and a lot of Python code runs in Mojo with only small tweaks.
 
-However, I strongly recommend taking a fresh, beginner’s perspective when approaching Mojo. After all, Mojo is an entirely new programming language, and it would be a mistake to view it merely as a wrapper for Python. If you begin to perceive Mojo as a superset of Python, I’m confident that your learning experience will transform you into a Mojo expert, or at the very least, make you a better Python programmer.
+That said, I strongly recommend approaching Mojo with fresh, beginner's eyes. Mojo is a genuinely new language, not just a faster Python wrapper. If you let yourself learn it on its own terms, you'll come out the other side either a Mojo expert or, at the very least, a sharper Python programmer.
 
-Before we begin our exploration, it’s important to note that the current Mojo documentation primarily focuses on systems programming, which is arguably distinct from application programming. However, for our learning purpose, We will initially use Mojo for application programming, gradually incorporating systems programming concepts as we progress. This approach will become particularly useful when our application programming needs to directly access hardware systems concepts for end-to-end program execution and performance optimization, thereby ensuring the most efficient use of hardware for faster application execution.
+One more thing before we start. The official Mojo documentation leans heavily toward *systems programming*, which is a different world from the *application programming* most of us do day to day. In this book we'll start with application programming, the kind of code that loads data, transforms it, and prints a result, and only reach for systems concepts when we actually need them for performance. That keeps the learning curve gentle while still getting us to fast, production-ready code.
 
-## Setup
+## How Mojo is installed today
 
-To begin using Mojo, the first thing you need to do is download something called the "Mojo SDK." This SDK contains the special code that Mojo needs to work. It also comes with a handy tool called the "Mojo CLI," which is like a super tool for people who like using the command line on their computer. The Mojo CLI helps you run Mojo code and does lots of other useful things. One of its main jobs is to take your Mojo code, compile it, and make it work. It can also create a special programming environment called a REPL.
+Here's the single biggest change if you're returning to Mojo after a break: **the old `modular` / `Mojo SDK` installer is gone.**
 
-Now, a REPL is a fantastic way to start learning any programming language. Think of it like a simple calculator on your computer. You can use it to do basic calculations, and it's a great way to practice writing little bits of code. Just remember, when you're using a REPL, you need to keep track of the variables you use in your code.
-
-As you get better at Mojo, you might want to organize your code into separate Mojo files, modules, and packages. When you're ready to do this, it means you're ready to start coding in a program called Visual Studio Code, or VSCode for short.
-
-Luckily, the Mojo community has created an extension for VSCode that makes it even easier to write Mojo code. This extension gives you lots of helpful features like auto-completion, quick fixes for mistakes, and explanations when you need help with Mojo.
-
-Having a great program like VSCode to write your Mojo code makes learning and using this programming language even more enjoyable.
+Mojo now installs like an ordinary Python or Conda package. You create a project, and the Mojo compiler lives *inside that project's environment*, exactly the way `numpy` or `pandas` would. The recommended tool for this is [`pixi`](https://pixi.sh), a fast package and environment manager. You can also use `uv`, `pip`, or `conda`, but `pixi` is the smoothest path for a first-timer.
 
 :::{note}
-Presently, Mojo SDK is exclusively accessible on Ubuntu & MacOS. If you're operating on a different system, such as Windows, Mojo is not yet fully compatible. However, you can still run Mojo using WSL container on windows.
+Mojo runs on **macOS** and **Linux**. On **Windows**, run it inside **WSL** (Windows Subsystem for Linux). For the current details, see the [system requirements](https://mojolang.org/docs/requirements).
 :::
 
-Once you are on your `Linux` or `MacOS` system.
+### Step 1 — Install pixi
 
-## Install Modular CLI
-
-```{code-block}
-
-curl https://get.modular.com | \
-MODULAR_AUTH=mut_e982ece66e6949d593f64xxxx \
-sh -
-
+```{code-block} bash
+curl -fsSL https://pixi.sh/install.sh | sh
 ```
 
-[click here](https://developer.modular.com/download) to download Modular SDK.
+Close and reopen your terminal afterward so the `pixi` command is on your `PATH`.
 
-## Install Mojo SDK
+### Step 2 — Create a Mojo project
 
-```{code-block}
-
-modular install mojo
-
+```{code-block} bash
+pixi init mojo-book \
+    -c https://conda.modular.com/max/ -c conda-forge \
+    && cd mojo-book
 ```
+
+This makes a folder called `mojo-book`, registers Modular's package channel (that's where the `mojo` package lives), and drops you inside the new project.
+
+### Step 3 — Add Mojo
+
+```{code-block} bash
+pixi add mojo
+```
+
+That command downloads the Mojo compiler, standard library, language server, and debugger into your project.
+
+### Step 4 — Activate the environment
+
+```{code-block} bash
+pixi shell
+```
+
+You're now inside the project's environment, where the `mojo` command is available. Check it:
+
+```{code-block} bash
+mojo --version
+```
+
+You should see a version string. If you do, you're ready to write Mojo.
 
 :::{note}
-After `modular` install command finish installing Mojo, it suggests `PATH` to add to your .bashrc or .zsh files.
-Before you start using Mojo in your local machine, You must set the MODULAR_HOME and PATH environment variables, as described in the output when you ran modular install mojo.
+Every Mojo project gets its own pinned compiler version, recorded in the project's `pixi.toml` file. To upgrade later, edit the version there (or run `pixi update`) and run `pixi install` again. No global "SDK" to babysit.
 :::
 
-```{code-block}
-echo 'export MODULAR_HOME="$HOME/.modular"' >> ~/.bashrc
-echo 'export PATH="$MODULAR_HOME/pkg/packages.modular.com_mojo/bin:$PATH"' >> ~/.bashrc
-source ~/.bashrc
+## An editor for Mojo
+
+You can write Mojo in any text editor, but I'd use [Visual Studio Code](https://code.visualstudio.com) with the official **Mojo extension**, which gives you syntax highlighting, autocompletion, inline errors, and a debugger.
+
+- [Mojo for VS Code](https://marketplace.visualstudio.com/items?itemName=modular-mojotools.vscode-mojo)
+- For Cursor and other VS Code-compatible editors, install it from the [Open VSX Registry](https://open-vsx.org/).
+
+:::{note} A note for the AI era
+This book was first written before large language models were everywhere. Things are different now. Mojo ships official **agent skills** that keep an AI assistant's Mojo knowledge current, instead of relying on whatever the model happened to memorize during training:
+
+```{code-block} bash
+npx skills add modular/skills
 ```
 
-## Update Mojo SDK
+I still believe in understanding the language yourself, which is why this book exists, but it's worth knowing the tool is there.
+:::
 
-```{code-block}
+## Your first Mojo program
 
-sudo apt-get update
-sudo apt-get install modular
-modular clean
-modular install mojo
+Inside your project, create a file named `hello.mojo` (the trendy alternative is `hello.🔥`, yes, the fire-emoji extension is real) and add:
 
+```{code-block} mojo
+def main():
+    print("Hello, world!")
 ```
 
-## vscode extension
+Two things to notice already:
 
-[click here](https://marketplace.visualstudio.com/items?itemName=modular-mojotools.vscode-mojo) to download vscode extension.
+- We use `def` to define a function. In older Mojo you'd have seen `fn` here too; `fn` is now deprecated, so we use `def` everywhere.
+- Every Mojo program that you *run* needs a `main()` function. That's the entry point, the first thing executed.
 
-## Mojo playground
+### Run it
 
-[click here](https://playground.modular.com/) to use hosted Mojo environment in a browser.
-
-## Run Mojo code
-
-### Run code in the REPL
-
-```{code-block}
-
-# $ mojo
-# Welcome to Mojo! 🔥
-
-# Expressions are delimited by a blank line.
-# Type `:quit` to exit the REPL and `:mojo help` for further assistance.
-
-# 1> print("Hello, world!")
-# 2.
-# Hello, world!
-
-```
-
-### Mojo source file
-
-Create a file named hello.mojo (or hello.🔥) and add the following code.
-
-```{code-block}
-
-fn main():
-   print("Hello, world!")
-
-```
-
-### run Mojo file
-
-```{code-block}
-
+```{code-block} bash
 mojo hello.mojo
-
 ```
 
-### build an executable binary
+You should see `Hello, world!`.
 
-```{code-block}
+### Build a standalone executable
 
+```{code-block} bash
 mojo build hello.mojo
-
 ```
 
-### run executable binary
+This compiles your code into a native binary named `hello`. Run it directly:
 
-```{code-block}
+```{code-block} bash
 ./hello
 ```
 
-## Mojo CLI
+No interpreter, no environment, just a fast native program, which is the whole point of Mojo.
 
-The Mojo CLI is a command-line interface that allows you to run, compile, and package Mojo code. It also provides a REPL programming environment and is a useful tool for finding code-related help. To use the Mojo CLI.
+## The mojo command
 
-You can run the mojo command followed by various `options` or `commands`.
+The `mojo` command-line tool does more than run files. The pattern is:
 
-```{code-block}
-mojo [options]
+```{code-block} bash
+mojo [command] [options]
 ```
 
-Here is a list of the available 'options` that you can run with the Mojo CLI:
+A few you'll reach for early:
 
-+ --version, -v  # prints current Mojo version installed
-+ --help, -h     # displays help information
+- `mojo run hello.mojo` — build and execute a file (the same as `mojo hello.mojo`).
+- `mojo build hello.mojo` — compile to a native executable.
+- `mojo format hello.mojo` — auto-format your source.
+- `mojo test` — run tests.
+- `mojo package mypackage` — bundle a package (more on this in the *Modules and Packages* chapter).
+- `mojo --version` — print the installed version.
+- `mojo --help` — show everything available.
 
-```{code-block}
-# example
-mojo --version
-mojo -v
-mojo --help
-mojo -h
-```
+You don't need to memorize these. `mojo --help` is always one command away.
 
-Alternatively you can run mojo along with a `command` in a terminal window.
-
-```{code-block}
-mojo <command>
-```
-
-Here is a list of the available `commands` that you can run with the Mojo CLI:
-
-- run       # Builds and executes a Mojo file. `run` command is followed by Mojo file you wish to run.
-- build     # Builds an executable from a Mojo file. `build` command is followed by Mojo file you wish to build.
-- repl      # Launches the Mojo REPL.
-- debug     # Launches the LLDB debugger with support for debugging Mojo programs.
-- package   # Compiles a Mojo package. `package` command is followed by Mojo file you wish to package.
-- format    # Formats Mojo source files.
-- doc       # Compiles docstrings from a Mojo file. `doc` command is followed by Mojo file.
-- demangle  # Demangles the given name.
-
-```{code-block}
-# example
-mojo run ./hello.mojo
-mojo build ./hello.mojo
-...
-
-```
-
-```{code-block}
-mojo  # default to run Mojo REPL
-
-# above command is same as running `mojo repl`
-```
+With your environment working and `Hello, world!` on the screen, we're ready to actually learn the language. Next stop: data, types, and variables.

@@ -6,37 +6,27 @@ root: intro
 chapters:
 - file: whymojo
 - file: gettingstarted
-- file: datatype # fix now
-- file: controlflow # fix now
-- file: functions # fix now
-- file: datastructure # fix now
-- file: packages # fix now
+- file: datatype
+- file: controlflow
+- file: functions
+- file: datastructure
+- file: packages
 - file: usingpython
 - file: traits
 - file: oops
 - file: metaprogramming
 - file: MLIR
 - file: thinkinginmojo
-- file: comprehension # fix now
-- file: parallel # fix now
-- file: standard # fix now
+- file: comprehension
+- file: parallel
+- file: standard
 
-#TODO-WAIT: getting started: update windows installation instructions
-#TODO-WAIT: functions: till **kwargs are live
-#TODO-WAIT: data structure- wait till Dict is live
-#TODO-WAIT: Mojo packaging system
-#TODO-WAIT: thinking in mojo
-#TODO-WAIT: OOPs
-#TODO-WAIT: till packages functionality are updated
-
-# - what is MLIR anyway #TODO: NEXT
-# - Data Analysis #TODO: NEXT
-# - Data Visualization #TODO: NEXT
-# - Data Mining #TODO: NEXT
-# - Data Transformation #TODO: NEXT
-# - Preparing your Data #TODO: NEXT
-# - Machine Learning Models #TODO: NEXT
-# - Model Train, Test #TODO: NEXT
-# - Deployment #TODO: NEXT
-# - Hardware testing #TODO: NEXT
-# - Deployment #TODO: NEXT
+# Roadmap for upcoming parts of this series:
+# - Data Analysis
+# - Data Visualization
+# - Data Mining
+# - Data Transformation
+# - Preparing your Data
+# - Machine Learning Models
+# - Model Train & Test
+# - Deployment & Hardware testing

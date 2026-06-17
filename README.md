@@ -2,7 +2,7 @@
 
 A Comprehensive Guide to Mojo programming language with Real-Life Data, Transforming Beginners into Professionals.
 
-*This is a `work in progress` repository, currently waiting for sponsors. This repository is `updated frequently`, please follow me at [Twitter](https://x.com/ashuklax), Subscribe to [YouTube channel](https://youtube.com/@Amit.Shukla) to see latest updates.*. Please give a star * to this repository.
+*This repository is `updated frequently` to keep pace with the fast-moving Mojo language — the content now follows the current Mojo `1.0` beta release. Please follow me on [X](https://x.com/ashuklax) and subscribe to my [YouTube channel](https://youtube.com/@Amit.Shukla) to see the latest updates. If this book helps you, please give the repository a ⭐ star.*
 
 ## Author: Amit Shukla
 
@@ -15,9 +15,7 @@ A Comprehensive Guide to Mojo programming language with Real-Life Data, Transfor
 ---
 Start Here -> read the [documentation](https://amitxshukla.github.io/Mojo/intro.html)
 
-**WIP** - *Download PDF version of this notebook*
-
-**WIP** - *Video Tutorials - Mojo*
+*Coming soon — a downloadable PDF edition and companion video tutorials.*
 
 ---
 

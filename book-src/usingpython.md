@@ -1,139 +1,97 @@
-# using Python
+# Using Python
 
-Although Mojo is still a work in progress and is not a full superset of Python yet, Mojo built a mechanism to import Python modules as-is, so you can leverage existing Python code right away. Under the hood, this mechanism uses the CPython interpreter to run Python code, and thus it works seamlessly with all Python modules today.
-
-For example, here’s how you can import and use NumPy.
-
-*you must have Python numpy installed.*
-
-```{code-block}
-from python import Python
-
-let np = Python.import_module("numpy")
-
-ar = np.arange(15).re
-print(ar.shape)
-```
+One of Mojo's most practical superpowers: it can import and run **Python modules** directly. Under the hood, Mojo hosts the CPython interpreter, so the entire Python ecosystem, NumPy, Pandas, Matplotlib, and the rest, is available to you from day one. You don't have to wait for someone to rewrite your favorite library in Mojo; you can call it today.
 
 :::{note}
-Mojo is not a feature-complete superset of Python yet. So, you **can’t always** copy Python code and run it in Mojo.
+Mojo is **not** a complete superset of Python yet. You can *import and call* Python libraries seamlessly, but you can't always copy arbitrary Python code into a `.mojo` file and expect it to compile. Think of it as "Mojo can use Python," rather than "Mojo is Python."
 :::
 
-Let's run another example of Python code.
+## Importing a Python module
 
-```{code-block}
-def add(x, y):
-    return x + y
+The gateway is the `Python` object, imported from the standard library. Here's the canonical example with NumPy:
 
-def subtract(x, y):
-    return x - y
+```{code-block} mojo
+from std.python import Python
 
-def multiply(x, y):
-    return x * y
+def main():
+    var np = Python.import_module("numpy")
 
-def divide(x, y):
-    return x / y
-
-print("Select operation.")
-print("1. Add")
-print("2. Subtract")
-print("3. Multiply")
-print("4. Divide")
-
-while True:
-    choice = input("Enter choice (1/2/3/4): ")
-
-## this is ChatGPT generated code
-# MATCH/Switch case would have been a preferred approach to write below code
-# TODO: refactor this code
-    if choice in ('1', '2', '3', '4'):
-        num1 = float(input("Enter first number: "))
-        num2 = float(input("Enter second number: "))
-
-        if choice == '1':
-            print(num1, "+", num2, "=", add(num1, num2))
-
-        elif choice == '2':
-            print(num1, "-", num2, "=", subtract(num1, num2))
-
-        elif choice == '3':
-            print(num1, "*", num2, "=", multiply(num1, num2))
-
-        elif choice == '4':
-            print(num1, "/", num2, "=", divide(num1, num2))
-        break
-    else:
-        print("Invalid Input")
+    var arr = np.arange(15)
+    print(arr)
+    print("shape:", arr.shape)
 ```
 
-Let's run another example of Python code.
+`Python.import_module("numpy")` is the equivalent of Python's `import numpy as np`. Whatever the module returns, you use it with the same dotted syntax you'd use in Python.
 
-*you must have Python tabulate installed to run this example.*
+:::{warning}
+The Python module must actually be installed in your project's environment. With `pixi`, add it like any dependency, for example `pixi add numpy`. If a required module isn't present, your Mojo program will fail when it tries to import it.
+:::
 
-```{code-block}
-from tabulate import tabulate
+## What you get back: `PythonObject`
 
-# Example text data
-text_data = """
-Name        Age     Occupation
-Alice       25      Engineer
-Bob         30      Developer
-Charlie     40      Manager
-"""
+When you call into Python, the values you receive are wrapped in a type called **`PythonObject`**. A `PythonObject` behaves with the same loose, dynamic flexibility it would have in Python, which is convenient, but remember you've temporarily stepped outside Mojo's strict, statically-typed world. You can also build Python values directly:
 
-# Split the text into rows and columns
-rows = [row.strip().split() for row in text_data.strip().split("\n")]
+```{code-block} mojo
+from std.python import Python, PythonObject
 
-# Create the table using the tabulate library
-table = tabulate(rows, headers="firstrow")
+def main():
+    var np = Python.import_module("numpy")
 
-# Print the table
-print(table)
+    # A Python list literal, typed as PythonObject
+    var data: PythonObject = [20.5, 22.3, 19.8, 25.1]
+
+    print("mean:", np.mean(data))
+    print("std: ", np.std(data))
 ```
 
-Let's run another tricky example of Python code. Python calls `Tesseract` exe to read image content.
-*you must have Python pytesseract and Pillow installed to run this example.*
+This tiny program hands a list to NumPy and gets back statistics, real, useful work, with almost no ceremony. For data analysis and quick prototyping, this interop is gold.
 
-```{code-block}
-############################################
-## MAKE SURE these packages are installed ##
-############################################
-# py -m pip install pytesseract
-# py -m pip install PIL
-################################
+## A larger example: building a table
+
+Let's use Python's `tabulate` library (install it first with `pixi add --pypi tabulate`) to pretty-print some records, the kind of thing you'd do when eyeballing a dataset:
+
+```{code-block} mojo
+from std.python import Python
+
+def main():
+    var tabulate = Python.import_module("tabulate")
+
+    var rows: PythonObject = [
+        ["Alice",   25, "Engineer"],
+        ["Bob",     30, "Developer"],
+        ["Charlie", 40, "Manager"],
+    ]
+    var headers: PythonObject = ["Name", "Age", "Occupation"]
+
+    print(tabulate.tabulate(rows, headers=headers, tablefmt="grid"))
 ```
 
-```{code-block}
-import pytesseract
-from PIL import Image
+We import a third-party Python package, hand it Mojo-side data, and let it do the formatting. Notice how natural the keyword argument `tablefmt="grid"` feels, calling Python from Mojo really does look like calling Python.
 
-##############################################################################
-# in case if tesseract is not included in PATH
-pytesseract.pytesseract.tesseract_cmd = r'<<path_to_>>\tesseract.exe'
-##############################################################################
+## Evaluating quick Python expressions
 
-def read_image_text(image_path):
-    """
-    Reads text from an image file using Tesseract OCR.
+For one-off calculations, `Python.evaluate` runs a snippet of Python and returns the result:
 
-    Args:
-        image_path (str): The file path to the input image.
+```{code-block} mojo
+from std.python import Python
 
-    Returns:
-        str: The extracted text from the image.
-    """
-    # Load the image file
-    image = Image.open(image_path)
+def main():
+    var result = Python.evaluate("2 ** 8")
+    print(result)        # 256
 
-    # Use Tesseract OCR to extract the text from the image
-    text = pytesseract.image_to_string(image)
-
-    return text
+    var math = Python.import_module("math")
+    print(math.pi)       # 3.141592653589793
 ```
 
-```{code-block}
-# Example usage
-image_path = "../downloads/image_to_read.png"
-text = read_image_text(image_path)
-print(text)
-```
+Handy when you just need Python's answer to something and don't want to import a whole module.
+
+## When to use Python, and when not to
+
+This interop is a bridge, and like any bridge it has a toll. Every call into Python runs through the CPython interpreter, which is exactly the slowness Mojo was built to escape. So a good rule of thumb:
+
+- **Do** use Python for things Mojo doesn't have yet: mature libraries, plotting, quick data exploration, glue code.
+- **Don't** put Python calls inside your hottest inner loops if you care about performance. For the heavy numerical work, write it in native Mojo and let the compiler do its magic.
+
+The beautiful workflow Mojo enables is exactly the one that pulled me in: prototype fast by leaning on Python's ecosystem, then, where it matters, rewrite the performance-critical pieces in pure Mojo, all in the same language, the same file, without switching tools. That's the bridge between research and production I kept talking about, and here it is in practice.
+
+Next, we'll leave Python behind and explore a feature that's pure Mojo: **traits**.

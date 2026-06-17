@@ -15,3 +15,7 @@ My primary motivation for transitioning to Modular | Mojo is simple: it acts as 
 Mojo is a novel systems programming language designed for heterogeneous computing. This implies that Mojo is perfectly equipped to write professional-grade code for heterogeneous systems that utilize various types of processors, including CPUs, GPUs, FPGAs, and NPUs, among others.
 
 I'm an AI Application Research Engineer, and I want to have complete control over my code. I want to handle everything from research and testing to training and getting it onto a device for people to use. I'd like to do all of this without relying on IT hardware engineers or having to learn many different tools, so I can stay organized and sane.
+
+:::{note} Where Mojo stands today
+When I started this book, Mojo was brand new and closed off. A lot has changed. The Mojo standard library is now open source under Apache 2.0, the language has reached its `1.0` beta, and you install it like any ordinary Python package. The bet has paid off: the bridge between research and production is real, and it's getting sturdier with every release.
+:::

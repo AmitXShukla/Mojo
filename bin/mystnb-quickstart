@@ -1,0 +1,6 @@
+#!/home/amit/Documents/Mojo/bin/python3
+import sys
+from myst_nb.cli import quickstart
+if __name__ == '__main__':
+    sys.argv[0] = sys.argv[0].removesuffix('.exe')
+    sys.exit(quickstart())

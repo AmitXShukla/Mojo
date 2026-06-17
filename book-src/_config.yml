@@ -1,29 +1,30 @@
 # Book settings
+# Learn more at https://jupyterbook.org/customize/config.html
 
-title: The Mojo Programming Language book
+title: The Mojo Programming Language
 author: Amit Shukla
 logo: logo.png
 
+# Force-execute notebooks on each build (set to "off" to skip)
 execute:
-  execute_notebooks: force
+  execute_notebooks: "off"
 
-# Define the name of the latex output file for PDF builds
+# Name of the LaTeX output file for PDF builds
 latex:
   latex_documents:
     targetname: the-mojo-book.tex
 
-# Add a bibtex file so that we can create citations
+# Bibtex file for citations
 bibtex_bibfiles:
   - references.bib
 
-# Information about where the book exists on the web
+# Where the book lives on the web
 repository:
-  url: https://github.com/AmitXShukla/mojo  # Online location of your book
-  path_to_book: docs  # Optional path to your book, relative to the repository root
-  branch: master  # Which branch of the repository should be used when creating links (optional)
+  url: https://github.com/AmitXShukla/Mojo
+  path_to_book: book-src
+  branch: main
 
-# Add GitHub buttons to your book
-# See https://jupyterbook.org/customize/config.html#https://github.com/AmitXShukla/mojo
+# GitHub buttons
 html:
   use_issues_button: true
   use_repository_button: true

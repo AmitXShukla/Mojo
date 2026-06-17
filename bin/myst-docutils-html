@@ -1,0 +1,6 @@
+#!/home/amit/Documents/Mojo/bin/python3
+import sys
+from myst_parser.parsers.docutils_ import cli_html
+if __name__ == '__main__':
+    sys.argv[0] = sys.argv[0].removesuffix('.exe')
+    sys.exit(cli_html())
