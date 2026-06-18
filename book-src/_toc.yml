@@ -19,6 +19,9 @@ chapters:
 - file: thinkinginmojo
 - file: comprehension
 - file: parallel
+- file: value-ownership
+- file: value-lifecycle
+- file: pointers
 - file: standard
 
 # Roadmap for upcoming parts of this series:

@@ -25,6 +25,9 @@ project:
     - file: book-src/thinkinginmojo.md
     - file: book-src/comprehension.md
     - file: book-src/parallel.md
+    - file: book-src/value-ownership.md
+    - file: book-src/value-lifecycle.md
+    - file: book-src/pointers.md
     - file: book-src/standard.md
 
 site:

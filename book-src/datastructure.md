@@ -176,7 +176,7 @@ Common dunder methods you'll meet:
 - `__eq__`, `__lt__` — comparisons (`==`, `<`).
 - `__str__` — convert to a `String`.
 - `__del__` — clean up when the value is destroyed (the *destructor*).
-- `__copyinit__`, `__moveinit__` — define copying and moving (usually handled for you by the `Copyable`/`Movable` traits).
+- the **copy constructor** and **move constructor** — special forms of `__init__` that define how a value is copied and moved. You almost never write these by hand; the `Copyable`/`Movable` traits generate them for you. We devote a whole chapter to them later in *Value lifecycle*.
 
 ## Putting it together
 
