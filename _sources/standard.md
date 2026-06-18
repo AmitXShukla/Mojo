@@ -108,11 +108,12 @@ A good habit: before writing a utility yourself, spend two minutes checking whet
 Take a breath and look back at the ground we've covered. You started by installing Mojo and printing "Hello, world!". Along the way you learned:
 
 - how Mojo stores data, and why types and memory layout make it fast,
-- control flow, functions, and Mojo's careful ownership model,
+- control flow and functions, the everyday building blocks of a program,
 - how to build your own types with structs, and share behavior with traits,
 - how to borrow Python's ecosystem when you need it,
 - how metaprogramming moves work to compile time,
-- and how SIMD and multi-core parallelism unleash your hardware.
+- how SIMD and multi-core parallelism unleash your hardware,
+- and, in the final stretch, how Mojo's ownership model, value lifecycle, and pointers give you systems-level control without giving up safety.
 
 That's a real foundation. You can now write Mojo that's expressive *and* fast, the exact combination that pulled me to this language in the first place.
 

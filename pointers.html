@@ -1,0 +1,646 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Pointers &#8212; The Mojo Programming Language</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css?v=8cd3d715" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=b8b12719"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'pointers';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="The Standard Library" href="standard.html" />
+    <link rel="prev" title="Value lifecycle" href="value-lifecycle.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="The Mojo Programming Language - Home"/>
+    <img src="_static/logo.png" class="logo__image only-dark pst-js-only" alt="The Mojo Programming Language - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    The Mojo Programming Language book
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="whymojo.html">Why Mojo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gettingstarted.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datatype.html">Data Types, Variables and Operators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="controlflow.html">Loops &amp; Control Flow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="functions.html">Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datastructure.html">Data Structures: Building Your Own Types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages.html">Modules and Packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usingpython.html">Using Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="traits.html">Traits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="oops.html">OOP Concepts in Mojo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="metaprogramming.html">Metaprogramming in Mojo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="MLIR.html">MLIR: The Engine Under the Hood</a></li>
+<li class="toctree-l1"><a class="reference internal" href="thinkinginmojo.html">Thinking in Mojo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="comprehension.html">Arrays, Lists and Comprehension</a></li>
+<li class="toctree-l1"><a class="reference internal" href="parallel.html">Parallelization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="value-ownership.html">Value ownership</a></li>
+<li class="toctree-l1"><a class="reference internal" href="value-lifecycle.html">Value lifecycle</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Pointers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="standard.html">The Standard Library</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/AmitXShukla/Mojo" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/AmitXShukla/Mojo/issues/new?title=Issue%20on%20page%20%2Fpointers.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/pointers.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Pointers</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-a-pointer-even-is">What a pointer even is</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pointer-a-safe-compiler-checked-reference"><code class="docutils literal notranslate"><span class="pre">Pointer</span></code>: a safe, compiler-checked reference</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ownedpointer-single-ownership-of-a-value-on-the-heap"><code class="docutils literal notranslate"><span class="pre">OwnedPointer</span></code>: single ownership of a value on the heap</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#arcpointer-shared-ownership-by-reference-counting"><code class="docutils literal notranslate"><span class="pre">ArcPointer</span></code>: shared ownership by reference counting</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unsafepointer-full-manual-control"><code class="docutils literal notranslate"><span class="pre">UnsafePointer</span></code>: full manual control</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#this-is-where-the-lifecycle-methods-earn-their-keep">This is where the lifecycle methods earn their keep</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#choosing-a-pointer">Choosing a pointer</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-this-matters">Why this matters</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="pointers">
+<h1>Pointers<a class="headerlink" href="#pointers" title="Link to this heading">#</a></h1>
+<p>This is the deepest end of the pool, and I want to open with a reassurance: <strong>most Mojo programs never use a pointer directly.</strong> Lists, dictionaries, strings, and your own structs already manage memory for you, safely, using everything we’ve built up in the last two chapters. You can write a great deal of fast, real Mojo and never type the word “pointer.”</p>
+<p>So why a chapter on them? Because once in a while you need to reach below the comfortable surface, to talk to hardware or the operating system, to share data with C or Python, or to build a new data structure that the standard library doesn’t already give you. When that day comes, Mojo offers a ladder of pointer types, from very safe to fully manual, and the trick is knowing which rung to stand on. We’ll climb from the top (safest) down.</p>
+<section id="what-a-pointer-even-is">
+<h2>What a pointer even is<a class="headerlink" href="#what-a-pointer-even-is" title="Link to this heading">#</a></h2>
+<p>A <strong>pointer</strong> is a value whose job is to hold the <em>address</em> of another value, rather than the value itself. Instead of “the number 42,” a pointer holds “the place in memory where 42 lives.” To get at the actual value, you <strong>dereference</strong> the pointer, which in Mojo you write with an empty pair of square brackets, <code class="docutils literal notranslate"><span class="pre">ptr[]</span></code>.</p>
+<p>Think of a pointer as a coat-check ticket. The ticket isn’t your coat; it’s a small token that tells you exactly where your coat is hanging. Dereferencing is handing over the ticket to get the coat back.</p>
+<p>Mojo’s standard library lives in the <code class="docutils literal notranslate"><span class="pre">std.memory</span></code> module and gives you four pointer types. Here they are, safest first.</p>
+</section>
+<section id="pointer-a-safe-compiler-checked-reference">
+<h2><code class="docutils literal notranslate"><span class="pre">Pointer</span></code>: a safe, compiler-checked reference<a class="headerlink" href="#pointer-a-safe-compiler-checked-reference" title="Link to this heading">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">Pointer</span></code> is the one you’ll meet most. It’s a <strong>safe</strong> pointer: it always points at a value that already exists, it can never be null, and the compiler tracks its <strong>origin</strong> (remember origins from the <em>Value Ownership</em> chapter?) to guarantee it never outlives the value it points to. No dangling pointers, by construction.</p>
+<p>You create one with the <code class="docutils literal notranslate"><span class="pre">to=</span></code> keyword, pointing at an existing variable:</p>
+<div class="highlight-mojo notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">std.memory</span><span class="w"> </span><span class="kn">import</span><span class="w"> </span><span class="n">Pointer</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span>
+<span class="w">    </span><span class="k">var</span><span class="w"> </span><span class="nv">balance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1000</span>
+<span class="w">    </span><span class="k">var</span><span class="w"> </span><span class="nv">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Pointer</span><span class="p">(</span><span class="n">to</span><span class="o">=</span><span class="n">balance</span><span class="p">)</span><span class="w">   </span><span class="c1"># p points at `balance`</span>
+<span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="n">p</span><span class="p">[])</span><span class="w">                    </span><span class="c1"># 1000  -- dereference to read</span>
+</pre></div>
+</div>
+<p>Because the compiler knows <code class="docutils literal notranslate"><span class="pre">p</span></code> came from <code class="docutils literal notranslate"><span class="pre">balance</span></code>, it keeps <code class="docutils literal notranslate"><span class="pre">balance</span></code> alive as long as <code class="docutils literal notranslate"><span class="pre">p</span></code> is in use, and it won’t let you point <code class="docutils literal notranslate"><span class="pre">p</span></code> at something else later. This is the safe workhorse: use it whenever you simply need to refer to a value indirectly without copying it.</p>
+</section>
+<section id="ownedpointer-single-ownership-of-a-value-on-the-heap">
+<h2><code class="docutils literal notranslate"><span class="pre">OwnedPointer</span></code>: single ownership of a value on the heap<a class="headerlink" href="#ownedpointer-single-ownership-of-a-value-on-the-heap" title="Link to this heading">#</a></h2>
+<p>The next two are <strong>smart pointers</strong>, they don’t just point at an existing value, they <em>own</em> the value they point to, allocating memory for it and cleaning it up automatically when the pointer dies.</p>
+<p><code class="docutils literal notranslate"><span class="pre">OwnedPointer</span></code> models <strong>exclusive</strong> ownership: exactly one owner, like the <code class="docutils literal notranslate"><span class="pre">var</span></code> argument convention but for a value living on the heap. You hand it a value, it stashes it, and when the <code class="docutils literal notranslate"><span class="pre">OwnedPointer</span></code> is destroyed it destroys the stored value and frees the memory, no manual cleanup from you:</p>
+<div class="highlight-mojo notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">std.memory</span><span class="w"> </span><span class="kn">import</span><span class="w"> </span><span class="n">OwnedPointer</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span>
+<span class="w">    </span><span class="k">var</span><span class="w"> </span><span class="nv">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">OwnedPointer</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span><span class="w">       </span><span class="c1"># allocates, stores 42</span>
+<span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="n">p</span><span class="p">[])</span><span class="w">                     </span><span class="c1"># 42</span>
+<span class="w">    </span><span class="n">p</span><span class="p">[]</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mi">10</span>
+<span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="n">p</span><span class="p">[])</span><span class="w">                     </span><span class="c1"># 52</span>
+<span class="w">    </span><span class="c1"># when `p` reaches its last use, the 42 is destroyed and freed for you</span>
+</pre></div>
+</div>
+<p>Because ownership is exclusive, an <code class="docutils literal notranslate"><span class="pre">OwnedPointer</span></code> can be <em>moved</em> but not <em>copied</em>, which should feel familiar after the lifecycle chapter. It’s the safe choice when one part of your program clearly owns a heap-allocated value.</p>
+</section>
+<section id="arcpointer-shared-ownership-by-reference-counting">
+<h2><code class="docutils literal notranslate"><span class="pre">ArcPointer</span></code>: shared ownership by reference counting<a class="headerlink" href="#arcpointer-shared-ownership-by-reference-counting" title="Link to this heading">#</a></h2>
+<p>Sometimes several parts of your program need to share the <em>same</em> value, and you want it cleaned up only when the <em>last</em> of them is done. That’s <code class="docutils literal notranslate"><span class="pre">ArcPointer</span></code> (“Arc” = <strong>a</strong>tomic <strong>r</strong>eference <strong>c</strong>ount). It keeps a running count of how many copies exist: every copy bumps the count up, every destruction bumps it down, and when the count hits zero the value is destroyed and the memory freed.</p>
+<div class="highlight-mojo notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">std.memory</span><span class="w"> </span><span class="kn">import</span><span class="w"> </span><span class="n">ArcPointer</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span>
+<span class="w">    </span><span class="k">var</span><span class="w"> </span><span class="nv">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ArcPointer</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span><span class="w">    </span><span class="c1"># count = 1</span>
+<span class="w">    </span><span class="k">var</span><span class="w"> </span><span class="nv">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="w">                  </span><span class="c1"># count = 2, both share ONE value</span>
+<span class="w">    </span><span class="n">b</span><span class="p">[]</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">[])</span><span class="w">                 </span><span class="c1"># 101 -- a and b see the same value</span>
+<span class="w">    </span><span class="c1"># value is freed only when BOTH a and b are gone</span>
+</pre></div>
+</div>
+<p>This is how you build safe, shared, reference-semantic types, a value that behaves like a Python object passed by reference. Copying an <code class="docutils literal notranslate"><span class="pre">ArcPointer</span></code> shares the pointee; it doesn’t duplicate it.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The reference count itself is stored atomically, so incrementing and decrementing it is safe even from multiple threads. But be careful: Mojo doesn’t currently stop two threads from mutating the shared <em>value</em> at the same time, so sharing an <code class="docutils literal notranslate"><span class="pre">ArcPointer</span></code> across threads can still create the race conditions we warned about in the <em>Parallelization</em> chapter. Shared ownership and shared mutation are two different problems.</p>
+</div>
+</section>
+<section id="unsafepointer-full-manual-control">
+<h2><code class="docutils literal notranslate"><span class="pre">UnsafePointer</span></code>: full manual control<a class="headerlink" href="#unsafepointer-full-manual-control" title="Link to this heading">#</a></h2>
+<p>At the bottom rung is <code class="docutils literal notranslate"><span class="pre">UnsafePointer</span></code>, and the name is a genuine warning label. It’s the closest thing to a C pointer: it can point at a block of one or more memory locations, that memory might be <strong>uninitialized</strong>, and Mojo does <em>not</em> track its lifecycle for you. There are no bounds checks, no guarantees. In exchange, you get total control, which you need when allocating raw buffers, interfacing with C, or implementing a brand-new container.</p>
+<p>Using one is a four-step ritual: <strong>allocate</strong> memory, <strong>initialize</strong> it with a value, use it, then <strong>destroy</strong> the value and <strong>free</strong> the memory. Miss the last two steps and you leak memory; do them in the wrong order and you corrupt it:</p>
+<div class="highlight-mojo notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">std.memory</span><span class="w"> </span><span class="kn">import</span><span class="w"> </span><span class="n">UnsafePointer</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span>
+<span class="w">    </span><span class="k">var</span><span class="w"> </span><span class="nv">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">alloc</span><span class="p">[</span><span class="nb">Int</span><span class="p">](</span><span class="mi">1</span><span class="p">)</span><span class="w">          </span><span class="c1"># 1. reserve room for one Int (uninitialized!)</span>
+<span class="w">    </span><span class="n">p</span><span class="o">.</span><span class="n">init_pointee_move</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span><span class="w">        </span><span class="c1"># 2. actually put a value there</span>
+<span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="n">p</span><span class="p">[])</span><span class="w">                     </span><span class="c1"># 3. use it -- 42</span>
+<span class="w">    </span><span class="n">p</span><span class="o">.</span><span class="n">destroy_pointee</span><span class="p">()</span><span class="w">            </span><span class="c1"># 4a. destroy the stored value</span>
+<span class="w">    </span><span class="n">p</span><span class="o">.</span><span class="n">free</span><span class="p">()</span><span class="w">                       </span><span class="c1"># 4b. give the memory back</span>
+</pre></div>
+</div>
+<p>Every one of those steps is your responsibility. Forget <code class="docutils literal notranslate"><span class="pre">free()</span></code> and the memory leaks. Read <code class="docutils literal notranslate"><span class="pre">p[]</span></code> before <code class="docutils literal notranslate"><span class="pre">init_pointee_move</span></code> and you’re reading garbage. This is exactly the kind of bookkeeping the safe pointers above do <em>for</em> you, which is precisely why you should prefer them.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The low-level memory APIs, the exact function names, import paths, and method signatures around <code class="docutils literal notranslate"><span class="pre">UnsafePointer</span></code>, are the <strong>fastest-moving corner of the standard library</strong>, and they’ve changed meaningfully even in recent releases. One change worth knowing: <code class="docutils literal notranslate"><span class="pre">UnsafePointer</span></code> is now <strong>non-null by design</strong>, so to express “a pointer that might be missing” you wrap it as <code class="docutils literal notranslate"><span class="pre">Optional[UnsafePointer[...]]</span></code> rather than using a null pointer. Treat the example above as the <em>shape</em> of the workflow, allocate, initialize, use, destroy, free, and always check the current <a class="reference external" href="https://docs.modular.com/mojo/manual/pointers/">Pointers section of the Mojo manual</a> for the exact spelling before you rely on it.</p>
+</div>
+</section>
+<section id="this-is-where-the-lifecycle-methods-earn-their-keep">
+<h2>This is where the lifecycle methods earn their keep<a class="headerlink" href="#this-is-where-the-lifecycle-methods-earn-their-keep" title="Link to this heading">#</a></h2>
+<p>Remember how, in the last chapter, I said the main reason to write a destructor by hand is when your type holds raw memory? Now you can see exactly what that means. A struct that wraps an <code class="docutils literal notranslate"><span class="pre">UnsafePointer</span></code> is responsible for that memory, so it implements <code class="docutils literal notranslate"><span class="pre">__del__</span></code> to free it when the value dies:</p>
+<div class="highlight-mojo notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">std.memory</span><span class="w"> </span><span class="kn">import</span><span class="w"> </span><span class="n">UnsafePointer</span>
+
+<span class="k">struct</span><span class="w"> </span><span class="n n-Struct">Buffer</span><span class="p">:</span>
+<span class="w">    </span><span class="k">var</span><span class="w"> </span><span class="nv">data</span><span class="p">:</span><span class="w"> </span><span class="n">UnsafePointer</span><span class="p">[</span><span class="nb">Int</span><span class="p">]</span>
+<span class="w">    </span><span class="k">var</span><span class="w"> </span><span class="nv">size</span><span class="p">:</span><span class="w"> </span><span class="nb">Int</span>
+
+<span class="w">    </span><span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="n">out</span><span class="w"> </span><span class="bp">self</span><span class="p">,</span><span class="w"> </span><span class="n">size</span><span class="p">:</span><span class="w"> </span><span class="nb">Int</span><span class="p">):</span>
+<span class="w">        </span><span class="bp">self</span><span class="o">.</span><span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">size</span>
+<span class="w">        </span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">alloc</span><span class="p">[</span><span class="nb">Int</span><span class="p">](</span><span class="n">size</span><span class="p">)</span><span class="w">      </span><span class="c1"># this struct now owns memory</span>
+
+<span class="w">    </span><span class="k">def</span><span class="w"> </span><span class="fm">__del__</span><span class="p">(</span><span class="n">deinit</span><span class="w"> </span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">free</span><span class="p">()</span><span class="w">                  </span><span class="c1"># ...so it must free it</span>
+</pre></div>
+</div>
+<p>This is the whole point of the design: the <em>messy, unsafe</em> memory management is sealed inside <code class="docutils literal notranslate"><span class="pre">Buffer</span></code>’s lifecycle methods, written once, carefully. Everyone who <em>uses</em> a <code class="docutils literal notranslate"><span class="pre">Buffer</span></code> gets a clean, safe value that cleans up after itself, no pointers in sight. You write the dangerous code once so that all the code on top of it can be safe.</p>
+</section>
+<section id="choosing-a-pointer">
+<h2>Choosing a pointer<a class="headerlink" href="#choosing-a-pointer" title="Link to this heading">#</a></h2>
+<p>When you do need indirection, the decision is usually quick:</p>
+<ul class="simple">
+<li><p>Just need to refer to an existing value without copying? <strong><code class="docutils literal notranslate"><span class="pre">Pointer</span></code></strong>.</p></li>
+<li><p>Need to own a single heap value with one clear owner? <strong><code class="docutils literal notranslate"><span class="pre">OwnedPointer</span></code></strong>.</p></li>
+<li><p>Need several owners to share one value, cleaned up when the last leaves? <strong><code class="docutils literal notranslate"><span class="pre">ArcPointer</span></code></strong>.</p></li>
+<li><p>Building a container or talking to C/hardware, and willing to manage memory yourself? <strong><code class="docutils literal notranslate"><span class="pre">UnsafePointer</span></code></strong>, with care.</p></li>
+</ul>
+<p>And the most important rule: if a <code class="docutils literal notranslate"><span class="pre">List</span></code>, <code class="docutils literal notranslate"><span class="pre">Dict</span></code>, or your own struct already does the job, reach for <em>that</em> first. The best pointer is often the one you didn’t need.</p>
+</section>
+<section id="why-this-matters">
+<h2>Why this matters<a class="headerlink" href="#why-this-matters" title="Link to this heading">#</a></h2>
+<p>Pointers are where Mojo stops being “fast Python” and becomes a true systems language, the place where, if you need to, you can get right down to the metal. But notice the shape of the whole design: Mojo gives you the unsafe tools <em>and</em> a ladder of progressively safer ones built on top, so you can choose exactly how much control and how much responsibility you want. For most code, you’ll stay near the top of the ladder and never think about memory at all. For the rare moment you need the bottom rung, it’s there.</p>
+<p>With ownership, lifecycle, and pointers behind you, you’ve now seen Mojo from its friendly Python-like surface all the way down to its foundations. In the final chapter we’ll come back up for air and take a tour of the <strong>standard library</strong>, the batteries Mojo ships with so you rarely have to build any of this from scratch.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="value-lifecycle.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Value lifecycle</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="standard.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">The Standard Library</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-a-pointer-even-is">What a pointer even is</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pointer-a-safe-compiler-checked-reference"><code class="docutils literal notranslate"><span class="pre">Pointer</span></code>: a safe, compiler-checked reference</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ownedpointer-single-ownership-of-a-value-on-the-heap"><code class="docutils literal notranslate"><span class="pre">OwnedPointer</span></code>: single ownership of a value on the heap</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#arcpointer-shared-ownership-by-reference-counting"><code class="docutils literal notranslate"><span class="pre">ArcPointer</span></code>: shared ownership by reference counting</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unsafepointer-full-manual-control"><code class="docutils literal notranslate"><span class="pre">UnsafePointer</span></code>: full manual control</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#this-is-where-the-lifecycle-methods-earn-their-keep">This is where the lifecycle methods earn their keep</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#choosing-a-pointer">Choosing a pointer</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-this-matters">Why this matters</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Amit Shukla
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

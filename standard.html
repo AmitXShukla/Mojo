@@ -34,7 +34,7 @@
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css?v=8cd3d715" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -63,7 +63,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'standard';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="Parallelization" href="parallel.html" />
+    <link rel="prev" title="Pointers" href="pointers.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -183,6 +183,9 @@
 <li class="toctree-l1"><a class="reference internal" href="thinkinginmojo.html">Thinking in Mojo</a></li>
 <li class="toctree-l1"><a class="reference internal" href="comprehension.html">Arrays, Lists and Comprehension</a></li>
 <li class="toctree-l1"><a class="reference internal" href="parallel.html">Parallelization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="value-ownership.html">Value ownership</a></li>
+<li class="toctree-l1"><a class="reference internal" href="value-lifecycle.html">Value lifecycle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pointers.html">Pointers</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">The Standard Library</a></li>
 </ul>
 
@@ -499,11 +502,12 @@
 <p>Take a breath and look back at the ground we’ve covered. You started by installing Mojo and printing “Hello, world!”. Along the way you learned:</p>
 <ul class="simple">
 <li><p>how Mojo stores data, and why types and memory layout make it fast,</p></li>
-<li><p>control flow, functions, and Mojo’s careful ownership model,</p></li>
+<li><p>control flow and functions, the everyday building blocks of a program,</p></li>
 <li><p>how to build your own types with structs, and share behavior with traits,</p></li>
 <li><p>how to borrow Python’s ecosystem when you need it,</p></li>
 <li><p>how metaprogramming moves work to compile time,</p></li>
-<li><p>and how SIMD and multi-core parallelism unleash your hardware.</p></li>
+<li><p>how SIMD and multi-core parallelism unleash your hardware,</p></li>
+<li><p>and, in the final stretch, how Mojo’s ownership model, value lifecycle, and pointers give you systems-level control without giving up safety.</p></li>
 </ul>
 <p>That’s a real foundation. You can now write Mojo that’s expressive <em>and</em> fast, the exact combination that pulled me to this language in the first place.</p>
 <p>From here, the natural next step is to point these skills at real problems. In future installments, that’s exactly where we’re headed: data analysis, visualization, transformation, and ultimately training and deploying machine-learning models, all the way from a research notebook to production hardware, in Mojo.</p>
@@ -542,12 +546,12 @@
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="parallel.html"
+       href="pointers.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Parallelization</p>
+        <p class="prev-next-title">Pointers</p>
       </div>
     </a>
 </div>

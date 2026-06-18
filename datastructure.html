@@ -34,7 +34,7 @@
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css?v=8cd3d715" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -184,6 +184,9 @@
 <li class="toctree-l1"><a class="reference internal" href="thinkinginmojo.html">Thinking in Mojo</a></li>
 <li class="toctree-l1"><a class="reference internal" href="comprehension.html">Arrays, Lists and Comprehension</a></li>
 <li class="toctree-l1"><a class="reference internal" href="parallel.html">Parallelization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="value-ownership.html">Value ownership</a></li>
+<li class="toctree-l1"><a class="reference internal" href="value-lifecycle.html">Value lifecycle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pointers.html">Pointers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="standard.html">The Standard Library</a></li>
 </ul>
 
@@ -559,7 +562,7 @@
 <li><p><code class="docutils literal notranslate"><span class="pre">__eq__</span></code>, <code class="docutils literal notranslate"><span class="pre">__lt__</span></code> — comparisons (<code class="docutils literal notranslate"><span class="pre">==</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;</span></code>).</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">__str__</span></code> — convert to a <code class="docutils literal notranslate"><span class="pre">String</span></code>.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">__del__</span></code> — clean up when the value is destroyed (the <em>destructor</em>).</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">__copyinit__</span></code>, <code class="docutils literal notranslate"><span class="pre">__moveinit__</span></code> — define copying and moving (usually handled for you by the <code class="docutils literal notranslate"><span class="pre">Copyable</span></code>/<code class="docutils literal notranslate"><span class="pre">Movable</span></code> traits).</p></li>
+<li><p>the <strong>copy constructor</strong> and <strong>move constructor</strong> — special forms of <code class="docutils literal notranslate"><span class="pre">__init__</span></code> that define how a value is copied and moved. You almost never write these by hand; the <code class="docutils literal notranslate"><span class="pre">Copyable</span></code>/<code class="docutils literal notranslate"><span class="pre">Movable</span></code> traits generate them for you. We devote a whole chapter to them later in <em>Value lifecycle</em>.</p></li>
 </ul>
 </section>
 <section id="putting-it-together">

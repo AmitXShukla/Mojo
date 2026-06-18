@@ -1,0 +1,668 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Value ownership &#8212; The Mojo Programming Language</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css?v=8cd3d715" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=b8b12719"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'value-ownership';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Value lifecycle" href="value-lifecycle.html" />
+    <link rel="prev" title="Parallelization" href="parallel.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="The Mojo Programming Language - Home"/>
+    <img src="_static/logo.png" class="logo__image only-dark pst-js-only" alt="The Mojo Programming Language - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    The Mojo Programming Language book
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="whymojo.html">Why Mojo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gettingstarted.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datatype.html">Data Types, Variables and Operators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="controlflow.html">Loops &amp; Control Flow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="functions.html">Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datastructure.html">Data Structures: Building Your Own Types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages.html">Modules and Packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usingpython.html">Using Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="traits.html">Traits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="oops.html">OOP Concepts in Mojo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="metaprogramming.html">Metaprogramming in Mojo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="MLIR.html">MLIR: The Engine Under the Hood</a></li>
+<li class="toctree-l1"><a class="reference internal" href="thinkinginmojo.html">Thinking in Mojo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="comprehension.html">Arrays, Lists and Comprehension</a></li>
+<li class="toctree-l1"><a class="reference internal" href="parallel.html">Parallelization</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Value ownership</a></li>
+<li class="toctree-l1"><a class="reference internal" href="value-lifecycle.html">Value lifecycle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pointers.html">Pointers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="standard.html">The Standard Library</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/AmitXShukla/Mojo" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/AmitXShukla/Mojo/issues/new?title=Issue%20on%20page%20%2Fvalue-ownership.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/value-ownership.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Value ownership</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-problem-ownership-solves">The problem ownership solves</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-three-rules">The three rules</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#borrowing-versus-owning">Borrowing versus owning</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transfer-handing-over-the-keys">Transfer: handing over the keys</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#when-does-the-value-actually-get-destroyed">When does the value actually get destroyed?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references-that-outlive-the-function-ref">References that outlive the function: <code class="docutils literal notranslate"><span class="pre">ref</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#origins-how-the-compiler-keeps-references-honest">Origins: how the compiler keeps references honest</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-worked-example">A worked example</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-this-matters">Why this matters</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="value-ownership">
+<h1>Value ownership<a class="headerlink" href="#value-ownership" title="Link to this heading">#</a></h1>
+<p>Back in the <em>Functions</em> chapter I promised we’d return to ownership and go deeper. This is that chapter. If the early chapters were about getting Mojo to <em>run</em> your ideas, this one is about understanding the single feature that lets Mojo be as safe as Python and as fast as C++ at the same time. It’s the part of the language I found most foreign coming from Python, and also the part that, once it clicked, made me trust Mojo with production code.</p>
+<p>So let me explain <em>why</em> it exists before I show you the <em>how</em>.</p>
+<section id="the-problem-ownership-solves">
+<h2>The problem ownership solves<a class="headerlink" href="#the-problem-ownership-solves" title="Link to this heading">#</a></h2>
+<p>In Python you never think about who “owns” a value. You make a list, pass it around, and a garbage collector quietly cleans up when nothing refers to it anymore. That convenience has a cost: the garbage collector runs while your program runs, pausing your code at unpredictable moments. For a notebook that’s invisible. For a model chewing through petabytes, those pauses are exactly the unpredictability that kept my pandemic-era code from scaling.</p>
+<p>Languages like C and C++ throw out the garbage collector for speed, but hand you a loaded gun: forget to free memory and you leak it; free it twice and you corrupt it; use a value after it’s freed and you get the kind of bug that takes a week to find.</p>
+<p>Mojo’s answer is a third path. Instead of a garbage collector <em>or</em> manual bookkeeping, the <strong>compiler</strong> tracks ownership for you and inserts the cleanup automatically, at compile time, with zero runtime cost. You get C++ speed with Python-like safety. The rules that make this work are surprisingly few.</p>
+</section>
+<section id="the-three-rules">
+<h2>The three rules<a class="headerlink" href="#the-three-rules" title="Link to this heading">#</a></h2>
+<p>Everything in this chapter follows from three rules:</p>
+<ol class="arabic simple">
+<li><p><strong>Every value has exactly one owner at a time.</strong></p></li>
+<li><p><strong>When the owner’s lifetime ends, Mojo destroys the value.</strong></p></li>
+<li><p><strong>If references to a value still exist, Mojo keeps the owner alive long enough for them.</strong></p></li>
+</ol>
+<p>That’s the whole model. The rest is just learning the vocabulary Mojo gives you to work within it.</p>
+</section>
+<section id="borrowing-versus-owning">
+<h2>Borrowing versus owning<a class="headerlink" href="#borrowing-versus-owning" title="Link to this heading">#</a></h2>
+<p>We met the argument conventions in the <em>Functions</em> chapter: <code class="docutils literal notranslate"><span class="pre">read</span></code>, <code class="docutils literal notranslate"><span class="pre">mut</span></code>, and <code class="docutils literal notranslate"><span class="pre">var</span></code>. Now you can see them for what they really are, two different relationships a function can have with a value.</p>
+<p>The first two <strong>borrow</strong>. The function gets a reference to the caller’s value and promises to give it back:</p>
+<ul class="simple">
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">read</span></code></strong> (the default) borrows <em>immutably</em>, look but don’t touch.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">mut</span></code></strong> borrows <em>mutably</em>, the function may change the value, and the caller sees those changes afterward.</p></li>
+</ul>
+<p>The third <strong>takes ownership</strong>:</p>
+<ul class="simple">
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">var</span></code></strong> means the value becomes the function’s. The caller gives it up.</p></li>
+</ul>
+<p>The crucial insight is that borrowing doesn’t copy. When you pass a million-row dataset to a function as <code class="docutils literal notranslate"><span class="pre">read</span></code>, nothing is duplicated, the function just gets a safe, temporary view. That’s why Mojo can be fast <em>by default</em>: passing values is cheap, and the compiler guarantees a borrowed value can’t be modified behind your back or destroyed while you’re still using it.</p>
+<div class="highlight-mojo notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">summarize</span><span class="p">(</span><span class="n">data</span><span class="p">:</span><span class="w"> </span><span class="nb">List</span><span class="p">[</span><span class="nb">Float64</span><span class="p">]):</span><span class="w">       </span><span class="c1"># `read` is implied</span>
+<span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;rows:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">))</span><span class="w">             </span><span class="c1"># may look, may not modify</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">append_row</span><span class="p">(</span><span class="n">mut</span><span class="w"> </span><span class="n">data</span><span class="p">:</span><span class="w"> </span><span class="nb">List</span><span class="p">[</span><span class="nb">Float64</span><span class="p">],</span><span class="w"> </span><span class="n">value</span><span class="p">:</span><span class="w"> </span><span class="nb">Float64</span><span class="p">):</span>
+<span class="w">    </span><span class="n">data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">value</span><span class="p">)</span><span class="w">                    </span><span class="c1"># may modify; caller sees it</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span>
+<span class="w">    </span><span class="k">var</span><span class="w"> </span><span class="nv">prices</span><span class="p">:</span><span class="w"> </span><span class="nb">List</span><span class="p">[</span><span class="nb">Float64</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">10.0</span><span class="p">,</span><span class="w"> </span><span class="mf">20.0</span><span class="p">]</span>
+<span class="w">    </span><span class="n">summarize</span><span class="p">(</span><span class="n">prices</span><span class="p">)</span><span class="w">                     </span><span class="c1"># borrowed immutably</span>
+<span class="w">    </span><span class="n">append_row</span><span class="p">(</span><span class="n">prices</span><span class="p">,</span><span class="w"> </span><span class="mf">30.0</span><span class="p">)</span><span class="w">              </span><span class="c1"># borrowed mutably</span>
+<span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">prices</span><span class="p">))</span><span class="w">                    </span><span class="c1"># 3 -- the original grew</span>
+</pre></div>
+</div>
+</section>
+<section id="transfer-handing-over-the-keys">
+<h2>Transfer: handing over the keys<a class="headerlink" href="#transfer-handing-over-the-keys" title="Link to this heading">#</a></h2>
+<p>Borrowing covers most code you’ll write. But sometimes you genuinely want to <em>give a value away</em>, hand it to a function and stop using it yourself. That’s a <strong>transfer</strong>, and you signal it with the <code class="docutils literal notranslate"><span class="pre">^</span></code> sigil we first saw in the <em>Functions</em> chapter:</p>
+<div class="highlight-mojo notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">archive</span><span class="p">(</span><span class="k">var</span><span class="w"> </span><span class="nv">record</span><span class="p">:</span><span class="w"> </span><span class="nb">String</span><span class="p">):</span>
+<span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;archived:&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">record</span><span class="p">)</span><span class="w">            </span><span class="c1"># `archive` now owns it</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span>
+<span class="w">    </span><span class="k">var</span><span class="w"> </span><span class="nv">note</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">String</span><span class="p">(</span><span class="s2">&quot;Q3 close complete 🔥&quot;</span><span class="p">)</span>
+<span class="w">    </span><span class="n">archive</span><span class="p">(</span><span class="n">note</span><span class="o">^</span><span class="p">)</span><span class="w">                        </span><span class="c1"># ownership handed over</span>
+<span class="w">    </span><span class="c1"># `note` is used up here -- the compiler won&#39;t let you touch it</span>
+</pre></div>
+</div>
+<p>After <code class="docutils literal notranslate"><span class="pre">note^</span></code>, the variable <code class="docutils literal notranslate"><span class="pre">note</span></code> is <em>dead</em>. Try to print it on the next line and the compiler stops you, not at runtime, but before your program ever runs. This is rule 1 doing its job: a value can’t have two owners, so once <code class="docutils literal notranslate"><span class="pre">archive</span></code> owns the string, <code class="docutils literal notranslate"><span class="pre">note</span></code> can’t.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Why is this such a big deal? Because the entire category of “use-after-free” bugs, some of the most dangerous security vulnerabilities in software, simply cannot be written in safe Mojo. The compiler proves at build time that you never touch a value you’ve given away. You don’t pay for a garbage collector, and you don’t get the footguns of manual memory management. That trade is the heart of why I trust Mojo in production.</p>
+</div>
+</section>
+<section id="when-does-the-value-actually-get-destroyed">
+<h2>When does the value actually get destroyed?<a class="headerlink" href="#when-does-the-value-actually-get-destroyed" title="Link to this heading">#</a></h2>
+<p>Here’s a detail that surprises people coming from other languages. Mojo destroys a value <strong>as soon as it’s no longer used</strong>, not at the end of the enclosing block. This is called <strong>ASAP (“as soon as possible”) destruction</strong>, and it’s eager rather than lazy.</p>
+<div class="highlight-mojo notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span>
+<span class="w">    </span><span class="k">var</span><span class="w"> </span><span class="nv">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">String</span><span class="p">(</span><span class="s2">&quot;Amit&quot;</span><span class="p">)</span>
+<span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="n">name</span><span class="p">)</span><span class="w">            </span><span class="c1"># last use of `name`...</span>
+<span class="w">    </span><span class="c1"># ...Mojo destroys `name` right HERE, not at the end of main()</span>
+<span class="w">    </span><span class="k">var</span><span class="w"> </span><span class="nv">city</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">String</span><span class="p">(</span><span class="s2">&quot;Malibu&quot;</span><span class="p">)</span>
+<span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="n">city</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>In a C++-style language, <code class="docutils literal notranslate"><span class="pre">name</span></code> would live until the closing brace. In Mojo, it’s gone the instant after its final use. The practical payoff: resources are released at the earliest safe moment, which keeps memory footprints tight, exactly what you want when every gigabyte counts.</p>
+</section>
+<section id="references-that-outlive-the-function-ref">
+<h2>References that outlive the function: <code class="docutils literal notranslate"><span class="pre">ref</span></code><a class="headerlink" href="#references-that-outlive-the-function-ref" title="Link to this heading">#</a></h2>
+<p>Borrowing inside a function call is the common case, but Mojo also lets you hold a direct reference to an existing value with a <strong>reference binding</strong>. You write <code class="docutils literal notranslate"><span class="pre">ref</span></code> and bind it to something that already exists:</p>
+<div class="highlight-mojo notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span>
+<span class="w">    </span><span class="k">var</span><span class="w"> </span><span class="nv">totals</span><span class="p">:</span><span class="w"> </span><span class="nb">List</span><span class="p">[</span><span class="nb">Int</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w"> </span><span class="mi">300</span><span class="p">]</span>
+<span class="w">    </span><span class="n">ref</span><span class="w"> </span><span class="n">second</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">totals</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="w">    </span><span class="c1"># `second` is a reference, not a copy</span>
+<span class="w">    </span><span class="n">second</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mi">5</span><span class="w">               </span><span class="c1"># writes straight through to the list</span>
+<span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="n">totals</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span><span class="w">          </span><span class="c1"># 205</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">second</span></code> isn’t a copy of <code class="docutils literal notranslate"><span class="pre">totals[1]</span></code>, it <em>is</em> <code class="docutils literal notranslate"><span class="pre">totals[1]</span></code>, viewed through another name. Because of rule 3, Mojo keeps <code class="docutils literal notranslate"><span class="pre">totals</span></code> alive for as long as <code class="docutils literal notranslate"><span class="pre">second</span></code> is in use, so the reference can never dangle.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>You may see older code write <code class="docutils literal notranslate"><span class="pre">var</span> <span class="pre">ref</span> <span class="pre">x</span> <span class="pre">=</span> <span class="pre">y</span></code>. As of recent Mojo versions that nested form produces a warning, the outer <code class="docutils literal notranslate"><span class="pre">var</span></code> is redundant. Just write <code class="docutils literal notranslate"><span class="pre">ref</span> <span class="pre">x</span> <span class="pre">=</span> <span class="pre">y</span></code>.</p>
+</div>
+</section>
+<section id="origins-how-the-compiler-keeps-references-honest">
+<h2>Origins: how the compiler keeps references honest<a class="headerlink" href="#origins-how-the-compiler-keeps-references-honest" title="Link to this heading">#</a></h2>
+<p>You might wonder how the compiler <em>knows</em> that <code class="docutils literal notranslate"><span class="pre">second</span></code> above is tied to <code class="docutils literal notranslate"><span class="pre">totals</span></code>, so it can enforce rule 3. The answer is a compile-time concept called an <strong>origin</strong>. Every reference carries, invisibly, the origin of the value it points to, a symbolic note that says “I came from <code class="docutils literal notranslate"><span class="pre">totals</span></code>.” The compiler reads those notes to guarantee that no reference ever outlives the thing it refers to.</p>
+<p>The good news for a beginner: <strong>you almost never write origins by hand.</strong> The compiler infers them. You’ll only meet them face-to-face in a few advanced situations, when you return a reference from a function, or when you use the <code class="docutils literal notranslate"><span class="pre">Pointer</span></code> and <code class="docutils literal notranslate"><span class="pre">Span</span></code> types, which are parameterized on the origin of their data. We’ll touch them again in the <em>Pointers</em> chapter. For now, just know they’re the bookkeeping that makes safe references possible, and that they cost nothing at runtime because all the tracking happens during compilation.</p>
+</section>
+<section id="a-worked-example">
+<h2>A worked example<a class="headerlink" href="#a-worked-example" title="Link to this heading">#</a></h2>
+<p>Let me tie the conventions together with something that looks like real code, a tiny ledger that borrows for reads, borrows mutably for updates, and transfers when it’s done:</p>
+<div class="highlight-mojo notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">total</span><span class="p">(</span><span class="n">ledger</span><span class="p">:</span><span class="w"> </span><span class="nb">List</span><span class="p">[</span><span class="nb">Float64</span><span class="p">])</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="nb">Float64</span><span class="p">:</span><span class="w">    </span><span class="c1"># borrows immutably</span>
+<span class="w">    </span><span class="k">var</span><span class="w"> </span><span class="nv">sum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.0</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="n">amount</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">ledger</span><span class="p">:</span>
+<span class="w">        </span><span class="nb">sum</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">amount</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nb">sum</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">post</span><span class="p">(</span><span class="n">mut</span><span class="w"> </span><span class="n">ledger</span><span class="p">:</span><span class="w"> </span><span class="nb">List</span><span class="p">[</span><span class="nb">Float64</span><span class="p">],</span><span class="w"> </span><span class="n">amount</span><span class="p">:</span><span class="w"> </span><span class="nb">Float64</span><span class="p">):</span><span class="w">   </span><span class="c1"># borrows mutably</span>
+<span class="w">    </span><span class="n">ledger</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">amount</span><span class="p">)</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">finalize</span><span class="p">(</span><span class="k">var</span><span class="w"> </span><span class="nv">ledger</span><span class="p">:</span><span class="w"> </span><span class="nb">List</span><span class="p">[</span><span class="nb">Float64</span><span class="p">]):</span><span class="w">         </span><span class="c1"># takes ownership</span>
+<span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;final total:&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">total</span><span class="p">(</span><span class="n">ledger</span><span class="p">))</span><span class="w">         </span><span class="c1"># consumes the ledger</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span>
+<span class="w">    </span><span class="k">var</span><span class="w"> </span><span class="nv">ledger</span><span class="p">:</span><span class="w"> </span><span class="nb">List</span><span class="p">[</span><span class="nb">Float64</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">1200.0</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mf">450.0</span><span class="p">]</span>
+<span class="w">    </span><span class="n">post</span><span class="p">(</span><span class="n">ledger</span><span class="p">,</span><span class="w"> </span><span class="mf">980.0</span><span class="p">)</span><span class="w">                          </span><span class="c1"># mutate in place</span>
+<span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;running total:&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">total</span><span class="p">(</span><span class="n">ledger</span><span class="p">))</span><span class="w">       </span><span class="c1"># read without copying</span>
+<span class="w">    </span><span class="n">finalize</span><span class="p">(</span><span class="n">ledger</span><span class="o">^</span><span class="p">)</span><span class="w">                            </span><span class="c1"># hand it off for good</span>
+<span class="w">    </span><span class="c1"># `ledger` is used up here</span>
+</pre></div>
+</div>
+<p>Read it back and notice how much the keywords tell you <em>at a glance</em>: <code class="docutils literal notranslate"><span class="pre">total</span></code> only looks, <code class="docutils literal notranslate"><span class="pre">post</span></code> may change, <code class="docutils literal notranslate"><span class="pre">finalize</span></code> takes the value away. The conventions aren’t ceremony, they’re a precise, compiler-checked contract about who is allowed to do what.</p>
+</section>
+<section id="why-this-matters">
+<h2>Why this matters<a class="headerlink" href="#why-this-matters" title="Link to this heading">#</a></h2>
+<p>It’s tempting to see ownership as overhead, more keywords to remember. But it buys you three guarantees most languages make you choose between:</p>
+<ul class="simple">
+<li><p><strong>Safety:</strong> no use-after-free, no double-free, proven at compile time.</p></li>
+<li><p><strong>Speed:</strong> no garbage collector, no hidden copies, values released the moment they’re done.</p></li>
+<li><p><strong>Clarity:</strong> every function signature states its intentions about the data it receives.</p></li>
+</ul>
+<p>That combination is exactly why I moved my research code onto Mojo. In the next chapter we go one level deeper, from <em>who owns a value</em> to <em>what happens at the precise moments a value is born, copied, moved, and destroyed</em>, the <strong>value lifecycle</strong>.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="parallel.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Parallelization</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="value-lifecycle.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Value lifecycle</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-problem-ownership-solves">The problem ownership solves</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-three-rules">The three rules</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#borrowing-versus-owning">Borrowing versus owning</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transfer-handing-over-the-keys">Transfer: handing over the keys</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#when-does-the-value-actually-get-destroyed">When does the value actually get destroyed?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references-that-outlive-the-function-ref">References that outlive the function: <code class="docutils literal notranslate"><span class="pre">ref</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#origins-how-the-compiler-keeps-references-honest">Origins: how the compiler keeps references honest</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-worked-example">A worked example</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-this-matters">Why this matters</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Amit Shukla
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
