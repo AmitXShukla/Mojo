@@ -442,7 +442,7 @@
 <section id="a-larger-example-building-a-table">
 <h2>A larger example: building a table<a class="headerlink" href="#a-larger-example-building-a-table" title="Link to this heading">#</a></h2>
 <p>Let’s use Python’s <code class="docutils literal notranslate"><span class="pre">tabulate</span></code> library (install it first with <code class="docutils literal notranslate"><span class="pre">pixi</span> <span class="pre">add</span> <span class="pre">--pypi</span> <span class="pre">tabulate</span></code>) to pretty-print some records, the kind of thing you’d do when eyeballing a dataset:</p>
-<div class="highlight-mojo notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">std.python</span><span class="w"> </span><span class="kn">import</span><span class="w"> </span><span class="n">Python</span>
+<div class="highlight-mojo notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">std.python</span><span class="w"> </span><span class="kn">import</span><span class="w"> </span><span class="n">Python</span><span class="p">,</span><span class="w"> </span><span class="n">PythonObject</span>
 
 <span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span>
 <span class="w">    </span><span class="k">var</span><span class="w"> </span><span class="nv">tabulate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Python</span><span class="o">.</span><span class="n">import_module</span><span class="p">(</span><span class="s2">&quot;tabulate&quot;</span><span class="p">)</span>
