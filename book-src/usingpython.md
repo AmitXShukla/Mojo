@@ -51,7 +51,7 @@ This tiny program hands a list to NumPy and gets back statistics, real, useful w
 Let's use Python's `tabulate` library (install it first with `pixi add --pypi tabulate`) to pretty-print some records, the kind of thing you'd do when eyeballing a dataset:
 
 ```{code-block} mojo
-from std.python import Python
+from std.python import Python, PythonObject
 
 def main():
     var tabulate = Python.import_module("tabulate")
