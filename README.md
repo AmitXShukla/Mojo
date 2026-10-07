@@ -13,9 +13,9 @@ A Comprehensive Guide to Mojo programming language with Real-Life Data, Transfor
 - [X](https://x.com/ashuklax)
 
 ---
-Start Here -> read the [documentation](https://amitxshukla.github.io/Mojo/intro.html)
+Start Here -> read the [eBook](https://amitxshukla.github.io/Mojo/intro.html)
 
-*Coming soon — a downloadable PDF edition and companion video tutorials.*
+companion [video tutorials](https://www.youtube.com/playlist?list=PLp0TENYyY8lGXcxf7wbsjAJ2paEAuiLtA)
 
 ---
 
